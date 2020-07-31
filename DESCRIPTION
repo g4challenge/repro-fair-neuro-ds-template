@@ -21,4 +21,6 @@ Remotes:
     ropensci/drake,
     wlandau/txtq
 RoxygenNote: 7.1.1
-Roxygen: list(markdown = TRUE)
+Roxygen: list(roclets = c("namespace", "rd", "roxytest::testthat_roclet"))
+Suggests: 
+    testthat
