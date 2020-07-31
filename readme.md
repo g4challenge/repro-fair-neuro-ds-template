@@ -2,19 +2,45 @@
 
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
 
-This template sets up a reproducible, aimed at FAIR environment for data science.
+This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.
 
+The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.
 
 ## Dataset(s)
 Description of data provenance and history goes here.
 
 ## (Next) Steps
-Description of the next analysis steps
+Description of the next analysis steps. How to use this package:
+
+1. start by cloning/forking the git repository
+2. use git+github, git lfs, tidyverse and RMarkdown
+3. add Drake Plans to for your Pipeline(s)
+4. (optional) start the RStudio IDE within Docker + use renv
 
 
-## Dev-Steps
+## Dev-Steps Getting Started (technical)
 
-Description of steps during development
+Description of steps during development, starting with Docker + RStudio right away.
+
+1. clone this template
+
+```
+git clone https://github.com/g4challenge/repro-fair-neuro-ds-template
+```
+
+2. within the git repository, start the docker container:
+
+```
+docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project 
+```
+
+3. open your browser at http://localhost:8787 
+
+4. login using user=`rstudio` password=`1234`
+
+5. click open on the .rproj file.
+
+6. Start using the project, adapt it to your needs + change the git remote
 
 
 - Local Docker build
