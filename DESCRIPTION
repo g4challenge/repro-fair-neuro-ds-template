@@ -1,12 +1,12 @@
-Package: reproducible-fair-ds-template
+Package: reproducibleFairTemplate
 Type: Package
 Title: Reproducible and fair data science project template
 Version: 0.1.0
-Author: Lukas Huber
-Maintainer: Lukas Huber
+Authors@R: person("Lukas", "Huber", email = "lukashuber1@gmail.com",
+                  role = c("aut", "cre"))
 Description: Template uses docker, git, rmd, drake, mandrake for reproducible data science.
     It is aimed at neuro-intensive care research teams with interdisciplinary teams, suits R and Python workflows.
-License: GPL3
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends:
@@ -20,5 +20,5 @@ Imports:
 Remotes:
     ropensci/drake,
     wlandau/txtq
-
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
