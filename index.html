@@ -67,7 +67,8 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#project-template" class="anchor"></a>Project Template</h1></div>
 <p><img src="https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master" alt="pkgdown"></p>
-<p>This template sets up a reproducible, aimed at FAIR environment for data science.</p>
+<p>This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.</p>
+<p>The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.</p>
 <div id="datasets" class="section level2">
 <h2 class="hasAnchor">
 <a href="#datasets" class="anchor"></a>Dataset(s)</h2>
@@ -76,12 +77,32 @@
 <div id="next-steps" class="section level2">
 <h2 class="hasAnchor">
 <a href="#next-steps" class="anchor"></a>(Next) Steps</h2>
-<p>Description of the next analysis steps</p>
+<p>Description of the next analysis steps. How to use this package:</p>
+<ol>
+<li>start by cloning/forking the git repository</li>
+<li>use git+github, git lfs, tidyverse and RMarkdown</li>
+<li>add Drake Plans to for your Pipeline(s)</li>
+<li>(optional) start the RStudio IDE within Docker + use renv</li>
+</ol>
 </div>
-<div id="dev-steps" class="section level2">
+<div id="dev-steps-getting-started-technical" class="section level2">
 <h2 class="hasAnchor">
-<a href="#dev-steps" class="anchor"></a>Dev-Steps</h2>
-<p>Description of steps during development</p>
+<a href="#dev-steps-getting-started-technical" class="anchor"></a>Dev-Steps Getting Started (technical)</h2>
+<p>Description of steps during development, starting with Docker + RStudio right away.</p>
+<ol>
+<li>clone this template</li>
+</ol>
+<pre><code>git clone https://github.com/g4challenge/repro-fair-neuro-ds-template</code></pre>
+<ol>
+<li>within the git repository, start the docker container:</li>
+</ol>
+<pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project </code></pre>
+<ol>
+<li><p>open your browser at <a href="http://localhost:8787" class="uri">http://localhost:8787</a></p></li>
+<li><p>login using user=<code>rstudio</code> password=<code>1234</code></p></li>
+<li><p>click open on the .rproj file.</p></li>
+<li><p>Start using the project, adapt it to your needs + change the git remote</p></li>
+</ol>
 <ul>
 <li>
 <p>Local Docker build</p>
