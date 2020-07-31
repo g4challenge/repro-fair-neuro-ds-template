@@ -1,0 +1,1 @@
+# NEWS on Template Project

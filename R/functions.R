@@ -18,3 +18,18 @@ my_function <- function(input){
   output <- input+1
   return(output)
 }
+
+
+#' Create Histogram with Mapping Ozone and Binwidth = 10
+#'
+#' @param data
+#'
+#' @return ggplot object
+#' @export
+#'
+#' @examples
+create_plot <- function(data) {
+  ggplot(data) +
+    geom_histogram(aes(x = Ozone), binwidth = 10) +
+    theme_gray(24)
+}
