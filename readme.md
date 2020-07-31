@@ -1,5 +1,7 @@
 # Project Template
 
+![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
+
 This template sets up a reproducible, aimed at FAIR environment for data science.
 
 
