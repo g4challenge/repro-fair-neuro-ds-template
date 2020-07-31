@@ -18,3 +18,15 @@ make(plan)
 ```{r}
 vis_drake_graph(plan)
 ```
+
+
+## Buidling
+
+```{r}
+devtools::document()
+```
+
+```{r}
+renv::snapshot()
+```
+
