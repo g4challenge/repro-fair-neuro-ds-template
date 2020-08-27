@@ -5,7 +5,7 @@ Version: 0.1.0
 Authors@R: person("Lukas", "Huber", 
                   email = "lukashuber1@gmail.com",
                   role = c("aut", "cre"),
-                  orcid="https://orcid.org/0000-0001-5443-0290")
+                  comment=c(ORCID="0000-0001-5443-0290"))
 Description: Template uses docker, git, rmd, drake, mandrake for reproducible data science.
     It is aimed at neuro-intensive care research teams with interdisciplinary teams, suits R and Python workflows.
 License: GPL-3
