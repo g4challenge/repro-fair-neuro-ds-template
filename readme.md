@@ -1,13 +1,19 @@
-# Project Template
+# Reproducible Clinical Research Project Template
 
+[![DOI](https://zenodo.org/badge/284042245.svg)](https://zenodo.org/badge/latestdoi/284042245)
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
+
+
+## Context
+This template can serve as common starting point for observational clinical research.
+## Documentation
+
 
 This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.
 
 The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.
 
-## Dataset(s)
-Description of data provenance and history goes here.
+## Process
 
 ## (Next) Steps
 Description of the next analysis steps. How to use this package:
@@ -18,8 +24,14 @@ Description of the next analysis steps. How to use this package:
 4. (optional) start the RStudio IDE within Docker + use renv
 
 
+## Dataset(s)
+Description of data provenance and history goes here.
 
-## Dev-Steps Getting Started (technical)
+
+## Code
+
+
+## Execution - Dev-Steps Getting Started (technical)
 
 Description of steps during development, starting with Docker + RStudio right away.
 
@@ -53,6 +65,8 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_
 ```
 docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project
 ```
+    
+## Results
     
 ## Additional Remarks
 
