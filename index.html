@@ -63,16 +63,24 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="project-template" class="section level1">
+<div id="reproducible-clinical-research-project-template" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#project-template" class="anchor"></a>Project Template</h1></div>
-<p><img src="https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master" alt="pkgdown"></p>
+<a href="#reproducible-clinical-research-project-template" class="anchor"></a>Reproducible Clinical Research Project Template</h1></div>
+
+<div id="context" class="section level2">
+<h2 class="hasAnchor">
+<a href="#context" class="anchor"></a>Context</h2>
+<p>This template can serve as common starting point for observational clinical research.</p>
+</div>
+<div id="documentation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#documentation" class="anchor"></a>Documentation</h2>
 <p>This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.</p>
 <p>The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.</p>
-<div id="datasets" class="section level2">
+</div>
+<div id="process" class="section level2">
 <h2 class="hasAnchor">
-<a href="#datasets" class="anchor"></a>Dataset(s)</h2>
-<p>Description of data provenance and history goes here.</p>
+<a href="#process" class="anchor"></a>Process</h2>
 </div>
 <div id="next-steps" class="section level2">
 <h2 class="hasAnchor">
@@ -85,9 +93,18 @@
 <li>(optional) start the RStudio IDE within Docker + use renv</li>
 </ol>
 </div>
-<div id="dev-steps-getting-started-technical" class="section level2">
+<div id="datasets" class="section level2">
 <h2 class="hasAnchor">
-<a href="#dev-steps-getting-started-technical" class="anchor"></a>Dev-Steps Getting Started (technical)</h2>
+<a href="#datasets" class="anchor"></a>Dataset(s)</h2>
+<p>Description of data provenance and history goes here.</p>
+</div>
+<div id="code" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code" class="anchor"></a>Code</h2>
+</div>
+<div id="execution---dev-steps-getting-started-technical" class="section level2">
+<h2 class="hasAnchor">
+<a href="#execution---dev-steps-getting-started-technical" class="anchor"></a>Execution - Dev-Steps Getting Started (technical)</h2>
 <p>Description of steps during development, starting with Docker + RStudio right away.</p>
 <ol>
 <li>clone this template</li>
@@ -111,6 +128,10 @@
 <li><p>Local Docker run with default user <code>rstudio</code> and PASSWORD=“1234” - use different password</p></li>
 </ul>
 <pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project</code></pre>
+</div>
+<div id="results" class="section level2">
+<h2 class="hasAnchor">
+<a href="#results" class="anchor"></a>Results</h2>
 </div>
 <div id="additional-remarks" class="section level2">
 <h2 class="hasAnchor">
@@ -142,7 +163,13 @@
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://zenodo.org/badge/latestdoi/284042245"><img src="https://zenodo.org/badge/284042245.svg" alt="DOI"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
