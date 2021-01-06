@@ -12,7 +12,7 @@ test_that("2 - documentation is created (roxygen)",1)
 test_that("3 - data are versioned and controlled", 1)
   # FAIR, DAQCORd, IQM3, FHIR, privacy+security
   # DVC
-test_that("4 - analysis-code is versioned and assured")
+test_that("4 - analysis-code is versioned and assured", 1)
   # environment - renv
   # traceable  - drake
   # pipelines - drake
