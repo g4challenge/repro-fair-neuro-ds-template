@@ -3,6 +3,11 @@
 [![DOI](https://zenodo.org/badge/284042245.svg)](https://zenodo.org/badge/latestdoi/284042245)
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
 
+Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290
+">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" />
+https://orcid.org/0000-0001-5443-0290
+</a>
 
 ## Context
 This template can serve as common starting point for observational clinical research.
