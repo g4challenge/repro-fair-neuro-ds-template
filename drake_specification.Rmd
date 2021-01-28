@@ -29,7 +29,7 @@ vis_drake_graph(plan)
 lookup_cache <- mandrake::load_package_colspec("mandrake")
 ```
 ```{r}
-cache <- drake::get_cache()
+cache <- drake::drake_cache()
 plan_extracted <- plan %>%
   mandrake::decorate_plan(cache, lookup_cache = lookup_cache)
 ```

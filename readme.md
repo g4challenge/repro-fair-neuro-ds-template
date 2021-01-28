@@ -10,7 +10,7 @@ https://orcid.org/0000-0001-5443-0290
 </a>
 
 ## Context
-This template can serve as common starting point for observational clinical research.
+This template can serve as common starting point for traceable analyses in observational clinical research.
 ## Documentation
 
 

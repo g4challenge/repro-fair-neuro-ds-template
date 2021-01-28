@@ -504,16 +504,16 @@
     },
     "mandrake": {
       "Package": "mandrake",
-      "Version": "0.2.1.9002",
+      "Version": "1.0.0",
       "Source": "GitHub",
-      "Remotes": "r-lib/downlit, r-lib/pkgdown",
+      "Remotes": "r-lib/downlit, r-lib/pkgdown, rstudio/htmltools",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "mandrake",
       "RemoteUsername": "mstr3336",
       "RemoteRef": "HEAD",
-      "RemoteSha": "ef0530b6488a69e71dab36f4f5b37bbb41743fd2",
-      "Hash": "0e3581bc1a9701ad39e182cb098cfb26"
+      "RemoteSha": "be7fd645a6210c4d2d9c8bc3d1ff4bce898ac322",
+      "Hash": "7049282fddc0cbc739f4fca6d9ba59f6"
     },
     "markdown": {
       "Package": "markdown",
