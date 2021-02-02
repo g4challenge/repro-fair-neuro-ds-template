@@ -60,6 +60,6 @@ devtools::document()
 ```
 
 ```{r}
-renv::snapshot()
+#renv::snapshot()
 ```
 
