@@ -3,6 +3,7 @@
 [![DOI](https://zenodo.org/badge/284042245.svg)](https://zenodo.org/badge/latestdoi/284042245)
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/g4challenge/repro-fair-neuro-ds-template/HEAD)
+![Binder](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/Binder/badge.svg)
 
 Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290
 ">
