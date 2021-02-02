@@ -43,7 +43,7 @@ graph_info <- drake_graph_info(
 
 graph <- render_drake_graph(
   graph_info, 
-  on_select = mandrake::embed_event_handler(),
+  on_select = mandrake::attach_dependencies(),
   ncol_legend = 4
   ) 
 ```
