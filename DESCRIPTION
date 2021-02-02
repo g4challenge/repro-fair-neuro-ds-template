@@ -18,7 +18,8 @@ Imports:
     haven,
     readxl,
     lubridate,
-    pacman
+    pacman,
+    visNetwork
 Remotes:
     ropensci/drake,
     wlandau/txtq
