@@ -56,7 +56,7 @@ graph
 ## Buidling
 
 ```{r}
-devtools::document()
+#devtools::document()
 ```
 
 ```{r}
