@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   curl \
   zip
 
-ENV RENV_VERSION 0.12.3
+ENV RENV_VERSION 0.12.5
 RUN R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 
