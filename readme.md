@@ -5,6 +5,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/g4challenge/repro-fair-neuro-ds-template/HEAD)
 ![Binder](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/Binder/badge.svg)
 [![codecov](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template/branch/master/graph/badge.svg?token=JF0BD0NRTR)](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template)
+![Docker Image Version (latest by date)](https://img.shields.io/docker/v/g4challenge/repro-fair-neuro-ds-template)
 
 Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290
 ">
@@ -74,7 +75,7 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_
 - Local Docker run with default user `rstudio` and PASSWORD="1234" - use different password
 
 ```
-docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project
+docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template
 ```
     
 ## Results
@@ -89,3 +90,6 @@ Elements the user should be familiar with:
 - R(markdown)
 - Tidyverse
 - [drake](https://books.ropensci.org/drake/)
+
+Alternatives:
+- https://github.com/End-to-end-provenance
