@@ -4,6 +4,7 @@
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/g4challenge/repro-fair-neuro-ds-template/HEAD)
 ![Binder](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/Binder/badge.svg)
+[![codecov](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template/branch/master/graph/badge.svg?token=JF0BD0NRTR)](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template)
 
 Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290
 ">
