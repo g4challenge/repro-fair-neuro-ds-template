@@ -13,9 +13,9 @@
 #' @tests
 #' expect_equal(my_function(1), 2)
 #'
-my_function <- function(input){
+my_function <- function(input) {
   # documented code
-  output <- input+1
+  output <- input + 1
   return(output)
 }
 
