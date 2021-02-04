@@ -2,8 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/284042245.svg)](https://zenodo.org/badge/latestdoi/284042245)
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/g4challenge/repro-fair-neuro-ds-template/HEAD)
-![Binder](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/Binder/badge.svg)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/g4challenge/repro-fair-neuro-ds-template/HEAD?urlpath=%3Frstudio)
+![Binder](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/Binder/badge.svmg)
 [![codecov](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template/branch/master/graph/badge.svg?token=JF0BD0NRTR)](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template)
 ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/g4challenge/repro-fair-neuro-ds-template)
 
