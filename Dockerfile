@@ -1,5 +1,6 @@
 FROM rocker/binder:4.0.3
 
+USER root
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages --allow-unauthenticated --no-install-recommends --no-upgrade \
   curl \
   zip
@@ -20,11 +21,14 @@ COPY . ${HOME}
 ## Useful to create a setup on binder that is different from a
 ## clone of your repository
 ## COPY binder ${HOME}
+
+## Install packages
+RUN R -e 'renv::consent(provided=TRUE)'
+RUN R -e 'renv::restore()'
+
 RUN chown -R ${NB_USER} ${HOME}
 
 ## Become normal user again
 USER ${NB_USER}
 
-## Install packages
-RUN R -e 'renv::consent(provided=TRUE)'
-RUN R -e 'renv::restore()'
+
