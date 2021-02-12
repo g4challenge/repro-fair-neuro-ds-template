@@ -1,0 +1,29 @@
+---
+title: "Scenario 1"
+output: html_notebook
+---
+
+```{r setup}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```
+
+# Question
+
+```{r}
+source("R/packages.R")
+source("R/functions.R")
+source("R/plan.R")
+```
+
+```{r}
+make(scenario_1)
+```
+
+```{r}
+history(scenario_1)
+```
+
+```{r}
+plot(scenario_1)
+```
+

@@ -19,3 +19,4 @@ library(lintr)
 #holepunch::write_runtime() # https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-r.md
 
 
+usethis::use_github_action_check_standard()

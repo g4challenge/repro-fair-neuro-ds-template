@@ -27,3 +27,12 @@ plan <- drake_plan(
       quiet = TRUE
     )
   )
+
+
+scenario_1 <- drake_plan(
+  question = "string that defines hypothesis - example: get the cpp values from different patients, which are stored in triplets",
+  data = import_data(question, file_in("data/raw_data.xlsx")),
+  analysis = make_analysis(data),
+  evaluation_process = evaluate_process(analysis),
+  result = export_result(evaluation_process)
+)
