@@ -1,6 +1,8 @@
 library(testthat)
 library(reproducibleFairTemplate)
 
+source("R/packages.R")
+
 test_check("reproducibleFairTemplate")
 
 
