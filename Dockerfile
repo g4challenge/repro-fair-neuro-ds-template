@@ -3,7 +3,9 @@ FROM rocker/binder:4.0.3
 USER root
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages --allow-unauthenticated --no-install-recommends --no-upgrade \
   curl \
-  zip
+  zip \
+  libharfbuzz-dev \
+  libfribidi-dev
 
 ENV RENV_VERSION 0.12.5
 RUN R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
