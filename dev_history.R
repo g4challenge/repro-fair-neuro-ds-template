@@ -20,3 +20,6 @@ library(lintr)
 
 
 usethis::use_github_action_check_standard()
+
+## pkgdown
+pkgdown::build_site()

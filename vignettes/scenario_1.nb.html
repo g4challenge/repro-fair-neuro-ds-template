@@ -243,6 +243,9 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25pdHI6Om9wdHNfa25pdCRzZXQocm9vdC5kaXIgPSBycHJvanJvb3Q6OmZpbmRfcnN0dWRpb19yb290X2ZpbGUoKSlcbmBgYCJ9 -->
+<pre class="r"><code>knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="question" class="section level1">
@@ -252,12 +255,13 @@ summary {
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKFwiUi9wYWNrYWdlcy5SXCIpXG5gYGAifQ== -->
 <pre class="r"><code>source(&quot;R/packages.R&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGZvbGxvd2luZyBwYWNrYWdlcyB3ZXJlIG5vdCBwcmV2aW91c2x5IGxvYWRlZDpcblxicmVwcm9kdWNpYmxlRmFpclRlbXBsYXRlXG4ifQ== -->
-<pre><code>The following packages were not previously loaded:
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGZvbGxvd2luZyBwYWNrYWdlcyBoYXZlIGJlZW4gdW5sb2FkZWQ6XG5cYnJlcHJvZHVjaWJsZUZhaXJUZW1wbGF0ZVxuIn0= -->
+<pre><code>The following packages have been unloaded:
 reproducibleFairTemplate</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKFwiUi9mdW5jdGlvbnMuUlwiKVxuc291cmNlKFwiUi9wbGFuLlJcIilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKFwiUi9mdW5jdGlvbnMuUlwiKVxuc291cmNlKFwiUi9mdW5jdGlvbnNfc2NlbmFyaW9fMS5SXCIpXG5zb3VyY2UoXCJSL3BsYW4uUlwiKVxuYGBgIn0= -->
 <pre class="r"><code>source(&quot;R/functions.R&quot;)
+source(&quot;R/functions_scenario_1.R&quot;)
 source(&quot;R/plan.R&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -267,22 +271,13 @@ source(&quot;R/plan.R&quot;)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFrZShzY2VuYXJpb18xKVxuYGBgIn0= -->
 <pre class="r"><code>make(scenario_1)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pa2IHRhcmdldCBkYXRhXG4ifQ== -->
-<pre><code>▶ target data</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiL1VzZXJzL2x1a2FzL2Rldi9yZXByb2R1Y2libGVfZmFpcl9uZXVyb19kc190ZW1wbGF0ZVwiXG4ifQ== -->
-<pre><code>[1] &quot;/Users/lukas/dev/reproducible_fair_neuro_ds_template&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pa2IHRhcmdldCByZXN1bHRcbiJ9 -->
-<pre><code>▶ target result</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoi4pyTIEFsbCB0YXJnZXRzIGFyZSBhbHJlYWR5IHVwIHRvIGRhdGUuXG4ifQ== -->
+<pre><code>✓ All targets are already up to date.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGlzdG9yeShzY2VuYXJpb18xKVxuYGBgIn0= -->
-<pre class="r"><code>history(scenario_1)</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -306,7 +301,7 @@ source(&quot;R/plan.R&quot;)</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2NlbmFyaW8gMSIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3Igc2V0dXB9CmtuaXRyOjpvcHRzX2tuaXQkc2V0KHJvb3QuZGlyID0gcnByb2pyb290OjpmaW5kX3JzdHVkaW9fcm9vdF9maWxlKCkpCmBgYAoKIyBRdWVzdGlvbgoKYGBge3J9CnNvdXJjZSgiUi9wYWNrYWdlcy5SIikKc291cmNlKCJSL2Z1bmN0aW9ucy5SIikKc291cmNlKCJSL3BsYW4uUiIpCmBgYAoKYGBge3J9Cm1ha2Uoc2NlbmFyaW9fMSkKYGBgCgpgYGB7cn0KaGlzdG9yeShzY2VuYXJpb18xKQpgYGAKCmBgYHtyfQpwbG90KHNjZW5hcmlvXzEpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2NlbmFyaW8gMSIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3Igc2V0dXB9CmtuaXRyOjpvcHRzX2tuaXQkc2V0KHJvb3QuZGlyID0gcnByb2pyb290OjpmaW5kX3JzdHVkaW9fcm9vdF9maWxlKCkpCmBgYAoKIyBRdWVzdGlvbgoKYGBge3J9CnNvdXJjZSgiUi9wYWNrYWdlcy5SIikKc291cmNlKCJSL2Z1bmN0aW9ucy5SIikKc291cmNlKCJSL2Z1bmN0aW9uc19zY2VuYXJpb18xLlIiKQpzb3VyY2UoIlIvcGxhbi5SIikKYGBgCgpgYGB7cn0KbWFrZShzY2VuYXJpb18xKQpgYGAKCmBgYHtyfQoKYGBgCgpgYGB7cn0KcGxvdChzY2VuYXJpb18xKQpgYGAKCg==</div>
 
 
 

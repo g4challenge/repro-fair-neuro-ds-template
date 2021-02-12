@@ -12,6 +12,7 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```{r}
 source("R/packages.R")
 source("R/functions.R")
+source("R/functions_scenario_1.R")
 source("R/plan.R")
 ```
 
@@ -20,7 +21,7 @@ make(scenario_1)
 ```
 
 ```{r}
-history(scenario_1)
+
 ```
 
 ```{r}
