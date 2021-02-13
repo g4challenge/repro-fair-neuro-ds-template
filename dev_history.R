@@ -23,3 +23,5 @@ usethis::use_github_action_check_standard()
 
 ## pkgdown
 pkgdown::build_site()
+
+usethis::use_gpl3_license() # GPL-License for maximum shareability
