@@ -240,24 +240,172 @@ summary {
 <p><a href="https://github.com/ResearchObject/ro-crate-py" class="uri">https://github.com/ResearchObject/ro-crate-py</a></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5cbmBgYCJ9 -->
-<pre class="python"><code>reticulate::repl_python()
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInJvY3JhdGVcIilcblxuYGBgIn0= -->
+<pre class="r"><code>py_install(&quot;rocrate&quot;)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRmVobGVyIGluIGxvYWROYW1lc3BhY2UobmFtZSkgOiBlcyBnaWJ0IGtlaW4gUGFrZXQgbmFtZW5zIOKAmHJldGljdWxhdGXigJlcbiJ9 -->
-<pre><code>Fehler in loadNamespace(name) : es gibt kein Paket namens ‘reticulate’</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4hcGlwIGluc3RhbGwgcm9jcmF0ZVxuYGBgIn0= -->
-<pre class="python"><code>!pip install rocrate</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRmVobGVyOiB1bmVyd2FydGV0ZXMgU3ltYm9sIGluIFwiIXBpcCBpbnN0YWxsXCJcbiJ9 -->
-<pre><code>Fehler: unerwartetes Symbol in &quot;!pip install&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiVXNpbmcgdmlydHVhbCBlbnZpcm9ubWVudCAnL1VzZXJzL2x1a2FzL2Rldi9yZXByb2R1Y2libGVfZmFpcl9uZXVyb19kc190ZW1wbGF0ZS9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuMScgLi4uXG5Db2xsZWN0aW5nIHJvY3JhdGVcbiAgRG93bmxvYWRpbmcgcm9jcmF0ZS0wLjMuMS1weTMtbm9uZS1hbnkud2hsICgyOTgga0IpXG5Db2xsZWN0aW5nIHJlcXVlc3RzXG4gIERvd25sb2FkaW5nIHJlcXVlc3RzLTIuMjUuMS1weTIucHkzLW5vbmUtYW55LndobCAoNjEga0IpXG5Db2xsZWN0aW5nIGFyY3A9PTAuMi4xXG4gIERvd25sb2FkaW5nIGFyY3AtMC4yLjEtcHkyLnB5My1ub25lLWFueS53aGwgKDE1IGtCKVxuQ29sbGVjdGluZyBqaW5qYTJcbiAgRG93bmxvYWRpbmcgSmluamEyLTIuMTEuMy1weTIucHkzLW5vbmUtYW55LndobCAoMTI1IGtCKVxuQ29sbGVjdGluZyBweXRob24tZGF0ZXV0aWxcbiAgRG93bmxvYWRpbmcgcHl0aG9uX2RhdGV1dGlsLTIuOC4xLXB5Mi5weTMtbm9uZS1hbnkud2hsICgyMjcga0IpXG5Db2xsZWN0aW5nIGdhbGF4eTJjd2xcbiAgRG93bmxvYWRpbmcgZ2FsYXh5MmN3bC0wLjEuNC1weTMtbm9uZS1hbnkud2hsICg4LjIga0IpXG5Db2xsZWN0aW5nIHB5eWFtbD49NS4zLjBcbiAgRG93bmxvYWRpbmcgUHlZQU1MLTUuNC4xLWNwMzktY3AzOS1tYWNvc3hfMTBfOV94ODZfNjQud2hsICgyNTkga0IpXG5Db2xsZWN0aW5nIGd4Zm9ybWF0Mj49MC4xMS4wXG4gIERvd25sb2FkaW5nIGd4Zm9ybWF0Mi0wLjE1LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDQ5IGtCKVxuQ29sbGVjdGluZyBiaW9ibGVuZFxuICBEb3dubG9hZGluZyBiaW9ibGVuZC0wLjE1LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDEyLjUgTUIpXG5Db2xsZWN0aW5nIHNpeD49MS45LjBcbiAgRG93bmxvYWRpbmcgc2l4LTEuMTUuMC1weTIucHkzLW5vbmUtYW55LndobCAoMTAga0IpXG5Db2xsZWN0aW5nIGJvdG8+PTIuOS43XG4gIERvd25sb2FkaW5nIGJvdG8tMi40OS4wLXB5Mi5weTMtbm9uZS1hbnkud2hsICgxLjQgTUIpXG5Db2xsZWN0aW5nIHJlcXVlc3RzLXRvb2xiZWx0IT0wLjkuMCw+PTAuNS4xXG4gIERvd25sb2FkaW5nIHJlcXVlc3RzX3Rvb2xiZWx0LTAuOS4xLXB5Mi5weTMtbm9uZS1hbnkud2hsICg1NCBrQilcbkNvbGxlY3RpbmcgaWRuYTwzLD49Mi41XG4gIERvd25sb2FkaW5nIGlkbmEtMi4xMC1weTIucHkzLW5vbmUtYW55LndobCAoNTgga0IpXG5Db2xsZWN0aW5nIHVybGxpYjM8MS4yNyw+PTEuMjEuMVxuICBEb3dubG9hZGluZyB1cmxsaWIzLTEuMjYuMy1weTIucHkzLW5vbmUtYW55LndobCAoMTM3IGtCKVxuQ29sbGVjdGluZyBjZXJ0aWZpPj0yMDE3LjQuMTdcbiAgRG93bmxvYWRpbmcgY2VydGlmaS0yMDIwLjEyLjUtcHkyLnB5My1ub25lLWFueS53aGwgKDE0NyBrQilcbkNvbGxlY3RpbmcgY2hhcmRldDw1LD49My4wLjJcbiAgRG93bmxvYWRpbmcgY2hhcmRldC00LjAuMC1weTIucHkzLW5vbmUtYW55LndobCAoMTc4IGtCKVxuQ29sbGVjdGluZyBNYXJrdXBTYWZlPj0wLjIzXG4gIERvd25sb2FkaW5nIE1hcmt1cFNhZmUtMS4xLjEtY3AzOS1jcDM5LW1hY29zeF8xMF85X3g4Nl82NC53aGwgKDE2IGtCKVxuSW5zdGFsbGluZyBjb2xsZWN0ZWQgcGFja2FnZXM6IHVybGxpYjMsIGlkbmEsIGNoYXJkZXQsIGNlcnRpZmksIHJlcXVlc3RzLCByZXF1ZXN0cy10b29sYmVsdCwgcHl5YW1sLCBib3RvLCBzaXgsIGJpb2JsZW5kLCBNYXJrdXBTYWZlLCBneGZvcm1hdDIsIHB5dGhvbi1kYXRldXRpbCwgamluamEyLCBnYWxheHkyY3dsLCBhcmNwLCByb2NyYXRlXG5TdWNjZXNzZnVsbHkgaW5zdGFsbGVkIE1hcmt1cFNhZmUtMS4xLjEgYXJjcC0wLjIuMSBiaW9ibGVuZC0wLjE1LjAgYm90by0yLjQ5LjAgY2VydGlmaS0yMDIwLjEyLjUgY2hhcmRldC00LjAuMCBnYWxheHkyY3dsLTAuMS40IGd4Zm9ybWF0Mi0wLjE1LjAgaWRuYS0yLjEwIGppbmphMi0yLjExLjMgcHl0aG9uLWRhdGV1dGlsLTIuOC4xIHB5eWFtbC01LjQuMSByZXF1ZXN0cy0yLjI1LjEgcmVxdWVzdHMtdG9vbGJlbHQtMC45LjEgcm9jcmF0ZS0wLjMuMSBzaXgtMS4xNS4wIHVybGxpYjMtMS4yNi4zXG4ifQ== -->
+<pre><code>Using virtual environment &#39;/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.1&#39; ...
+Collecting rocrate
+  Downloading rocrate-0.3.1-py3-none-any.whl (298 kB)
+Collecting requests
+  Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+Collecting arcp==0.2.1
+  Downloading arcp-0.2.1-py2.py3-none-any.whl (15 kB)
+Collecting jinja2
+  Downloading Jinja2-2.11.3-py2.py3-none-any.whl (125 kB)
+Collecting python-dateutil
+  Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting galaxy2cwl
+  Downloading galaxy2cwl-0.1.4-py3-none-any.whl (8.2 kB)
+Collecting pyyaml&gt;=5.3.0
+  Downloading PyYAML-5.4.1-cp39-cp39-macosx_10_9_x86_64.whl (259 kB)
+Collecting gxformat2&gt;=0.11.0
+  Downloading gxformat2-0.15.0-py2.py3-none-any.whl (49 kB)
+Collecting bioblend
+  Downloading bioblend-0.15.0-py2.py3-none-any.whl (12.5 MB)
+Collecting six&gt;=1.9.0
+  Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+Collecting boto&gt;=2.9.7
+  Downloading boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
+Collecting requests-toolbelt!=0.9.0,&gt;=0.5.1
+  Downloading requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
+Collecting idna&lt;3,&gt;=2.5
+  Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+Collecting urllib3&lt;1.27,&gt;=1.21.1
+  Downloading urllib3-1.26.3-py2.py3-none-any.whl (137 kB)
+Collecting certifi&gt;=2017.4.17
+  Downloading certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
+Collecting chardet&lt;5,&gt;=3.0.2
+  Downloading chardet-4.0.0-py2.py3-none-any.whl (178 kB)
+Collecting MarkupSafe&gt;=0.23
+  Downloading MarkupSafe-1.1.1-cp39-cp39-macosx_10_9_x86_64.whl (16 kB)
+Installing collected packages: urllib3, idna, chardet, certifi, requests, requests-toolbelt, pyyaml, boto, six, bioblend, MarkupSafe, gxformat2, python-dateutil, jinja2, galaxy2cwl, arcp, rocrate
+Successfully installed MarkupSafe-1.1.1 arcp-0.2.1 bioblend-0.15.0 boto-2.49.0 certifi-2020.12.5 chardet-4.0.0 galaxy2cwl-0.1.4 gxformat2-0.15.0 idna-2.10 jinja2-2.11.3 python-dateutil-2.8.1 pyyaml-5.4.1 requests-2.25.1 requests-toolbelt-0.9.1 rocrate-0.3.1 six-1.15.0 urllib3-1.26.3</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5cbmBgYCJ9 -->
+<pre class="python"><code>reticulate::repl_python()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS4xICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS4xL2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.1 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.1/bin/python)
+Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4hcGlwIGluc3RhbGwgcm9jcmF0ZVxuYGBgIn0= -->
+<pre class="python"><code>!pip install rocrate</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU3ludGF4RXJyb3I6IGludmFsaWQgc3ludGF4ICg8c3RyaW5nPiwgbGluZSAxKVxuIn0= -->
+<pre><code>SyntaxError: invalid syntax (&lt;string&gt;, line 1)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
+<pre class="python"><code>reticulate::repl_python()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS4xICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS4xL2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.1 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.1/bin/python)
+Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIHJvY3JhdGUucm9jcmF0ZSBpbXBvcnQgUk9DcmF0ZVxuY3JhdGUgPSBST0NyYXRlKCkgXG5cbmBgYCJ9 -->
+<pre class="python"><code>from rocrate.rocrate import ROCrate
+crate = ROCrate() 
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="data-entities" class="section level2">
+<h2>Data entities</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4jIyBhZGRpbmcgYSBGaWxlIGVudGl0eTpcbnNhbXBsZV9maWxlID0gJy9wYXRoL3RvL3NhbXBsZV9maWxlLnR4dCdcbmZpbGVfZW50aXR5ID0gY3JhdGUuYWRkX2ZpbGUoc2FtcGxlX2ZpbGUpXG5cbiMgQWRkaW5nIGEgRmlsZSBlbnRpdHkgd2l0aCBhIHJlZmVyZW5jZSB0byBhbiBleHRlcm5hbCAoYWJzb2x1dGUpIFVSSVxucmVtb3RlX2ZpbGUgPSBjcmF0ZS5hZGRfZmlsZSgnaHR0cHM6Ly9naXRodWIuY29tL1Jlc2VhcmNoT2JqZWN0L3JvLWNyYXRlLXB5L2Jsb2IvbWFzdGVyL3Rlc3QvdGVzdC1kYXRhL3Rlc3RfZ2FsYXh5X3dmLmdhJywgZmV0Y2hfcmVtb3RlID0gRmFsc2UpXG5cbiMgYWRkaW5nIGEgRGF0YXNldFxuc2FtcGxlX2RpciA9ICcvcGF0aC90by9kaXInXG5kYXRhc2V0X2VudGl0eSA9IGNyYXRlLmFkZF9kaXJlY3Rvcnkoc2FtcGxlX2RpciwgJ3JlbGF0aXZlL3JvY3JhdGUvcGF0aCcpXG5gYGAifQ== -->
+<pre class="python"><code>## adding a File entity:
+sample_file = &#39;/path/to/sample_file.txt&#39;
+file_entity = crate.add_file(sample_file)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUk8tQ3JhdGUgVmlnbmV0dGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmh0dHBzOi8vZ2l0aHViLmNvbS9SZXNlYXJjaE9iamVjdC9yby1jcmF0ZS1weQoKYGBge3B5dGhvbn0KcGlwIGluc3RhbGwgcm9jcmF0ZQpgYGAKCg==</div>
+# Adding a File entity with a reference to an external (absolute) URI
+remote_file = crate.add_file(&#39;https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga&#39;, fetch_remote = False)
+
+# adding a Dataset
+sample_dir = &#39;/path/to/dir&#39;
+dataset_entity = crate.add_directory(sample_dir, &#39;relative/rocrate/path&#39;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="contextual-entities" class="section level2">
+<h2>Contextual Entities</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
+<pre class="python"><code>reticulate::repl_python()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS4xICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS4xL2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.1 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.1/bin/python)
+Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIHJvY3JhdGUubW9kZWwucGVyc29uIGltcG9ydCBQZXJzb25cblxuIyBBZGQgYXV0aG9ycyBpbmZvXG4jY3JhdGUuYWRkKFBlcnNvbihjcmF0ZSwgJyNsdWthcycsIHsnbmFtZSc6ICdMdWthcyBIdWJlcid9KSlcbmNyZWF0b3IgPSBQZXJzb24oY3JhdGUsICcwMDEnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInfSlcbmBgYCJ9 -->
+<pre class="python"><code>from rocrate.model.person import Person
+
+# Add authors info
+#crate.add(Person(crate, &#39;#lukas&#39;, {&#39;name&#39;: &#39;Lukas Huber&#39;}))
+creator = Person(crate, &#39;001&#39;, {&#39;name&#39;: &#39;Lukas Huber&#39;})</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRmVobGVyIGluIHB5X21vZHVsZV9pbXBvcnQobW9kdWxlLCBjb252ZXJ0ID0gY29udmVydCkgOiBcbiAgTW9kdWxlTm90Rm91bmRFcnJvcjogTm8gbW9kdWxlIG5hbWVkICdwYWNrYWdlOnJlcHJvZHVjaWJsZUZhaXJUZW1wbGF0ZSdcblxuRGV0YWlsZWQgdHJhY2ViYWNrOiBcbiAgRmlsZSBcIi9Vc2Vycy9sdWthcy9MaWJyYXJ5L0FwcGxpY2F0aW9uIFN1cHBvcnQvcmVudi9jYWNoZS92NS9SLTQuMC94ODZfNjQtYXBwbGUtZGFyd2luMTcuMC9yZXRpY3VsYXRlLzEuMTgvZmJkMzVjYWM2YWU3NTU0ZDBlNGY0NDBiY2ExYWRmM2EvcmV0aWN1bGF0ZS9weXRob24vcnB5dG9vbHMvbG9hZGVyLnB5XCIsIGxpbmUgMTksIGluIF9pbXBvcnRfaG9va1xuICAgIG1vZHVsZSA9IF9pbXBvcnQoXG4gIEZpbGUgXCIvVXNlcnMvbHVrYXMvTGlicmFyeS9BcHBsaWNhdGlvbiBTdXBwb3J0L3JlbnYvY2FjaGUvdjUvUi00LjAveDg2XzY0LWFwcGxlLWRhcndpbjE3LjAvcmV0aWN1bGF0ZS8xLjE4L2ZiZDM1Y2FjNmFlNzU1NGQwZTRmNDQwYmNhMWFkZjNhL3JldGljdWxhdGUvcHl0aG9uL3JweXRvb2xzL2xvYWRlci5weVwiLCBsaW5lIDE5LCBpbiBfaW1wb3J0X2hvb2tcbiAgICBtb2R1bGUgPSBfaW1wb3J0KFxuICBGaWxlIFwiL1VzZXJzL2x1a2FzL0xpYnJhcnkvQXBwbGljYXRpb24gU3VwcG9ydC9yZW52L2NhY2hlL3Y1L1ItNC4wL3g4Nl82NC1hcHBsZS1kYXJ3aW4xNy4wL3JldGljdWxhdGUvMS4xOC9mYmQzNWNhYzZhZTc1NTRkMGU0ZjQ0MGJjYTFhZGYzYS9yZXRpY3VsYXRlL3B5dGhvbi9ycHl0b29scy9sb2FkZXIucHlcIiwgbGluZSAxOSwgaW4gX2ltcG9ydF9ob29rXG4gICAgbW9kdWxlID0gX2ltcG9ydChcbiJ9 -->
+<pre><code>Fehler in py_module_import(module, convert = convert) : 
+  ModuleNotFoundError: No module named &#39;package:reproducibleFairTemplate&#39;
+
+Detailed traceback: 
+  File &quot;/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/reticulate/1.18/fbd35cac6ae7554d0e4f440bca1adf3a/reticulate/python/rpytools/loader.py&quot;, line 19, in _import_hook
+    module = _import(
+  File &quot;/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/reticulate/1.18/fbd35cac6ae7554d0e4f440bca1adf3a/reticulate/python/rpytools/loader.py&quot;, line 19, in _import_hook
+    module = _import(
+  File &quot;/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/reticulate/1.18/fbd35cac6ae7554d0e4f440bca1adf3a/reticulate/python/rpytools/loader.py&quot;, line 19, in _import_hook
+    module = _import(</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5jcmF0ZS5wdWJsaXNoZXIgPSBjcmVhdG9yXG5jcmF0ZS5jcmVhdG9yID0gWyBjcmVhdG9yIF1cbmBgYCJ9 -->
+<pre class="python"><code>crate.publisher = creator
+crate.creator = [ creator ]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="other-metadata" class="section level2">
+<h2>Other Metadata</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5jcmF0ZS5saWNlbnNlID0gJ0dQTC0zJ1xuY3JhdGUuaXNCYXNlZE9uID0gXCJodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZVwiXG5jcmF0ZS5uYW1lID0gJ1JlcHJvZHVjaWJsZSBOZXVyby1JbnRlbnNpdmUtQ2FyZSBEYXRhIFNjaWVuY2UgUHJvamVjdCBUZW1wbGF0ZSdcbmNyYXRlLmtleXdvcmRzID0gWydOZXVyb2xvZ3knLCAnRGF0YSBTY2llbmNlJywgJ1JlcHJvZHVjaWJpbGl0eScsICdQcm92ZW5hbmNlJywgJ1RyYWNlYWJpbGl0eSddXG5jcmF0ZS5pbWFnZSA9IFwiZHJha2Vfd29ya2Zsb3cuc3ZnXCJcbmNyYXRlLmRlc2NyaXB0aW9uID0gXCJUaGUgdGVtcGxhdGUgZm9yIHRoaXMgd29ya2Zsb3cgY2FuIGJlIGZvdW5kIG9uIEdpdGhidSBhbmQgYmluZGVyXCJcbmNyYXRlLkNyZWF0aXZlV29ya1N0YXR1cyA9IFwiTWF0dXJpbmdcIlxuYGBgIn0= -->
+<pre class="python"><code>crate.license = &#39;GPL-3&#39;
+crate.isBasedOn = &quot;https://github.com/g4challenge/repro-fair-neuro-ds-template&quot;
+crate.name = &#39;Reproducible Neuro-Intensive-Care Data Science Project Template&#39;
+crate.keywords = [&#39;Neurology&#39;, &#39;Data Science&#39;, &#39;Reproducibility&#39;, &#39;Provenance&#39;, &#39;Traceability&#39;]
+crate.image = &quot;drake_workflow.svg&quot;
+crate.description = &quot;The template for this workflow can be found on Githbu and binder&quot;
+crate.CreativeWorkStatus = &quot;Maturing&quot;</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="write-file" class="section level2">
+<h2>write File</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4jIHdyaXRlIGNyYXRlIHRvIGRpc2tcbm91dF9wYXRoID0gXCIvaG9tZS90ZXN0X3VzZXIvY3JhdGVfYmFzZVwiXG5jcmF0ZS53cml0ZV9jcmF0ZShvdXRfcGF0aClcbmBgYCJ9 -->
+<pre class="python"><code># write crate to disk
+out_path = &quot;/home/test_user/crate_base&quot;
+crate.write_crate(out_path)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUk8tQ3JhdGUgVmlnbmV0dGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmh0dHBzOi8vZ2l0aHViLmNvbS9SZXNlYXJjaE9iamVjdC9yby1jcmF0ZS1weQoKYGBge3J9CmxpYnJhcnkocmV0aWN1bGF0ZSkKcHlfaW5zdGFsbCgicm9jcmF0ZSIpCmBgYAoKCmBgYHtweXRob259CiFwaXAgaW5zdGFsbCByb2NyYXRlCmBgYAoKYGBge3B5dGhvbn0KZnJvbSByb2NyYXRlLnJvY3JhdGUgaW1wb3J0IFJPQ3JhdGUKY3JhdGUgPSBST0NyYXRlKCkgCgpgYGAKCgojIyBEYXRhIGVudGl0aWVzCmBgYHtweXRob259CiMjIGFkZGluZyBhIEZpbGUgZW50aXR5OgpzYW1wbGVfZmlsZSA9ICcvcGF0aC90by9zYW1wbGVfZmlsZS50eHQnCmZpbGVfZW50aXR5ID0gY3JhdGUuYWRkX2ZpbGUoc2FtcGxlX2ZpbGUpCgojIEFkZGluZyBhIEZpbGUgZW50aXR5IHdpdGggYSByZWZlcmVuY2UgdG8gYW4gZXh0ZXJuYWwgKGFic29sdXRlKSBVUkkKcmVtb3RlX2ZpbGUgPSBjcmF0ZS5hZGRfZmlsZSgnaHR0cHM6Ly9naXRodWIuY29tL1Jlc2VhcmNoT2JqZWN0L3JvLWNyYXRlLXB5L2Jsb2IvbWFzdGVyL3Rlc3QvdGVzdC1kYXRhL3Rlc3RfZ2FsYXh5X3dmLmdhJywgZmV0Y2hfcmVtb3RlID0gRmFsc2UpCgojIGFkZGluZyBhIERhdGFzZXQKc2FtcGxlX2RpciA9ICcvcGF0aC90by9kaXInCmRhdGFzZXRfZW50aXR5ID0gY3JhdGUuYWRkX2RpcmVjdG9yeShzYW1wbGVfZGlyLCAncmVsYXRpdmUvcm9jcmF0ZS9wYXRoJykKYGBgCgojIyBDb250ZXh0dWFsIEVudGl0aWVzCgpgYGB7cHl0aG9ufQpmcm9tIHJvY3JhdGUubW9kZWwucGVyc29uIGltcG9ydCBQZXJzb24KCiMgQWRkIGF1dGhvcnMgaW5mbwojY3JhdGUuYWRkKFBlcnNvbihjcmF0ZSwgJyNsdWthcycsIHsnbmFtZSc6ICdMdWthcyBIdWJlcid9KSkKY3JlYXRvciA9IFBlcnNvbihjcmF0ZSwgJzAwMScsIHsnbmFtZSc6ICdMdWthcyBIdWJlcid9KQoKY3JhdGUucHVibGlzaGVyID0gY3JlYXRvcgpjcmF0ZS5jcmVhdG9yID0gWyBjcmVhdG9yIF0KYGBgCgojIyBPdGhlciBNZXRhZGF0YQoKYGBge3B5dGhvbn0KY3JhdGUubGljZW5zZSA9ICdHUEwtMycKY3JhdGUuaXNCYXNlZE9uID0gImh0dHBzOi8vZ2l0aHViLmNvbS9nNGNoYWxsZW5nZS9yZXByby1mYWlyLW5ldXJvLWRzLXRlbXBsYXRlIgpjcmF0ZS5uYW1lID0gJ1JlcHJvZHVjaWJsZSBOZXVyby1JbnRlbnNpdmUtQ2FyZSBEYXRhIFNjaWVuY2UgUHJvamVjdCBUZW1wbGF0ZScKY3JhdGUua2V5d29yZHMgPSBbJ05ldXJvbG9neScsICdEYXRhIFNjaWVuY2UnLCAnUmVwcm9kdWNpYmlsaXR5JywgJ1Byb3ZlbmFuY2UnLCAnVHJhY2VhYmlsaXR5J10KY3JhdGUuaW1hZ2UgPSAiZHJha2Vfd29ya2Zsb3cuc3ZnIgpjcmF0ZS5kZXNjcmlwdGlvbiA9ICJUaGUgdGVtcGxhdGUgZm9yIHRoaXMgd29ya2Zsb3cgY2FuIGJlIGZvdW5kIG9uIEdpdGhidSBhbmQgYmluZGVyIgpjcmF0ZS5DcmVhdGl2ZVdvcmtTdGF0dXMgPSAiTWF0dXJpbmciCmBgYAoKIyMgd3JpdGUgRmlsZQoKYGBge3B5dGhvbn0KIyB3cml0ZSBjcmF0ZSB0byBkaXNrCm91dF9wYXRoID0gIi9ob21lL3Rlc3RfdXNlci9jcmF0ZV9iYXNlIgpjcmF0ZS53cml0ZV9jcmF0ZShvdXRfcGF0aCkKYGBgCgo=</div>
 
 
 

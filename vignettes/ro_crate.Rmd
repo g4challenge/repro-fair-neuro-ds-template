@@ -5,7 +5,67 @@ output: html_notebook
 
 https://github.com/ResearchObject/ro-crate-py
 
+```{r}
+library(reticulate)
+py_install("rocrate")
+```
+
+
 ```{python}
-pip install rocrate
+!pip install rocrate
+```
+
+```{python}
+from rocrate.rocrate import ROCrate
+crate = ROCrate() 
+
+```
+
+
+## Data entities
+```{python}
+## adding a File entity:
+sample_file = '/path/to/sample_file.txt'
+file_entity = crate.add_file(sample_file)
+
+# Adding a File entity with a reference to an external (absolute) URI
+remote_file = crate.add_file('https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga', fetch_remote = False)
+
+# adding a Dataset
+sample_dir = '/path/to/dir'
+dataset_entity = crate.add_directory(sample_dir, 'relative/rocrate/path')
+```
+
+## Contextual Entities
+
+```{python}
+from rocrate.model.person import Person
+
+# Add authors info
+#crate.add(Person(crate, '#lukas', {'name': 'Lukas Huber'}))
+creator = Person(crate, '001', {'name': 'Lukas Huber'})
+
+crate.publisher = creator
+crate.creator = [ creator ]
+```
+
+## Other Metadata
+
+```{python}
+crate.license = 'GPL-3'
+crate.isBasedOn = "https://github.com/g4challenge/repro-fair-neuro-ds-template"
+crate.name = 'Reproducible Neuro-Intensive-Care Data Science Project Template'
+crate.keywords = ['Neurology', 'Data Science', 'Reproducibility', 'Provenance', 'Traceability']
+crate.image = "drake_workflow.svg"
+crate.description = "The template for this workflow can be found on Githbu and binder"
+crate.CreativeWorkStatus = "Maturing"
+```
+
+## write File
+
+```{python}
+# write crate to disk
+out_path = "/home/test_user/crate_base"
+crate.write_crate(out_path)
 ```
 
