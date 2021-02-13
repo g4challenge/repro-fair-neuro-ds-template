@@ -8,6 +8,11 @@
       }
     ]
   },
+  "Python": {
+    "Version": "3.9.1",
+    "Type": "virtualenv",
+    "Name": null
+  },
   "Packages": {
     "BH": {
       "Package": "BH",
@@ -720,6 +725,13 @@
       "Repository": "CRAN",
       "Hash": "cb4d6f77f163b8d685833f2a59e7cb4c"
     },
+    "reticulate": {
+      "Package": "reticulate",
+      "Version": "1.18",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "fbd35cac6ae7554d0e4f440bca1adf3a"
+    },
     "rex": {
       "Package": "rex",
       "Version": "1.2.0",
@@ -972,9 +984,5 @@
       "Repository": "CRAN",
       "Hash": "3bc8405c637d988801ec5ea88372d0c2"
     }
-  },
-  "Python": {
-    "Version": "3.9.1",
-    "Type": "virtualenv"
   }
 }

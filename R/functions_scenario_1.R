@@ -5,8 +5,10 @@
 #' @param question question string, which is linked in the system
 #' @param file path to raw triplet file
 #'
+#' @importFrom readxl read_excel
+#'
 #' @tests
-#' expect_type(import_data("test", "../../data/raw_data.xlsx"),  "tibble")
+#' expect_s3_class(import_data("test", "../../data/raw_data.xlsx"),  "data.frame")
 #'
 #'
 #' @return imported data

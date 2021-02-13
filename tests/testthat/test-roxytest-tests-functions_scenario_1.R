@@ -2,7 +2,7 @@
 
 context("File R/functions_scenario_1.R: @tests")
 
-test_that("Function import_data() @ L15", {
-  expect_type(import_data("test", "../../data/raw_data.xlsx"),  "tibble")
+test_that("Function import_data() @ L17", {
+  expect_s3_class(import_data("test", "../../data/raw_data.xlsx"),  "data.frame")
 })
 

@@ -4,7 +4,7 @@
 \alias{export_result}
 \title{Title}
 \usage{
-export_result()
+export_result(evaluated_process)
 }
 \value{
 

@@ -65,7 +65,7 @@ crate.CreativeWorkStatus = "Maturing"
 
 ```{python}
 # write crate to disk
-out_path = "/home/test_user/crate_base"
+out_path = "../"
 crate.write_crate(out_path)
 ```
 
