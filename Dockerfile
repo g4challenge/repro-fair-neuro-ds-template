@@ -17,6 +17,10 @@ ARG NB_UID
 
 ## Copies your repo files into the Docker Container
 USER root
+WORKDIR ${HOME}
+COPY renv.lock renv.lock
+RUN R -e 'renv::restore()'
+
 COPY . ${HOME}
 ## Enable this to copy files from the binder subdirectory
 ## to the home, overriding any existing files.
@@ -25,8 +29,6 @@ COPY . ${HOME}
 ## COPY binder ${HOME}
 
 ## Install packages
-RUN R -e 'renv::consent(provided=TRUE)'
-RUN R -e 'renv::restore()'
 
 RUN chown -R ${NB_USER} ${HOME}
 
