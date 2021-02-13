@@ -1,0 +1,11 @@
+---
+title: "RO-Crate Vignette"
+output: html_notebook
+---
+
+https://github.com/ResearchObject/ro-crate-py
+
+```{python}
+pip install rocrate
+```
+
