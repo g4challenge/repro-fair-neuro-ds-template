@@ -17,9 +17,16 @@
                     "@id": "#001"
                 }
             ],
-            "datePublished": "2021-02-13T09:33:29.556762",
+            "datePublished": "2021-02-13T12:43:33.672691",
             "description": "The template for this workflow can be found on Githbu and binder",
-            "hasPart": [],
+            "hasPart": [
+                {
+                    "@id": "https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga"
+                },
+                {
+                    "@id": "relative/rocrate/path/"
+                }
+            ],
             "image": "drake_workflow.svg",
             "isBasedOn": "https://github.com/g4challenge/repro-fair-neuro-ds-template",
             "keywords": [
@@ -44,6 +51,17 @@
             "conformsTo": {
                 "@id": "https://w3id.org/ro/crate/1.1"
             }
+        },
+        {
+            "@id": "https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga",
+            "@type": "File",
+            "contentSize": null,
+            "encodingFormat": "text/html; charset=utf-8",
+            "url": "https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga"
+        },
+        {
+            "@id": "relative/rocrate/path/",
+            "@type": "Dataset"
         }
     ]
 }

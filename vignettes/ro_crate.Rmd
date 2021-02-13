@@ -38,7 +38,7 @@ from rocrate.model.person import Person
 
 # Add authors info
 #crate.add(Person(crate, '#lukas', {'name': 'Lukas Huber'}))
-creator = Person(crate, '001', {'name': 'Lukas Huber'})
+creator = Person(crate, '001', {'name': 'Lukas Huber', "@id": 'https://orcid.org/0000-0001-5443-0290'})
 
 crate.publisher = creator
 crate.creator = [ creator ]

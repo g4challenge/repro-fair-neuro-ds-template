@@ -19,6 +19,7 @@ ARG NB_UID
 USER root
 WORKDIR ${HOME}
 COPY renv.lock renv.lock
+RUN R -e 'renv::consent(provided=TRUE)'
 RUN R -e 'renv::restore()'
 
 COPY . ${HOME}
