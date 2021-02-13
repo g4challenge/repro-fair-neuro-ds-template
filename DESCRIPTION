@@ -20,7 +20,8 @@ Imports:
     lubridate,
     pacman,
     visNetwork,
-    mandrake
+    mandrake,
+    reticulate
 Remotes:
     ropensci/drake,
     wlandau/txtq,
