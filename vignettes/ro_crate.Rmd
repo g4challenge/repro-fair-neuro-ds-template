@@ -10,11 +10,6 @@ library(reticulate)
 py_install("rocrate")
 ```
 
-
-```{python}
-!pip install rocrate
-```
-
 ```{python}
 from rocrate.rocrate import ROCrate
 crate = ROCrate() 
