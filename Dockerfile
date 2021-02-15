@@ -14,6 +14,7 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 ## Declares build arguments
 ARG NB_USER
 ARG NB_UID
+ARG HOME
 
 ## Copies your repo files into the Docker Container
 USER root
