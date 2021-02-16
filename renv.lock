@@ -10,8 +10,7 @@
   },
   "Python": {
     "Version": "3.9.1",
-    "Type": "virtualenv",
-    "Name": null
+    "Type": "virtualenv"
   },
   "Packages": {
     "BH": {

@@ -18,7 +18,7 @@ https://orcid.org/0000-0001-5443-0290
 This template can serve as common starting point for traceable analyses in observational clinical research.
 
 
-![](assets/overview_architecture.png)
+![](man/figures/overview_architecture.png)
 
 
 ## Documentation
