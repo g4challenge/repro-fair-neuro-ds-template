@@ -15,34 +15,37 @@
 #' @export
 #'
 import_data = function(question, file){
-  print(getwd())
   dataset = read_excel(file)
   return(dataset)
 }
 
 
-#' Title
+#' The analysis makes a report, in the example case a visualization of cpp
 #'
 #' @param data
+#' @param notebook_file
 #'
 #' @return
 #' @export
 #'
 #' @examples
-make_analysis = function(data){
-
+make_analysis = function(data, notebook_file){
+  # calculate cpp
+  # knit notebook
+  # check - successful
 }
 
-#' Title
+#' Evaluate the made analysis
 #'
-#' @param analysis
+#' @param analysis made before
 #'
 #' @return
 #' @export
 #'
 #' @examples
 evaluate_process = function(analysis){
-
+  # check plot
+  #
 }
 
 #' Title
@@ -52,5 +55,6 @@ evaluate_process = function(analysis){
 #'
 #' @examples
 export_result= function(evaluated_process){
-
+  # create output files
+  # capture metadata
 }

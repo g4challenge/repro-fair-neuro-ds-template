@@ -19,7 +19,7 @@ test_that("4 - analysis-code is versioned and assured", 1)
 # environment - renv
 # traceable  - drake
 # pipelines - drake
-# dockerized
+# dockerized - rocker
 # wholetale, dcat, nanopublications, codeocean, binder...
 test_that("5 - execution is validated", 1)
 # drake

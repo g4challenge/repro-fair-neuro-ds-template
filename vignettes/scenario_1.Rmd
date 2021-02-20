@@ -21,10 +21,10 @@ make(scenario_1)
 ```
 
 ```{r}
-
+drake_history()
 ```
 
 ```{r}
-plot(scenario_1)
+vis_drake_graph(scenario_1)
 ```
 
