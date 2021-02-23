@@ -4,7 +4,8 @@
 
 # Provenance in R
 # https://github.com/End-to-end-provenance/RDataTracker
-
+## Provenance of a run
+prov.run("R/make.R")
 
 ## Research Compendium
 ## https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor
@@ -25,3 +26,5 @@ usethis::use_github_action_check_standard()
 pkgdown::build_site()
 
 usethis::use_gpl3_license() # GPL-License for maximum shareability
+
+

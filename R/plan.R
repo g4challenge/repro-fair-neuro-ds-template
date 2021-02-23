@@ -9,7 +9,7 @@ plan <- drake_plan(
     raw_data = readxl::read_excel(file_in("../data/raw_data.xlsx")),
     ## Data Preprocessing
     data = raw_data %>%
-      mutate(Ozone = replace_na(Ozone, mean(Ozone, na.rm = TRUE))),
+      mutate(cpp = map-icp),
     ## Data Transformation
 
     ## Data Mining

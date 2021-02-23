@@ -31,6 +31,8 @@ import_data = function(question, file){
 #' @examples
 make_analysis = function(data, notebook_file){
   # calculate cpp
+  raw_data %>%
+    mutate(cpp = map-icp)
   # knit notebook
   # check - successful
 }

@@ -63,3 +63,15 @@ graph
 #renv::snapshot()
 ```
 
+## Version_control
+
+```{r eval=F}
+library(gert)
+```
+```{r}
+git_log()
+```
+```{r}
+git_status()
+```
+
