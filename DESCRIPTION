@@ -21,7 +21,8 @@ Imports:
     pacman,
     visNetwork,
     mandrake,
-    reticulate
+    reticulate,
+    gert
 Remotes:
     ropensci/drake,
     wlandau/txtq,
