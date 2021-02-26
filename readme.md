@@ -24,6 +24,8 @@ This template can serve as common starting point for traceable analyses in obser
 ## Documentation
 
 
+[ ] https://r-pkgs.org/inst.html
+
 This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.
 
 The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.

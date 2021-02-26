@@ -9,9 +9,8 @@
     ]
   },
   "Python": {
-    "Version": "3.9.1",
-    "Type": "virtualenv",
-    "Name": null
+    "Version": "3.9.2",
+    "Type": "virtualenv"
   },
   "Packages": {
     "BH": {
@@ -713,10 +712,9 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.12.5",
+      "Version": "0.13.0",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "5c0cdb37f063c58cdab3c7e9fbb8bd2c"
+      "Repository": "CRAN"
     },
     "reprex": {
       "Package": "reprex",

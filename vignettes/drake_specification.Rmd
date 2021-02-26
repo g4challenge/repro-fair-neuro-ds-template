@@ -5,10 +5,14 @@ date: "31 7 2020"
 output: html_notebook
 ---
 
+```{r setup}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```
+
 ```{r}
-source("../R/packages.R")
-source("../R/functions.R")
-source("../R/plan.R")
+source("R/packages.R")
+source("R/functions.R")
+source("R/plan.R")
 ```
 
 ```{r}
@@ -28,16 +32,21 @@ vis_drake_graph(plan)
 ```{r}
 lookup_cache <- mandrake::load_package_colspec("mandrake")
 ```
+
 ```{r}
 cache <- drake::drake_cache()
 plan_extracted <- plan %>%
-  mandrake::decorate_plan(cache, lookup_cache = lookup_cache)
+  mandrake::decorate_plan(cache=cache, 
+                          lookup_cache = lookup_cache,
+                          desc_colname = "desc")
 ```
 
 ```{r}
 my_config <- drake_config(plan_extracted)
 graph_info <- drake_graph_info(
   my_config, 
+  group = "cluster_id", 
+  clusters = c("summ", "coef"), 
   build_times = "none",
   on_select_col = "desc")
 
@@ -68,10 +77,10 @@ graph
 ```{r eval=F}
 library(gert)
 ```
-```{r}
+```{r eval=F}
 git_log()
 ```
-```{r}
+```{r eval=F}
 git_status()
 ```
 

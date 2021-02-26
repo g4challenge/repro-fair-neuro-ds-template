@@ -17,6 +17,12 @@ source("R/plan.R")
 ```
 
 ```{r}
+# check file existing
+#file.exists("data/raw_data.xlsx")
+```
+
+
+```{r}
 make(scenario_1)
 ```
 
