@@ -49,7 +49,7 @@ evaluate_process = function(analysis){
   #
 }
 
-#' Title
+#' Export the Result artifact
 #'
 #' @return
 #' @export
