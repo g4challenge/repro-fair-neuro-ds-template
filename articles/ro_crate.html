@@ -62,13 +62,23 @@
     <li>
       <a href="../articles/scenario_1.html">Scenario 1</a>
     </li>
+    <li>
+      <a href="../articles/trace-rm.html">TRACE-RM</a>
+    </li>
   </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -84,7 +94,7 @@
       <h1 data-toc-skip>RO-Crate Vignette</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template/blob/master/vignettes/ro_crate.Rmd"><code>vignettes/ro_crate.Rmd</code></a></small>
       <div class="hidden name"><code>ro_crate.Rmd</code></div>
 
     </div>
@@ -95,15 +105,15 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/reticulate">reticulate</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/py_install.html">py_install</a></span><span class="op">(</span><span class="st">"rocrate"</span><span class="op">)</span></code></pre></div>
-<pre><code>## Using virtual environment '/Users/runner/work/repro-fair-neuro-ds-template/repro-fair-neuro-ds-template/renv/python/virtualenvs/renv-python-3.9.1' ...</code></pre>
+<pre><code>## Using virtual environment '/Users/runner/work/repro-fair-neuro-ds-template/repro-fair-neuro-ds-template/renv/python/virtualenvs/renv-python-3.9.2' ...</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> rocrate.rocrate <span class="im">import</span> ROCrate</span>
 <span id="cb3-2"><a href="#cb3-2"></a>crate <span class="op">=</span> ROCrate() </span></code></pre></div>
 <div id="data-entities" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-entities" class="anchor"></a>Data entities</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">## adding a File entity:</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#sample_file = '/path/to/sample_file.txt'</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#file_entity = crate.add_file(sample_file)</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>raw_file <span class="op">=</span> <span class="st">'../data/raw_data.xlsx'</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>file_entity <span class="op">=</span> crate.add_file(raw_file)</span>
 <span id="cb4-4"><a href="#cb4-4"></a></span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="co"># Adding a File entity with a reference to an external (absolute) URI</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="co">#remote_file = crate.add_file('https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga', fetch_remote = False)</span></span>
@@ -132,7 +142,7 @@
 <span id="cb6-3"><a href="#cb6-3"></a>crate.name <span class="op">=</span> <span class="st">'Reproducible Neuro-Intensive-Care Data Science Project Template'</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>crate.keywords <span class="op">=</span> [<span class="st">'Neurology'</span>, <span class="st">'Data Science'</span>, <span class="st">'Reproducibility'</span>, <span class="st">'Provenance'</span>, <span class="st">'Traceability'</span>]</span>
 <span id="cb6-5"><a href="#cb6-5"></a>crate.image <span class="op">=</span> <span class="st">"drake_workflow.svg"</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>crate.description <span class="op">=</span> <span class="st">"The template for this workflow can be found on Githbu and binder"</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>crate.description <span class="op">=</span> <span class="st">"The template for this workflow can be found on GitHub, DockerHub and binder"</span></span>
 <span id="cb6-7"><a href="#cb6-7"></a>crate.CreativeWorkStatus <span class="op">=</span> <span class="st">"Maturing"</span></span></code></pre></div>
 </div>
 <div id="write-file" class="section level2">

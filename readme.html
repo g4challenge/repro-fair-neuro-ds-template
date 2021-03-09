@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reproducible Clinical Research Project Template • reproducibleFairTemplate</title>
+<title>Reproducible Clinical Research Project Template based on -RM • reproducibleFairTemplate</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Reproducible Clinical Research Project Template" />
+<meta property="og:title" content="Reproducible Clinical Research Project Template based on -RM" />
 
 
 
@@ -102,6 +102,9 @@
     <li>
       <a href="articles/scenario_1.html">Scenario 1</a>
     </li>
+    <li>
+      <a href="articles/trace-rm.html">TRACE-RM</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -109,7 +112,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -123,10 +131,10 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Reproducible Clinical Research Project Template</h1>
+      <h1>Reproducible Clinical Research Project Template based on -RM</h1>
     </div>
 
-<div id="reproducible-clinical-research-project-template" class="section level1">
+<div id="reproducible-clinical-research-project-template-based-on--rm" class="section level1">
 
 <p><a href="https://zenodo.org/badge/latestdoi/284042245"><img src="https://zenodo.org/badge/284042245.svg" alt="DOI"></a> <img src="https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master" alt="pkgdown"><a href="https://mybinder.org/v2/gh/g4challenge/repro-fair-neuro-ds-template/HEAD?urlpath=%3Frstudio"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a> <img src="https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/Binder/badge.svg" alt="Binder Build"><a href="https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template"><img src="https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template/branch/master/graph/badge.svg?token=JF0BD0NRTR" alt="codecov"></a> <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template/actions"><img src="https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <img src="https://img.shields.io/docker/v/g4challenge/repro-fair-neuro-ds-template" alt="Docker Image Version (latest by date)"></p>
 <p>Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290%0A"> <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"> https://orcid.org/0000-0001-5443-0290 </a></p>
@@ -135,12 +143,21 @@
 <a href="#context" class="anchor"></a>Context</h2>
 <p>This template can serve as common starting point for traceable analyses in observational clinical research.</p>
 <p><img src="man/figures/overview_architecture.png"></p>
+<div id="trace-rm" class="section level3">
+<h3 class="hasAnchor">
+<a href="#trace-rm" class="anchor"></a><a href="docs/articles/trace-rm.html">TRACE-RM</a>
+</h3>
+</div>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#documentation" class="anchor"></a>Documentation</h2>
+<p><a href="https://g4challenge.github.io/repro-fair-neuro-ds-template/">GitHub Pages pkgdown</a></p>
 <p>This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.</p>
 <p>The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.</p>
+<p>Background Rationale(STROBE02) Objectives (STROBE03) Study Design (STROBE04) Setting (STROBE05) Participants (STROBE06)</p>
+<p>Variables (STROBE07)</p>
+<p>Data Sources/Measurement (STROBE08)</p>
 </div>
 <div id="process" class="section level2">
 <h2 class="hasAnchor">
@@ -165,10 +182,12 @@
 <div id="code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code" class="anchor"></a>Code</h2>
+<p><a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">GitHub reproducibleFairTemplate</a></p>
 </div>
 <div id="execution---dev-steps-getting-started-technical" class="section level2">
 <h2 class="hasAnchor">
 <a href="#execution---dev-steps-getting-started-technical" class="anchor"></a>Execution - Dev-Steps Getting Started (technical)</h2>
+<p><a href="https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template">repro-fair-neuro-ds-template Dockerhub</a></p>
 <p>Description of steps during development, starting with Docker + RStudio right away.</p>
 <ol>
 <li>clone this template</li>
@@ -192,10 +211,13 @@
 <li><p>Local Docker run with default user <code>rstudio</code> and PASSWORD=“1234” - use different password</p></li>
 </ul>
 <pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template</code></pre>
+<p>The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable.</p>
+<p>The main specification is found in <a href="drake_spec.Rmd">drake_spec</a></p>
 </div>
 <div id="results" class="section level2">
 <h2 class="hasAnchor">
 <a href="#results" class="anchor"></a>Results</h2>
+<p><a href="../ro-crate-preview.html">ROCrate</a></p>
 </div>
 <div id="additional-remarks" class="section level2">
 <h2 class="hasAnchor">
@@ -213,6 +235,7 @@
 <ul>
 <li><a href="https://github.com/End-to-end-provenance" class="uri">https://github.com/End-to-end-provenance</a></li>
 </ul>
+<p>[ ] <a href="https://github.com/INCF/neuroshapes" class="uri">https://github.com/INCF/neuroshapes</a></p>
 </div>
 </div>
 

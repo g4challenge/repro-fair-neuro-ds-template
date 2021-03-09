@@ -63,13 +63,23 @@
     <li>
       <a href="articles/scenario_1.html">Scenario 1</a>
     </li>
+    <li>
+      <a href="articles/trace-rm.html">TRACE-RM</a>
+    </li>
   </ul>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -81,9 +91,9 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="reproducible-clinical-research-project-template" class="section level1">
+<div id="reproducible-clinical-research-project-template-based-on--rm" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#reproducible-clinical-research-project-template" class="anchor"></a>Reproducible Clinical Research Project Template</h1></div>
+<a href="#reproducible-clinical-research-project-template-based-on--rm" class="anchor"></a>Reproducible Clinical Research Project Template based on -RM</h1></div>
 
 <p>Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290%0A"> <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16"> https://orcid.org/0000-0001-5443-0290 </a></p>
 <div id="context" class="section level2">
@@ -91,12 +101,21 @@
 <a href="#context" class="anchor"></a>Context</h2>
 <p>This template can serve as common starting point for traceable analyses in observational clinical research.</p>
 <p><img src="reference/figures/overview_architecture.png"></p>
+<div id="trace-rm" class="section level3">
+<h3 class="hasAnchor">
+<a href="#trace-rm" class="anchor"></a><a href="docs/articles/trace-rm.html">TRACE-RM</a>
+</h3>
+</div>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#documentation" class="anchor"></a>Documentation</h2>
+<p><a href="https://g4challenge.github.io/repro-fair-neuro-ds-template/">GitHub Pages pkgdown</a></p>
 <p>This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.</p>
 <p>The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.</p>
+<p>Background Rationale(STROBE02) Objectives (STROBE03) Study Design (STROBE04) Setting (STROBE05) Participants (STROBE06)</p>
+<p>Variables (STROBE07)</p>
+<p>Data Sources/Measurement (STROBE08)</p>
 </div>
 <div id="process" class="section level2">
 <h2 class="hasAnchor">
@@ -121,10 +140,12 @@
 <div id="code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code" class="anchor"></a>Code</h2>
+<p><a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">GitHub reproducibleFairTemplate</a></p>
 </div>
 <div id="execution---dev-steps-getting-started-technical" class="section level2">
 <h2 class="hasAnchor">
 <a href="#execution---dev-steps-getting-started-technical" class="anchor"></a>Execution - Dev-Steps Getting Started (technical)</h2>
+<p><a href="https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template">repro-fair-neuro-ds-template Dockerhub</a></p>
 <p>Description of steps during development, starting with Docker + RStudio right away.</p>
 <ol>
 <li>clone this template</li>
@@ -148,10 +169,13 @@
 <li><p>Local Docker run with default user <code>rstudio</code> and PASSWORD=“1234” - use different password</p></li>
 </ul>
 <pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template</code></pre>
+<p>The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable.</p>
+<p>The main specification is found in <a href="drake_spec.Rmd">drake_spec</a></p>
 </div>
 <div id="results" class="section level2">
 <h2 class="hasAnchor">
 <a href="#results" class="anchor"></a>Results</h2>
+<p><a href="../ro-crate-preview.html">ROCrate</a></p>
 </div>
 <div id="additional-remarks" class="section level2">
 <h2 class="hasAnchor">
@@ -169,12 +193,20 @@
 <ul>
 <li><a href="https://github.com/End-to-end-provenance" class="uri">https://github.com/End-to-end-provenance</a></li>
 </ul>
+<p>[ ] <a href="https://github.com/INCF/neuroshapes" class="uri">https://github.com/INCF/neuroshapes</a></p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">https://​github.com/​g4challenge/​repro-fair-neuro-ds-template</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
