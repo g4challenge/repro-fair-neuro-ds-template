@@ -17,9 +17,13 @@
                     "@id": "#001"
                 }
             ],
-            "datePublished": "2021-02-26T10:17:49.485068",
-            "description": "The template for this workflow can be found on Githbu and binder",
-            "hasPart": [],
+            "datePublished": "2021-03-02T08:51:07.956687",
+            "description": "The template for this workflow can be found on GitHub, DockerHub and binder",
+            "hasPart": [
+                {
+                    "@id": "raw_data.xlsx"
+                }
+            ],
             "image": "drake_workflow.svg",
             "isBasedOn": "https://github.com/g4challenge/repro-fair-neuro-ds-template",
             "keywords": [
@@ -44,6 +48,10 @@
             "conformsTo": {
                 "@id": "https://w3id.org/ro/crate/1.1"
             }
+        },
+        {
+            "@id": "raw_data.xlsx",
+            "@type": "File"
         }
     ]
 }

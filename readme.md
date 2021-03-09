@@ -1,4 +1,4 @@
-# Reproducible Clinical Research Project Template
+# Reproducible Clinical Research Project Template based on  -RM
 
 [![DOI](https://zenodo.org/badge/284042245.svg)](https://zenodo.org/badge/latestdoi/284042245)
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
@@ -20,15 +20,25 @@ This template can serve as common starting point for traceable analyses in obser
 
 ![](man/figures/overview_architecture.png)
 
+### [TRACE-RM](docs/articles/trace-rm.html)
 
 ## Documentation
+[GitHub Pages pkgdown](https://g4challenge.github.io/repro-fair-neuro-ds-template/)
 
-
-[ ] https://r-pkgs.org/inst.html
 
 This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.
 
 The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.
+
+Background Rationale(STROBE02)
+Objectives (STROBE03)
+Study Design (STROBE04) 
+Setting (STROBE05) 
+Participants (STROBE06)
+
+Variables (STROBE07)
+
+Data Sources/Measurement (STROBE08)
 
 ## Process
 
@@ -46,9 +56,11 @@ Description of data provenance and history goes here.
 
 
 ## Code
-
+[GitHub reproducibleFairTemplate](https://github.com/g4challenge/repro-fair-neuro-ds-template)
 
 ## Execution - Dev-Steps Getting Started (technical)
+
+[repro-fair-neuro-ds-template Dockerhub](https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template)
 
 Description of steps during development, starting with Docker + RStudio right away.
 
@@ -82,8 +94,14 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_
 ```
 docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template
 ```
+
+The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable. 
+
+The main specification is found in [drake_spec](drake_spec.Rmd)
     
 ## Results
+
+[ROCrate](../ro-crate-preview.html)
     
 ## Additional Remarks
 
@@ -98,3 +116,6 @@ Elements the user should be familiar with:
 
 Alternatives:
 - https://github.com/End-to-end-provenance
+
+
+[ ] https://github.com/INCF/neuroshapes

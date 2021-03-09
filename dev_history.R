@@ -27,4 +27,10 @@ pkgdown::build_site()
 
 usethis::use_gpl3_license() # GPL-License for maximum shareability
 
+#prov
 
+library(rdtLite)
+
+rdtLite::prov.quit()
+rdtLite::prov.run("R/make.R")
+rdtLite::prov.visualize()
