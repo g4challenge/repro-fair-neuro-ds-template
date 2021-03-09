@@ -37,7 +37,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          renv::restore()
+          renv::restore(rebuild=TRUE, clean=TRUE)
           install.packages("pkgdown")
         shell: Rscript {0}
 
