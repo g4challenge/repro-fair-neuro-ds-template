@@ -19,7 +19,7 @@ crate = ROCrate()
 ## Data entities
 ```{python}
 ## adding a File entity:
-raw_file = '/data/raw_data.xlsx'
+raw_file = '../data/raw_data.xlsx'
 file_entity = crate.add_file(raw_file)
 
 # Adding a File entity with a reference to an external (absolute) URI
@@ -51,7 +51,7 @@ crate.isBasedOn = "https://github.com/g4challenge/repro-fair-neuro-ds-template"
 crate.name = 'Reproducible Neuro-Intensive-Care Data Science Project Template'
 crate.keywords = ['Neurology', 'Data Science', 'Reproducibility', 'Provenance', 'Traceability']
 crate.image = "drake_workflow.svg"
-crate.description = "The template for this workflow can be found on Githbu and binder"
+crate.description = "The template for this workflow can be found on GitHub, DockerHub and binder"
 crate.CreativeWorkStatus = "Maturing"
 ```
 
