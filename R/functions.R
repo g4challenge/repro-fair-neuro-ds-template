@@ -30,6 +30,6 @@ my_function <- function(input) {
 #' @examples
 create_plot <- function(data) {
   ggplot(data) +
-    geom_histogram(aes(x = Ozone), binwidth = 10) +
+    geom_histogram(aes(x = timestamp), binwidth = 10) +
     theme_gray(24)
 }

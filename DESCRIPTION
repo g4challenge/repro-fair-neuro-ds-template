@@ -22,7 +22,8 @@ Imports:
     visNetwork,
     mandrake,
     reticulate,
-    gert
+    gert,
+    ggplot2
 Remotes:
     ropensci/drake,
     wlandau/txtq,

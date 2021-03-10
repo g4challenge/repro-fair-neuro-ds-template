@@ -22,8 +22,8 @@ import_data = function(question, file){
 
 #' The analysis makes a report, in the example case a visualization of cpp
 #'
-#' @param data
-#' @param notebook_file
+#' @param data returned from import data
+#' @param notebook_file the report file which is knitted
 #'
 #' @return
 #' @export
