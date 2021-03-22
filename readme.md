@@ -20,7 +20,7 @@ This template can serve as common starting point for traceable analyses in obser
 
 ![](man/figures/overview_architecture.png)
 
-### [TRACE-RM](docs/articles/trace-rm.html)
+### [TRACE-RM](https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/trace-rm.html)
 
 ## Documentation
 [GitHub Pages pkgdown](https://g4challenge.github.io/repro-fair-neuro-ds-template/)
@@ -97,7 +97,7 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challe
 
 The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable. 
 
-The main specification is found in [drake_spec](drake_spec.Rmd)
+The main specification is found in [drake_spec](https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/drake_specification.html)
     
 ## Results
 
