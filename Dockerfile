@@ -1,4 +1,4 @@
-FROM rocker/binder:4.0.3
+FROM rocker/verse:4.0.4
 
 USER root
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages --allow-unauthenticated --no-install-recommends --no-upgrade \
@@ -7,25 +7,30 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   libharfbuzz-dev \
   libfribidi-dev
 
+USER rstudio
 ENV RSESSION_PROXY_RSTUDIO_1_4=yes
 ENV RENV_VERSION 0.13.0
 RUN R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 
-## Declares build arguments
-ARG NB_USER
-ARG NB_UID
-ARG HOME
-
 ## Copies your repo files into the Docker Container
-USER root
-#WORKDIR ${HOME}
+WORKDIR /home/rstudio/project
 COPY renv.lock renv.lock
 RUN R -e 'renv::consent(provided=TRUE)'
-RUN R -e 'renv::restore()'
-RUN pip3 install --no-cache-dir jupyter-rsession-proxy
+RUN R -e 'renv::restore(packages = "renv")'
+#RUN R -e 'renv::restore(project="/home/rstudio/")'
+#RUN pip3 install --no-cache-dir jupyter-rsession-proxy
+#RUN pip3 install jupyter
 
-COPY . ${HOME}
+COPY . /home/rstudio/project
+
+USER root
+RUN chown -R rstudio /home/rstudio
+RUN chmod -R 777 /tmp
+USER rstudio
+
+RUN R --vanilla -s -e 'renv::restore()'
+#RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 ## Enable this to copy files from the binder subdirectory
 ## to the home, overriding any existing files.
 ## Useful to create a setup on binder that is different from a
@@ -34,7 +39,7 @@ COPY . ${HOME}
 
 ## Install packages
 
-RUN chown -R ${NB_USER} ${HOME}
+#RUN chown -R ${NB_USER} ${HOME}
 
 ## Become normal user again
 USER ${NB_USER}
