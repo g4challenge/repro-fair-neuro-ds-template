@@ -125,6 +125,17 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_
 docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template
 ```
 
+## (Next) Steps
+
+Getting Started
+Description of the next analysis steps. How to use this package:
+
+1. start by cloning/forking the git repository
+2. use git+github, git lfs, tidyverse and RMarkdown
+3. add Drake Plans to for your Pipeline(s)
+4. (optional) start the RStudio IDE within Docker + use renv
+
+
 ### FAQ
 
 Where should I start my documentation? 

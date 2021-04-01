@@ -46,15 +46,6 @@ In order to document the Clinical Setting - this template recommends to follow t
 
 ## Process
 
-## (Next) Steps
-
-Getting Started
-Description of the next analysis steps. How to use this package:
-
-1. start by cloning/forking the git repository
-2. use git+github, git lfs, tidyverse and RMarkdown
-3. add Drake Plans to for your Pipeline(s)
-4. (optional) start the RStudio IDE within Docker + use renv
 
 
 ## Dataset(s)
@@ -95,8 +86,12 @@ The main specification is found in [drake_spec](https://g4challenge.github.io/re
 ## Results
 The research results have associated generated metadata, which can be displayed as HTML or are available as JSON.
 
-- [reproducible-fair-ROCrate](https://g4challenge.github.io/repro-fair-neuro-ds-template/reference/ro-crate-preview.html)
-- [reproducible-fair-ROCrate-JSON](https://g4challenge.github.io/repro-fair-neuro-ds-template/reference/ro-crate-metadata.json)
+- [reproducible-fair-ROCrate](https://g4challenge.github.io/repro-fair-neuro-ds-template/reference/figures/ro-crate-preview.html)
+- [reproducible-fair-ROCrate-JSON](https://g4challenge.github.io/repro-fair-neuro-ds-template/reference/figures/ro-crate-metadata.json)
+
+Further, the results are archived and stored as zip on Zenodo:
+
+- [Zenodo repro-Fair-Neuro](https://zenodo.org/record/4015128)
     
 ## Additional Remarks
 
@@ -109,9 +104,7 @@ Elements the user should be familiar with:
 - [Tidyverse](https://www.tidyverse.org/)
 - [drake](https://books.ropensci.org/drake/)
 
-Alternatives:
-- https://github.com/End-to-end-provenance
+Alternatives and extensions:
+- [https://github.com/End-to-end-provenance](https://github.com/End-to-end-provenance) - rdtlite is used to generate PROV information.
 - [targets](https://docs.ropensci.org/targets/) - successor of drake.
-
-
-[ ] https://github.com/INCF/neuroshapes
+- [NeuroShapes](https://github.com/INCF/neuroshapes) INCF neuroshapes for defined data format - Common Data model.
