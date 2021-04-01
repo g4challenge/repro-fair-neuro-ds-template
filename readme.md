@@ -22,6 +22,8 @@ The user should utilize R and Tidyverse.
 
 ![](man/figures/overview_architecture.png)
 
+The figure shows the main elements one may and should use to address the main needs of technical setup, in order to get a project up and running, follow the [Getting started guide](https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/getting_started.html)
+
 ### [TRACE-RM](https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/trace-rm.html)
 
 ## Documentation
@@ -31,6 +33,8 @@ The user should utilize R and Tidyverse.
 This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.
 
 The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.
+
+In order to document the Clinical Setting - this template recommends to follow the [STROBE Statement](https://strobe-statement.org/index.php?id=strobe-home) and fill out the following items first:
 
 - Background Rationale(STROBE02)
 - Objectives (STROBE03)
@@ -56,8 +60,12 @@ Description of the next analysis steps. How to use this package:
 ## Dataset(s)
 Description of data provenance and history goes here.
 
+The template is configured to store data within the code repository in the folder `data`.
+
 
 ## Code
+
+
 [reproducibleFairTemplate - GitHub](https://github.com/g4challenge/repro-fair-neuro-ds-template)
 
 ## Execution - Dev-Steps Getting Started (technical)
