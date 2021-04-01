@@ -17,6 +17,8 @@ https://orcid.org/0000-0001-5443-0290
 ## Context
 This template can serve as common starting point for traceable analyses in observational clinical research.
 
+The user should utilize R and Tidyverse.
+
 
 ![](man/figures/overview_architecture.png)
 
@@ -30,19 +32,19 @@ This template sets up a reproducible, aimed at FAIR environment for data science
 
 The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.
 
-Background Rationale(STROBE02)
-Objectives (STROBE03)
-Study Design (STROBE04) 
-Setting (STROBE05) 
-Participants (STROBE06)
-
-Variables (STROBE07)
-
-Data Sources/Measurement (STROBE08)
+- Background Rationale(STROBE02)
+- Objectives (STROBE03)
+- Study Design (STROBE04) 
+- Setting (STROBE05) 
+- Participants (STROBE06)
+- Variables (STROBE07)
+- Data Sources/Measurement (STROBE08)
 
 ## Process
 
 ## (Next) Steps
+
+Getting Started
 Description of the next analysis steps. How to use this package:
 
 1. start by cloning/forking the git repository
@@ -56,11 +58,11 @@ Description of data provenance and history goes here.
 
 
 ## Code
-[GitHub reproducibleFairTemplate](https://github.com/g4challenge/repro-fair-neuro-ds-template)
+[reproducibleFairTemplate - GitHub](https://github.com/g4challenge/repro-fair-neuro-ds-template)
 
 ## Execution - Dev-Steps Getting Started (technical)
 
-[repro-fair-neuro-ds-template Dockerhub](https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template)
+[repro-fair-neuro-ds-template - Dockerhub](https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template)
 
 Description of steps during development, starting with Docker + RStudio right away.
 
@@ -100,8 +102,10 @@ The statistical methods are denoted as drake specification. The analysis is trac
 The main specification is found in [drake_spec](https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/drake_specification.html)
     
 ## Results
+The research results have associated generated metadata, which can be displayed as HTML or are available as JSON.
 
-[ROCrate](../ro-crate-preview.html)
+- [reproducible-fair-ROCrate](../vignettes/ro-crate-preview.html)
+- [reproducible-fair-ROCrate-JSON](../vignettes/ro-crate-metadata.json)
     
 ## Additional Remarks
 
@@ -111,11 +115,12 @@ Elements the user should be familiar with:
 - Git
 - Git(-hub/-lab)
 - R(markdown)
-- Tidyverse
+- [Tidyverse](https://www.tidyverse.org/)
 - [drake](https://books.ropensci.org/drake/)
 
 Alternatives:
 - https://github.com/End-to-end-provenance
+- [targets](https://docs.ropensci.org/targets/) - successor of drake.
 
 
 [ ] https://github.com/INCF/neuroshapes

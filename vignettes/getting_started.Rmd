@@ -1,0 +1,78 @@
+---
+title: "Getting Started"
+output: html_notebook
+---
+
+Remarks on outline:
+Where should I start my documentation? 
+How do the various documentations relate to each other? 
+What adaptations do I have to make? 
+How can a prioritize these adaptations? 
+What is the minimal set of adaptations that I need to make? 
+Can I also apply this to other contexts within medicine, or even outside of a medical context or?
+
+
+## Getting Started
+
+There are two main ways to use this template:
+
+- As a project starter. For this, use Git clone and change the remote to your repository. This starts a clean, fresh project.
+- As a reference. In that case, you use the project template and parts as reference.
+
+In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility.
+
+In order to start with your reproducible Project use the following steps to get the template running:
+
+- Your Project should use Git.
+
+- Your Project MUST have a README file
+
+- Define a license for your Project.
+
+- Utilize an environment tool (renv)
+
+- Turn your project into a package structure
+
+- Lint your code to follow good styleguides.
+
+- Decide where to host your data
+
+- Use version control for everything
+
+- Publish your work with a repository.
+
+- Use continous integration
+
+- Use code tests
+
+- Use software engineering practices like docstrings, roxytest, 
+
+- use workflows like drake, targets
+
+- utilize PROV-Tools (rdtlite)
+
+- package your results (rocrate)
+
+
+Then you need to consider a few questions on how you want to start building your package:
+
+- Hypotheses you need to investigate
+- Long-term traceability
+- Base data quality
+- ETL-Process
+- Analytic processes
+
+
+### Scenario 1: walk-through
+
+The scenario 1 is one simple scenario involving several steps in a linear manner.
+
+The file is in `vignettes/scenario_1.Rmd`, it utilizes `R/packages.R"` for package loading, `R/functions.R` for general functions,
+`R/functions_scenario_1.R` for scenario specific functions and the plan is defined in `R/plan.R`
+
+### Test-Results
+
+```{r}
+testthat::test_local("../")
+```
+

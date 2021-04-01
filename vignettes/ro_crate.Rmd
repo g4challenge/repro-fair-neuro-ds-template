@@ -3,11 +3,17 @@ title: "RO-Crate Vignette"
 output: html_notebook
 ---
 
+
+This Helper document allows the automatic creation of a research object crate with metadata and especially the link to the author(agent).
 https://github.com/ResearchObject/ro-crate-py
 
 ```{r}
 library(reticulate)
-py_install("rocrate")
+knitr::knit_engines$set(python = reticulate::eng_python)
+use_virtualenv("../renv/python/virtualenvs/renv-python-3.9.2/", required=T)
+use_python("../renv/python/virtualenvs/renv-python-3.9.2/bin/python", required=T)
+py_config()
+py_install("rocrate", envname = "../renv/python/virtualenvs/renv-python-3.9.2/")
 ```
 
 ```{python}
@@ -59,7 +65,7 @@ crate.CreativeWorkStatus = "Maturing"
 
 ```{python}
 # write crate to disk
-out_path = "../"
+out_path = "./"
 crate.write_crate(out_path)
 ```
 

@@ -1,0 +1,57 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "ro-crate-preview.html",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            }
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "CreativeWorkStatus": "Maturing",
+            "creator": [
+                {
+                    "@id": "#001"
+                }
+            ],
+            "datePublished": "2021-04-01T09:35:20.206142",
+            "description": "The template for this workflow can be found on GitHub, DockerHub and binder",
+            "hasPart": [
+                {
+                    "@id": "raw_data.xlsx"
+                }
+            ],
+            "image": "drake_workflow.svg",
+            "isBasedOn": "https://github.com/g4challenge/repro-fair-neuro-ds-template",
+            "keywords": [
+                "Neurology",
+                "Data Science",
+                "Reproducibility",
+                "Provenance",
+                "Traceability"
+            ],
+            "license": "GPL-3",
+            "name": "Reproducible Neuro-Intensive-Care Data Science Project Template",
+            "publisher": {
+                "@id": "#001"
+            }
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            }
+        },
+        {
+            "@id": "raw_data.xlsx",
+            "@type": "File"
+        }
+    ]
+}
