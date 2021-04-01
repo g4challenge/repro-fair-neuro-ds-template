@@ -224,30 +224,45 @@ pre code {
 <li>As a project starter. For this, use Git clone and change the remote to your repository. This starts a clean, fresh project.</li>
 <li>As a reference. In that case, you use the project template and parts as reference.</li>
 </ul>
-<p>In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility.</p>
+<p>In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility. This section will walk you through some of the core aspects to utilize this work.</p>
+<p>In order to get reproducible and traceable, one must version control ideally documentation, code, data and execution environment.</p>
+</div>
+<div id="tldr" class="section level2">
+<h2>TL;DR</h2>
+<p>How to use this package:</p>
+<ol style="list-style-type: decimal">
+<li>start by cloning/forking this git repository</li>
+<li>use git+github, git lfs, tidyverse and RMarkdown</li>
+<li>add/modify Drake Plans to for your Pipeline(s)</li>
+<li>Adapt the documentation in Vignettes</li>
+<li>(optional) start the RStudio IDE within Docker + use renv</li>
+</ol>
 </div>
 <div id="prerequisites" class="section level2">
 <h2>Prerequisites</h2>
+<ul>
+<li><p>Your Project should utilize R - although it may be possible to adapt to Python code aswell, it’s native to R.</p></li>
+<li><p>Your Project should use Git.</p></li>
+<li><p>Your Project MUST have a README file</p></li>
+</ul>
 </div>
 <div id="getting-started" class="section level2">
 <h2>Getting Started</h2>
 <p>In order to start with your reproducible Project use the following steps to get the template running:</p>
 <ul>
-<li><p>Your Project should use Git.</p></li>
-<li><p>Your Project MUST have a README file</p></li>
-<li><p>Define a license for your Project.</p></li>
-<li><p>Utilize an environment tool (renv)</p></li>
-<li><p>Turn your project into a package structure</p></li>
-<li><p>Lint your code to follow good styleguides.</p></li>
-<li><p>Decide where to host your data</p></li>
-<li><p>Use version control for everything</p></li>
-<li><p>Publish your work with a repository.</p></li>
-<li><p>Use continous integration</p></li>
-<li><p>Use code tests</p></li>
-<li><p>Use software engineering practices like docstrings, roxytest,</p></li>
-<li><p>use workflows like drake, targets</p></li>
-<li><p>utilize PROV-Tools (rdtlite)</p></li>
-<li><p>package your results (rocrate)</p></li>
+<li><p>Create a RStudio-Project in the structure of a package - the template already established a project template.</p></li>
+<li><p>Define a license for your Project. By default the template already uses gpl3 - <code>usethis::use_gpl3_license()</code> is the command setting the license file.</p></li>
+<li><p>Utilize an environment tool (renv). The project template comes with an <code>renv.lock</code> file and accompanying other files.</p></li>
+<li><p>Lint your code to follow good styleguides. Project Template recommends running <code>lintr:::addin_lint_package()</code> - if your package is in package structure, this lints all project files.</p></li>
+<li><p>Decide where to host your data. The project template utilizes git for version control, and may be extended with Git-LFS. Use <code>data</code> or <code>data-raw</code> folders.</p></li>
+<li><p>Use version control for everything - including code, data, the environment, and even the packaged dependencies.</p></li>
+<li><p>Publish your work with a repository. The template is hosted under <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template" class="uri">https://github.com/g4challenge/repro-fair-neuro-ds-template</a> - when using GitHub change the path and name of your template.</p></li>
+<li><p>Use continous integration. The template utizes <code>.github/workflows</code> folders with the incorporation of pkgdown build of the <strong>Documentation</strong>, codecov and R-CMD-Check of the <strong>Execution</strong> in order to trace the results.</p></li>
+<li><p>Use code tests. The template suggests using <code>testthat</code> and documentation based tests like <code>roxytest</code>.</p></li>
+<li><p>Use software engineering practices like docstrings, roxytest. The template utilizes the <code>vignettes</code> folder, <code>roxygen2</code> and <code>roxytest</code> for documentation and good practices.</p></li>
+<li><p>use workflows like drake, targets. The <code>vignettes/drake_spec.Rmd</code> file is one example on how to utilize the <code>drake</code> package. A workflow captures inputs and outputs of executions in order to trace results. The template version controls even the executions within the <code>.drake</code> folder, this must be curated for good release practices.</p></li>
+<li><p>utilize PROV-Tools (rdtlite) - which creates a PROV-based representation of the workflow executions.</p></li>
+<li><p>package your results - this work packages everything on Zenodo.org in the specifications according to <a href="https://www.researchobject.org/ro-crate/">ROCrate</a></p></li>
 </ul>
 <p>Then you need to consider a few questions on how you want to start building your package:</p>
 <ul>
@@ -261,9 +276,12 @@ pre code {
 <h3>Scenario 1: walk-through</h3>
 <p>The scenario 1 is one simple scenario involving several steps in a linear manner.</p>
 <p>The file is in <code>vignettes/scenario_1.Rmd</code>, it utilizes <code>R/packages.R&quot;</code> for package loading, <code>R/functions.R</code> for general functions, <code>R/functions_scenario_1.R</code> for scenario specific functions and the plan is defined in <code>R/plan.R</code></p>
+<p>Open the file <code>scenario_1.Rmd</code> where the statement <code>make(scenario_1)</code> does the execution, and the workflow of drake is visualized as graph.</p>
+<p>This graph shows, the sequence from input question, to reading the dataset to producing a report.</p>
 </div>
 <div id="test-results" class="section level3">
 <h3>Test-Results</h3>
+<p><code>testthat</code> is able to test the local package of your analysis using <code>test_local()</code> the following code chunk tests all targets and executions of this package’s workflows.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdHRoYXQ6OnRlc3RfbG9jYWwoXCIuLi9cIilcbmBgYCJ9 -->
@@ -308,6 +326,7 @@ Run `rm(list = c(&quot;create_plot&quot;, &quot;my_function&quot;, &quot;plan&qu
 </div>
 <div id="complete-provenance" class="section level3">
 <h3>Complete Provenance</h3>
+<p>In order to achieve a track record of complete provenance within the template, <code>rdtLite</code> is used in conjunction with a makefile, the <code>make.R</code> is comparable and similar to the <code>scenario_1.Rmd</code> except it can be captured by rdtLite as workflow run.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoicmR0TGl0ZTo6cHJvdi5ydW4oXCIuLi9SL21ha2UuUlwiLCBwcm92LmRpcj1cIi4uLy5wcm92L1wiKSJ9 -->
@@ -315,9 +334,11 @@ Run `rm(list = c(&quot;create_plot&quot;, &quot;my_function&quot;, &quot;plan&qu
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>This results in the fresh creation of a <code>.prov</code> subdirectory - which has provenance execution traces according to the rdtlite specification.</p>
 </div>
 <div id="provenance-curation" class="section level3">
 <h3>Provenance Curation</h3>
+<p>If you want to curate your results as <code>release</code> - it may be useful and suitable to curate the traces. The following commands help to achieve this:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjpbImRyYWtlOjpjbGVhbigpICNjbGVhbiB0aGUgY2FjaGUgdG8gZm9yY2UgcmVidWlsZCIsImRyYWtlOjpjbGVhbihkZXN0cm95PVRSVUUpICMgY2xlYW4gY2FjaGUgYW5kIGN1cmF0ZSBcIm9uZVwiIGNsZWFuIHJ1biBpbiB0aGUgZHJha2UgY2FjaGUuIl19 -->
@@ -326,9 +347,11 @@ drake::clean(destroy=TRUE) # clean cache and curate &quot;one&quot; clean run in
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>The second command cleans the <code>.drake</code> folder and allows for version control of only the curated final release.</p>
 </div>
 <div id="development-steps" class="section level3">
 <h3>Development Steps</h3>
+<p>If you may want to continue development on this project and extend it further to your needs. Developing with the project template is comparable to using the template.</p>
 <p>Description of steps during development, starting with Docker + RStudio right away.</p>
 <ol style="list-style-type: decimal">
 <li>clone this template</li>
@@ -351,16 +374,9 @@ drake::clean(destroy=TRUE) # clean cache and curate &quot;one&quot; clean run in
 </ul>
 <pre><code>docker run --rm -p 8787:8787 -e PASSWORD=&quot;1234&quot; -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template</code></pre>
 </div>
+<div id="limitations" class="section level3">
+<h3>Limitations</h3>
 </div>
-<div id="next-steps" class="section level2">
-<h2>(Next) Steps</h2>
-<p>Getting Started Description of the next analysis steps. How to use this package:</p>
-<ol style="list-style-type: decimal">
-<li>start by cloning/forking the git repository</li>
-<li>use git+github, git lfs, tidyverse and RMarkdown</li>
-<li>add Drake Plans to for your Pipeline(s)</li>
-<li>(optional) start the RStudio IDE within Docker + use renv</li>
-</ol>
 <div id="faq" class="section level3">
 <h3>FAQ</h3>
 <p>Where should I start my documentation?</p>
@@ -373,7 +389,7 @@ drake::clean(destroy=TRUE) # clean cache and curate &quot;one&quot; clean run in
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiR2V0dGluZyBTdGFydGVkIgphdXRob3I6ICJMdWthcyBIdWJlciIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCiMjIEludHJvZHVjdGlvbgoKVGhlcmUgYXJlIHR3byBtYWluIHdheXMgdG8gdXNlIHRoaXMgdGVtcGxhdGU6CgotIEFzIGEgcHJvamVjdCBzdGFydGVyLiBGb3IgdGhpcywgdXNlIEdpdCBjbG9uZSBhbmQgY2hhbmdlIHRoZSByZW1vdGUgdG8geW91ciByZXBvc2l0b3J5LiBUaGlzIHN0YXJ0cyBhIGNsZWFuLCBmcmVzaCBwcm9qZWN0LgotIEFzIGEgcmVmZXJlbmNlLiBJbiB0aGF0IGNhc2UsIHlvdSB1c2UgdGhlIHByb2plY3QgdGVtcGxhdGUgYW5kIHBhcnRzIGFzIHJlZmVyZW5jZS4KCkluIGJvdGggY2FzZXMsIG5vIG9uZSBtdXN0IHV0aWxpemUgYWxsIHByb3ZpZGVkIHBhY2thZ2VzIGFuZCBwYXR0ZXJucywgb25lIGNhbiBncmFkdWFsbHkgaW1wcm92ZSByZXByb2R1Y2liaWxpdHkuCgoKCgoKCiMjIFByZXJlcXVpc2l0ZXMKCgoKIyMgR2V0dGluZyBTdGFydGVkCgoKSW4gb3JkZXIgdG8gc3RhcnQgd2l0aCB5b3VyIHJlcHJvZHVjaWJsZSBQcm9qZWN0IHVzZSB0aGUgZm9sbG93aW5nIHN0ZXBzIHRvIGdldCB0aGUgdGVtcGxhdGUgcnVubmluZzoKCi0gWW91ciBQcm9qZWN0IHNob3VsZCB1c2UgR2l0LgoKLSBZb3VyIFByb2plY3QgTVVTVCBoYXZlIGEgUkVBRE1FIGZpbGUKCi0gRGVmaW5lIGEgbGljZW5zZSBmb3IgeW91ciBQcm9qZWN0LgoKLSBVdGlsaXplIGFuIGVudmlyb25tZW50IHRvb2wgKHJlbnYpCgotIFR1cm4geW91ciBwcm9qZWN0IGludG8gYSBwYWNrYWdlIHN0cnVjdHVyZQoKLSBMaW50IHlvdXIgY29kZSB0byBmb2xsb3cgZ29vZCBzdHlsZWd1aWRlcy4KCi0gRGVjaWRlIHdoZXJlIHRvIGhvc3QgeW91ciBkYXRhCgotIFVzZSB2ZXJzaW9uIGNvbnRyb2wgZm9yIGV2ZXJ5dGhpbmcKCi0gUHVibGlzaCB5b3VyIHdvcmsgd2l0aCBhIHJlcG9zaXRvcnkuCgotIFVzZSBjb250aW5vdXMgaW50ZWdyYXRpb24KCi0gVXNlIGNvZGUgdGVzdHMKCi0gVXNlIHNvZnR3YXJlIGVuZ2luZWVyaW5nIHByYWN0aWNlcyBsaWtlIGRvY3N0cmluZ3MsIHJveHl0ZXN0LCAKCi0gdXNlIHdvcmtmbG93cyBsaWtlIGRyYWtlLCB0YXJnZXRzCgotIHV0aWxpemUgUFJPVi1Ub29scyAocmR0bGl0ZSkKCi0gcGFja2FnZSB5b3VyIHJlc3VsdHMgKHJvY3JhdGUpCgoKVGhlbiB5b3UgbmVlZCB0byBjb25zaWRlciBhIGZldyBxdWVzdGlvbnMgb24gaG93IHlvdSB3YW50IHRvIHN0YXJ0IGJ1aWxkaW5nIHlvdXIgcGFja2FnZToKCi0gSHlwb3RoZXNlcyB5b3UgbmVlZCB0byBpbnZlc3RpZ2F0ZQotIExvbmctdGVybSB0cmFjZWFiaWxpdHkKLSBCYXNlIGRhdGEgcXVhbGl0eQotIEVUTC1Qcm9jZXNzCi0gQW5hbHl0aWMgcHJvY2Vzc2VzCgoKIyMjIFNjZW5hcmlvIDE6IHdhbGstdGhyb3VnaAoKVGhlIHNjZW5hcmlvIDEgaXMgb25lIHNpbXBsZSBzY2VuYXJpbyBpbnZvbHZpbmcgc2V2ZXJhbCBzdGVwcyBpbiBhIGxpbmVhciBtYW5uZXIuCgpUaGUgZmlsZSBpcyBpbiBgdmlnbmV0dGVzL3NjZW5hcmlvXzEuUm1kYCwgaXQgdXRpbGl6ZXMgYFIvcGFja2FnZXMuUiJgIGZvciBwYWNrYWdlIGxvYWRpbmcsIGBSL2Z1bmN0aW9ucy5SYCBmb3IgZ2VuZXJhbCBmdW5jdGlvbnMsCmBSL2Z1bmN0aW9uc19zY2VuYXJpb18xLlJgIGZvciBzY2VuYXJpbyBzcGVjaWZpYyBmdW5jdGlvbnMgYW5kIHRoZSBwbGFuIGlzIGRlZmluZWQgaW4gYFIvcGxhbi5SYAoKIyMjIFRlc3QtUmVzdWx0cwoKYGBge3J9CnRlc3R0aGF0Ojp0ZXN0X2xvY2FsKCIuLi8iKQpgYGAKCiMjIyBDb21wbGV0ZSBQcm92ZW5hbmNlCgpgYGB7ciBldmFsPUZ9CnJkdExpdGU6OnByb3YucnVuKCIuLi9SL21ha2UuUiIsIHByb3YuZGlyPSIuLi8ucHJvdi8iKQpgYGAKCgojIyMgUHJvdmVuYW5jZSBDdXJhdGlvbgoKYGBge3IgZXZhbD1GfQpkcmFrZTo6Y2xlYW4oKSAjY2xlYW4gdGhlIGNhY2hlIHRvIGZvcmNlIHJlYnVpbGQKZHJha2U6OmNsZWFuKGRlc3Ryb3k9VFJVRSkgIyBjbGVhbiBjYWNoZSBhbmQgY3VyYXRlICJvbmUiIGNsZWFuIHJ1biBpbiB0aGUgZHJha2UgY2FjaGUuCmBgYAoKCiMjIyBEZXZlbG9wbWVudCBTdGVwcwoKRGVzY3JpcHRpb24gb2Ygc3RlcHMgZHVyaW5nIGRldmVsb3BtZW50LCBzdGFydGluZyB3aXRoIERvY2tlciArIFJTdHVkaW8gcmlnaHQgYXdheS4KCjEuIGNsb25lIHRoaXMgdGVtcGxhdGUKCmBgYApnaXQgY2xvbmUgaHR0cHM6Ly9naXRodWIuY29tL2c0Y2hhbGxlbmdlL3JlcHJvLWZhaXItbmV1cm8tZHMtdGVtcGxhdGUKYGBgCgoyLiB3aXRoaW4gdGhlIGdpdCByZXBvc2l0b3J5LCBzdGFydCB0aGUgZG9ja2VyIGNvbnRhaW5lcjoKCmBgYApkb2NrZXIgcnVuIC0tcm0gLXAgODc4Nzo4Nzg3IC1lIFBBU1NXT1JEPSIxMjM0IiAtdiAkKHB3ZCk6L2hvbWUvcnN0dWRpbyBteV9mYWlyX3Byb2plY3QgCmBgYAoKMy4gb3BlbiB5b3VyIGJyb3dzZXIgYXQgaHR0cDovL2xvY2FsaG9zdDo4Nzg3IAoKNC4gbG9naW4gdXNpbmcgdXNlcj1gcnN0dWRpb2AgcGFzc3dvcmQ9YDEyMzRgCgo1LiBjbGljayBvcGVuIG9uIHRoZSAucnByb2ogZmlsZS4KCjYuIFN0YXJ0IHVzaW5nIHRoZSBwcm9qZWN0LCBhZGFwdCBpdCB0byB5b3VyIG5lZWRzICsgY2hhbmdlIHRoZSBnaXQgcmVtb3RlCgoKLSBMb2NhbCBEb2NrZXIgYnVpbGQKICAgIAogICAgZG9ja2VyIGJ1aWxkIC4gLXQgbXlfZmFpcl9wcm9qZWN0CgotIExvY2FsIERvY2tlciBydW4gd2l0aCBkZWZhdWx0IHVzZXIgYHJzdHVkaW9gIGFuZCBQQVNTV09SRD0iMTIzNCIgLSB1c2UgZGlmZmVyZW50IHBhc3N3b3JkCgpgYGAKZG9ja2VyIHJ1biAtLXJtIC1wIDg3ODc6ODc4NyAtZSBQQVNTV09SRD0iMTIzNCIgLXYgJChwd2QpOi9ob21lL3JzdHVkaW8gZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZQpgYGAKCiMjIChOZXh0KSBTdGVwcwoKR2V0dGluZyBTdGFydGVkCkRlc2NyaXB0aW9uIG9mIHRoZSBuZXh0IGFuYWx5c2lzIHN0ZXBzLiBIb3cgdG8gdXNlIHRoaXMgcGFja2FnZToKCjEuIHN0YXJ0IGJ5IGNsb25pbmcvZm9ya2luZyB0aGUgZ2l0IHJlcG9zaXRvcnkKMi4gdXNlIGdpdCtnaXRodWIsIGdpdCBsZnMsIHRpZHl2ZXJzZSBhbmQgUk1hcmtkb3duCjMuIGFkZCBEcmFrZSBQbGFucyB0byBmb3IgeW91ciBQaXBlbGluZShzKQo0LiAob3B0aW9uYWwpIHN0YXJ0IHRoZSBSU3R1ZGlvIElERSB3aXRoaW4gRG9ja2VyICsgdXNlIHJlbnYKCgojIyMgRkFRCgpXaGVyZSBzaG91bGQgSSBzdGFydCBteSBkb2N1bWVudGF0aW9uPyAKCgpIb3cgZG8gdGhlIHZhcmlvdXMgZG9jdW1lbnRhdGlvbnMgcmVsYXRlIHRvIGVhY2ggb3RoZXI/IAoKCldoYXQgYWRhcHRhdGlvbnMgZG8gSSBoYXZlIHRvIG1ha2U/IAoKSG93IGNhbiBhIHByaW9yaXRpemUgdGhlc2UgYWRhcHRhdGlvbnM/IAoKV2hhdCBpcyB0aGUgbWluaW1hbCBzZXQgb2YgYWRhcHRhdGlvbnMgdGhhdCBJIG5lZWQgdG8gbWFrZT8gCgoKQ2FuIEkgYWxzbyBhcHBseSB0aGlzIHRvIG90aGVyIGNvbnRleHRzIHdpdGhpbiBtZWRpY2luZSwgb3IgZXZlbiBvdXRzaWRlIG9mIGEgbWVkaWNhbCBjb250ZXh0IG9yPwo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiR2V0dGluZyBTdGFydGVkIgphdXRob3I6ICJMdWthcyBIdWJlciIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKCiMjIEludHJvZHVjdGlvbgoKVGhlcmUgYXJlIHR3byBtYWluIHdheXMgdG8gdXNlIHRoaXMgdGVtcGxhdGU6CgotIEFzIGEgcHJvamVjdCBzdGFydGVyLiBGb3IgdGhpcywgdXNlIEdpdCBjbG9uZSBhbmQgY2hhbmdlIHRoZSByZW1vdGUgdG8geW91ciByZXBvc2l0b3J5LiBUaGlzIHN0YXJ0cyBhIGNsZWFuLCBmcmVzaCBwcm9qZWN0LgotIEFzIGEgcmVmZXJlbmNlLiBJbiB0aGF0IGNhc2UsIHlvdSB1c2UgdGhlIHByb2plY3QgdGVtcGxhdGUgYW5kIHBhcnRzIGFzIHJlZmVyZW5jZS4KCkluIGJvdGggY2FzZXMsIG5vIG9uZSBtdXN0IHV0aWxpemUgYWxsIHByb3ZpZGVkIHBhY2thZ2VzIGFuZCBwYXR0ZXJucywgb25lIGNhbiBncmFkdWFsbHkgaW1wcm92ZSByZXByb2R1Y2liaWxpdHkuIFRoaXMgc2VjdGlvbiB3aWxsIHdhbGsgeW91IHRocm91Z2ggc29tZSBvZiB0aGUgY29yZSBhc3BlY3RzIHRvIHV0aWxpemUgdGhpcyB3b3JrLgoKSW4gb3JkZXIgdG8gZ2V0IHJlcHJvZHVjaWJsZSBhbmQgdHJhY2VhYmxlLCBvbmUgbXVzdCB2ZXJzaW9uIGNvbnRyb2wgaWRlYWxseSBkb2N1bWVudGF0aW9uLCBjb2RlLCBkYXRhIGFuZCBleGVjdXRpb24gZW52aXJvbm1lbnQuCgojIyBUTDtEUgpIb3cgdG8gdXNlIHRoaXMgcGFja2FnZToKCjEuIHN0YXJ0IGJ5IGNsb25pbmcvZm9ya2luZyB0aGlzIGdpdCByZXBvc2l0b3J5CjIuIHVzZSBnaXQrZ2l0aHViLCBnaXQgbGZzLCB0aWR5dmVyc2UgYW5kIFJNYXJrZG93bgozLiBhZGQvbW9kaWZ5IERyYWtlIFBsYW5zIHRvIGZvciB5b3VyIFBpcGVsaW5lKHMpCjQuIEFkYXB0IHRoZSBkb2N1bWVudGF0aW9uIGluIFZpZ25ldHRlcwo1LiAob3B0aW9uYWwpIHN0YXJ0IHRoZSBSU3R1ZGlvIElERSB3aXRoaW4gRG9ja2VyICsgdXNlIHJlbnYKCgojIyBQcmVyZXF1aXNpdGVzCgotIFlvdXIgUHJvamVjdCBzaG91bGQgdXRpbGl6ZSBSIC0gYWx0aG91Z2ggaXQgbWF5IGJlIHBvc3NpYmxlIHRvIGFkYXB0IHRvIFB5dGhvbiBjb2RlIGFzd2VsbCwgaXQncyBuYXRpdmUgdG8gUi4KCi0gWW91ciBQcm9qZWN0IHNob3VsZCB1c2UgR2l0LgoKLSBZb3VyIFByb2plY3QgTVVTVCBoYXZlIGEgUkVBRE1FIGZpbGUKCgojIyBHZXR0aW5nIFN0YXJ0ZWQKSW4gb3JkZXIgdG8gc3RhcnQgd2l0aCB5b3VyIHJlcHJvZHVjaWJsZSBQcm9qZWN0IHVzZSB0aGUgZm9sbG93aW5nIHN0ZXBzIHRvIGdldCB0aGUgdGVtcGxhdGUgcnVubmluZzoKCi0gQ3JlYXRlIGEgUlN0dWRpby1Qcm9qZWN0IGluIHRoZSBzdHJ1Y3R1cmUgb2YgYSBwYWNrYWdlIC0gdGhlIHRlbXBsYXRlIGFscmVhZHkgZXN0YWJsaXNoZWQgYSBwcm9qZWN0IHRlbXBsYXRlLgoKLSBEZWZpbmUgYSBsaWNlbnNlIGZvciB5b3VyIFByb2plY3QuIEJ5IGRlZmF1bHQgdGhlIHRlbXBsYXRlIGFscmVhZHkgdXNlcyBncGwzIC0gYHVzZXRoaXM6OnVzZV9ncGwzX2xpY2Vuc2UoKWAgaXMgdGhlIGNvbW1hbmQgc2V0dGluZyB0aGUgbGljZW5zZSBmaWxlLgoKLSBVdGlsaXplIGFuIGVudmlyb25tZW50IHRvb2wgKHJlbnYpLiBUaGUgcHJvamVjdCB0ZW1wbGF0ZSBjb21lcyB3aXRoIGFuIGByZW52LmxvY2tgIGZpbGUgYW5kIGFjY29tcGFueWluZyBvdGhlciBmaWxlcy4KCi0gTGludCB5b3VyIGNvZGUgdG8gZm9sbG93IGdvb2Qgc3R5bGVndWlkZXMuIFByb2plY3QgVGVtcGxhdGUgcmVjb21tZW5kcyBydW5uaW5nIGBsaW50cjo6OmFkZGluX2xpbnRfcGFja2FnZSgpYCAtIGlmIHlvdXIgcGFja2FnZSBpcyBpbiBwYWNrYWdlIHN0cnVjdHVyZSwgdGhpcyBsaW50cyBhbGwgcHJvamVjdCBmaWxlcy4KCi0gRGVjaWRlIHdoZXJlIHRvIGhvc3QgeW91ciBkYXRhLiBUaGUgcHJvamVjdCB0ZW1wbGF0ZSB1dGlsaXplcyBnaXQgZm9yIHZlcnNpb24gY29udHJvbCwgYW5kIG1heSBiZSBleHRlbmRlZCB3aXRoIEdpdC1MRlMuIFVzZSBgZGF0YWAgb3IgYGRhdGEtcmF3YCBmb2xkZXJzLgoKLSBVc2UgdmVyc2lvbiBjb250cm9sIGZvciBldmVyeXRoaW5nIC0gaW5jbHVkaW5nIGNvZGUsIGRhdGEsIHRoZSBlbnZpcm9ubWVudCwgYW5kIGV2ZW4gdGhlIHBhY2thZ2VkIGRlcGVuZGVuY2llcy4KCi0gUHVibGlzaCB5b3VyIHdvcmsgd2l0aCBhIHJlcG9zaXRvcnkuIFRoZSB0ZW1wbGF0ZSBpcyBob3N0ZWQgdW5kZXIgaHR0cHM6Ly9naXRodWIuY29tL2c0Y2hhbGxlbmdlL3JlcHJvLWZhaXItbmV1cm8tZHMtdGVtcGxhdGUgLSB3aGVuIHVzaW5nIEdpdEh1YiBjaGFuZ2UgdGhlIHBhdGggYW5kIG5hbWUgb2YgeW91ciB0ZW1wbGF0ZS4KCi0gVXNlIGNvbnRpbm91cyBpbnRlZ3JhdGlvbi4gVGhlIHRlbXBsYXRlIHV0aXplcyBgLmdpdGh1Yi93b3JrZmxvd3NgIGZvbGRlcnMgd2l0aCB0aGUgaW5jb3Jwb3JhdGlvbiBvZiBwa2dkb3duIGJ1aWxkIG9mIHRoZSAqKkRvY3VtZW50YXRpb24qKiwgY29kZWNvdiBhbmQgUi1DTUQtQ2hlY2sgb2YgdGhlICoqRXhlY3V0aW9uKiogaW4gb3JkZXIgdG8gdHJhY2UgdGhlIHJlc3VsdHMuCgotIFVzZSBjb2RlIHRlc3RzLiBUaGUgdGVtcGxhdGUgc3VnZ2VzdHMgdXNpbmcgYHRlc3R0aGF0YCBhbmQgZG9jdW1lbnRhdGlvbiBiYXNlZCB0ZXN0cyBsaWtlIGByb3h5dGVzdGAuCgotIFVzZSBzb2Z0d2FyZSBlbmdpbmVlcmluZyBwcmFjdGljZXMgbGlrZSBkb2NzdHJpbmdzLCByb3h5dGVzdC4gVGhlIHRlbXBsYXRlIHV0aWxpemVzIHRoZSBgdmlnbmV0dGVzYCBmb2xkZXIsIGByb3h5Z2VuMmAgYW5kIGByb3h5dGVzdGAgZm9yIGRvY3VtZW50YXRpb24gYW5kIGdvb2QgcHJhY3RpY2VzLgoKLSB1c2Ugd29ya2Zsb3dzIGxpa2UgZHJha2UsIHRhcmdldHMuIFRoZSBgdmlnbmV0dGVzL2RyYWtlX3NwZWMuUm1kYCBmaWxlIGlzIG9uZSBleGFtcGxlIG9uIGhvdyB0byB1dGlsaXplIHRoZSBgZHJha2VgIHBhY2thZ2UuIEEgd29ya2Zsb3cgY2FwdHVyZXMgaW5wdXRzIGFuZCBvdXRwdXRzIG9mIGV4ZWN1dGlvbnMgaW4gb3JkZXIgdG8gdHJhY2UgcmVzdWx0cy4gVGhlIHRlbXBsYXRlIHZlcnNpb24gY29udHJvbHMgZXZlbiB0aGUgZXhlY3V0aW9ucyB3aXRoaW4gdGhlIGAuZHJha2VgIGZvbGRlciwgdGhpcyBtdXN0IGJlIGN1cmF0ZWQgZm9yIGdvb2QgcmVsZWFzZSBwcmFjdGljZXMuCgotIHV0aWxpemUgUFJPVi1Ub29scyAocmR0bGl0ZSkgLSB3aGljaCBjcmVhdGVzIGEgUFJPVi1iYXNlZCByZXByZXNlbnRhdGlvbiBvZiB0aGUgd29ya2Zsb3cgZXhlY3V0aW9ucy4KCi0gcGFja2FnZSB5b3VyIHJlc3VsdHMgLSB0aGlzIHdvcmsgcGFja2FnZXMgZXZlcnl0aGluZyBvbiBaZW5vZG8ub3JnIGluIHRoZSBzcGVjaWZpY2F0aW9ucyBhY2NvcmRpbmcgdG8gW1JPQ3JhdGVdKGh0dHBzOi8vd3d3LnJlc2VhcmNob2JqZWN0Lm9yZy9yby1jcmF0ZS8pCgoKVGhlbiB5b3UgbmVlZCB0byBjb25zaWRlciBhIGZldyBxdWVzdGlvbnMgb24gaG93IHlvdSB3YW50IHRvIHN0YXJ0IGJ1aWxkaW5nIHlvdXIgcGFja2FnZToKCi0gSHlwb3RoZXNlcyB5b3UgbmVlZCB0byBpbnZlc3RpZ2F0ZQotIExvbmctdGVybSB0cmFjZWFiaWxpdHkKLSBCYXNlIGRhdGEgcXVhbGl0eQotIEVUTC1Qcm9jZXNzCi0gQW5hbHl0aWMgcHJvY2Vzc2VzCgoKIyMjIFNjZW5hcmlvIDE6IHdhbGstdGhyb3VnaAoKVGhlIHNjZW5hcmlvIDEgaXMgb25lIHNpbXBsZSBzY2VuYXJpbyBpbnZvbHZpbmcgc2V2ZXJhbCBzdGVwcyBpbiBhIGxpbmVhciBtYW5uZXIuCgpUaGUgZmlsZSBpcyBpbiBgdmlnbmV0dGVzL3NjZW5hcmlvXzEuUm1kYCwgaXQgdXRpbGl6ZXMgYFIvcGFja2FnZXMuUiJgIGZvciBwYWNrYWdlIGxvYWRpbmcsIGBSL2Z1bmN0aW9ucy5SYCBmb3IgZ2VuZXJhbCBmdW5jdGlvbnMsCmBSL2Z1bmN0aW9uc19zY2VuYXJpb18xLlJgIGZvciBzY2VuYXJpbyBzcGVjaWZpYyBmdW5jdGlvbnMgYW5kIHRoZSBwbGFuIGlzIGRlZmluZWQgaW4gYFIvcGxhbi5SYAoKT3BlbiB0aGUgZmlsZSBgc2NlbmFyaW9fMS5SbWRgIHdoZXJlIHRoZSBzdGF0ZW1lbnQgYG1ha2Uoc2NlbmFyaW9fMSlgIGRvZXMgdGhlIGV4ZWN1dGlvbiwgYW5kIHRoZSB3b3JrZmxvdyBvZiBkcmFrZSBpcyB2aXN1YWxpemVkIGFzIGdyYXBoLgoKVGhpcyBncmFwaCBzaG93cywgdGhlIHNlcXVlbmNlIGZyb20gaW5wdXQgcXVlc3Rpb24sIHRvIHJlYWRpbmcgdGhlIGRhdGFzZXQgdG8gcHJvZHVjaW5nIGEgcmVwb3J0LgoKIyMjIFRlc3QtUmVzdWx0cwoKYHRlc3R0aGF0YCBpcyBhYmxlIHRvIHRlc3QgdGhlIGxvY2FsIHBhY2thZ2Ugb2YgeW91ciBhbmFseXNpcyB1c2luZyBgdGVzdF9sb2NhbCgpYCB0aGUgZm9sbG93aW5nIGNvZGUgY2h1bmsgdGVzdHMgYWxsIHRhcmdldHMgYW5kIGV4ZWN1dGlvbnMgb2YgdGhpcyBwYWNrYWdlJ3Mgd29ya2Zsb3dzLgoKYGBge3J9CnRlc3R0aGF0Ojp0ZXN0X2xvY2FsKCIuLi8iKQpgYGAKCiMjIyBDb21wbGV0ZSBQcm92ZW5hbmNlCgpJbiBvcmRlciB0byBhY2hpZXZlIGEgdHJhY2sgcmVjb3JkIG9mIGNvbXBsZXRlIHByb3ZlbmFuY2Ugd2l0aGluIHRoZSB0ZW1wbGF0ZSwgYHJkdExpdGVgIGlzIHVzZWQgaW4gY29uanVuY3Rpb24gd2l0aCBhIG1ha2VmaWxlLCB0aGUgYG1ha2UuUmAgaXMgY29tcGFyYWJsZSBhbmQgc2ltaWxhciB0byB0aGUgYHNjZW5hcmlvXzEuUm1kYCBleGNlcHQgaXQgY2FuIGJlIGNhcHR1cmVkIGJ5IHJkdExpdGUgYXMgd29ya2Zsb3cgcnVuLgoKYGBge3IgZXZhbD1GfQpyZHRMaXRlOjpwcm92LnJ1bigiLi4vUi9tYWtlLlIiLCBwcm92LmRpcj0iLi4vLnByb3YvIikKYGBgCgpUaGlzIHJlc3VsdHMgaW4gdGhlIGZyZXNoIGNyZWF0aW9uIG9mIGEgYC5wcm92YCBzdWJkaXJlY3RvcnkgLSB3aGljaCBoYXMgcHJvdmVuYW5jZSBleGVjdXRpb24gdHJhY2VzIGFjY29yZGluZyB0byB0aGUgcmR0bGl0ZSBzcGVjaWZpY2F0aW9uLgoKCiMjIyBQcm92ZW5hbmNlIEN1cmF0aW9uCgpJZiB5b3Ugd2FudCB0byBjdXJhdGUgeW91ciByZXN1bHRzIGFzIGByZWxlYXNlYCAtIGl0IG1heSBiZSB1c2VmdWwgYW5kIHN1aXRhYmxlIHRvIGN1cmF0ZSB0aGUgdHJhY2VzLiBUaGUgZm9sbG93aW5nIGNvbW1hbmRzIGhlbHAgdG8gYWNoaWV2ZSB0aGlzOgoKYGBge3IgZXZhbD1GfQpkcmFrZTo6Y2xlYW4oKSAjY2xlYW4gdGhlIGNhY2hlIHRvIGZvcmNlIHJlYnVpbGQKZHJha2U6OmNsZWFuKGRlc3Ryb3k9VFJVRSkgIyBjbGVhbiBjYWNoZSBhbmQgY3VyYXRlICJvbmUiIGNsZWFuIHJ1biBpbiB0aGUgZHJha2UgY2FjaGUuCmBgYAoKVGhlIHNlY29uZCBjb21tYW5kIGNsZWFucyB0aGUgYC5kcmFrZWAgZm9sZGVyIGFuZCBhbGxvd3MgZm9yIHZlcnNpb24gY29udHJvbCBvZiBvbmx5IHRoZSBjdXJhdGVkIGZpbmFsIHJlbGVhc2UuCgoKIyMjIERldmVsb3BtZW50IFN0ZXBzCgpJZiB5b3UgbWF5IHdhbnQgdG8gY29udGludWUgZGV2ZWxvcG1lbnQgb24gdGhpcyBwcm9qZWN0IGFuZCBleHRlbmQgaXQgZnVydGhlciB0byB5b3VyIG5lZWRzLiBEZXZlbG9waW5nIHdpdGggdGhlIHByb2plY3QgdGVtcGxhdGUgaXMgY29tcGFyYWJsZSB0byB1c2luZyB0aGUgdGVtcGxhdGUuCgpEZXNjcmlwdGlvbiBvZiBzdGVwcyBkdXJpbmcgZGV2ZWxvcG1lbnQsIHN0YXJ0aW5nIHdpdGggRG9ja2VyICsgUlN0dWRpbyByaWdodCBhd2F5LgoKMS4gY2xvbmUgdGhpcyB0ZW1wbGF0ZQoKYGBgCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZQpgYGAKCjIuIHdpdGhpbiB0aGUgZ2l0IHJlcG9zaXRvcnksIHN0YXJ0IHRoZSBkb2NrZXIgY29udGFpbmVyOgoKYGBgCmRvY2tlciBydW4gLS1ybSAtcCA4Nzg3Ojg3ODcgLWUgUEFTU1dPUkQ9IjEyMzQiIC12ICQocHdkKTovaG9tZS9yc3R1ZGlvIG15X2ZhaXJfcHJvamVjdCAKYGBgCgozLiBvcGVuIHlvdXIgYnJvd3NlciBhdCBodHRwOi8vbG9jYWxob3N0Ojg3ODcgCgo0LiBsb2dpbiB1c2luZyB1c2VyPWByc3R1ZGlvYCBwYXNzd29yZD1gMTIzNGAKCjUuIGNsaWNrIG9wZW4gb24gdGhlIC5ycHJvaiBmaWxlLgoKNi4gU3RhcnQgdXNpbmcgdGhlIHByb2plY3QsIGFkYXB0IGl0IHRvIHlvdXIgbmVlZHMgKyBjaGFuZ2UgdGhlIGdpdCByZW1vdGUKCgotIExvY2FsIERvY2tlciBidWlsZAogICAgCiAgICBkb2NrZXIgYnVpbGQgLiAtdCBteV9mYWlyX3Byb2plY3QKCi0gTG9jYWwgRG9ja2VyIHJ1biB3aXRoIGRlZmF1bHQgdXNlciBgcnN0dWRpb2AgYW5kIFBBU1NXT1JEPSIxMjM0IiAtIHVzZSBkaWZmZXJlbnQgcGFzc3dvcmQKCmBgYApkb2NrZXIgcnVuIC0tcm0gLXAgODc4Nzo4Nzg3IC1lIFBBU1NXT1JEPSIxMjM0IiAtdiAkKHB3ZCk6L2hvbWUvcnN0dWRpbyBnNGNoYWxsZW5nZS9yZXByby1mYWlyLW5ldXJvLWRzLXRlbXBsYXRlCmBgYAoKCgoKIyMjIExpbWl0YXRpb25zCgoKCiMjIyBGQVEKCldoZXJlIHNob3VsZCBJIHN0YXJ0IG15IGRvY3VtZW50YXRpb24/IAoKCkhvdyBkbyB0aGUgdmFyaW91cyBkb2N1bWVudGF0aW9ucyByZWxhdGUgdG8gZWFjaCBvdGhlcj8gCgoKV2hhdCBhZGFwdGF0aW9ucyBkbyBJIGhhdmUgdG8gbWFrZT8gCgpIb3cgY2FuIGEgcHJpb3JpdGl6ZSB0aGVzZSBhZGFwdGF0aW9ucz8gCgpXaGF0IGlzIHRoZSBtaW5pbWFsIHNldCBvZiBhZGFwdGF0aW9ucyB0aGF0IEkgbmVlZCB0byBtYWtlPyAKCgpDYW4gSSBhbHNvIGFwcGx5IHRoaXMgdG8gb3RoZXIgY29udGV4dHMgd2l0aGluIG1lZGljaW5lLCBvciBldmVuIG91dHNpZGUgb2YgYSBtZWRpY2FsIGNvbnRleHQgb3I/Cg==</div>
 
 
 

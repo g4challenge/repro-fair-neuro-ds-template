@@ -12,51 +12,57 @@ There are two main ways to use this template:
 - As a project starter. For this, use Git clone and change the remote to your repository. This starts a clean, fresh project.
 - As a reference. In that case, you use the project template and parts as reference.
 
-In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility.
+In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility. This section will walk you through some of the core aspects to utilize this work.
 
+In order to get reproducible and traceable, one must version control ideally documentation, code, data and execution environment.
 
+## TL;DR
+How to use this package:
 
-
+1. start by cloning/forking this git repository
+2. use git+github, git lfs, tidyverse and RMarkdown
+3. add/modify Drake Plans to for your Pipeline(s)
+4. Adapt the documentation in Vignettes
+5. (optional) start the RStudio IDE within Docker + use renv
 
 
 ## Prerequisites
 
-
-
-## Getting Started
-
-
-In order to start with your reproducible Project use the following steps to get the template running:
+- Your Project should utilize R - although it may be possible to adapt to Python code aswell, it's native to R.
 
 - Your Project should use Git.
 
 - Your Project MUST have a README file
 
-- Define a license for your Project.
 
-- Utilize an environment tool (renv)
+## Getting Started
+In order to start with your reproducible Project use the following steps to get the template running:
 
-- Turn your project into a package structure
+- Create a RStudio-Project in the structure of a package - the template already established a project template.
 
-- Lint your code to follow good styleguides.
+- Define a license for your Project. By default the template already uses gpl3 - `usethis::use_gpl3_license()` is the command setting the license file.
 
-- Decide where to host your data
+- Utilize an environment tool (renv). The project template comes with an `renv.lock` file and accompanying other files.
 
-- Use version control for everything
+- Lint your code to follow good styleguides. Project Template recommends running `lintr:::addin_lint_package()` - if your package is in package structure, this lints all project files.
 
-- Publish your work with a repository.
+- Decide where to host your data. The project template utilizes git for version control, and may be extended with Git-LFS. Use `data` or `data-raw` folders.
 
-- Use continous integration
+- Use version control for everything - including code, data, the environment, and even the packaged dependencies.
 
-- Use code tests
+- Publish your work with a repository. The template is hosted under https://github.com/g4challenge/repro-fair-neuro-ds-template - when using GitHub change the path and name of your template.
 
-- Use software engineering practices like docstrings, roxytest, 
+- Use continous integration. The template utizes `.github/workflows` folders with the incorporation of pkgdown build of the **Documentation**, codecov and R-CMD-Check of the **Execution** in order to trace the results.
 
-- use workflows like drake, targets
+- Use code tests. The template suggests using `testthat` and documentation based tests like `roxytest`.
 
-- utilize PROV-Tools (rdtlite)
+- Use software engineering practices like docstrings, roxytest. The template utilizes the `vignettes` folder, `roxygen2` and `roxytest` for documentation and good practices.
 
-- package your results (rocrate)
+- use workflows like drake, targets. The `vignettes/drake_spec.Rmd` file is one example on how to utilize the `drake` package. A workflow captures inputs and outputs of executions in order to trace results. The template version controls even the executions within the `.drake` folder, this must be curated for good release practices.
+
+- utilize PROV-Tools (rdtlite) - which creates a PROV-based representation of the workflow executions.
+
+- package your results - this work packages everything on Zenodo.org in the specifications according to [ROCrate](https://www.researchobject.org/ro-crate/)
 
 
 Then you need to consider a few questions on how you want to start building your package:
@@ -75,7 +81,13 @@ The scenario 1 is one simple scenario involving several steps in a linear manner
 The file is in `vignettes/scenario_1.Rmd`, it utilizes `R/packages.R"` for package loading, `R/functions.R` for general functions,
 `R/functions_scenario_1.R` for scenario specific functions and the plan is defined in `R/plan.R`
 
+Open the file `scenario_1.Rmd` where the statement `make(scenario_1)` does the execution, and the workflow of drake is visualized as graph.
+
+This graph shows, the sequence from input question, to reading the dataset to producing a report.
+
 ### Test-Results
+
+`testthat` is able to test the local package of your analysis using `test_local()` the following code chunk tests all targets and executions of this package's workflows.
 
 ```{r}
 testthat::test_local("../")
@@ -83,20 +95,30 @@ testthat::test_local("../")
 
 ### Complete Provenance
 
+In order to achieve a track record of complete provenance within the template, `rdtLite` is used in conjunction with a makefile, the `make.R` is comparable and similar to the `scenario_1.Rmd` except it can be captured by rdtLite as workflow run.
+
 ```{r eval=F}
 rdtLite::prov.run("../R/make.R", prov.dir="../.prov/")
 ```
 
+This results in the fresh creation of a `.prov` subdirectory - which has provenance execution traces according to the rdtlite specification.
+
 
 ### Provenance Curation
+
+If you want to curate your results as `release` - it may be useful and suitable to curate the traces. The following commands help to achieve this:
 
 ```{r eval=F}
 drake::clean() #clean the cache to force rebuild
 drake::clean(destroy=TRUE) # clean cache and curate "one" clean run in the drake cache.
 ```
 
+The second command cleans the `.drake` folder and allows for version control of only the curated final release.
+
 
 ### Development Steps
+
+If you may want to continue development on this project and extend it further to your needs. Developing with the project template is comparable to using the template.
 
 Description of steps during development, starting with Docker + RStudio right away.
 
@@ -131,15 +153,11 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_
 docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template
 ```
 
-## (Next) Steps
 
-Getting Started
-Description of the next analysis steps. How to use this package:
 
-1. start by cloning/forking the git repository
-2. use git+github, git lfs, tidyverse and RMarkdown
-3. add Drake Plans to for your Pipeline(s)
-4. (optional) start the RStudio IDE within Docker + use renv
+
+### Limitations
+
 
 
 ### FAQ
