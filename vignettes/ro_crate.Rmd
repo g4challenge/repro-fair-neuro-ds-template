@@ -9,6 +9,8 @@ https://github.com/ResearchObject/ro-crate-py
 
 ```{r}
 library(reticulate)
+library(renv)
+renv::restore()
 knitr::knit_engines$set(python = reticulate::eng_python)
 use_virtualenv("../renv/python/virtualenvs/renv-python-3.9.2/", required=T)
 use_python("../renv/python/virtualenvs/renv-python-3.9.2/bin/python", required=T)

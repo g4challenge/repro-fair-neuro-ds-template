@@ -85,11 +85,24 @@ testthat::test_local("../")
 
 ### Provenance Curation
 
+```{r eval=F}
+drake::clean()
+```
+
 
 ### FAQ
+
 Where should I start my documentation? 
+
+
 How do the various documentations relate to each other? 
+
+
 What adaptations do I have to make? 
+
 How can a prioritize these adaptations? 
+
 What is the minimal set of adaptations that I need to make? 
+
+
 Can I also apply this to other contexts within medicine, or even outside of a medical context or?
