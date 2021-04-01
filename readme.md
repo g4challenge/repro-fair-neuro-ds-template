@@ -46,6 +46,9 @@ In order to document the Clinical Setting - this template recommends to follow t
 
 ## Process
 
+The project template recommends following a defined process with phases plan, action, validation, organization and curation.
+
+Use the `pull_request_template.md` file to allow collaborators for a standard approach in approaching the merge requests.
 
 
 ## Dataset(s)
@@ -59,6 +62,8 @@ The template is configured to store data within the code repository in the folde
 The code of this repsoitory resides in a git-version controlled repository and utilizes tests with testthat and roxytest.
 
 [reproducibleFairTemplate - GitHub](https://github.com/g4challenge/repro-fair-neuro-ds-template)
+
+Good Code Style should be enforced using e.g. `lintr:::addin_lint_package()`.
 
 ## Execution - Reproduction steps
 

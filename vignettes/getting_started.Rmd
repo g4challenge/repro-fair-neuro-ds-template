@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+author: "Lukas Huber"
 output: html_notebook
 ---
 
@@ -82,11 +83,16 @@ testthat::test_local("../")
 
 ### Complete Provenance
 
+```{r eval=F}
+rdtLite::prov.run("../R/make.R", prov.dir="../.prov/")
+```
+
 
 ### Provenance Curation
 
 ```{r eval=F}
-drake::clean()
+drake::clean() #clean the cache to force rebuild
+drake::clean(destroy=TRUE) # clean cache and curate "one" clean run in the drake cache.
 ```
 
 
