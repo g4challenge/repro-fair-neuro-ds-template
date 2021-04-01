@@ -142,6 +142,7 @@
 <div id="code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code" class="anchor"></a>Code</h2>
+<p>The code of this repsoitory resides in a git-version controlled repository and utilizes tests with testthat and roxytest.</p>
 <p><a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">reproducibleFairTemplate - GitHub</a></p>
 </div>
 <div id="execution---reproduction-steps" class="section level2">
@@ -150,7 +151,7 @@
 <p>In order to reproduce the results from the template and example scenarios, you need to have docker installed on your machine.</p>
 <p><a href="https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template">repro-fair-neuro-ds-template - Dockerhub</a></p>
 <p>First get the image built within this repository, as it contains all dependencies and elements used within this work:</p>
-<p><code>docker pull g4challenge/repro-fair-neuro-ds-template</code></p>
+<p><code>docker pull docker.io/g4challenge/repro-fair-neuro-ds-template</code></p>
 <p>After the download is completed, the container of the image can be started using:</p>
 <p><code>docker run -e PASSWORD=12345 -p 8787:8787 docker.io/g4challenge/repro-fair-neuro-ds-template</code></p>
 <p>Then open your browser and enter the address <a href="http://localhost:8787" class="uri">http://localhost:8787</a>. Use user <code>rstudio</code> and the set PASSWORD (e.g. <code>12345</code>) to log into the environment.</p>
@@ -158,6 +159,9 @@
 <p>Open the project and project file (red rectangle) to launch the project.</p>
 <p>The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable.</p>
 <p>The main specification is found in <a href="https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/drake_specification.html">drake_spec</a></p>
+<p>The run of <code>vignettes/scenario_1.Rmd</code> - can be tested with the output and history.</p>
+<p><img src="reference/figures/scenario_1.png"></p>
+<p>Thereby, it is testable, if the results, the versioned drake history, and a new run result in the same results.</p>
 </div>
 <div id="results" class="section level2">
 <h2 class="hasAnchor">
