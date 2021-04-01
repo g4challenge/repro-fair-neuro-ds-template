@@ -68,42 +68,25 @@ The template is configured to store data within the code repository in the folde
 
 [reproducibleFairTemplate - GitHub](https://github.com/g4challenge/repro-fair-neuro-ds-template)
 
-## Execution - Dev-Steps Getting Started (technical)
+## Execution - Reproduction steps
+
+In order to reproduce the results from the template and example scenarios, you need to have docker installed on your machine.
 
 [repro-fair-neuro-ds-template - Dockerhub](https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template)
 
-Description of steps during development, starting with Docker + RStudio right away.
+First get the image built within this repository, as it contains all dependencies and elements used within this work:
 
-1. clone this template
+`docker pull g4challenge/repro-fair-neuro-ds-template`
 
-```
-git clone https://github.com/g4challenge/repro-fair-neuro-ds-template
-```
+After the download is completed, the container of the image can be started using:
 
-2. within the git repository, start the docker container:
+`docker run -e PASSWORD=12345 -p 8787:8787 docker.io/g4challenge/repro-fair-neuro-ds-template` 
 
-```
-docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project 
-```
+Then open your browser and enter the address http://localhost:8787. Use user `rstudio` and the set PASSWORD (e.g. `12345`) to log into the environment.
 
-3. open your browser at http://localhost:8787 
+![](man/figures/rstudio_overview.png)
 
-4. login using user=`rstudio` password=`1234`
-
-5. click open on the .rproj file.
-
-6. Start using the project, adapt it to your needs + change the git remote
-
-
-- Local Docker build
-    
-    docker build . -t my_fair_project
-
-- Local Docker run with default user `rstudio` and PASSWORD="1234" - use different password
-
-```
-docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template
-```
+Open the project and project file (red rectangle) to launch the project.
 
 The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable. 
 

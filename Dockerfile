@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   curl \
   zip \
   libharfbuzz-dev \
-  libfribidi-dev
+  libfribidi-dev \
+  python3-venv
 
 USER rstudio
 ENV RSESSION_PROXY_RSTUDIO_1_4=yes
