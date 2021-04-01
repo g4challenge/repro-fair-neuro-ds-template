@@ -3,8 +3,9 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   drake_specification: drake_specification.html
+  getting_started: getting_started.html
   ro_crate: ro_crate.html
   scenario_1: scenario_1.html
   trace-rm: trace-rm.html
-last_built: 2021-03-22T07:03Z
+last_built: 2021-04-01T08:10Z
 

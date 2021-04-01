@@ -58,6 +58,9 @@
       <a href="articles/drake_specification.html">drake_specification</a>
     </li>
     <li>
+      <a href="articles/getting_started.html">Getting Started</a>
+    </li>
+    <li>
       <a href="articles/ro_crate.html">RO-Crate Vignette</a>
     </li>
     <li>
@@ -100,10 +103,11 @@
 <h2 class="hasAnchor">
 <a href="#context" class="anchor"></a>Context</h2>
 <p>This template can serve as common starting point for traceable analyses in observational clinical research.</p>
+<p>The user should utilize R and Tidyverse.</p>
 <p><img src="reference/figures/overview_architecture.png"></p>
 <div id="trace-rm" class="section level3">
 <h3 class="hasAnchor">
-<a href="#trace-rm" class="anchor"></a><a href="docs/articles/trace-rm.html">TRACE-RM</a>
+<a href="#trace-rm" class="anchor"></a><a href="https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/trace-rm.html">TRACE-RM</a>
 </h3>
 </div>
 </div>
@@ -113,9 +117,15 @@
 <p><a href="https://g4challenge.github.io/repro-fair-neuro-ds-template/">GitHub Pages pkgdown</a></p>
 <p>This template sets up a reproducible, aimed at FAIR environment for data science. It is possible to use it in different levels of reproducibility. It uses Docker, R, RMarkdown, Git, drake, mandrake, pkgdown, roxygen, roxytest and Github Actions.</p>
 <p>The template is aimed at collaborators with technical and non-technical backgrounds, while the minimum requirement to run it, is having docker installed.</p>
-<p>Background Rationale(STROBE02) Objectives (STROBE03) Study Design (STROBE04) Setting (STROBE05) Participants (STROBE06)</p>
-<p>Variables (STROBE07)</p>
-<p>Data Sources/Measurement (STROBE08)</p>
+<ul>
+<li>Background Rationale(STROBE02)</li>
+<li>Objectives (STROBE03)</li>
+<li>Study Design (STROBE04)</li>
+<li>Setting (STROBE05)</li>
+<li>Participants (STROBE06)</li>
+<li>Variables (STROBE07)</li>
+<li>Data Sources/Measurement (STROBE08)</li>
+</ul>
 </div>
 <div id="process" class="section level2">
 <h2 class="hasAnchor">
@@ -124,7 +134,7 @@
 <div id="next-steps" class="section level2">
 <h2 class="hasAnchor">
 <a href="#next-steps" class="anchor"></a>(Next) Steps</h2>
-<p>Description of the next analysis steps. How to use this package:</p>
+<p>Getting Started Description of the next analysis steps. How to use this package:</p>
 <ol>
 <li>start by cloning/forking the git repository</li>
 <li>use git+github, git lfs, tidyverse and RMarkdown</li>
@@ -140,12 +150,12 @@
 <div id="code" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code" class="anchor"></a>Code</h2>
-<p><a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">GitHub reproducibleFairTemplate</a></p>
+<p><a href="https://github.com/g4challenge/repro-fair-neuro-ds-template">reproducibleFairTemplate - GitHub</a></p>
 </div>
 <div id="execution---dev-steps-getting-started-technical" class="section level2">
 <h2 class="hasAnchor">
 <a href="#execution---dev-steps-getting-started-technical" class="anchor"></a>Execution - Dev-Steps Getting Started (technical)</h2>
-<p><a href="https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template">repro-fair-neuro-ds-template Dockerhub</a></p>
+<p><a href="https://hub.docker.com/repository/docker/g4challenge/repro-fair-neuro-ds-template">repro-fair-neuro-ds-template - Dockerhub</a></p>
 <p>Description of steps during development, starting with Docker + RStudio right away.</p>
 <ol>
 <li>clone this template</li>
@@ -170,12 +180,16 @@
 </ul>
 <pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template</code></pre>
 <p>The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable.</p>
-<p>The main specification is found in <a href="drake_spec.Rmd">drake_spec</a></p>
+<p>The main specification is found in <a href="https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/drake_specification.html">drake_spec</a></p>
 </div>
 <div id="results" class="section level2">
 <h2 class="hasAnchor">
 <a href="#results" class="anchor"></a>Results</h2>
-<p><a href="../ro-crate-preview.html">ROCrate</a></p>
+<p>The research results have associated generated metadata, which can be displayed as HTML or are available as JSON.</p>
+<ul>
+<li><a href="../vignettes/ro-crate-preview.html">reproducible-fair-ROCrate</a></li>
+<li><a href="../vignettes/ro-crate-metadata.json">reproducible-fair-ROCrate-JSON</a></li>
+</ul>
 </div>
 <div id="additional-remarks" class="section level2">
 <h2 class="hasAnchor">
@@ -186,12 +200,14 @@
 <li>Git</li>
 <li>Git(-hub/-lab)</li>
 <li>R(markdown)</li>
-<li>Tidyverse</li>
+<li><a href="https://www.tidyverse.org/">Tidyverse</a></li>
 <li><a href="https://books.ropensci.org/drake/">drake</a></li>
 </ul>
 <p>Alternatives:</p>
 <ul>
 <li><a href="https://github.com/End-to-end-provenance" class="uri">https://github.com/End-to-end-provenance</a></li>
+<li>
+<a href="https://docs.ropensci.org/targets/">targets</a> - successor of drake.</li>
 </ul>
 <p>[ ] <a href="https://github.com/INCF/neuroshapes" class="uri">https://github.com/INCF/neuroshapes</a></p>
 </div>

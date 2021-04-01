@@ -57,6 +57,9 @@
       <a href="../articles/drake_specification.html">drake_specification</a>
     </li>
     <li>
+      <a href="../articles/getting_started.html">Getting Started</a>
+    </li>
+    <li>
       <a href="../articles/ro_crate.html">RO-Crate Vignette</a>
     </li>
     <li>
@@ -101,56 +104,94 @@
 
     
     
-<p><a href="https://github.com/ResearchObject/ro-crate-py" class="uri">https://github.com/ResearchObject/ro-crate-py</a></p>
+<p>This Helper document allows the automatic creation of a research object crate with metadata and especially the link to the author(agent). <a href="https://github.com/ResearchObject/ro-crate-py" class="uri">https://github.com/ResearchObject/ro-crate-py</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/reticulate">reticulate</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/py_install.html">py_install</a></span><span class="op">(</span><span class="st">"rocrate"</span><span class="op">)</span></code></pre></div>
-<pre><code>## Using virtual environment '/Users/runner/work/repro-fair-neuro-ds-template/repro-fair-neuro-ds-template/renv/python/virtualenvs/renv-python-3.9.2' ...</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> rocrate.rocrate <span class="im">import</span> ROCrate</span>
-<span id="cb3-2"><a href="#cb3-2"></a>crate <span class="op">=</span> ROCrate() </span></code></pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/renv/">renv</a></span><span class="op">)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: 'renv'</code></pre>
+<pre><code>## The following object is masked from 'package:reticulate':
+## 
+##     use_python</code></pre>
+<pre><code>## The following object is masked from 'package:stats':
+## 
+##     update</code></pre>
+<pre><code>## The following objects are masked from 'package:utils':
+## 
+##     history, upgrade</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     load, remove</code></pre>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv//reference/restore.html">restore</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## * The library is already synchronized with the lockfile.
+## * The Python library is already up to date.</code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/knit_engines.html">knit_engines</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>python <span class="op">=</span> <span class="fu">reticulate</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/reticulate/man/eng_python.html">eng_python</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/use_python.html">use_virtualenv</a></span><span class="op">(</span><span class="st">"../renv/python/virtualenvs/renv-python-3.9.2/"</span>, required<span class="op">=</span><span class="cn">T</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/use_python.html">use_python</a></span><span class="op">(</span><span class="st">"../renv/python/virtualenvs/renv-python-3.9.2/bin/python"</span><span class="op">)</span></code></pre></div>
+<pre><code>## * Activated Python 3.9.2 [virtualenv; ~/work/repro-fair-neuro-ds-template/repro-fair-neuro-ds-template/renv/python/virtualenvs/renv-python-3.9.2]</code></pre>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/py_config.html">py_config</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<pre><code>## python:         /Users/runner/work/repro-fair-neuro-ds-template/repro-fair-neuro-ds-template/renv/python/virtualenvs/renv-python-3.9.2/bin/python
+## libpython:      /usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib
+## pythonhome:     /Users/runner/work/repro-fair-neuro-ds-template/repro-fair-neuro-ds-template/renv/python/virtualenvs/renv-python-3.9.2:/Users/runner/work/repro-fair-neuro-ds-template/repro-fair-neuro-ds-template/renv/python/virtualenvs/renv-python-3.9.2
+## version:        3.9.2 (default, Mar 25 2021, 03:29:14)  [Clang 12.0.0 (clang-1200.0.32.29)]
+## numpy:           [NOT FOUND]
+## 
+## NOTE: Python version was forced by RETICULATE_PYTHON</code></pre>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/reticulate/man/py_install.html">py_install</a></span><span class="op">(</span><span class="st">"rocrate"</span>, envname <span class="op">=</span> <span class="st">"../renv/python/virtualenvs/renv-python-3.9.2/"</span><span class="op">)</span></code></pre></div>
+<pre><code>## Using Python: /usr/local/Cellar/python@3.9/3.9.2_3/Frameworks/Python.framework/Versions/3.9/bin/python3.9
+## Creating virtual environment '../renv/python/virtualenvs/renv-python-3.9.2/' ... Done!
+## Installing packages: 'pip', 'wheel', 'setuptools', 'numpy'
+## Virtual environment '../renv/python/virtualenvs/renv-python-3.9.2/' successfully created.
+## Using virtual environment '../renv/python/virtualenvs/renv-python-3.9.2/' ...</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">from</span> rocrate.rocrate <span class="im">import</span> ROCrate</span>
+<span id="cb15-2"><a href="#cb15-2"></a>crate <span class="op">=</span> ROCrate() </span></code></pre></div>
 <div id="data-entities" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-entities" class="anchor"></a>Data entities</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">## adding a File entity:</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>raw_file <span class="op">=</span> <span class="st">'../data/raw_data.xlsx'</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>file_entity <span class="op">=</span> crate.add_file(raw_file)</span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># Adding a File entity with a reference to an external (absolute) URI</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#remote_file = crate.add_file('https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga', fetch_remote = False)</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="co"># adding a Dataset</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#sample_dir = '/path/to/dir'</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#dataset_entity = crate.add_directory(sample_dir, 'relative/rocrate/path')</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">## adding a File entity:</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>raw_file <span class="op">=</span> <span class="st">'../data/raw_data.xlsx'</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>file_entity <span class="op">=</span> crate.add_file(raw_file)</span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="co"># Adding a File entity with a reference to an external (absolute) URI</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="co">#remote_file = crate.add_file('https://github.com/ResearchObject/ro-crate-py/blob/master/test/test-data/test_galaxy_wf.ga', fetch_remote = False)</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="co"># adding a Dataset</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="co">#sample_dir = '/path/to/dir'</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="co">#dataset_entity = crate.add_directory(sample_dir, 'relative/rocrate/path')</span></span></code></pre></div>
 </div>
 <div id="contextual-entities" class="section level2">
 <h2 class="hasAnchor">
 <a href="#contextual-entities" class="anchor"></a>Contextual Entities</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> rocrate.model.person <span class="im">import</span> Person</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># Add authors info</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#crate.add(Person(crate, '#lukas', {'name': 'Lukas Huber'}))</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>creator <span class="op">=</span> Person(crate, <span class="st">'001'</span>, {<span class="st">'name'</span>: <span class="st">'Lukas Huber'</span>, <span class="st">"@id"</span>: <span class="st">'https://orcid.org/0000-0001-5443-0290'</span>})</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a>crate.publisher <span class="op">=</span> creator</span>
-<span id="cb5-8"><a href="#cb5-8"></a>crate.creator <span class="op">=</span> [ creator ]</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">from</span> rocrate.model.person <span class="im">import</span> Person</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># Add authors info</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#crate.add(Person(crate, '#lukas', {'name': 'Lukas Huber'}))</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>creator <span class="op">=</span> Person(crate, <span class="st">'001'</span>, {<span class="st">'name'</span>: <span class="st">'Lukas Huber'</span>, <span class="st">"@id"</span>: <span class="st">'https://orcid.org/0000-0001-5443-0290'</span>})</span>
+<span id="cb17-6"><a href="#cb17-6"></a></span>
+<span id="cb17-7"><a href="#cb17-7"></a>crate.publisher <span class="op">=</span> creator</span>
+<span id="cb17-8"><a href="#cb17-8"></a>crate.creator <span class="op">=</span> [ creator ]</span></code></pre></div>
 </div>
 <div id="other-metadata" class="section level2">
 <h2 class="hasAnchor">
 <a href="#other-metadata" class="anchor"></a>Other Metadata</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>crate.license <span class="op">=</span> <span class="st">'GPL-3'</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>crate.isBasedOn <span class="op">=</span> <span class="st">"https://github.com/g4challenge/repro-fair-neuro-ds-template"</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>crate.name <span class="op">=</span> <span class="st">'Reproducible Neuro-Intensive-Care Data Science Project Template'</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>crate.keywords <span class="op">=</span> [<span class="st">'Neurology'</span>, <span class="st">'Data Science'</span>, <span class="st">'Reproducibility'</span>, <span class="st">'Provenance'</span>, <span class="st">'Traceability'</span>]</span>
-<span id="cb6-5"><a href="#cb6-5"></a>crate.image <span class="op">=</span> <span class="st">"drake_workflow.svg"</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>crate.description <span class="op">=</span> <span class="st">"The template for this workflow can be found on GitHub, DockerHub and binder"</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>crate.CreativeWorkStatus <span class="op">=</span> <span class="st">"Maturing"</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>crate.license <span class="op">=</span> <span class="st">'GPL-3'</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>crate.isBasedOn <span class="op">=</span> <span class="st">"https://github.com/g4challenge/repro-fair-neuro-ds-template"</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>crate.name <span class="op">=</span> <span class="st">'Reproducible Neuro-Intensive-Care Data Science Project Template'</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>crate.keywords <span class="op">=</span> [<span class="st">'Neurology'</span>, <span class="st">'Data Science'</span>, <span class="st">'Reproducibility'</span>, <span class="st">'Provenance'</span>, <span class="st">'Traceability'</span>]</span>
+<span id="cb18-5"><a href="#cb18-5"></a>crate.image <span class="op">=</span> <span class="st">"drake_workflow.svg"</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>crate.description <span class="op">=</span> <span class="st">"The template for this workflow can be found on GitHub, DockerHub and binder"</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>crate.CreativeWorkStatus <span class="op">=</span> <span class="st">"Maturing"</span></span></code></pre></div>
 </div>
 <div id="write-file" class="section level2">
 <h2 class="hasAnchor">
 <a href="#write-file" class="anchor"></a>write File</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># write crate to disk</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>out_path <span class="op">=</span> <span class="st">"../"</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>crate.write_crate(out_path)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># write crate to disk</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>out_path <span class="op">=</span> <span class="st">"./"</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>crate.write_crate(out_path)</span></code></pre></div>
 </div>
   </div>
 
