@@ -90,6 +90,41 @@ drake::clean()
 ```
 
 
+### Development Steps
+
+Description of steps during development, starting with Docker + RStudio right away.
+
+1. clone this template
+
+```
+git clone https://github.com/g4challenge/repro-fair-neuro-ds-template
+```
+
+2. within the git repository, start the docker container:
+
+```
+docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project 
+```
+
+3. open your browser at http://localhost:8787 
+
+4. login using user=`rstudio` password=`1234`
+
+5. click open on the .rproj file.
+
+6. Start using the project, adapt it to your needs + change the git remote
+
+
+- Local Docker build
+    
+    docker build . -t my_fair_project
+
+- Local Docker run with default user `rstudio` and PASSWORD="1234" - use different password
+
+```
+docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template
+```
+
 ### FAQ
 
 Where should I start my documentation? 

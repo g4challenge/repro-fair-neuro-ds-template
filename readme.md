@@ -95,8 +95,8 @@ The main specification is found in [drake_spec](https://g4challenge.github.io/re
 ## Results
 The research results have associated generated metadata, which can be displayed as HTML or are available as JSON.
 
-- [reproducible-fair-ROCrate](../vignettes/ro-crate-preview.html)
-- [reproducible-fair-ROCrate-JSON](../vignettes/ro-crate-metadata.json)
+- [reproducible-fair-ROCrate](https://g4challenge.github.io/repro-fair-neuro-ds-template/reference/ro-crate-preview.html)
+- [reproducible-fair-ROCrate-JSON](https://g4challenge.github.io/repro-fair-neuro-ds-template/reference/ro-crate-metadata.json)
     
 ## Additional Remarks
 
