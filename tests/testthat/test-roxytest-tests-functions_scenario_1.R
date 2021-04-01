@@ -3,7 +3,6 @@
 context("File R/functions_scenario_1.R: @tests")
 
 test_that("Function import_data() @ L17", {
-  expect_s3_class(import_data("test", "../../data/raw_data.xlsx"),
-                  "data.frame")
+  expect_s3_class(import_data("test", "../../data/raw_data.xlsx"),  "data.frame")
 })
 

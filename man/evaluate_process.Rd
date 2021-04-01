@@ -2,16 +2,16 @@
 % Please edit documentation in R/functions_scenario_1.R
 \name{evaluate_process}
 \alias{evaluate_process}
-\title{Title}
+\title{Evaluate the made analysis}
 \usage{
 evaluate_process(analysis)
 }
 \arguments{
-\item{analysis}{}
+\item{analysis}{made before}
 }
 \value{
 
 }
 \description{
-Title
+Evaluate the made analysis
 }

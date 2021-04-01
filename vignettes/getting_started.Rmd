@@ -4,7 +4,6 @@ author: "Lukas Huber"
 output: html_notebook
 ---
 
-
 ## Introduction
 
 There are two main ways to use this template:
@@ -156,23 +155,38 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challe
 
 
 
-### Limitations
+### Known Limitations
 
+- Currently, not all Versions are Working
+- Binder: Rsession-proxy has challenges with R 4.0.3 – unresolved
+- Renv: in continous integration, Python environments are not restored
+- Provenance Integration – rdtLite not fully working
+- [NeuroShapes](https://github.com/INCF/neuroshapes) INCF neuroshapes for defined data format - Common Data model.
 
 
 ### FAQ
 
-Where should I start my documentation? 
+Q: "Where should I start my documentation?"
+
+A: start with the `Readme.md` with the base context and efforts involved in your project. Then if necessary adapt and change the vignettes to your projects implementation.
 
 
-How do the various documentations relate to each other? 
+Q: How do the various documentations relate to each other? 
+
+A: The readme serves as starting and entrypoint, while the main documentation by `pkgdown` is hosted as github page. There, all function documentation and vignettes are rendered and described.
 
 
-What adaptations do I have to make? 
+Q: What adaptations do I have to make? 
 
-How can a prioritize these adaptations? 
+A: Ideally, you adapt/fork the template and start by clicking on "use this template" in GitHub. There a new traceable analysis project is created. You need to maintain Links to **GitHub Pages, Zenodo and DockerHub** by yourself. 
 
-What is the minimal set of adaptations that I need to make? 
+Q: How can a prioritize these adaptations? 
+
+A: You start by the most pressing needs first - getting the template externally working. Priority one is fixing the traces and validating these.
+
+Q: What is the minimal set of adaptations that I need to make? 
+
+A: Minimal is readme, links and the vignettes folder cleaning with one drake_spec, one function.R, one packages.R, one plan.R and finally one docker build. Then your analysis is version controlled and mostly traceable with comparatively low effort.
 
 
 Can I also apply this to other contexts within medicine, or even outside of a medical context or?

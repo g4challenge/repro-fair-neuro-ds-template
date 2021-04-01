@@ -5,7 +5,9 @@ output: html_document
 ---
 
 
-Run `make.R` to generate the output `report.pdf` and its dependencies. Because we use `loadd()` and `readd()` below, `drake` knows `report.pdf` depends on targets `fit`, and `hist`.
+Run `make.R` to generate the output `report.html` and its dependencies. 
+
+Because of the use of `loadd()` and `readd()` below, `drake` knows `report.report` depends on targets `sc1_interim_data`.
 
 ```{r content}
 library(drake)

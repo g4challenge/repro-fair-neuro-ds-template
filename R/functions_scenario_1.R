@@ -14,7 +14,7 @@
 #' @return imported data
 #' @export
 #'
-import_data = function(question, file) {
+import_data <- function(question, file) {
   dataset <-  read_excel(file)
   return(dataset)
 }
@@ -44,7 +44,7 @@ make_analysis <- function(data, notebook_file) {
 #' @export
 #'
 #' @examples
-evaluate_process <- function(analysis){
+evaluate_process <- function(analysis) {
   # check plot
   #
 }

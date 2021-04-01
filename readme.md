@@ -17,6 +17,16 @@ https://orcid.org/0000-0001-5443-0290
 ## Context
 This template can serve as common starting point for traceable analyses in observational clinical research.
 
+The projects created with this template should be:
+
+- Versioned
+- Identified
+- Linked
+- Documented
+- Tested
+- FAIR
+
+
 The user should utilize R and Tidyverse.
 
 

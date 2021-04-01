@@ -2,16 +2,18 @@
 % Please edit documentation in R/functions_scenario_1.R
 \name{make_analysis}
 \alias{make_analysis}
-\title{Title}
+\title{The analysis makes a report, in the example case a visualization of cpp}
 \usage{
-make_analysis(data)
+make_analysis(data, notebook_file)
 }
 \arguments{
-\item{data}{}
+\item{data}{returned from import data}
+
+\item{notebook_file}{the report file which is knitted}
 }
 \value{
 
 }
 \description{
-Title
+The analysis makes a report, in the example case a visualization of cpp
 }

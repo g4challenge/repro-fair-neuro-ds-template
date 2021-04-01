@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions_scenario_1.R
 \name{export_result}
 \alias{export_result}
-\title{Title}
+\title{Export the Result artifact}
 \usage{
 export_result(evaluated_process)
 }
@@ -10,5 +10,5 @@ export_result(evaluated_process)
 
 }
 \description{
-Title
+Export the Result artifact
 }
