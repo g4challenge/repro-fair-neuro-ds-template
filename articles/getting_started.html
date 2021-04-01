@@ -194,7 +194,9 @@
 ✔ |   1       | File R/functions.R: @tests
 ## 
 ## ══ Results ═════════════════════════════════════════════════════════════════════
-## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]</code></pre>
+## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
+## 
+## You are a coding rockstar!</code></pre>
 </div>
 <div id="complete-provenance" class="section level3">
 <h3 class="hasAnchor">
@@ -205,6 +207,33 @@
 <a href="#provenance-curation" class="anchor"></a>Provenance Curation</h3>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="development-steps" class="section level3">
+<h3 class="hasAnchor">
+<a href="#development-steps" class="anchor"></a>Development Steps</h3>
+<p>Description of steps during development, starting with Docker + RStudio right away.</p>
+<ol style="list-style-type: decimal">
+<li>clone this template</li>
+</ol>
+<pre><code>git clone https://github.com/g4challenge/repro-fair-neuro-ds-template</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>within the git repository, start the docker container:</li>
+</ol>
+<pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_project </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>open your browser at <a href="http://localhost:8787" class="uri">http://localhost:8787</a></p></li>
+<li><p>login using user=<code>rstudio</code> password=<code>1234</code></p></li>
+<li><p>click open on the .rproj file.</p></li>
+<li><p>Start using the project, adapt it to your needs + change the git remote</p></li>
+</ol>
+<ul>
+<li>
+<p>Local Docker build</p>
+<p>docker build . -t my_fair_project</p>
+</li>
+<li><p>Local Docker run with default user <code>rstudio</code> and PASSWORD=“1234” - use different password</p></li>
+</ul>
+<pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template</code></pre>
 </div>
 <div id="faq" class="section level3">
 <h3 class="hasAnchor">
