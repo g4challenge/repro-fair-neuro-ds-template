@@ -25,37 +25,39 @@ import_data <- function(question, file) {
 #' @param data returned from import data
 #' @param notebook_file the report file which is knitted
 #'
-#' @return
+#' @return TRUE or result code
 #' @export
 #'
-#' @examples
 make_analysis <- function(data, notebook_file) {
 
   # knit notebook
 
   # check - successful
+  return(TRUE)
 }
 
 #' Evaluate the made analysis
 #'
 #' @param analysis made before
 #'
-#' @return
+#' @return TRUE if succesful
 #' @export
 #'
-#' @examples
 evaluate_process <- function(analysis) {
   # check plot
   #
+  return(TRUE)
 }
 
 #' Export the Result artifact
 #'
-#' @return
+#' @param if process was evaluated succesful
+#'
+#' @return TRUE as stub
 #' @export
 #'
-#' @examples
 export_result <- function(evaluated_process) {
   # create output files
   # capture metadata
+  return(TRUE)
 }

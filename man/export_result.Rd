@@ -6,8 +6,11 @@
 \usage{
 export_result(evaluated_process)
 }
+\arguments{
+\item{if}{process was evaluated succesful}
+}
 \value{
-
+TRUE as stub
 }
 \description{
 Export the Result artifact

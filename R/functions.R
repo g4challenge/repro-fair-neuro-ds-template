@@ -20,16 +20,16 @@ my_function <- function(input) {
 }
 
 
-#' Create Histogram with Mapping Ozone and Binwidth = 10
+#' Create Histogram of a named variable
 #'
-#' @param data
+#' @param data tibble to be utilized
+#' @param variable name of the variable to be plotted
 #'
 #' @return ggplot object
 #' @export
 #'
-#' @examples
-create_plot <- function(data) {
+create_plot <- function(data, variable) {
   ggplot(data) +
-    geom_histogram(aes(x = timestamp), binwidth = 10) +
+    geom_histogram(aes(x = variable), binwidth = 10) +
     theme_gray(24)
 }

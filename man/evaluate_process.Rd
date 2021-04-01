@@ -10,7 +10,7 @@ evaluate_process(analysis)
 \item{analysis}{made before}
 }
 \value{
-
+TRUE if succesful
 }
 \description{
 Evaluate the made analysis

@@ -12,7 +12,7 @@ make_analysis(data, notebook_file)
 \item{notebook_file}{the report file which is knitted}
 }
 \value{
-
+TRUE or result code
 }
 \description{
 The analysis makes a report, in the example case a visualization of cpp
