@@ -56,6 +56,7 @@ The template is configured to store data within the code repository in the folde
 
 ## Code
 
+The code of this repsoitory resides in a git-version controlled repository and utilizes tests with testthat and roxytest.
 
 [reproducibleFairTemplate - GitHub](https://github.com/g4challenge/repro-fair-neuro-ds-template)
 
@@ -67,7 +68,7 @@ In order to reproduce the results from the template and example scenarios, you n
 
 First get the image built within this repository, as it contains all dependencies and elements used within this work:
 
-`docker pull g4challenge/repro-fair-neuro-ds-template`
+`docker pull docker.io/g4challenge/repro-fair-neuro-ds-template`
 
 After the download is completed, the container of the image can be started using:
 
@@ -82,6 +83,12 @@ Open the project and project file (red rectangle) to launch the project.
 The statistical methods are denoted as drake specification. The analysis is traceable and computationally reproducable. 
 
 The main specification is found in [drake_spec](https://g4challenge.github.io/repro-fair-neuro-ds-template/articles/drake_specification.html)
+
+The run of `vignettes/scenario_1.Rmd` - can be tested with the output and history.
+
+![](man/figures/scenario_1.png)
+
+Thereby, it is testable, if the results, the versioned drake history, and a new run result in the same results.
     
 ## Results
 The research results have associated generated metadata, which can be displayed as HTML or are available as JSON.
