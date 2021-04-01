@@ -3,16 +3,8 @@ title: "Getting Started"
 output: html_notebook
 ---
 
-Remarks on outline:
-Where should I start my documentation? 
-How do the various documentations relate to each other? 
-What adaptations do I have to make? 
-How can a prioritize these adaptations? 
-What is the minimal set of adaptations that I need to make? 
-Can I also apply this to other contexts within medicine, or even outside of a medical context or?
 
-
-## Getting Started
+## Introduction
 
 There are two main ways to use this template:
 
@@ -20,6 +12,18 @@ There are two main ways to use this template:
 - As a reference. In that case, you use the project template and parts as reference.
 
 In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility.
+
+
+
+
+
+
+## Prerequisites
+
+
+
+## Getting Started
+
 
 In order to start with your reproducible Project use the following steps to get the template running:
 
@@ -76,3 +80,16 @@ The file is in `vignettes/scenario_1.Rmd`, it utilizes `R/packages.R"` for packa
 testthat::test_local("../")
 ```
 
+### Complete Provenance
+
+
+### Provenance Curation
+
+
+### FAQ
+Where should I start my documentation? 
+How do the various documentations relate to each other? 
+What adaptations do I have to make? 
+How can a prioritize these adaptations? 
+What is the minimal set of adaptations that I need to make? 
+Can I also apply this to other contexts within medicine, or even outside of a medical context or?

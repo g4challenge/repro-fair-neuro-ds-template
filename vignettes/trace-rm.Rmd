@@ -1,5 +1,6 @@
 ---
 title: "TRACE-RM"
+author: "Lukas Huber"
 output: html_notebook
 ---
 
