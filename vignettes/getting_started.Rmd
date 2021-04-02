@@ -152,7 +152,16 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio my_fair_
 docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template
 ```
 
+### Release Curation
 
+- Version the `DESCRIPTION` file
+- Write the `News.md` file
+- Build the Package
+- Create a signed and tagged Git Commit `git tag -s v1.5 -m 'my signed 1.5 tag'`
+- Push the release `git push origin main`
+- Validate Documentation (the pkgdown action must complete)
+- Tag the DockerHub Image `docker tag`
+- Validate Zenodo Publication
 
 
 ### Known Limitations

@@ -28,19 +28,22 @@ plan <- drake_plan(
 
 #' Plan of scenario_1
 #' @export
-scenario_1 <- drake_plan(
-  sc1_question = "string that defines hypothesis - example: get the cpp values from different patients, which are stored in triplets",
-  sc1_data = import_data(sc1_question, file_in("data/raw_data.xlsx")),
-  # calculate cpp
-  sc1_interim_data = sc1_data %>% mutate(cpp = MAP - ICP),
-  sc1_analysis = {
-    rmarkdown::render(
-    knitr_in("notebooks/report.Rmd"),
-    output_file = "report.html",
-    quiet = TRUE
-    )
-    file_out("notebooks/report.html")
+scenario_1_wrapper <- function(){
+  scenario_1 <- drake_plan(
+    sc1_question = "string that defines hypothesis - example: get the cpp values from different patients, which are stored in triplets",
+    sc1_data = import_data(sc1_question, file_in("data/raw_data.xlsx")),
+    # calculate cpp
+    sc1_interim_data = sc1_data %>% mutate(cpp = MAP - ICP),
+    sc1_analysis = {
+      rmarkdown::render(
+        knitr_in("notebooks/report.Rmd"),
+        output_file = "report.html",
+        quiet = TRUE
+      )
+      file_out("notebooks/report.html")
     },
-  sc1_evaluation_process = evaluate_process(sc1_analysis),
-  sc1_result = export_result(sc1_evaluation_process)
-)
+    sc1_evaluation_process = evaluate_process(sc1_analysis),
+    sc1_result = export_result(sc1_evaluation_process)
+  )
+  return(scenario_1)
+}

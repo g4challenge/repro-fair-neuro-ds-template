@@ -23,7 +23,7 @@ source("R/plan.R")
 
 
 ```{r}
-make(scenario_1)
+make(scenario_1_wrapper())
 ```
 
 ```{r}
@@ -31,6 +31,6 @@ drake_history()
 ```
 
 ```{r}
-vis_drake_graph(scenario_1)
+vis_drake_graph(scenario_1_wrapper())
 ```
 
