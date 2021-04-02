@@ -1,4 +1,9 @@
 
+
+# reproducibleFairTemplate 0.3.0
+
+- fixes for pkgdown
+
 # reproducibleFairTemplate 0.2.0
 
 - embedded Getting Started
