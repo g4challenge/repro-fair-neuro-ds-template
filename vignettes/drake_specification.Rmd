@@ -24,7 +24,7 @@ source("R/plan.R")
 The first line of the following chunk forces a re-run of the whole drake workflow - comment it to see, if drake validates the current step.
 
 ```{r}
-#drake::clean()
+drake::clean()
 drake::make(plan)
 ```
 
