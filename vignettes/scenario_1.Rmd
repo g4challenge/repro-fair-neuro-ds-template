@@ -3,11 +3,15 @@ title: "Scenario 1"
 output: html_notebook
 ---
 
+This notebook handles the rendering of scenario_1 - which is a simple case of a hypotheses - import dataset - transform dataset - generate report and evaluate the process and result.
+
 ```{r setup}
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
 
 # Question
+
+The simulated hypotheses is to generate a CPP(cerebral perfusion pressure) based on raw_data. The following chunk instantiates packages, functions and plans.
 
 ```{r}
 source("R/packages.R")
@@ -16,14 +20,18 @@ source("R/functions_scenario_1.R")
 source("R/plan.R")
 ```
 
+In order to avoid errors - the drake cache is cleaned.
+
 ```{r}
+drake::clean()
 # check file existing
 #file.exists("data/raw_data.xlsx")
 ```
 
+The `scenario_1_wrapper`-function returns the instantiated scenario_1 drake "tibble".
 
 ```{r}
-make(scenario_1_wrapper())
+drake::make(scenario_1_wrapper())
 ```
 
 ```{r}
