@@ -16,6 +16,7 @@ source("R/plan.R")
 ```
 
 ```{r}
+drake::clean()
 make(plan)
 ```
 
