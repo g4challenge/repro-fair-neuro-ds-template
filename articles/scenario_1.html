@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reproducibleFairTemplate</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -105,11 +105,13 @@
 
     
     
+<p>This notebook handles the rendering of scenario_1 - which is a simple case of a hypotheses - import dataset - transform dataset - generate report and evaluate the process and result.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_knit.html">opts_knit</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>root.dir <span class="op">=</span> <span class="fu">rprojroot</span><span class="fu">::</span><span class="fu"><a href="https://rprojroot.r-lib.org//reference/find_root_file.html">find_rstudio_root_file</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div id="question" class="section level1">
 <h1 class="hasAnchor">
 <a href="#question" class="anchor"></a>Question</h1>
+<p>The simulated hypotheses is to generate a CPP(cerebral perfusion pressure) based on raw_data. The following chunk instantiates packages, functions and plans.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R/packages.R"</span><span class="op">)</span></code></pre></div>
 <pre><code>## The following packages were not previously loaded:
@@ -118,32 +120,40 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R/functions.R"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R/functions_scenario_1.R"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R/plan.R"</span><span class="op">)</span></code></pre></div>
+<p>In order to avoid errors - the drake cache is cleaned.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># check file existing</span>
+<code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co"># check file existing</span>
 <span class="co">#file.exists("data/raw_data.xlsx")</span></code></pre></div>
+<p>The <code>scenario_1_wrapper</code>-function returns the instantiated scenario_1 drake “tibble”.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">make</span><span class="op">(</span><span class="va">scenario_1</span><span class="op">)</span></code></pre></div>
-<pre><code>## ✔ All targets are already up to date.</code></pre>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/make.html">make</a></span><span class="op">(</span><span class="fu"><a href="../reference/scenario_1_wrapper.html">scenario_1_wrapper</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>## ▶ target sc1_question</code></pre>
+<pre><code>## ▶ target sc1_data</code></pre>
+<pre><code>## ▶ target sc1_interim_data</code></pre>
+<pre><code>## ▶ target sc1_analysis</code></pre>
+<pre><code>## ▶ target sc1_evaluation_process</code></pre>
+<pre><code>## ▶ target sc1_result</code></pre>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">drake_history</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## # A tibble: 40 x 11
-##    target  current built    exists hash  command        seed runtime na.rm quiet
-##    &lt;chr&gt;   &lt;lgl&gt;   &lt;chr&gt;    &lt;lgl&gt;  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;   &lt;dbl&gt; &lt;lgl&gt; &lt;lgl&gt;
-##  1 analys… TRUE    2021-02… TRUE   c85d… "make_analy… 1.77e8  0      NA    NA   
-##  2 data    FALSE   2020-07… TRUE   11e2… "raw_data %… 1.29e9  0.003  TRUE  NA   
-##  3 data    FALSE   2021-02… TRUE   855d… "import_dat… 1.29e9  0.0200 NA    NA   
-##  4 data    FALSE   2021-02… TRUE   855d… "import_dat… 1.29e9  0.014  NA    NA   
-##  5 data    FALSE   2021-02… TRUE   855d… "import_dat… 1.29e9  0.026  NA    NA   
-##  6 data    FALSE   2021-02… TRUE   11e2… "raw_data %… 1.29e9  0.012  TRUE  NA   
-##  7 data    FALSE   2021-02… TRUE   11e2… "raw_data %… 1.29e9  0.0110 TRUE  NA   
-##  8 data    FALSE   2021-02… TRUE   11e2… "raw_data %… 1.29e9  0.01   TRUE  NA   
-##  9 data    FALSE   2021-02… TRUE   855d… "import_dat… 1.29e9  0.012  NA    NA   
-## 10 data    FALSE   2021-02… TRUE   11e2… "raw_data %… 1.29e9  0.0100 TRUE  NA   
-## # … with 30 more rows, and 1 more variable: output_file &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">vis_drake_graph</span><span class="op">(</span><span class="va">scenario_1</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-d6b28bb3bf5451291dfb" style="width:700px;height:432.632880098888px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d6b28bb3bf5451291dfb">{"x":{"nodes":{"id":["n-OJWWC4TLMRXXO3R2HJZGK3TEMVZA","p-NZXXIZLCN5XWW4ZPOJSXA33SOQXFE3LE","export_result","evaluate_process","sc1_question","import_data","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","sc1_data","sc1_interim_data","sc1_analysis","sc1_evaluation_process","p-N52XI4DVOQXXEZLQN5ZHILTIORWWY","sc1_result"],"imported":[true,true,true,true,false,true,true,false,false,false,false,false,false],"label":["rmarkdown::render","file notebooks/report.Rmd","export_result","evaluate_process","sc1_question\n0.006s","import_data","file data/raw_data.xlsx","sc1_data\n0.052s","sc1_interim_data\n0.013s","sc1_analysis\n0.679s","sc1_evaluation_process\n0.007s","file output/report.html","sc1_result\n0.006s"],"status":["imported","imported","imported","imported","up to date","imported","imported","up to date","up to date","up to date","up to date","up to date","up to date"],"type":["function","file","function","function","object","function","file","object","object","object","object","file","object"],"font.size":[20,20,20,20,20,20,20,20,20,20,20,20,20],"color":["#1874CD","#1874CD","#1874CD","#1874CD","#228B22","#1874CD","#1874CD","#228B22","#228B22","#228B22","#228B22","#228B22","#228B22"],"shape":["triangle","square","triangle","triangle","dot","triangle","square","dot","dot","dot","dot","square","dot"],"level":[1,1,1,1,1,1,1,2,3,4,5,5,6],"x":[-1,-1,-1,-1,-1,-1,-1,-0.6,-0.2,0.2,0.6,0.6,1],"y":[-1,-0.666666666666667,-0.333333333333333,0,0.333333333333333,0.666666666666667,1,0,0,0,-0.444444444444445,0.444444444444444,0]},"edges":{"from":["n-OJWWC4TLMRXXO3R2HJZGK3TEMVZA","sc1_interim_data","p-NZXXIZLCN5XWW4ZPOJSXA33SOQXFE3LE","sc1_analysis","sc1_analysis","export_result","evaluate_process","sc1_question","import_data","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","sc1_evaluation_process","sc1_data"],"to":["sc1_analysis","sc1_analysis","sc1_analysis","sc1_evaluation_process","p-N52XI4DVOQXXEZLQN5ZHILTIORWWY","sc1_result","sc1_evaluation_process","sc1_data","sc1_data","sc1_data","sc1_result","sc1_interim_data"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"interaction":{"navigationButtons":true},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"Dependency graph","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":false,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"left","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Imported","Object","Function","File"],"color":["#228B22","#1874CD","#888888","#888888","#888888"],"shape":["dot","dot","dot","triangle","square"],"font.color":["black","black","black","black","black"],"font.size":[20,20,20,20,20],"id":[1,6,8,10,11]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
+<pre><code>## # A tibble: 26 x 10
+##    target  current built exists hash  command     seed runtime quiet output_file
+##    &lt;chr&gt;   &lt;lgl&gt;   &lt;chr&gt; &lt;lgl&gt;  &lt;chr&gt; &lt;chr&gt;      &lt;int&gt;   &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt;      
+##  1 data    FALSE   2021… NA     &lt;NA&gt;   &lt;NA&gt;    NA      NA      NA    &lt;NA&gt;       
+##  2 data    FALSE   2021… TRUE   aed3… "raw_da…  1.29e9  0.0130 NA    &lt;NA&gt;       
+##  3 raw_da… FALSE   2021… NA     &lt;NA&gt;   &lt;NA&gt;    NA      NA      NA    &lt;NA&gt;       
+##  4 raw_da… FALSE   2021… TRUE   53c9… "readxl…  1.20e9  0.016  NA    &lt;NA&gt;       
+##  5 sc1_an… FALSE   2021… NA     &lt;NA&gt;   &lt;NA&gt;    NA      NA      NA    &lt;NA&gt;       
+##  6 sc1_an… TRUE    2021… TRUE   7855… "{\n   …  2.72e7  1.06   TRUE  report.html
+##  7 sc1_an… FALSE   2021… NA     &lt;NA&gt;   &lt;NA&gt;    NA      NA      NA    &lt;NA&gt;       
+##  8 sc1_da… FALSE   2021… NA     &lt;NA&gt;   &lt;NA&gt;    NA      NA      NA    &lt;NA&gt;       
+##  9 sc1_da… FALSE   2021… NA     &lt;NA&gt;   &lt;NA&gt;    NA      NA      NA    &lt;NA&gt;       
+## 10 sc1_da… TRUE    2021… TRUE   53c9… "import…  1.71e9  0.014  NA    &lt;NA&gt;       
+## # … with 16 more rows</code></pre>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">vis_drake_graph</span><span class="op">(</span><span class="fu"><a href="../reference/scenario_1_wrapper.html">scenario_1_wrapper</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div id="htmlwidget-43b97748e7cbbc9bf8bb" style="width:700px;height:432.632880098888px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43b97748e7cbbc9bf8bb">{"x":{"nodes":{"id":["n-OJWWC4TLMRXXO3R2HJZGK3TEMVZA","p-NZXXIZLCN5XWW4ZPOJSXA33SOQXFE3LE","export_result","evaluate_process","sc1_question","import_data","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","sc1_data","sc1_interim_data","sc1_analysis","sc1_evaluation_process","p-NZXXIZLCN5XWW4ZPOJSXA33SOQXGQ5DNNQ","sc1_result"],"imported":[true,true,true,true,false,true,true,false,false,false,false,false,false],"label":["rmarkdown::render","file notebooks/report.Rmd","export_result","evaluate_process","sc1_question\n0.007s","import_data","file data/raw_data.xlsx","sc1_data\n0.018s","sc1_interim_data\n0.014s","sc1_analysis\n1.075s","sc1_evaluation_process\n0.003s","file notebooks/report.html","sc1_result\n0.004s"],"status":["imported","imported","imported","imported","up to date","imported","imported","up to date","up to date","up to date","up to date","up to date","up to date"],"type":["function","file","function","function","object","function","file","object","object","object","object","file","object"],"font.size":[20,20,20,20,20,20,20,20,20,20,20,20,20],"color":["#1874CD","#1874CD","#1874CD","#1874CD","#228B22","#1874CD","#1874CD","#228B22","#228B22","#228B22","#228B22","#228B22","#228B22"],"shape":["triangle","square","triangle","triangle","dot","triangle","square","dot","dot","dot","dot","square","dot"],"level":[1,1,1,1,1,1,1,2,3,4,5,5,6],"x":[-1,-1,-1,-1,-1,-1,-1,-0.6,-0.2,0.2,0.6,0.6,1],"y":[-1,-0.666666666666667,-0.333333333333333,0,0.333333333333333,0.666666666666667,1,0,0,0,-0.444444444444445,0.444444444444444,0]},"edges":{"from":["n-OJWWC4TLMRXXO3R2HJZGK3TEMVZA","sc1_interim_data","p-NZXXIZLCN5XWW4ZPOJSXA33SOQXFE3LE","sc1_analysis","sc1_analysis","export_result","evaluate_process","sc1_question","import_data","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","sc1_evaluation_process","sc1_data"],"to":["sc1_analysis","sc1_analysis","sc1_analysis","sc1_evaluation_process","p-NZXXIZLCN5XWW4ZPOJSXA33SOQXGQ5DNNQ","sc1_result","sc1_evaluation_process","sc1_data","sc1_data","sc1_data","sc1_result","sc1_interim_data"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"interaction":{"navigationButtons":true},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"Dependency graph","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":false,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"left","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Imported","Object","Function","File"],"color":["#228B22","#1874CD","#888888","#888888","#888888"],"shape":["dot","dot","dot","triangle","square"],"font.color":["black","black","black","black","black"],"font.size":[20,20,20,20,20],"id":[1,6,8,10,11]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
 </div>
   </div>
 

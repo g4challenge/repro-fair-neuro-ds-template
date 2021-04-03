@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create Histogram with Mapping Ozone and Binwidth = 10 — create_plot • reproducibleFairTemplate</title>
+<title>Create Histogram of a named variable — create_plot • reproducibleFairTemplate</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Create Histogram with Mapping Ozone and Binwidth = 10 — create_plot" />
-<meta property="og:description" content="Create Histogram with Mapping Ozone and Binwidth = 10" />
+<meta property="og:title" content="Create Histogram of a named variable — create_plot" />
+<meta property="og:description" content="Create Histogram of a named variable" />
 
 
 
@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reproducibleFairTemplate</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -135,23 +135,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create Histogram with Mapping Ozone and Binwidth = 10</h1>
+    <h1>Create Histogram of a named variable</h1>
     <small class="dont-index">Source: <a href='https://github.com/g4challenge/repro-fair-neuro-ds-template/blob/master/R/functions.R'><code>R/functions.R</code></a></small>
     <div class="hidden name"><code>create_plot.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Create Histogram with Mapping Ozone and Binwidth = 10</p>
+    <p>Create Histogram of a named variable</p>
     </div>
 
-    <pre class="usage"><span class='fu'>create_plot</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>create_plot</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>variable</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td></td>
+      <td><p>tibble to be utilized</p></td>
+    </tr>
+    <tr>
+      <th>variable</th>
+      <td><p>name of the variable to be plotted</p></td>
     </tr>
     </table>
 

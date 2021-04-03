@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reproducibleFairTemplate</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3</span>
       </span>
     </div>
 
@@ -95,6 +95,7 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Getting Started</h1>
+                        <h4 class="author">Lukas Huber</h4>
             
       
       <small class="dont-index">Source: <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template/blob/master/vignettes/getting_started.Rmd"><code>vignettes/getting_started.Rmd</code></a></small>
@@ -112,32 +113,48 @@
 <li>As a project starter. For this, use Git clone and change the remote to your repository. This starts a clean, fresh project.</li>
 <li>As a reference. In that case, you use the project template and parts as reference.</li>
 </ul>
-<p>In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility.</p>
+<p>In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility. This section will walk you through some of the core aspects to utilize this work.</p>
+<p>In order to get reproducible and traceable, one must version control ideally documentation, code, data and execution environment.</p>
+</div>
+<div id="tldr" class="section level2">
+<h2 class="hasAnchor">
+<a href="#tldr" class="anchor"></a>TL;DR</h2>
+<p>How to use this package:</p>
+<ol style="list-style-type: decimal">
+<li>start by cloning/forking this git repository</li>
+<li>use git+github, git lfs, tidyverse and RMarkdown</li>
+<li>add/modify Drake Plans to for your Pipeline(s)</li>
+<li>Adapt the documentation in Vignettes</li>
+<li>(optional) start the RStudio IDE within Docker + use renv</li>
+</ol>
 </div>
 <div id="prerequisites" class="section level2">
 <h2 class="hasAnchor">
 <a href="#prerequisites" class="anchor"></a>Prerequisites</h2>
+<ul>
+<li><p>Your Project should utilize R - although it may be possible to adapt to Python code aswell, it’s native to R.</p></li>
+<li><p>Your Project should use Git.</p></li>
+<li><p>Your Project MUST have a README file</p></li>
+</ul>
 </div>
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting Started</h2>
 <p>In order to start with your reproducible Project use the following steps to get the template running:</p>
 <ul>
-<li><p>Your Project should use Git.</p></li>
-<li><p>Your Project MUST have a README file</p></li>
-<li><p>Define a license for your Project.</p></li>
-<li><p>Utilize an environment tool (renv)</p></li>
-<li><p>Turn your project into a package structure</p></li>
-<li><p>Lint your code to follow good styleguides.</p></li>
-<li><p>Decide where to host your data</p></li>
-<li><p>Use version control for everything</p></li>
-<li><p>Publish your work with a repository.</p></li>
-<li><p>Use continous integration</p></li>
-<li><p>Use code tests</p></li>
-<li><p>Use software engineering practices like docstrings, roxytest,</p></li>
-<li><p>use workflows like drake, targets</p></li>
-<li><p>utilize PROV-Tools (rdtlite)</p></li>
-<li><p>package your results (rocrate)</p></li>
+<li><p>Create a RStudio-Project in the structure of a package - the template already established a project template.</p></li>
+<li><p>Define a license for your Project. By default the template already uses gpl3 - <code><a href="https://usethis.r-lib.org/reference/licenses.html">usethis::use_gpl3_license()</a></code> is the command setting the license file.</p></li>
+<li><p>Utilize an environment tool (renv). The project template comes with an <code>renv.lock</code> file and accompanying other files.</p></li>
+<li><p>Lint your code to follow good styleguides. Project Template recommends running <code>lintr:::addin_lint_package()</code> - if your package is in package structure, this lints all project files.</p></li>
+<li><p>Decide where to host your data. The project template utilizes git for version control, and may be extended with Git-LFS. Use <code>data</code> or <code>data-raw</code> folders.</p></li>
+<li><p>Use version control for everything - including code, data, the environment, and even the packaged dependencies.</p></li>
+<li><p>Publish your work with a repository. The template is hosted under <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template" class="uri">https://github.com/g4challenge/repro-fair-neuro-ds-template</a> - when using GitHub change the path and name of your template.</p></li>
+<li><p>Use continous integration. The template utizes <code>.github/workflows</code> folders with the incorporation of pkgdown build of the <strong>Documentation</strong>, codecov and R-CMD-Check of the <strong>Execution</strong> in order to trace the results.</p></li>
+<li><p>Use code tests. The template suggests using <code>testthat</code> and documentation based tests like <code>roxytest</code>.</p></li>
+<li><p>Use software engineering practices like docstrings, roxytest. The template utilizes the <code>vignettes</code> folder, <code>roxygen2</code> and <code>roxytest</code> for documentation and good practices.</p></li>
+<li><p>use workflows like drake, targets. The <code>vignettes/drake_spec.Rmd</code> file is one example on how to utilize the <code>drake</code> package. A workflow captures inputs and outputs of executions in order to trace results. The template version controls even the executions within the <code>.drake</code> folder, this must be curated for good release practices.</p></li>
+<li><p>utilize PROV-Tools (rdtlite) - which creates a PROV-based representation of the workflow executions.</p></li>
+<li><p>package your results - this work packages everything on Zenodo.org in the specifications according to <a href="https://www.researchobject.org/ro-crate/">ROCrate</a></p></li>
 </ul>
 <p>Then you need to consider a few questions on how you want to start building your package:</p>
 <ul>
@@ -152,10 +169,13 @@
 <a href="#scenario-1-walk-through" class="anchor"></a>Scenario 1: walk-through</h3>
 <p>The scenario 1 is one simple scenario involving several steps in a linear manner.</p>
 <p>The file is in <code>vignettes/scenario_1.Rmd</code>, it utilizes <code>R/packages.R"</code> for package loading, <code>R/functions.R</code> for general functions, <code>R/functions_scenario_1.R</code> for scenario specific functions and the plan is defined in <code>R/plan.R</code></p>
+<p>Open the file <code>scenario_1.Rmd</code> where the statement <code>make(scenario_1)</code> does the execution, and the workflow of drake is visualized as graph.</p>
+<p>This graph shows, the sequence from input question, to reading the dataset to producing a report.</p>
 </div>
 <div id="test-results" class="section level3">
 <h3 class="hasAnchor">
 <a href="#test-results" class="anchor"></a>Test-Results</h3>
+<p><code>testthat</code> is able to test the local package of your analysis using <code>test_local()</code> the following code chunk tests all targets and executions of this package’s workflows.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_package.html">test_local</a></span><span class="op">(</span><span class="st">"../"</span><span class="op">)</span></code></pre></div>
 <pre><code>## Loading required package: tidyverse</code></pre>
@@ -171,18 +191,6 @@
 ## ✖ dplyr::matches() masks tidyr::matches(), testthat::matches()</code></pre>
 <pre><code>## The following packages were not previously loaded:
 ## reproducibleFairTemplate</code></pre>
-<pre><code>## ✔ All targets are already up to date.</code></pre>
-<pre><code>## The following packages were not previously loaded:
-## reproducibleFairTemplate</code></pre>
-<pre><code>## Warning: 
-## ── Conflicts ───────────────────────────── reproducibleFairTemplate conflicts ──
-## ✖ create_plot() masks reproducibleFairTemplate::create_plot()
-## ✖ my_function() masks reproducibleFairTemplate::my_function()
-## ✖ plan()        masks reproducibleFairTemplate::plan()
-## ✖ scenario_1()  masks reproducibleFairTemplate::scenario_1()
-## 
-## Did you accidentally source a file rather than using `load_all()`?
-## Run `rm(list = c("create_plot", "my_function", "plan", "scenario_1"))` to remove the conflicts.</code></pre>
 <pre><code>## ✔ |  OK F W S | Context
 ## 
 ⠏ |   0       | roxytest-tests-functions_scenario_1                             
@@ -194,23 +202,29 @@
 ✔ |   1       | File R/functions.R: @tests
 ## 
 ## ══ Results ═════════════════════════════════════════════════════════════════════
-## Duration: 0.1 s
-## 
 ## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]</code></pre>
 </div>
 <div id="complete-provenance" class="section level3">
 <h3 class="hasAnchor">
 <a href="#complete-provenance" class="anchor"></a>Complete Provenance</h3>
+<p>In order to achieve a track record of complete provenance within the template, <code>rdtLite</code> is used in conjunction with a makefile, the <code>make.R</code> is comparable and similar to the <code>scenario_1.Rmd</code> except it can be captured by rdtLite as workflow run.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">rdtLite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rdtLite/man/prov.run.html">prov.run</a></span><span class="op">(</span><span class="st">"../R/make.R"</span>, prov.dir<span class="op">=</span><span class="st">"../.prov/"</span><span class="op">)</span></code></pre></div>
+<p>This results in the fresh creation of a <code>.prov</code> subdirectory - which has provenance execution traces according to the rdtlite specification.</p>
 </div>
 <div id="provenance-curation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#provenance-curation" class="anchor"></a>Provenance Curation</h3>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>If you want to curate your results as <code>release</code> - it may be useful and suitable to curate the traces. The following commands help to achieve this:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#clean the cache to force rebuild</span>
+<span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span>destroy<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co"># clean cache and curate "one" clean run in the drake cache.</span></code></pre></div>
+<p>The second command cleans the <code>.drake</code> folder and allows for version control of only the curated final release.</p>
 </div>
 <div id="development-steps" class="section level3">
 <h3 class="hasAnchor">
 <a href="#development-steps" class="anchor"></a>Development Steps</h3>
+<p>If you may want to continue development on this project and extend it further to your needs. Developing with the project template is comparable to using the template.</p>
 <p>Description of steps during development, starting with Docker + RStudio right away.</p>
 <ol style="list-style-type: decimal">
 <li>clone this template</li>
@@ -235,25 +249,48 @@
 </ul>
 <pre><code>docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challenge/repro-fair-neuro-ds-template</code></pre>
 </div>
+<div id="release-curation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#release-curation" class="anchor"></a>Release Curation</h3>
+<ul>
+<li>Version the <code>DESCRIPTION</code> file</li>
+<li>Write the <code>News.md</code> file</li>
+<li>Build the Package</li>
+<li>Create a signed and tagged Git Commit <code>git tag -s v1.5 -m 'my signed 1.5 tag'</code>
+</li>
+<li>Push the release <code>git push origin main</code>
+</li>
+<li>Validate Documentation (the pkgdown action must complete)</li>
+<li>Tag the DockerHub Image <code>docker tag</code>
+</li>
+<li>Validate Zenodo Publication</li>
+</ul>
 </div>
-<div id="next-steps" class="section level2">
-<h2 class="hasAnchor">
-<a href="#next-steps" class="anchor"></a>(Next) Steps</h2>
-<p>Getting Started Description of the next analysis steps. How to use this package:</p>
-<ol style="list-style-type: decimal">
-<li>start by cloning/forking the git repository</li>
-<li>use git+github, git lfs, tidyverse and RMarkdown</li>
-<li>add Drake Plans to for your Pipeline(s)</li>
-<li>(optional) start the RStudio IDE within Docker + use renv</li>
-</ol>
+<div id="known-limitations" class="section level3">
+<h3 class="hasAnchor">
+<a href="#known-limitations" class="anchor"></a>Known Limitations</h3>
+<ul>
+<li>Currently, not all Versions are Working</li>
+<li>Binder: Rsession-proxy has challenges with R 4.0.3 – unresolved</li>
+<li>Renv: in continous integration, Python environments are not restored</li>
+<li>Provenance Integration – rdtLite not fully working</li>
+<li>
+<a href="https://github.com/INCF/neuroshapes">NeuroShapes</a> INCF neuroshapes for defined data format - Common Data model.</li>
+</ul>
+</div>
 <div id="faq" class="section level3">
 <h3 class="hasAnchor">
 <a href="#faq" class="anchor"></a>FAQ</h3>
-<p>Where should I start my documentation?</p>
-<p>How do the various documentations relate to each other?</p>
-<p>What adaptations do I have to make?</p>
-<p>How can a prioritize these adaptations?</p>
-<p>What is the minimal set of adaptations that I need to make?</p>
+<p>Q: “Where should I start my documentation?”</p>
+<p>A: start with the <code>Readme.md</code> with the base context and efforts involved in your project. Then if necessary adapt and change the vignettes to your projects implementation.</p>
+<p>Q: How do the various documentations relate to each other?</p>
+<p>A: The readme serves as starting and entrypoint, while the main documentation by <code>pkgdown</code> is hosted as github page. There, all function documentation and vignettes are rendered and described.</p>
+<p>Q: What adaptations do I have to make?</p>
+<p>A: Ideally, you adapt/fork the template and start by clicking on “use this template” in GitHub. There a new traceable analysis project is created. You need to maintain Links to <strong>GitHub Pages, Zenodo and DockerHub</strong> by yourself.</p>
+<p>Q: How can a prioritize these adaptations?</p>
+<p>A: You start by the most pressing needs first - getting the template externally working. Priority one is fixing the traces and validating these.</p>
+<p>Q: What is the minimal set of adaptations that I need to make?</p>
+<p>A: Minimal is readme, links and the vignettes folder cleaning with one drake_spec, one function.R, one packages.R, one plan.R and finally one docker build. Then your analysis is version controlled and mostly traceable with comparatively low effort.</p>
 <p>Can I also apply this to other contexts within medicine, or even outside of a medical context or?</p>
 </div>
 </div>
