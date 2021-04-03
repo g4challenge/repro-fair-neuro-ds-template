@@ -222,6 +222,8 @@ pre code {
 
 
 <!-- rnb-text-begin -->
+<p>This template demonstrates traceability of a drake plan as a sequence of execution steps.</p>
+<p>First the <code>setup</code> chunk sets the path to the project root - to conviently work with reproducible file-paths in headless and rstudio modes.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25pdHI6Om9wdHNfa25pdCRzZXQocm9vdC5kaXIgPSBycHJvanJvb3Q6OmZpbmRfcnN0dWRpb19yb290X2ZpbGUoKSlcbmBgYCJ9 -->
@@ -229,13 +231,14 @@ pre code {
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>This code sources the current projects files - packages required, functions required and the base drake plans.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKFwiUi9wYWNrYWdlcy5SXCIpXG5gYGAifQ== -->
 <pre class="r"><code>source(&quot;R/packages.R&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGZvbGxvd2luZyBwYWNrYWdlcyB3ZXJlIG5vdCBwcmV2aW91c2x5IGxvYWRlZDpcblxicmVwcm9kdWNpYmxlRmFpclRlbXBsYXRlXG4ifQ== -->
-<pre><code>The following packages were not previously loaded:
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGZvbGxvd2luZyBwYWNrYWdlcyBoYXZlIGJlZW4gdW5sb2FkZWQ6XG5cYnJlcHJvZHVjaWJsZUZhaXJUZW1wbGF0ZVxuIn0= -->
+<pre><code>The following packages have been unloaded:
 reproducibleFairTemplate</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKFwiUi9mdW5jdGlvbnMuUlwiKVxuc291cmNlKFwiUi9wbGFuLlJcIilcbmBgYCJ9 -->
@@ -244,13 +247,16 @@ source(&quot;R/plan.R&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>The first line of the following chunk forces a re-run of the whole drake workflow - comment it to see, if drake validates the current step.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFrZShwbGFuKVxuYGBgIn0= -->
-<pre class="r"><code>make(plan)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2RyYWtlOjpjbGVhbigpXG5kcmFrZTo6bWFrZShwbGFuKVxuYGBgIn0= -->
+<pre class="r"><code>#drake::clean()
+drake::make(plan)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pyTIEFsbCB0YXJnZXRzIGFyZSBhbHJlYWR5IHVwIHRvIGRhdGUuXG4ifQ== -->
-<pre><code>✓ All targets are already up to date.</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoi4pa2IHRhcmdldCByYXdfZGF0YVxu4pa2IHRhcmdldCBkYXRhXG4ifQ== -->
+<pre><code>▶ target raw_data
+▶ target data</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -259,19 +265,14 @@ source(&quot;R/plan.R&quot;)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmlzX2RyYWtlX2dyYXBoKHBsYW4pXG5gYGAifQ== -->
 <pre class="r"><code>vis_drake_graph(plan)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2h0bWx3aWRnZXRzJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWx3aWRnZXQgdG9vbHM6cnN0dWRpb1xuIn0= -->
-<pre><code>Registered S3 method overwritten by &#39;htmlwidgets&#39;:
-  method           from         
-  print.htmlwidget tools:rstudio</code></pre>
-<!-- rnb-output-end -->
 
 <!-- rnb-htmlwidget-begin eyJkZXBlbmRlbmNpZXMiOlt7Im5hbWUiOiJodG1sd2lkZ2V0cyIsInZlcnNpb24iOiIxLjUuMyIsInNyYyI6eyJmaWxlIjoiL1VzZXJzL2x1a2FzL0xpYnJhcnkvQXBwbGljYXRpb24gU3VwcG9ydC9yZW52L2NhY2hlL3Y1L1ItNC4wL3g4Nl82NC1hcHBsZS1kYXJ3aW4xNy4wL2h0bWx3aWRnZXRzLzEuNS4zLzZmZGFhODZkMDcwMGY4YjNlOTJlZTNjNDQ1YTVhMTBkL2h0bWx3aWRnZXRzL3d3dyJ9LCJtZXRhIjpbXSwic2NyaXB0IjoiaHRtbHdpZGdldHMuanMiLCJzdHlsZXNoZWV0IjpbXSwiaGVhZCI6W10sImF0dGFjaG1lbnQiOltdLCJwYWNrYWdlIjpbXSwiYWxsX2ZpbGVzIjp0cnVlfSx7Im5hbWUiOiJ2aXMiLCJ2ZXJzaW9uIjoiNC4yMC4xIiwic3JjIjp7ImZpbGUiOiIvVXNlcnMvbHVrYXMvTGlicmFyeS9BcHBsaWNhdGlvbiBTdXBwb3J0L3JlbnYvY2FjaGUvdjUvUi00LjAveDg2XzY0LWFwcGxlLWRhcndpbjE3LjAvdmlzTmV0d29yay8yLjAuOS8xMjU0NWYyYWNmNDlkMWQzNDZkMDc1NTgwMTIyZDg5Yy92aXNOZXR3b3JrL2h0bWx3aWRnZXRzL2xpYi92aXMifSwibWV0YSI6W10sInNjcmlwdCI6InZpcy5taW4uanMiLCJzdHlsZXNoZWV0IjoidmlzLmNzcyIsImhlYWQiOltdLCJhdHRhY2htZW50IjpbXSwicGFja2FnZSI6W10sImFsbF9maWxlcyI6dHJ1ZX0seyJuYW1lIjoidmlzTmV0d29yay1iaW5kaW5nIiwidmVyc2lvbiI6IjIuMC45Iiwic3JjIjp7ImZpbGUiOiIvVXNlcnMvbHVrYXMvTGlicmFyeS9BcHBsaWNhdGlvbiBTdXBwb3J0L3JlbnYvY2FjaGUvdjUvUi00LjAveDg2XzY0LWFwcGxlLWRhcndpbjE3LjAvdmlzTmV0d29yay8yLjAuOS8xMjU0NWYyYWNmNDlkMWQzNDZkMDc1NTgwMTIyZDg5Yy92aXNOZXR3b3JrL2h0bWx3aWRnZXRzIn0sIm1ldGEiOltdLCJzY3JpcHQiOiJ2aXNOZXR3b3JrLmpzIiwic3R5bGVzaGVldCI6W10sImhlYWQiOltdLCJhdHRhY2htZW50IjpbXSwicGFja2FnZSI6W10sImFsbF9maWxlcyI6ZmFsc2V9XSwibWV0YWRhdGEiOnsiY2xhc3NlcyI6WyJ2aXNOZXR3b3JrIiwiaHRtbHdpZGdldCJdLCJzaXppbmdQb2xpY3kiOnsiZGVmYXVsdFdpZHRoIjpbXSwiZGVmYXVsdEhlaWdodCI6W10sInBhZGRpbmciOltdLCJ2aWV3ZXIiOnsiZGVmYXVsdFdpZHRoIjpbXSwiZGVmYXVsdEhlaWdodCI6W10sInBhZGRpbmciOltdLCJmaWxsIjpbdHJ1ZV0sInN1cHByZXNzIjpbZmFsc2VdLCJwYW5lSGVpZ2h0IjpbXX0sImJyb3dzZXIiOnsiZGVmYXVsdFdpZHRoIjpbXSwiZGVmYXVsdEhlaWdodCI6W10sInBhZGRpbmciOltdLCJmaWxsIjpbZmFsc2VdLCJleHRlcm5hbCI6W2ZhbHNlXX0sImtuaXRyIjp7ImRlZmF1bHRXaWR0aCI6W10sImRlZmF1bHRIZWlnaHQiOltdLCJmaWd1cmUiOlt0cnVlXX0sInZpZXdlci5wYWRkaW5nIjpbMF0sInZpZXdlci5maWxsIjpbdHJ1ZV19fX0= -->
 
 <!-- htmlwidget-container-begin -->
-<div id="htmlwidget-405a2c0575b7b1008732" style="width:504px;height:504px;" class="visNetwork html-widget"></div>
+<div id="htmlwidget-6f1e8618f3c864ae5127" style="width:500px;height:500px;" class="visNetwork html-widget"></div>
 <!-- htmlwidget-container-end -->
-<script type="application/json" data-for="htmlwidget-405a2c0575b7b1008732">{"x":{"nodes":{"id":["n-OJSWCZDYNQ5DU4TFMFSF6ZLYMNSWY","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","raw_data","data"],"imported":[true,true,false,false],"label":["readxl::read_excel","file data/raw_data.xlsx","raw_data\n0.027s","data\n0.019s"],"status":["imported","imported","up to date","up to date"],"type":["function","file","object","object"],"font.size":[20,20,20,20],"color":["#1874CD","#1874CD","#228B22","#228B22"],"shape":["triangle","square","dot","dot"],"level":[1,1,2,3],"x":[-1,-1,0,1],"y":[-1,1,2.22044604925031e-16,2.22044604925031e-16]},"edges":{"from":["n-OJSWCZDYNQ5DU4TFMFSF6ZLYMNSWY","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","raw_data"],"to":["raw_data","raw_data","data"],"arrows":["to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"interaction":{"navigationButtons":true},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"Dependency graph","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":false,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"left","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Imported","Object","Function","File"],"color":["#228B22","#1874CD","#888888","#888888","#888888"],"shape":["dot","dot","dot","triangle","square"],"font.color":["black","black","black","black","black"],"font.size":[20,20,20,20,20],"id":[1,6,8,10,11]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
-<!-- htmlwidget-sizing-policy-base64 PHNjcmlwdCB0eXBlPSJhcHBsaWNhdGlvbi9odG1sd2lkZ2V0LXNpemluZyIgZGF0YS1mb3I9Imh0bWx3aWRnZXQtNDA1YTJjMDU3NWI3YjEwMDg3MzIiPnsidmlld2VyIjp7IndpZHRoIjo0NTAsImhlaWdodCI6MzUwLCJwYWRkaW5nIjoxNSwiZmlsbCI6dHJ1ZX0sImJyb3dzZXIiOnsid2lkdGgiOjk2MCwiaGVpZ2h0Ijo1MDAsInBhZGRpbmciOjQwLCJmaWxsIjpmYWxzZX19PC9zY3JpcHQ+ -->
+<script type="application/json" data-for="htmlwidget-6f1e8618f3c864ae5127">{"x":{"nodes":{"id":["n-OJSWCZDYNQ5DU4TFMFSF6ZLYMNSWY","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","raw_data","data"],"imported":[true,true,false,false],"label":["readxl::read_excel","file data/raw_data.xlsx","raw_data\n0.017s","data\n0.009s"],"status":["imported","imported","up to date","up to date"],"type":["function","file","object","object"],"font.size":[20,20,20,20],"color":["#1874CD","#1874CD","#228B22","#228B22"],"shape":["triangle","square","dot","dot"],"level":[1,1,2,3],"x":[-1,-1,0,1],"y":[-1,1,2.22044604925031e-16,2.22044604925031e-16]},"edges":{"from":["n-OJSWCZDYNQ5DU4TFMFSF6ZLYMNSWY","p-MRQXIYJPOJQXOX3EMF2GCLTYNRZXQ","raw_data"],"to":["raw_data","raw_data","data"],"arrows":["to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"interaction":{"navigationButtons":true},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"Dependency graph","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":false,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"left","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Imported","Object","Function","File"],"color":["#228B22","#1874CD","#888888","#888888","#888888"],"shape":["dot","dot","dot","triangle","square"],"font.color":["black","black","black","black","black"],"font.size":[20,20,20,20,20],"id":[1,6,8,10,11]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
+<!-- htmlwidget-sizing-policy-base64 PHNjcmlwdCB0eXBlPSJhcHBsaWNhdGlvbi9odG1sd2lkZ2V0LXNpemluZyIgZGF0YS1mb3I9Imh0bWx3aWRnZXQtNmYxZTg2MThmM2M4NjRhZTUxMjciPnsidmlld2VyIjp7IndpZHRoIjo0NTAsImhlaWdodCI6MzUwLCJwYWRkaW5nIjoxNSwiZmlsbCI6dHJ1ZX0sImJyb3dzZXIiOnsid2lkdGgiOjk2MCwiaGVpZ2h0Ijo1MDAsInBhZGRpbmciOjQwLCJmaWxsIjpmYWxzZX19PC9zY3JpcHQ+ -->
 
 <!-- rnb-htmlwidget-end -->
 
@@ -279,6 +280,7 @@ source(&quot;R/plan.R&quot;)</code></pre>
 <!-- rnb-text-begin -->
 <div id="mandrake" class="section level2">
 <h2>Mandrake</h2>
+<p>Mandrake allows us to annotate and advance the documentation of a drake graph.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
@@ -356,8 +358,10 @@ to load other external JS deps, use htmltools::htmlDependency().</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="buidling" class="section level2">
-<h2>Buidling</h2>
+<div id="buidling-of-the-analytic-package" class="section level2">
+<h2>Buidling of the analytic package</h2>
+<p>This section considers the build steps involved in the development and extension of an analysis.</p>
+<p>First - be sure to document your package using roxygen with the following chunk.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2RldnRvb2xzOjpkb2N1bWVudCgpXG5gYGAifQ== -->
@@ -375,6 +379,7 @@ to load other external JS deps, use htmltools::htmlDependency().</code></pre>
 </div>
 <div id="version_control" class="section level2">
 <h2>Version_control</h2>
+<p>In order to look into the git commit history from R - one can use the gert library to see what happened.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoibGlicmFyeShnZXJ0KSJ9 -->
@@ -395,7 +400,7 @@ to load other external JS deps, use htmltools::htmlDependency().</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiZHJha2Vfc3BlY2lmaWNhdGlvbiIKYXV0aG9yOiAiTHVrYXMgSHViZXIiCmRhdGU6ICIyMDIwLTctMzEsIGxhc3QgdXBkYXRlIChgciBTeXMuRGF0ZSgpYCkiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyIHNldHVwfQprbml0cjo6b3B0c19rbml0JHNldChyb290LmRpciA9IHJwcm9qcm9vdDo6ZmluZF9yc3R1ZGlvX3Jvb3RfZmlsZSgpKQpgYGAKCmBgYHtyfQpzb3VyY2UoIlIvcGFja2FnZXMuUiIpCnNvdXJjZSgiUi9mdW5jdGlvbnMuUiIpCnNvdXJjZSgiUi9wbGFuLlIiKQpgYGAKCmBgYHtyfQpkcmFrZTo6Y2xlYW4oKQptYWtlKHBsYW4pCmBgYAoKYGBge3J9CnZpc19kcmFrZV9ncmFwaChwbGFuKQpgYGAKCiMjIE1hbmRyYWtlCgpgYGB7cn0KYGBgCgoKYGBge3J9Cmxvb2t1cF9jYWNoZSA8LSBtYW5kcmFrZTo6bG9hZF9wYWNrYWdlX2NvbHNwZWMoIm1hbmRyYWtlIikKYGBgCgpgYGB7cn0KY2FjaGUgPC0gZHJha2U6OmRyYWtlX2NhY2hlKCkKcGxhbl9leHRyYWN0ZWQgPC0gcGxhbiAlPiUKICBtYW5kcmFrZTo6ZGVjb3JhdGVfcGxhbihjYWNoZT1jYWNoZSwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgbG9va3VwX2NhY2hlID0gbG9va3VwX2NhY2hlLAogICAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NfY29sbmFtZSA9ICJkZXNjIikKYGBgCgpgYGB7cn0KbXlfY29uZmlnIDwtIGRyYWtlX2NvbmZpZyhwbGFuX2V4dHJhY3RlZCkKZ3JhcGhfaW5mbyA8LSBkcmFrZV9ncmFwaF9pbmZvKAogIG15X2NvbmZpZywgCiAgZ3JvdXAgPSAiY2x1c3Rlcl9pZCIsIAogIGNsdXN0ZXJzID0gYygic3VtbSIsICJjb2VmIiksIAogIGJ1aWxkX3RpbWVzID0gIm5vbmUiLAogIG9uX3NlbGVjdF9jb2wgPSAiZGVzYyIpCgpncmFwaCA8LSByZW5kZXJfZHJha2VfZ3JhcGgoCiAgZ3JhcGhfaW5mbywgCiAgb25fc2VsZWN0ID0gbWFuZHJha2U6OmVtYmVkX2V2ZW50X2hhbmRsZXIoKSwKICBuY29sX2xlZ2VuZCA9IDQKICApIApgYGAKCmBgYHtyfQpncmFwaApgYGAKCgojIyBCdWlkbGluZwoKYGBge3J9CiNkZXZ0b29sczo6ZG9jdW1lbnQoKQpgYGAKCmBgYHtyfQojcmVudjo6c25hcHNob3QoKQpgYGAKCiMjIFZlcnNpb25fY29udHJvbAoKYGBge3IgZXZhbD1GfQpsaWJyYXJ5KGdlcnQpCmBgYApgYGB7ciBldmFsPUZ9CmdpdF9sb2coKQpgYGAKYGBge3IgZXZhbD1GfQpnaXRfc3RhdHVzKCkKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiZHJha2Vfc3BlY2lmaWNhdGlvbiIKYXV0aG9yOiAiTHVrYXMgSHViZXIiCmRhdGU6ICIyMDIwLTctMzEsIGxhc3QgdXBkYXRlIChgciBTeXMuRGF0ZSgpYCkiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KClRoaXMgdGVtcGxhdGUgZGVtb25zdHJhdGVzIHRyYWNlYWJpbGl0eSBvZiBhIGRyYWtlIHBsYW4gYXMgYSBzZXF1ZW5jZSBvZiBleGVjdXRpb24gc3RlcHMuCgpGaXJzdCB0aGUgYHNldHVwYCBjaHVuayBzZXRzIHRoZSBwYXRoIHRvIHRoZSBwcm9qZWN0IHJvb3QgLSB0byBjb252aWVudGx5IHdvcmsgd2l0aCByZXByb2R1Y2libGUgZmlsZS1wYXRocyBpbiBoZWFkbGVzcyBhbmQgcnN0dWRpbyBtb2Rlcy4KCmBgYHtyIHNldHVwfQprbml0cjo6b3B0c19rbml0JHNldChyb290LmRpciA9IHJwcm9qcm9vdDo6ZmluZF9yc3R1ZGlvX3Jvb3RfZmlsZSgpKQpgYGAKClRoaXMgY29kZSBzb3VyY2VzIHRoZSBjdXJyZW50IHByb2plY3RzIGZpbGVzIC0gcGFja2FnZXMgcmVxdWlyZWQsIGZ1bmN0aW9ucyByZXF1aXJlZCBhbmQgdGhlIGJhc2UgZHJha2UgcGxhbnMuCgpgYGB7cn0Kc291cmNlKCJSL3BhY2thZ2VzLlIiKQpzb3VyY2UoIlIvZnVuY3Rpb25zLlIiKQpzb3VyY2UoIlIvcGxhbi5SIikKYGBgCgpUaGUgZmlyc3QgbGluZSBvZiB0aGUgZm9sbG93aW5nIGNodW5rIGZvcmNlcyBhIHJlLXJ1biBvZiB0aGUgd2hvbGUgZHJha2Ugd29ya2Zsb3cgLSBjb21tZW50IGl0IHRvIHNlZSwgaWYgZHJha2UgdmFsaWRhdGVzIHRoZSBjdXJyZW50IHN0ZXAuCgpgYGB7cn0KI2RyYWtlOjpjbGVhbigpCmRyYWtlOjptYWtlKHBsYW4pCmBgYAoKYGBge3J9CnZpc19kcmFrZV9ncmFwaChwbGFuKQpgYGAKCiMjIE1hbmRyYWtlCgpNYW5kcmFrZSBhbGxvd3MgdXMgdG8gYW5ub3RhdGUgYW5kIGFkdmFuY2UgdGhlIGRvY3VtZW50YXRpb24gb2YgYSBkcmFrZSBncmFwaC4KCmBgYHtyfQpgYGAKCgpgYGB7cn0KbG9va3VwX2NhY2hlIDwtIG1hbmRyYWtlOjpsb2FkX3BhY2thZ2VfY29sc3BlYygibWFuZHJha2UiKQpgYGAKCmBgYHtyfQpjYWNoZSA8LSBkcmFrZTo6ZHJha2VfY2FjaGUoKQpwbGFuX2V4dHJhY3RlZCA8LSBwbGFuICU+JQogIG1hbmRyYWtlOjpkZWNvcmF0ZV9wbGFuKGNhY2hlPWNhY2hlLCAKICAgICAgICAgICAgICAgICAgICAgICAgICBsb29rdXBfY2FjaGUgPSBsb29rdXBfY2FjaGUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgZGVzY19jb2xuYW1lID0gImRlc2MiKQpgYGAKCmBgYHtyfQpteV9jb25maWcgPC0gZHJha2VfY29uZmlnKHBsYW5fZXh0cmFjdGVkKQpncmFwaF9pbmZvIDwtIGRyYWtlX2dyYXBoX2luZm8oCiAgbXlfY29uZmlnLCAKICBncm91cCA9ICJjbHVzdGVyX2lkIiwgCiAgY2x1c3RlcnMgPSBjKCJzdW1tIiwgImNvZWYiKSwgCiAgYnVpbGRfdGltZXMgPSAibm9uZSIsCiAgb25fc2VsZWN0X2NvbCA9ICJkZXNjIikKCmdyYXBoIDwtIHJlbmRlcl9kcmFrZV9ncmFwaCgKICBncmFwaF9pbmZvLCAKICBvbl9zZWxlY3QgPSBtYW5kcmFrZTo6ZW1iZWRfZXZlbnRfaGFuZGxlcigpLAogIG5jb2xfbGVnZW5kID0gNAogICkgCmBgYAoKYGBge3J9CmdyYXBoCmBgYAoKCiMjIEJ1aWRsaW5nIG9mIHRoZSBhbmFseXRpYyBwYWNrYWdlCgpUaGlzIHNlY3Rpb24gY29uc2lkZXJzIHRoZSBidWlsZCBzdGVwcyBpbnZvbHZlZCBpbiB0aGUgZGV2ZWxvcG1lbnQgYW5kIGV4dGVuc2lvbiBvZiBhbiBhbmFseXNpcy4KCkZpcnN0IC0gYmUgc3VyZSB0byBkb2N1bWVudCB5b3VyIHBhY2thZ2UgdXNpbmcgcm94eWdlbiB3aXRoIHRoZSBmb2xsb3dpbmcgY2h1bmsuCgpgYGB7cn0KI2RldnRvb2xzOjpkb2N1bWVudCgpCmBgYAoKYGBge3J9CiNyZW52OjpzbmFwc2hvdCgpCmBgYAoKIyMgVmVyc2lvbl9jb250cm9sCgpJbiBvcmRlciB0byBsb29rIGludG8gdGhlIGdpdCBjb21taXQgaGlzdG9yeSBmcm9tIFIgLSBvbmUgY2FuIHVzZSB0aGUgZ2VydCBsaWJyYXJ5IHRvIHNlZSB3aGF0IGhhcHBlbmVkLgoKYGBge3IgZXZhbD1GfQpsaWJyYXJ5KGdlcnQpCmBgYApgYGB7ciBldmFsPUZ9CmdpdF9sb2coKQpgYGAKYGBge3IgZXZhbD1GfQpnaXRfc3RhdHVzKCkKYGBgCgo=</div>
 
 
 

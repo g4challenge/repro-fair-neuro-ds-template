@@ -1,4 +1,8 @@
 
+# reproducibleFairTemplate 0.3.5
+
+- fixes for Docker Image build 
+- changes in workflow description
 
 # reproducibleFairTemplate 0.3.0
 

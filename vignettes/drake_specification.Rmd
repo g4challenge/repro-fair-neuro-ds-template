@@ -5,9 +5,15 @@ date: "2020-7-31, last update (`r Sys.Date()`)"
 output: html_notebook
 ---
 
+This template demonstrates traceability of a drake plan as a sequence of execution steps.
+
+First the `setup` chunk sets the path to the project root - to conviently work with reproducible file-paths in headless and rstudio modes.
+
 ```{r setup}
 knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 ```
+
+This code sources the current projects files - packages required, functions required and the base drake plans.
 
 ```{r}
 source("R/packages.R")
@@ -15,9 +21,11 @@ source("R/functions.R")
 source("R/plan.R")
 ```
 
+The first line of the following chunk forces a re-run of the whole drake workflow - comment it to see, if drake validates the current step.
+
 ```{r}
-drake::clean()
-make(plan)
+#drake::clean()
+drake::make(plan)
 ```
 
 ```{r}
@@ -25,6 +33,8 @@ vis_drake_graph(plan)
 ```
 
 ## Mandrake
+
+Mandrake allows us to annotate and advance the documentation of a drake graph.
 
 ```{r}
 ```
@@ -63,7 +73,11 @@ graph
 ```
 
 
-## Buidling
+## Buidling of the analytic package
+
+This section considers the build steps involved in the development and extension of an analysis.
+
+First - be sure to document your package using roxygen with the following chunk.
 
 ```{r}
 #devtools::document()
@@ -74,6 +88,8 @@ graph
 ```
 
 ## Version_control
+
+In order to look into the git commit history from R - one can use the gert library to see what happened.
 
 ```{r eval=F}
 library(gert)
