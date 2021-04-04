@@ -30,7 +30,7 @@ RUN chown -R rstudio /home/rstudio
 RUN chmod -R 777 /tmp
 USER rstudio
 
-RUN R --vanilla -s -e 'renv::restore()'
+RUN R --vanilla -s -e 'renv::restore(project="/home/rstudio/project/")'
 #RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 ## Enable this to copy files from the binder subdirectory
 ## to the home, overriding any existing files.
@@ -43,6 +43,6 @@ RUN R --vanilla -s -e 'renv::restore()'
 #RUN chown -R ${NB_USER} ${HOME}
 
 ## Become normal user again
-USER ${NB_USER}
+##USER ${NB_USER}
 
 
