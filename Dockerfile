@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
 
 USER rstudio
 ENV RSESSION_PROXY_RSTUDIO_1_4=yes
-ENV RENV_VERSION 0.13.0
+ENV RENV_VERSION 0.13.2
 RUN R -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 
