@@ -31,7 +31,7 @@ How to use this package:
 
 - Your Project should use Git.
 
-- Your Project MUST have a README file
+- Your Project MUST have a `README` file
 
 
 ## Getting Started
@@ -41,13 +41,13 @@ In order to start with your reproducible Project use the following steps to get 
 
 - Define a license for your Project. By default the template already uses gpl3 - `usethis::use_gpl3_license()` is the command setting the license file.
 
-- Utilize an environment tool (renv). The project template comes with an `renv.lock` file and accompanying other files.
+- Utilize an environment tool (`renv`). The project template comes with an `renv.lock` file and accompanying other files.
 
-- Lint your code to follow good styleguides. Project Template recommends running `lintr:::addin_lint_package()` - if your package is in package structure, this lints all project files.
+- Lint your code to follow good *styleguides.* Project Template recommends running `lintr:::addin_lint_package()` - if your package is in package structure, this lints all project files.
 
 - Decide where to host your data. The project template utilizes git for version control, and may be extended with Git-LFS. Use `data` or `data-raw` folders.
 
-- Use version control for everything - including code, data, the environment, and even the packaged dependencies.
+- Use version control for everything - including *code, data, the environment, and even the packaged dependencies*.
 
 - Publish your work with a repository. The template is hosted under https://github.com/g4challenge/repro-fair-neuro-ds-template - when using GitHub change the path and name of your template.
 
@@ -175,27 +175,29 @@ docker run --rm -p 8787:8787 -e PASSWORD="1234" -v $(pwd):/home/rstudio g4challe
 
 ### FAQ
 
-Q: "Where should I start my documentation?"
+Q: *"Where should I start my documentation?"*
 
 A: start with the `Readme.md` with the base context and efforts involved in your project. Then if necessary adapt and change the vignettes to your projects implementation.
 
 
-Q: How do the various documentations relate to each other? 
+Q: *How do the various documentations relate to each other? *
 
-A: The readme serves as starting and entrypoint, while the main documentation by `pkgdown` is hosted as github page. There, all function documentation and vignettes are rendered and described.
+A: The `readme` serves as starting and entrypoint, while the main documentation by `pkgdown` is hosted as github page. There, all function documentation and vignettes are rendered and described.
 
 
-Q: What adaptations do I have to make? 
+Q: *What adaptations do I have to make? *
 
 A: Ideally, you adapt/fork the template and start by clicking on "use this template" in GitHub. There a new traceable analysis project is created. You need to maintain Links to **GitHub Pages, Zenodo and DockerHub** by yourself. 
 
-Q: How can a prioritize these adaptations? 
+Q: *How can a prioritize these adaptations?*
 
 A: You start by the most pressing needs first - getting the template externally working. Priority one is fixing the traces and validating these.
 
-Q: What is the minimal set of adaptations that I need to make? 
+Q: *What is the minimal set of adaptations that I need to make? *
 
 A: Minimal is readme, links and the vignettes folder cleaning with one drake_spec, one function.R, one packages.R, one plan.R and finally one docker build. Then your analysis is version controlled and mostly traceable with comparatively low effort.
 
 
-Can I also apply this to other contexts within medicine, or even outside of a medical context or?
+Q: *Can I also apply this to other contexts within medicine, or even outside of a medical context or?*
+
+A: Yes, the main target is utilizing good clinical practice, STROBE and DAQCORD, but it may suit other needs as well.
