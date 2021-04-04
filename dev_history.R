@@ -19,6 +19,11 @@ install.packages("lintr")
 library(lintr)
 #holepunch::write_runtime() # https://github.com/alan-turing-institute/the-turing-way/blob/master/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-r.md
 
+## covr
+covr::codecov()
+
+## testthat
+
 
 usethis::use_github_action_check_standard()
 
