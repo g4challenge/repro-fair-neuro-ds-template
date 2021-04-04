@@ -134,7 +134,7 @@
 <ul>
 <li><p>Your Project should utilize R - although it may be possible to adapt to Python code aswell, it’s native to R.</p></li>
 <li><p>Your Project should use Git.</p></li>
-<li><p>Your Project MUST have a README file</p></li>
+<li><p>Your Project MUST have a <code>README</code> file</p></li>
 </ul>
 </div>
 <div id="getting-started" class="section level2">
@@ -144,10 +144,10 @@
 <ul>
 <li><p>Create a RStudio-Project in the structure of a package - the template already established a project template.</p></li>
 <li><p>Define a license for your Project. By default the template already uses gpl3 - <code><a href="https://usethis.r-lib.org/reference/licenses.html">usethis::use_gpl3_license()</a></code> is the command setting the license file.</p></li>
-<li><p>Utilize an environment tool (renv). The project template comes with an <code>renv.lock</code> file and accompanying other files.</p></li>
-<li><p>Lint your code to follow good styleguides. Project Template recommends running <code>lintr:::addin_lint_package()</code> - if your package is in package structure, this lints all project files.</p></li>
+<li><p>Utilize an environment tool (<code>renv</code>). The project template comes with an <code>renv.lock</code> file and accompanying other files.</p></li>
+<li><p>Lint your code to follow good <em>styleguides.</em> Project Template recommends running <code>lintr:::addin_lint_package()</code> - if your package is in package structure, this lints all project files.</p></li>
 <li><p>Decide where to host your data. The project template utilizes git for version control, and may be extended with Git-LFS. Use <code>data</code> or <code>data-raw</code> folders.</p></li>
-<li><p>Use version control for everything - including code, data, the environment, and even the packaged dependencies.</p></li>
+<li><p>Use version control for everything - including <em>code, data, the environment, and even the packaged dependencies</em>.</p></li>
 <li><p>Publish your work with a repository. The template is hosted under <a href="https://github.com/g4challenge/repro-fair-neuro-ds-template" class="uri">https://github.com/g4challenge/repro-fair-neuro-ds-template</a> - when using GitHub change the path and name of your template.</p></li>
 <li><p>Use continous integration. The template utizes <code>.github/workflows</code> folders with the incorporation of pkgdown build of the <strong>Documentation</strong>, codecov and R-CMD-Check of the <strong>Execution</strong> in order to trace the results.</p></li>
 <li><p>Use code tests. The template suggests using <code>testthat</code> and documentation based tests like <code>roxytest</code>.</p></li>
@@ -281,17 +281,18 @@
 <div id="faq" class="section level3">
 <h3 class="hasAnchor">
 <a href="#faq" class="anchor"></a>FAQ</h3>
-<p>Q: “Where should I start my documentation?”</p>
+<p>Q: <em>“Where should I start my documentation?”</em></p>
 <p>A: start with the <code>Readme.md</code> with the base context and efforts involved in your project. Then if necessary adapt and change the vignettes to your projects implementation.</p>
-<p>Q: How do the various documentations relate to each other?</p>
-<p>A: The readme serves as starting and entrypoint, while the main documentation by <code>pkgdown</code> is hosted as github page. There, all function documentation and vignettes are rendered and described.</p>
-<p>Q: What adaptations do I have to make?</p>
+<p>Q: <em>How do the various documentations relate to each other? </em></p>
+<p>A: The <code>readme</code> serves as starting and entrypoint, while the main documentation by <code>pkgdown</code> is hosted as github page. There, all function documentation and vignettes are rendered and described.</p>
+<p>Q: <em>What adaptations do I have to make? </em></p>
 <p>A: Ideally, you adapt/fork the template and start by clicking on “use this template” in GitHub. There a new traceable analysis project is created. You need to maintain Links to <strong>GitHub Pages, Zenodo and DockerHub</strong> by yourself.</p>
-<p>Q: How can a prioritize these adaptations?</p>
+<p>Q: <em>How can a prioritize these adaptations?</em></p>
 <p>A: You start by the most pressing needs first - getting the template externally working. Priority one is fixing the traces and validating these.</p>
-<p>Q: What is the minimal set of adaptations that I need to make?</p>
+<p>Q: <em>What is the minimal set of adaptations that I need to make? </em></p>
 <p>A: Minimal is readme, links and the vignettes folder cleaning with one drake_spec, one function.R, one packages.R, one plan.R and finally one docker build. Then your analysis is version controlled and mostly traceable with comparatively low effort.</p>
-<p>Can I also apply this to other contexts within medicine, or even outside of a medical context or?</p>
+<p>Q: <em>Can I also apply this to other contexts within medicine, or even outside of a medical context or?</em></p>
+<p>A: Yes, the main target is utilizing good clinical practice, STROBE and DAQCORD, but it may suit other needs as well.</p>
 </div>
 </div>
   </div>
