@@ -28,6 +28,8 @@ import_data <- function(question, file) {
 #' @return TRUE or result code
 #' @export
 #'
+#' @tests
+#' expect_true(make_analysis(tibble(x=1), notebook_file="../../notebooks/report.rmd"))
 make_analysis <- function(data, notebook_file) {
 
   # knit notebook
@@ -43,6 +45,8 @@ make_analysis <- function(data, notebook_file) {
 #' @return TRUE if succesful
 #' @export
 #'
+#' @tests
+#' expect_true(evaluate_process(analysis="test"))
 evaluate_process <- function(analysis) {
   # check plot
   #
@@ -56,6 +60,8 @@ evaluate_process <- function(analysis) {
 #' @return TRUE as stub
 #' @export
 #'
+#' @tests
+#' expect_true(export_result("test"))
 export_result <- function(evaluated_process) {
   # create output files
   # capture metadata

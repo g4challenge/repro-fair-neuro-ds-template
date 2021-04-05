@@ -6,3 +6,18 @@ test_that("Function import_data() @ L17", {
   expect_s3_class(import_data("test", "../../data/raw_data.xlsx"),  "data.frame")
 })
 
+
+test_that("Function make_analysis() @ L33", {
+  expect_true(make_analysis(tibble(x=1), notebook_file="../../notebooks/report.rmd"))
+})
+
+
+test_that("Function evaluate_process() @ L50", {
+  expect_true(evaluate_process(analysis="test"))
+})
+
+
+test_that("Function export_result() @ L65", {
+  expect_true(export_result("test"))
+})
+

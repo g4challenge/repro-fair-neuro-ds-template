@@ -15,6 +15,11 @@ In both cases, no one must utilize all provided packages and patterns, one can g
 
 In order to get reproducible and traceable, one must version control ideally documentation, code, data and execution environment.
 
+```{r setup}
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```
+
+
 ## TL;DR
 How to use this package:
 
@@ -89,18 +94,9 @@ This graph shows, the sequence from input question, to reading the dataset to pr
 `testthat` is able to test the local package of your analysis using `test_local()` the following code chunk tests all targets and executions of this package's workflows.
 
 ```{r}
-testthat::test_local("../")
+testthat::test_local(".")
 ```
 
-### Complete Provenance
-
-In order to achieve a track record of complete provenance within the template, `rdtLite` is used in conjunction with a makefile, the `make.R` is comparable and similar to the `scenario_1.Rmd` except it can be captured by rdtLite as workflow run.
-
-```{r eval=F}
-rdtLite::prov.run("../R/make.R", prov.dir="../.prov/")
-```
-
-This results in the fresh creation of a `.prov` subdirectory - which has provenance execution traces according to the rdtlite specification.
 
 
 ### Provenance Curation
@@ -113,6 +109,17 @@ drake::clean(destroy=TRUE) # clean cache and curate "one" clean run in the drake
 ```
 
 The second command cleans the `.drake` folder and allows for version control of only the curated final release.
+
+### Complete Provenance
+
+In order to achieve a track record of complete provenance within the template, `rdtLite` is used in conjunction with a makefile, the `make.R` is comparable and similar to the `scenario_1.Rmd` except it can be captured by rdtLite as workflow run.
+
+```{r eval=F}
+getwd() #validate path to project root
+rdtLite::prov.run(r.script.path = "make.R", prov.dir=".prov/")
+```
+
+This results in the fresh creation of a `.prov` subdirectory - which has provenance execution traces according to the rdtlite specification.
 
 
 ### Development Steps

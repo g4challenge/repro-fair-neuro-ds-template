@@ -6,3 +6,8 @@ test_that("Function my_function() @ L16", {
   expect_equal(my_function(1), 2)
 })
 
+
+test_that("Function create_plot() @ L33", {
+  expect_s3_class(create_plot(tibble(x=rnorm(10)), quote("x")), "ggplot")
+})
+

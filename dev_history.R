@@ -2,10 +2,7 @@
 
 # Dev-History
 
-# Provenance in R
-# https://github.com/End-to-end-provenance/RDataTracker
-## Provenance of a run
-prov.run("R/make.R")
+
 
 ## Research Compendium
 ## https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor
@@ -23,8 +20,10 @@ library(lintr)
 covr::codecov()
 
 ## testthat
+testthat::test_local(".")
 
 
+## Github Action for R CMD Check
 usethis::use_github_action_check_standard()
 
 ## pkgdown
@@ -33,9 +32,11 @@ pkgdown::build_site()
 usethis::use_gpl3_license() # GPL-License for maximum shareability
 
 #prov
-
+# Provenance in R
+# https://github.com/End-to-end-provenance/RDataTracker
+## Provenance of a run
 library(rdtLite)
 
 rdtLite::prov.quit()
-rdtLite::prov.run("R/make.R")
+rdtLite::prov.run("make.R")
 rdtLite::prov.visualize()

@@ -18,8 +18,7 @@ USER rstudio
 
 ## Copies your repo files into the Docker Container
 WORKDIR /home/rstudio/project
-COPY renv.lock renv.lock
-COPY renv/ renv/
+COPY . /home/rstudio/project
 RUN R -e 'renv::consent(provided=TRUE)'
 RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 #RUN R -e 'renv::restore(packages = "renv")'
@@ -29,8 +28,12 @@ RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 
 
 
-COPY . /home/rstudio/project
+
+COPY .drake /home/rstudio/project/.drake
 USER root
+RUN chown -R rstudio:rstudio /home/rstudio
+
+
 #RUN R --vanilla -e 'renv::restore(project="/home/rstudio/project/")'
 #RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 

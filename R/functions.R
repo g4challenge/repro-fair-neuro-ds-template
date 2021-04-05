@@ -28,8 +28,10 @@ my_function <- function(input) {
 #' @return ggplot object
 #' @export
 #'
+#'@tests
+#'expect_s3_class(create_plot(tibble(x=rnorm(10)), quote("x")), "ggplot")
 create_plot <- function(data, variable) {
   ggplot(data) +
-    geom_histogram(aes(x = variable), binwidth = 10) +
+    geom_histogram(aes_(x = variable), binwidth = 10) +
     theme_gray(24)
 }

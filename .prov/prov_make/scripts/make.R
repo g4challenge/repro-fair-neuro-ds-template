@@ -2,8 +2,9 @@
 
 ## Make R
 
-source("R/packages.R")
-source("R/functions.R")
-source("R/plan.R")
-
-make(plan)
+#devtools::load_all()
+#library(drake)
+render_repro <- function(){
+  drake::make(scenario_1_wrapper())
+}
+render_repro()
