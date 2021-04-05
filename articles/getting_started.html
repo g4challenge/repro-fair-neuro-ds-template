@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reproducibleFairTemplate</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -115,6 +115,8 @@
 </ul>
 <p>In both cases, no one must utilize all provided packages and patterns, one can gradually improve reproducibility. This section will walk you through some of the core aspects to utilize this work.</p>
 <p>In order to get reproducible and traceable, one must version control ideally documentation, code, data and execution environment.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_knit.html">opts_knit</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>root.dir <span class="op">=</span> <span class="fu">rprojroot</span><span class="fu">::</span><span class="fu"><a href="https://rprojroot.r-lib.org//reference/find_root_file.html">find_rstudio_root_file</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="tldr" class="section level2">
 <h2 class="hasAnchor">
@@ -176,8 +178,8 @@
 <h3 class="hasAnchor">
 <a href="#test-results" class="anchor"></a>Test-Results</h3>
 <p><code>testthat</code> is able to test the local package of your analysis using <code>test_local()</code> the following code chunk tests all targets and executions of this package’s workflows.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_package.html">test_local</a></span><span class="op">(</span><span class="st">"../"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_package.html">test_local</a></span><span class="op">(</span><span class="st">"."</span><span class="op">)</span></code></pre></div>
 <pre><code>## Loading required package: tidyverse</code></pre>
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.3.3     ✔ purrr   0.3.4
@@ -195,22 +197,17 @@
 ## 
 ⠏ |   0       | roxytest-tests-functions_scenario_1                             
 ⠏ |   0       | File R/functions_scenario_1.R: @tests                           
-✔ |   1       | File R/functions_scenario_1.R: @tests
+⠙ |   2       | File R/functions_scenario_1.R: @tests                           
+✔ |   4       | File R/functions_scenario_1.R: @tests [0.3 s]
 ## 
 ⠏ |   0       | roxytest-tests-functions                                        
 ⠏ |   0       | File R/functions.R: @tests                                      
-✔ |   1       | File R/functions.R: @tests
+✔ |   2       | File R/functions.R: @tests
 ## 
 ## ══ Results ═════════════════════════════════════════════════════════════════════
-## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]</code></pre>
-</div>
-<div id="complete-provenance" class="section level3">
-<h3 class="hasAnchor">
-<a href="#complete-provenance" class="anchor"></a>Complete Provenance</h3>
-<p>In order to achieve a track record of complete provenance within the template, <code>rdtLite</code> is used in conjunction with a makefile, the <code>make.R</code> is comparable and similar to the <code>scenario_1.Rmd</code> except it can be captured by rdtLite as workflow run.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">rdtLite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rdtLite/man/prov.run.html">prov.run</a></span><span class="op">(</span><span class="st">"../R/make.R"</span>, prov.dir<span class="op">=</span><span class="st">"../.prov/"</span><span class="op">)</span></code></pre></div>
-<p>This results in the fresh creation of a <code>.prov</code> subdirectory - which has provenance execution traces according to the rdtlite specification.</p>
+## Duration: 0.3 s
+## 
+## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]</code></pre>
 </div>
 <div id="provenance-curation" class="section level3">
 <h3 class="hasAnchor">
@@ -220,6 +217,15 @@
 <code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#clean the cache to force rebuild</span>
 <span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span>destroy<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co"># clean cache and curate "one" clean run in the drake cache.</span></code></pre></div>
 <p>The second command cleans the <code>.drake</code> folder and allows for version control of only the curated final release.</p>
+</div>
+<div id="complete-provenance" class="section level3">
+<h3 class="hasAnchor">
+<a href="#complete-provenance" class="anchor"></a>Complete Provenance</h3>
+<p>In order to achieve a track record of complete provenance within the template, <code>rdtLite</code> is used in conjunction with a makefile, the <code>make.R</code> is comparable and similar to the <code>scenario_1.Rmd</code> except it can be captured by rdtLite as workflow run.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#validate path to project root</span>
+<span class="fu">rdtLite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rdtLite/man/prov.run.html">prov.run</a></span><span class="op">(</span>r.script.path <span class="op">=</span> <span class="st">"make.R"</span>, prov.dir<span class="op">=</span><span class="st">".prov/"</span><span class="op">)</span></code></pre></div>
+<p>This results in the fresh creation of a <code>.prov</code> subdirectory - which has provenance execution traces according to the rdtlite specification.</p>
 </div>
 <div id="development-steps" class="section level3">
 <h3 class="hasAnchor">
