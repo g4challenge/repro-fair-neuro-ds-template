@@ -33,6 +33,6 @@ RUN chown -R root:root /var/lib/rstudio-server
 RUN chmod -R g=u /var/lib/rstudio-server
 USER rstudio
 
-RUN R --vanilla -e 'renv::restore(project="/home/rstudio/project/")'
+#RUN R --vanilla -e 'renv::restore(project="/home/rstudio/project/")'
 #RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 
