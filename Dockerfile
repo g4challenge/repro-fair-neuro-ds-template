@@ -18,6 +18,7 @@ RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 WORKDIR /home/rstudio/project
 COPY renv.lock renv.lock
 RUN R -e 'renv::consent(provided=TRUE)'
+RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 #RUN R -e 'renv::restore(packages = "renv")'
 #RUN R -e 'renv::restore(project="/home/rstudio/")'
 #RUN pip3 install --no-cache-dir jupyter-rsession-proxy
@@ -28,21 +29,10 @@ COPY . /home/rstudio/project
 USER root
 RUN chown -R rstudio /home/rstudio
 RUN chmod -R 777 /tmp
+RUN chown -R root:root /var/lib/rstudio-server
+RUN chmod -R g=u /var/lib/rstudio-server
 USER rstudio
 
 RUN R --vanilla -e 'renv::restore(project="/home/rstudio/project/")'
 #RUN R -e 'renv::restore(project="/home/rstudio/project/")'
-## Enable this to copy files from the binder subdirectory
-## to the home, overriding any existing files.
-## Useful to create a setup on binder that is different from a
-## clone of your repository
-## COPY binder ${HOME}
-
-## Install packages
-
-#RUN chown -R ${NB_USER} ${HOME}
-
-## Become normal user again
-##USER ${NB_USER}
-
 
