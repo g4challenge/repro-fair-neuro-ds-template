@@ -1,4 +1,4 @@
-# Reproducible Clinical Research Project Template based on  -RM
+# Reproducible Clinical Research Project Template based on TRACE-RM
 
 [![DOI](https://zenodo.org/badge/284042245.svg)](https://zenodo.org/badge/latestdoi/284042245)
 ![pkgdown](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/pkgdown/badge.svg?branch=master)
@@ -113,7 +113,7 @@ The research results have associated generated metadata, which can be displayed 
 
 Further, the results are archived and stored as zip on Zenodo:
 
-- [Zenodo repro-Fair-Neuro](https://zenodo.org/record/4015128)
+- [Zenodo repro-Fair-Neuro](https://zenodo.org/record/4015127)
     
 ## Additional Remarks
 
