@@ -5,6 +5,6 @@
 #devtools::load_all()
 #library(drake)
 render_repro <- function(){
-  drake::make(scenario_1_wrapper())
+  drake::make(scenario_wrapper())
 }
 render_repro()

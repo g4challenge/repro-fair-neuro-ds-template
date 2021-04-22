@@ -28,10 +28,10 @@ drake::clean()
 #file.exists("data/raw_data.xlsx")
 ```
 
-The `scenario_1_wrapper`-function returns the instantiated scenario_1 drake "tibble".
+The `scenario_wrapper`-function returns the instantiated scenario plan as drake "tibble".
 
 ```{r}
-drake::make(scenario_1_wrapper())
+drake::make(scenario_wrapper())
 ```
 
 ```{r}
@@ -39,6 +39,6 @@ drake_history()
 ```
 
 ```{r}
-vis_drake_graph(scenario_1_wrapper())
+vis_drake_graph(scenario_wrapper())
 ```
 

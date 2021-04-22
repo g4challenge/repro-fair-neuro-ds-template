@@ -26,10 +26,10 @@ plan <- drake_plan(
     #)
   )
 
-#' Plan of scenario_1
+#' Plan of scenarios
 #' @export
-scenario_1_wrapper <- function(){
-  scenario_1 <- drake_plan(
+scenario_wrapper <- function(){
+  plan <- drake_plan(
     sc1_question = "string that defines hypothesis - example: get the cpp values from different patients, which are stored in triplets",
     sc1_data = import_data(sc1_question, file_in("data/raw_data.xlsx")),
     # calculate cpp
@@ -43,7 +43,8 @@ scenario_1_wrapper <- function(){
       file_out("notebooks/report.html")
     },
     sc1_evaluation_process = evaluate_process(sc1_analysis),
-    sc1_result = export_result(sc1_evaluation_process)
+    sc1_result = export_result(sc1_evaluation_process),
+    ### Scenario_2
   )
-  return(scenario_1)
+  return(plan)
 }
