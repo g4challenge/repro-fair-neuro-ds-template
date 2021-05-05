@@ -27,7 +27,6 @@ The projects created with this template should be:
 - Tested
 - FAIR
 
-
 The user should utilize R and Tidyverse.
 
 
