@@ -8,6 +8,7 @@
 [![R-CMD-check](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/R-CMD-check/badge.svg)](https://github.com/g4challenge/repro-fair-neuro-ds-template/actions)
 ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/g4challenge/repro-fair-neuro-ds-template)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4849/badge)](https://bestpractices.coreinfrastructure.org/projects/4849)
+[![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B%20%20%E2%97%8F%20%20%E2%97%8F-yellow)](https://fair-software.eu)
 
 Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290
 ">
