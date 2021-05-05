@@ -7,6 +7,7 @@
 [![codecov](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template/branch/master/graph/badge.svg?token=JF0BD0NRTR)](https://codecov.io/gh/g4challenge/repro-fair-neuro-ds-template)
 [![R-CMD-check](https://github.com/g4challenge/repro-fair-neuro-ds-template/workflows/R-CMD-check/badge.svg)](https://github.com/g4challenge/repro-fair-neuro-ds-template/actions)
 ![Docker Image Version (latest by date)](https://img.shields.io/docker/v/g4challenge/repro-fair-neuro-ds-template)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4849/badge)](https://bestpractices.coreinfrastructure.org/projects/4849)
 
 Author: Lukas Huber <a href="https://orcid.org/0000-0001-5443-0290
 ">
