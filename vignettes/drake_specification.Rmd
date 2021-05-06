@@ -25,11 +25,11 @@ The first line of the following chunk forces a re-run of the whole drake workflo
 
 ```{r}
 drake::clean()
-drake::make(plan)
+drake::make(scenario_wrapper())
 ```
 
 ```{r}
-vis_drake_graph(plan)
+vis_drake_graph(scenario_wrapper())
 ```
 
 ## Mandrake

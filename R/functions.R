@@ -1,5 +1,8 @@
 # Functions
 
+source("R/functions_scenario_1.R")
+source("R/functions_scenario_2.R")
+
 #' Increment Template Function
 #'
 #' @param input

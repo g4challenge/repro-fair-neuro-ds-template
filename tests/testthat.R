@@ -43,7 +43,12 @@ test_that("6 - results are traceable", 1)
 # zenodo,...
 # Rocrate
 test_that("6 - ROCrate exists",{
-  expect_true(file.exists("../ro-crate-metadata.json"))
+  expect_true(file.exists("../man/figures/ro-crate-metadata.json"))
+})
+
+drake::loadd(sc2_random1)
+testthat::test_that("6 - sc2_random1 contains the reproducible correct sample", {
+  testthat::expect_equal(sc2_random1$cpp[1], 89.5938261130521)
 })
 
 test_that("Environment is correct version", {
