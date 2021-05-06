@@ -2,8 +2,19 @@
 title: "drake_specification"
 author: "Lukas Huber"
 date: "2020-7-31, last update (`r Sys.Date()`)"
-output: html_notebook
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{drake_specification}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 This template demonstrates traceability of a drake plan as a sequence of execution steps.
 
@@ -32,19 +43,19 @@ drake::make(scenario_wrapper())
 vis_drake_graph(scenario_wrapper())
 ```
 
-## Mandrake
+## Mandrake - limited
 
 Mandrake allows us to annotate and advance the documentation of a drake graph.
 
-```{r}
+```{r eval=F}
 ```
 
 
-```{r}
+```{r eval=F}
 lookup_cache <- mandrake::load_package_colspec("reproducibleFairTemplate")
 ```
 
-```{r}
+```{r eval=F}
 cache <- drake::drake_cache()
 plan_extracted <- scenario_wrapper() %>%
   mandrake::decorate_plan(cache=cache, 
@@ -52,7 +63,7 @@ plan_extracted <- scenario_wrapper() %>%
                           desc_colname = "desc")
 ```
 
-```{r}
+```{r eval=F}
 my_config <- drake_config(plan_extracted)
 graph_info <- drake_graph_info(
   my_config, 
@@ -68,7 +79,7 @@ graph <- render_drake_graph(
   mandrake::attach_dependencies()
 ```
 
-```{r}
+```{r eval=F}
 graph
 ```
 

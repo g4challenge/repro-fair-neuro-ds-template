@@ -1,3 +1,6 @@
+url: https://g4challenge.github.io/repro-fair-neuro-ds-template/
+deploy:
+ install_metadata: true
 repo:
   url:
     home: https://github.com/g4challenge/repro-fair-neuro-ds-template
