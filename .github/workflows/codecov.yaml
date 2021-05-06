@@ -38,7 +38,7 @@ jobs:
         run: |
           install.packages(c("renv", "remotes"))
           renv::restore()
-          remotes::install_cran("covr")
+          remotes::install_cran("covr")d
         shell: Rscript {0}
 
       - name: Test coverage
