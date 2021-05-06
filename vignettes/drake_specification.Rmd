@@ -64,8 +64,8 @@ graph_info <- drake_graph_info(
 graph <- render_drake_graph(
   graph_info,
   on_select = "embedHandler",
-  ncol_legend = 4
-  ) %>% mandrake::attach_dependencies(standalone=F)
+  ncol_legend = 4) %>% 
+  mandrake::attach_dependencies()
 ```
 
 ```{r}
