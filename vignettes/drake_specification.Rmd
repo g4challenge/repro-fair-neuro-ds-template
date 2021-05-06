@@ -46,7 +46,7 @@ lookup_cache <- mandrake::load_package_colspec("mandrake")
 
 ```{r}
 cache <- drake::drake_cache()
-plan_extracted <- plan %>%
+plan_extracted <- scenario_wrapper() %>%
   mandrake::decorate_plan(cache=cache, 
                           lookup_cache = lookup_cache,
                           desc_colname = "desc")
@@ -62,15 +62,17 @@ graph_info <- drake_graph_info(
   on_select_col = "desc")
 
 graph <- render_drake_graph(
-  graph_info, 
-  on_select = mandrake::embed_event_handler(),
+  graph_info,
   ncol_legend = 4
-  ) 
+  ) %>% mandrake::attach_dependencies()
 ```
 
 ```{r}
 graph
 ```
+
+
+
 
 
 ## Buidling of the analytic package
