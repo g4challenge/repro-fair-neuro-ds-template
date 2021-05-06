@@ -126,6 +126,7 @@ Elements the user should be familiar with:
 - R(markdown)
 - [Tidyverse](https://www.tidyverse.org/)
 - [drake](https://books.ropensci.org/drake/)
+- [FAIR Software](http://fair-software.eu/)
 
 Alternatives and extensions:
 - [https://github.com/End-to-end-provenance](https://github.com/End-to-end-provenance) - rdtlite is used to generate PROV information.
