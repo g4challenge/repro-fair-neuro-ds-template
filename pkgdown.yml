@@ -6,6 +6,10 @@ articles:
   getting_started: getting_started.html
   ro_crate: ro_crate.html
   scenario_1: scenario_1.html
+  scenario_2: scenario_2.html
   trace-rm: trace-rm.html
-last_built: 2021-04-05T13:18Z
+last_built: 2021-05-06T11:51Z
+urls:
+  reference: https://g4challenge.github.io/repro-fair-neuro-ds-template//reference
+  article: https://g4challenge.github.io/repro-fair-neuro-ds-template//articles
 

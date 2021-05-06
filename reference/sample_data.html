@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Neuro-ICU Synthetic Dataset — icu_example_dataset • reproducibleFairTemplate</title>
+<title>Samples data linked with the question from scenario 1 — sample_data • reproducibleFairTemplate</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Neuro-ICU Synthetic Dataset — icu_example_dataset" />
-<meta property="og:description" content="This dataset is synthetically generated and gives example of real values" />
+<meta property="og:title" content="Samples data linked with the question from scenario 1 — sample_data" />
+<meta property="og:description" content="Samples data linked with the question from scenario 1" />
 
 
 
@@ -138,36 +138,29 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Neuro-ICU Synthetic Dataset</h1>
-    <small class="dont-index">Source: <a href='https://github.com/g4challenge/repro-fair-neuro-ds-template/blob/master/R/data_structure.R'><code>R/data_structure.R</code></a></small>
-    <div class="hidden name"><code>icu_example_dataset.Rd</code></div>
+    <h1>Samples data linked with the question from scenario 1</h1>
+    <small class="dont-index">Source: <a href='https://github.com/g4challenge/repro-fair-neuro-ds-template/blob/master/R/functions_scenario_2.R'><code>R/functions_scenario_2.R</code></a></small>
+    <div class="hidden name"><code>sample_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This dataset is synthetically generated and gives example of real values</p>
+    <p>Samples data linked with the question from scenario 1</p>
     </div>
 
+    <pre class="usage"><span class='fu'>sample_data</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>the tibble which is subsampled</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="output-columns-"><a class="anchor" href="#output-columns-"></a>Output Columns:</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
-<dl>
-<dt>gupi</dt><dd><p>Numeric.
-<code>gupi</code> or "General Unified Persistent Identifier" identifies a subject across different datasets.
-<ul>
-</ul></p></dd>
-<dt>timestamp</dt><dd><p>dttm
-Timestamp of recorded value(s)
-<ul>
-</ul></p></dd>
-<dt>ICP</dt><dd><p>Numeric.
-Intracranial Pressure measured in mmHg
-<ul>
-</ul></p></dd>
-
-</dl>
-
+    <p>sampled data, which should be reprodcicble</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

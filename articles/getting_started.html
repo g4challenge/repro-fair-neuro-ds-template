@@ -66,6 +66,9 @@
       <a href="../articles/scenario_1.html">Scenario 1</a>
     </li>
     <li>
+      <a href="../articles/scenario_2.html">Scenario 2</a>
+    </li>
+    <li>
       <a href="../articles/trace-rm.html">TRACE-RM</a>
     </li>
   </ul>
@@ -183,7 +186,7 @@
 <pre><code>## Loading required package: tidyverse</code></pre>
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.3.3     ✔ purrr   0.3.4
-## ✔ tibble  3.1.0     ✔ dplyr   1.0.5
+## ✔ tibble  3.1.1     ✔ dplyr   1.0.6
 ## ✔ tidyr   1.1.3     ✔ stringr 1.4.0
 ## ✔ readr   1.4.0     ✔ forcats 0.5.1</code></pre>
 <pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -193,6 +196,15 @@
 ## ✖ dplyr::matches() masks tidyr::matches(), testthat::matches()</code></pre>
 <pre><code>## The following packages were not previously loaded:
 ## reproducibleFairTemplate</code></pre>
+<pre><code>## Warning: 
+## ── Conflicts ───────────────────────────── reproducibleFairTemplate conflicts ──
+## ✖ evaluate_process() masks reproducibleFairTemplate::evaluate_process()
+## ✖ export_result()    masks reproducibleFairTemplate::export_result()
+## ✖ import_data()      masks reproducibleFairTemplate::import_data()
+## … and 2 more
+## 
+## Did you accidentally source a file rather than using `load_all()`?
+## Run `rm(list = c("evaluate_process", "export_result", "import_data", "make_analysis", "sample_data"))` to remove the conflicts.</code></pre>
 <pre><code>## ✔ |  OK F W S | Context
 ## 
 ⠏ |   0       | roxytest-tests-functions_scenario_1                             
@@ -207,13 +219,15 @@
 ## ══ Results ═════════════════════════════════════════════════════════════════════
 ## Duration: 0.3 s
 ## 
-## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]</code></pre>
+## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]
+## 
+## You are a coding rockstar!</code></pre>
 </div>
 <div id="provenance-curation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#provenance-curation" class="anchor"></a>Provenance Curation</h3>
 <p>If you want to curate your results as <code>release</code> - it may be useful and suitable to curate the traces. The following commands help to achieve this:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#clean the cache to force rebuild</span>
 <span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span>destroy<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co"># clean cache and curate "one" clean run in the drake cache.</span></code></pre></div>
 <p>The second command cleans the <code>.drake</code> folder and allows for version control of only the curated final release.</p>
@@ -222,7 +236,7 @@
 <h3 class="hasAnchor">
 <a href="#complete-provenance" class="anchor"></a>Complete Provenance</h3>
 <p>In order to achieve a track record of complete provenance within the template, <code>rdtLite</code> is used in conjunction with a makefile, the <code>make.R</code> is comparable and similar to the <code>scenario_1.Rmd</code> except it can be captured by rdtLite as workflow run.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#validate path to project root</span>
 <span class="fu">rdtLite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rdtLite/man/prov.run.html">prov.run</a></span><span class="op">(</span>r.script.path <span class="op">=</span> <span class="st">"make.R"</span>, prov.dir<span class="op">=</span><span class="st">".prov/"</span><span class="op">)</span></code></pre></div>
 <p>This results in the fresh creation of a <code>.prov</code> subdirectory - which has provenance execution traces according to the rdtlite specification.</p>
