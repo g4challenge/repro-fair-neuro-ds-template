@@ -2,12 +2,12 @@
 
 context("File R/functions.R: @tests")
 
-test_that("Function my_function() @ L16", {
+test_that("Function my_function() @ L19", {
   expect_equal(my_function(1), 2)
 })
 
 
-test_that("Function create_plot() @ L33", {
+test_that("Function create_plot() @ L36", {
   expect_s3_class(create_plot(tibble(x=rnorm(10)), quote("x")), "ggplot")
 })
 
