@@ -308,12 +308,12 @@ Including mandrake.yaml in lookup cache</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2FjaGUgPC0gZHJha2U6OmRyYWtlX2NhY2hlKClcbnBsYW5fZXh0cmFjdGVkIDwtIHBsYW4gJT4lXG4gIG1hbmRyYWtlOjpkZWNvcmF0ZV9wbGFuKGNhY2hlPWNhY2hlLCBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgbG9va3VwX2NhY2hlID0gbG9va3VwX2NhY2hlLFxuICAgICAgICAgICAgICAgICAgICAgICAgICBkZXNjX2NvbG5hbWUgPSBcImRlc2NcIilcbmBgYCJ9 -->
-<pre class="r"><code>cache &lt;- drake::drake_cache()
-plan_extracted &lt;- plan %&gt;%
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxhbl9leHRyYWN0ZWQgPC0gcGxhbiAlPiVcbiAgbWFuZHJha2U6OmRlY29yYXRlX3BsYW4oY2FjaGU9Y2FjaGUsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICBsb29rdXBfY2FjaGUgPSBsb29rdXBfY2FjaGUsXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NfY29sbmFtZSA9IFwiZGVzY1wiKVxuXG5gYGAifQ== -->
+<pre class="r"><code>plan_extracted &lt;- plan %&gt;%
   mandrake::decorate_plan(cache=cache, 
                           lookup_cache = lookup_cache,
-                          desc_colname = &quot;desc&quot;)</code></pre>
+                          desc_colname = &quot;desc&quot;)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiRmVobGVyIGluIFVzZU1ldGhvZChcIm11dGF0ZVwiKSA6IFxuICBuaWNodCBhbndlbmRiYXJlIE1ldGhvZGUgZsO8ciAnbXV0YXRlJyBhdWYgT2JqZWt0IGRlciBLbGFzc2UgXCJmdW5jdGlvblwiIGFuZ2V3ZW5kZXRcbiJ9 -->
 <pre><code>Fehler in UseMethod(&quot;mutate&quot;) : 
