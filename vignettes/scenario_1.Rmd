@@ -14,7 +14,7 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 The simulated hypotheses is to generate a CPP(cerebral perfusion pressure) based on raw_data. The following chunk instantiates packages, functions and plans.
 
 ```{r}
-library(reproducibleFairTemplate)
+pkgload::load_all()
 #source("R/packages.R")
 #source("R/functions.R")
 #source("R/functions_scenario_1.R")

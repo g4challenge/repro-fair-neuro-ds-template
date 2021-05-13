@@ -1,4 +1,9 @@
 
+# reproducibleFairTemplate 0.4.2
+- clean runs of drake
+- added multiple fixes on CI scripts
+- using renv 0.13.2-32 to avoid python venv bug
+
 # reproducibleFairTemplate 0.4.0
 
 - removed all binder specific dependencies and moved to clean R+verse image.

@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --allow-downgrades --allow-remove-essen
   python3-venv
 
 
-ENV RENV_VERSION 0.13.2
+ENV RENV_VERSION 0.13.2-32
 RUN R --vanilla -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN R --vanilla -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 
@@ -23,9 +23,6 @@ RUN R -e 'renv::consent(provided=TRUE)'
 RUN R -e 'renv::restore(project="/home/rstudio/project/")'
 #RUN R -e 'renv::restore(packages = "renv")'
 #RUN R -e 'renv::restore(project="/home/rstudio/")'
-
-
-
 
 
 

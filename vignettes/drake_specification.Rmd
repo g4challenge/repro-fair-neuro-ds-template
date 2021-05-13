@@ -35,12 +35,12 @@ pkgload::load_all()
 
 The first line of the following chunk forces a re-run of the whole drake workflow - comment it to see, if drake validates the current step.
 
-```{r}
+```{r eval=F}
 drake::clean()
 drake::make(scenario_wrapper())
 ```
 
-```{r}
+```{r eval=F}
 vis_drake_graph(scenario_wrapper())
 ```
 

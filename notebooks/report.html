@@ -174,21 +174,21 @@ pre code {
 <p>Because of the use of <code>loadd()</code> and <code>readd()</code> below, <code>drake</code> knows <code>report.report</code> depends on targets <code>sc1_interim_data</code>.</p>
 <pre class="r"><code>library(drake)
 loadd(sc1_interim_data)
-print(sc1_interim_data)</code></pre>
-<pre><code>## # A tibble: 153 x 6
-##     gupi timestamp              ICP PbtO2   MAP   cpp
-##    &lt;dbl&gt; &lt;dttm&gt;               &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1     1 2021-01-01 10:00:00  3.80  18.8  109.  105. 
-##  2     1 2021-01-01 10:05:00  9.15  32.0  105.   95.8
-##  3     1 2021-01-01 10:10:00  5.80  14.8   88.5  82.7
-##  4     1 2021-01-01 10:15:00 15.4    2.72  94.3  78.9
-##  5     1 2021-01-01 10:20:00 14.1   21.3  105.   90.4
-##  6     1 2021-01-01 10:25:00 13.7   29.9  116.  102. 
-##  7     1 2021-01-01 10:30:00  8.81  35.0  118.  110. 
-##  8     1 2021-01-01 10:35:00  0.551 25.1  106.  105. 
-##  9     1 2021-01-01 10:40:00  8.31  28.8   93.7  85.4
-## 10     1 2021-01-01 10:45:00 18.3   38.2   97.6  79.3
-## # … with 143 more rows</code></pre>
+print(sc1_interim_data)
+#&gt; # A tibble: 153 x 6
+#&gt;     gupi timestamp              ICP PbtO2   MAP   cpp
+#&gt;    &lt;dbl&gt; &lt;dttm&gt;               &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt;  1     1 2021-01-01 10:00:00  3.80  18.8  109.  105. 
+#&gt;  2     1 2021-01-01 10:05:00  9.15  32.0  105.   95.8
+#&gt;  3     1 2021-01-01 10:10:00  5.80  14.8   88.5  82.7
+#&gt;  4     1 2021-01-01 10:15:00 15.4    2.72  94.3  78.9
+#&gt;  5     1 2021-01-01 10:20:00 14.1   21.3  105.   90.4
+#&gt;  6     1 2021-01-01 10:25:00 13.7   29.9  116.  102. 
+#&gt;  7     1 2021-01-01 10:30:00  8.81  35.0  118.  110. 
+#&gt;  8     1 2021-01-01 10:35:00  0.551 25.1  106.  105. 
+#&gt;  9     1 2021-01-01 10:40:00  8.31  28.8   93.7  85.4
+#&gt; 10     1 2021-01-01 10:45:00 18.3   38.2   97.6  79.3
+#&gt; # … with 143 more rows</code></pre>
 <pre class="r"><code>library(tidyverse)
 ggplot(sc1_interim_data, aes(x=timestamp, y=cpp, color=factor(gupi)))+
   geom_line()</code></pre>
