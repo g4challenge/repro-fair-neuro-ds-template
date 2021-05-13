@@ -10,7 +10,7 @@ scenario_wrapper <- function(){
   plan <- drake_plan(
     ## Data Selection
     sc1_question = "string that defines hypothesis - example: get the cpp values from different patients, which are stored in triplets",
-    sc1_data = target(import_data(sc1_question, file_in("data/raw_data.xlsx")),
+    sc1_data = target(import_data(sc1_question, file_in("data-raw/raw_data.xlsx")),
                       desc = "
                       ** Dataframe containing patient data **
                       "),

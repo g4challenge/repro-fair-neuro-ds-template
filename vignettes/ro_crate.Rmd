@@ -27,7 +27,7 @@ crate = ROCrate()
 ## Data entities
 ```{python eval=F}
 ## adding a File entity:
-raw_file = '../data/raw_data.xlsx'
+raw_file = '../data-raw/raw_data.xlsx'
 file_entity = crate.add_file(raw_file)
 
 # Adding a File entity with a reference to an external (absolute) URI
