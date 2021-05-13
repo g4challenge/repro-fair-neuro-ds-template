@@ -7,7 +7,7 @@ test_that("Function my_function() @ L17", {
 })
 
 
-test_that("Function create_plot() @ L34", {
+test_that("Function create_plot() @ L36", {
   expect_s3_class(create_plot(tibble(x=rnorm(10)), quote("x")), "ggplot")
 })
 

@@ -1,13 +1,25 @@
 # Plan
 # Author: LH
 
+# Define Globals
+utils::globalVariables(c("sc1_question",
+                         "sc1_data",
+                         "sc1_interim_data",
+                         "sc1_analysis",
+                         "sc1_evaluation_process",
+                         "sc1_result",
+                         "sc2_random1"))
 
 #' Plan of scenarios,
 #' This is where you set up your workflow plan,
 #' a data frame with the steps of your analysis.
 #' @export
 #'
-#' @importFrom drake drake_plan
+#' @importFrom drake drake_plan target knitr_in file_in file_out
+#' @importFrom magrittr `%>%`
+#' @importFrom dplyr mutate
+#' @import tidyverse
+#' @import rmarkdown
 #'
 #' @tests
 #' expect_s3_class(scenario_wrapper(), "drake_plan")

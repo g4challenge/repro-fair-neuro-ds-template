@@ -2,10 +2,14 @@
 
 #' Samples data linked with the question from scenario 1
 #'
+#'
 #' @param data the tibble which is subsampled
 #'
 #' @return sampled data, which should be reprodcicble
+#'
+#' @importFrom dplyr sample_n
 #' @export
+#'
 #'
 #'@tests
 #'expect_equal(nrow(sample_data(tibble(x=c(1,2,3,4,5)))),1)

@@ -29,6 +29,8 @@ my_function <- function(input) {
 #' @return ggplot object
 #' @export
 #'
+#' @import ggplot2
+#'
 #'@tests
 #'expect_s3_class(create_plot(tibble(x=rnorm(10)), quote("x")), "ggplot")
 create_plot <- function(data, variable) {
