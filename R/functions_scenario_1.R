@@ -8,7 +8,7 @@
 #' @importFrom readxl read_excel
 #'
 #' @tests
-#' expect_s3_class(import_data("test", "../../data/raw_data.xlsx"),  "data.frame")
+#' expect_error(import_data("test", "some_wrong_path/raw_data.xlsx"),  "data.frame")
 #'
 #'
 #' @return imported data
