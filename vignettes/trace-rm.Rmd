@@ -1,7 +1,11 @@
 ---
 title: "TRACE-RM"
 author: "Lukas Huber"
-output: html_notebook
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{trace_rm}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 This traceability reference model **TRACE-RM** is based upon [W3C PROV](https://www.w3.org/TR/prov-overview/) principles with the scope of traceability of observational neuro-intensive care research. It focuses on computational reproducibility of analytic approaches.

@@ -1,6 +1,10 @@
 ---
 title: "Scenario 2"
-output: html_notebook
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{scenario_2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 This notebook handles the rendering of scenario_2 - which is a simple case of a hypotheses - import dataset - transform dataset - generate report and evaluate the process and result.

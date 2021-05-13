@@ -7,6 +7,8 @@
 #' a data frame with the steps of your analysis.
 #' @export
 #'
+#' @importFrom drake drake_plan
+#'
 #' @tests
 #' expect_s3_class(scenario_wrapper(), "drake_plan")
 scenario_wrapper <- function(){
