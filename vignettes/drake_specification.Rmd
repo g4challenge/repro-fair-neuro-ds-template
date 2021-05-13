@@ -27,9 +27,10 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 This code sources the current projects files - packages required, functions required and the base drake plans.
 
 ```{r}
-source("R/packages.R")
-source("R/functions.R")
-source("R/plan.R")
+pkgload::load_all()
+#source("R/packages.R")
+#source("R/functions.R")
+#source("R/plan.R")
 ```
 
 The first line of the following chunk forces a re-run of the whole drake workflow - comment it to see, if drake validates the current step.

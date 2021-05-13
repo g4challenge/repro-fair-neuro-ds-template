@@ -20,10 +20,11 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 The simulated hypotheses is to generate a CPP(cerebral perfusion pressure) based on raw_data. The following chunk instantiates packages, functions and plans.
 
 ```{r}
-source("R/packages.R")
-source("R/functions.R")
-source("R/functions_scenario_2.R")
-source("R/plan.R")
+pkgload::load_all()
+#source("R/packages.R")
+#source("R/functions.R")
+#source("R/functions_scenario_2.R")
+#source("R/plan.R")
 ```
 
 In order to avoid errors - the drake cache is cleaned.

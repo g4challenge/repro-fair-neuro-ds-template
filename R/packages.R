@@ -1,6 +1,5 @@
 # Packages
 
-pacman::p_unload(reproducibleFairTemplate)
 pacman::p_load(remotes,
                drake,
                tidyverse,
