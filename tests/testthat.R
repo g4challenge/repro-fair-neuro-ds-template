@@ -5,6 +5,10 @@ library(reproducibleFairTemplate)
 
 test_check("reproducibleFairTemplate")
 
+template_mode <- FALSE
+# Additional Tests, only suitable in "full-template" not in the package mode.
+if(template_mode)
+{
 
 test_that("0 - context is defined", 1)
 
@@ -54,3 +58,6 @@ testthat::test_that("6 - sc2_random1 contains the reproducible correct sample", 
 test_that("Environment is correct version", {
   expect_true(T)
 })
+
+}
+

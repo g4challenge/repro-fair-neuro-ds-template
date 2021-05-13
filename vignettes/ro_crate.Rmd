@@ -7,7 +7,7 @@ output: html_notebook
 This Helper document allows the automatic creation of a research object crate with metadata and especially the link to the author(agent).
 https://github.com/ResearchObject/ro-crate-py
 
-```{r}
+```{r eval=F}
 library(reticulate)
 library(renv)
 renv::restore()
@@ -18,14 +18,14 @@ py_config()
 py_install("rocrate", envname = "../renv/python/virtualenvs/renv-python-3.9.5/")
 ```
 
-```{python}
+```{python eval=F}
 from rocrate.rocrate import ROCrate
 crate = ROCrate() 
 ```
 
 
 ## Data entities
-```{python}
+```{python eval=F}
 ## adding a File entity:
 raw_file = '../data/raw_data.xlsx'
 file_entity = crate.add_file(raw_file)
@@ -40,7 +40,7 @@ file_entity = crate.add_file(raw_file)
 
 ## Contextual Entities
 
-```{python}
+```{python eval=F}
 from rocrate.model.person import Person
 
 # Add authors info
@@ -53,7 +53,7 @@ crate.creator = [ creator ]
 
 ## Other Metadata
 
-```{python}
+```{python eval=F}
 crate.license = 'GPL-3'
 crate.isBasedOn = "https://github.com/g4challenge/repro-fair-neuro-ds-template"
 crate.name = 'Reproducible Neuro-Intensive-Care Data Science Project Template'
@@ -65,7 +65,7 @@ crate.CreativeWorkStatus = "Maturing"
 
 ## write File
 
-```{python}
+```{python eval=F}
 # write crate to disk
 out_path = '../man/figures/'
 crate.write_crate(out_path)

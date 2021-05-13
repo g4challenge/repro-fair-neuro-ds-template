@@ -218,64 +218,22 @@ pre code {
 <p>This Helper document allows the automatic creation of a research object crate with metadata and especially the link to the author(agent). <a href="https://github.com/ResearchObject/ro-crate-py" class="uri">https://github.com/ResearchObject/ro-crate-py</a></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInJvY3JhdGVcIiwgZW52bmFtZSA9IFwiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvXCIpXG5cbmBgYCJ9 -->
-<pre class="r"><code>py_install(&quot;rocrate&quot;, envname = &quot;../renv/python/virtualenvs/renv-python-3.9.5/&quot;)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjpbImxpYnJhcnkocmV0aWN1bGF0ZSkiLCJsaWJyYXJ5KHJlbnYpIiwicmVudjo6cmVzdG9yZSgpIiwia25pdHI6OmtuaXRfZW5naW5lcyRzZXQocHl0aG9uID0gcmV0aWN1bGF0ZTo6ZW5nX3B5dGhvbikiLCJ1c2VfdmlydHVhbGVudihcIi4uL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L1wiLCByZXF1aXJlZD1UKSIsInVzZV9weXRob24oXCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNS9iaW4vcHl0aG9uXCIpIiwicHlfY29uZmlnKCkiLCJweV9pbnN0YWxsKFwicm9jcmF0ZVwiLCBlbnZuYW1lID0gXCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNS9cIikiXX0= -->
+<pre class="r"><code>library(reticulate)
+library(renv)
+renv::restore()
+knitr::knit_engines$set(python = reticulate::eng_python)
+use_virtualenv(&quot;../renv/python/virtualenvs/renv-python-3.9.5/&quot;, required=T)
+use_python(&quot;../renv/python/virtualenvs/renv-python-3.9.5/bin/python&quot;)
+py_config()
+py_install(&quot;rocrate&quot;, envname = &quot;../renv/python/virtualenvs/renv-python-3.9.5/&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVXNpbmcgdmlydHVhbCBlbnZpcm9ubWVudCAnLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvJyAuLi5cbkNvbGxlY3Rpbmcgcm9jcmF0ZVxuICBVc2luZyBjYWNoZWQgcm9jcmF0ZS0wLjQuMC1weTMtbm9uZS1hbnkud2hsICgzMDkga0IpXG5Db2xsZWN0aW5nIGNsaWNrXG4gIFVzaW5nIGNhY2hlZCBjbGljay04LjAuMC1weTMtbm9uZS1hbnkud2hsICg5NiBrQilcbkNvbGxlY3RpbmcgamluamEyXG4gIFVzaW5nIGNhY2hlZCBKaW5qYTItMy4wLjAtcHkzLW5vbmUtYW55LndobCAoMTMzIGtCKVxuQ29sbGVjdGluZyBhcmNwPT0wLjIuMVxuICBVc2luZyBjYWNoZWQgYXJjcC0wLjIuMS1weTIucHkzLW5vbmUtYW55LndobCAoMTUga0IpXG5Db2xsZWN0aW5nIHB5dGhvbi1kYXRldXRpbFxuICBVc2luZyBjYWNoZWQgcHl0aG9uX2RhdGV1dGlsLTIuOC4xLXB5Mi5weTMtbm9uZS1hbnkud2hsICgyMjcga0IpXG5Db2xsZWN0aW5nIHJlcXVlc3RzXG4gIFVzaW5nIGNhY2hlZCByZXF1ZXN0cy0yLjI1LjEtcHkyLnB5My1ub25lLWFueS53aGwgKDYxIGtCKVxuQ29sbGVjdGluZyBnYWxheHkyY3dsXG4gIFVzaW5nIGNhY2hlZCBnYWxheHkyY3dsLTAuMS40LXB5My1ub25lLWFueS53aGwgKDguMiBrQilcbkNvbGxlY3RpbmcgZ3hmb3JtYXQyPj0wLjExLjBcbiAgVXNpbmcgY2FjaGVkIGd4Zm9ybWF0Mi0wLjE1LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDQ5IGtCKVxuQ29sbGVjdGluZyBweXlhbWw+PTUuMy4wXG4gIFVzaW5nIGNhY2hlZCBQeVlBTUwtNS40LjEtY3AzOS1jcDM5LW1hY29zeF8xMF85X3g4Nl82NC53aGwgKDI1OSBrQilcbkNvbGxlY3Rpbmcgc2l4Pj0xLjkuMFxuICBVc2luZyBjYWNoZWQgc2l4LTEuMTYuMC1weTIucHkzLW5vbmUtYW55LndobCAoMTEga0IpXG5Db2xsZWN0aW5nIGJpb2JsZW5kXG4gIFVzaW5nIGNhY2hlZCBiaW9ibGVuZC0wLjE1LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDEyLjUgTUIpXG5Db2xsZWN0aW5nIHJlcXVlc3RzLXRvb2xiZWx0IT0wLjkuMCw+PTAuNS4xXG4gIFVzaW5nIGNhY2hlZCByZXF1ZXN0c190b29sYmVsdC0wLjkuMS1weTIucHkzLW5vbmUtYW55LndobCAoNTQga0IpXG5Db2xsZWN0aW5nIGJvdG8+PTIuOS43XG4gIFVzaW5nIGNhY2hlZCBib3RvLTIuNDkuMC1weTIucHkzLW5vbmUtYW55LndobCAoMS40IE1CKVxuQ29sbGVjdGluZyBjZXJ0aWZpPj0yMDE3LjQuMTdcbiAgVXNpbmcgY2FjaGVkIGNlcnRpZmktMjAyMC4xMi41LXB5Mi5weTMtbm9uZS1hbnkud2hsICgxNDcga0IpXG5Db2xsZWN0aW5nIHVybGxpYjM8MS4yNyw+PTEuMjEuMVxuICBVc2luZyBjYWNoZWQgdXJsbGliMy0xLjI2LjQtcHkyLnB5My1ub25lLWFueS53aGwgKDE1MyBrQilcbkNvbGxlY3RpbmcgY2hhcmRldDw1LD49My4wLjJcbiAgVXNpbmcgY2FjaGVkIGNoYXJkZXQtNC4wLjAtcHkyLnB5My1ub25lLWFueS53aGwgKDE3OCBrQilcbkNvbGxlY3RpbmcgaWRuYTwzLD49Mi41XG4gIFVzaW5nIGNhY2hlZCBpZG5hLTIuMTAtcHkyLnB5My1ub25lLWFueS53aGwgKDU4IGtCKVxuQ29sbGVjdGluZyBNYXJrdXBTYWZlPj0yLjAuMHJjMlxuICBVc2luZyBjYWNoZWQgTWFya3VwU2FmZS0yLjAuMC1jcDM5LWNwMzktbWFjb3N4XzEwXzlfeDg2XzY0LndobCAoMTMga0IpXG5JbnN0YWxsaW5nIGNvbGxlY3RlZCBwYWNrYWdlczogdXJsbGliMywgaWRuYSwgY2hhcmRldCwgY2VydGlmaSwgcmVxdWVzdHMsIHJlcXVlc3RzLXRvb2xiZWx0LCBweXlhbWwsIGJvdG8sIHNpeCwgYmlvYmxlbmQsIE1hcmt1cFNhZmUsIGd4Zm9ybWF0MiwgcHl0aG9uLWRhdGV1dGlsLCBqaW5qYTIsIGdhbGF4eTJjd2wsIGNsaWNrLCBhcmNwLCByb2NyYXRlXG5TdWNjZXNzZnVsbHkgaW5zdGFsbGVkIE1hcmt1cFNhZmUtMi4wLjAgYXJjcC0wLjIuMSBiaW9ibGVuZC0wLjE1LjAgYm90by0yLjQ5LjAgY2VydGlmaS0yMDIwLjEyLjUgY2hhcmRldC00LjAuMCBjbGljay04LjAuMCBnYWxheHkyY3dsLTAuMS40IGd4Zm9ybWF0Mi0wLjE1LjAgaWRuYS0yLjEwIGppbmphMi0zLjAuMCBweXRob24tZGF0ZXV0aWwtMi44LjEgcHl5YW1sLTUuNC4xIHJlcXVlc3RzLTIuMjUuMSByZXF1ZXN0cy10b29sYmVsdC0wLjkuMSByb2NyYXRlLTAuNC4wIHNpeC0xLjE2LjAgdXJsbGliMy0xLjI2LjRcbiJ9 -->
-<pre><code>Using virtual environment &#39;../renv/python/virtualenvs/renv-python-3.9.5/&#39; ...
-Collecting rocrate
-  Using cached rocrate-0.4.0-py3-none-any.whl (309 kB)
-Collecting click
-  Using cached click-8.0.0-py3-none-any.whl (96 kB)
-Collecting jinja2
-  Using cached Jinja2-3.0.0-py3-none-any.whl (133 kB)
-Collecting arcp==0.2.1
-  Using cached arcp-0.2.1-py2.py3-none-any.whl (15 kB)
-Collecting python-dateutil
-  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
-Collecting requests
-  Using cached requests-2.25.1-py2.py3-none-any.whl (61 kB)
-Collecting galaxy2cwl
-  Using cached galaxy2cwl-0.1.4-py3-none-any.whl (8.2 kB)
-Collecting gxformat2&gt;=0.11.0
-  Using cached gxformat2-0.15.0-py2.py3-none-any.whl (49 kB)
-Collecting pyyaml&gt;=5.3.0
-  Using cached PyYAML-5.4.1-cp39-cp39-macosx_10_9_x86_64.whl (259 kB)
-Collecting six&gt;=1.9.0
-  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
-Collecting bioblend
-  Using cached bioblend-0.15.0-py2.py3-none-any.whl (12.5 MB)
-Collecting requests-toolbelt!=0.9.0,&gt;=0.5.1
-  Using cached requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
-Collecting boto&gt;=2.9.7
-  Using cached boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
-Collecting certifi&gt;=2017.4.17
-  Using cached certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
-Collecting urllib3&lt;1.27,&gt;=1.21.1
-  Using cached urllib3-1.26.4-py2.py3-none-any.whl (153 kB)
-Collecting chardet&lt;5,&gt;=3.0.2
-  Using cached chardet-4.0.0-py2.py3-none-any.whl (178 kB)
-Collecting idna&lt;3,&gt;=2.5
-  Using cached idna-2.10-py2.py3-none-any.whl (58 kB)
-Collecting MarkupSafe&gt;=2.0.0rc2
-  Using cached MarkupSafe-2.0.0-cp39-cp39-macosx_10_9_x86_64.whl (13 kB)
-Installing collected packages: urllib3, idna, chardet, certifi, requests, requests-toolbelt, pyyaml, boto, six, bioblend, MarkupSafe, gxformat2, python-dateutil, jinja2, galaxy2cwl, click, arcp, rocrate
-Successfully installed MarkupSafe-2.0.0 arcp-0.2.1 bioblend-0.15.0 boto-2.49.0 certifi-2020.12.5 chardet-4.0.0 click-8.0.0 galaxy2cwl-0.1.4 gxformat2-0.15.0 idna-2.10 jinja2-3.0.0 python-dateutil-2.8.1 pyyaml-5.4.1 requests-2.25.1 requests-toolbelt-0.9.1 rocrate-0.4.0 six-1.16.0 urllib3-1.26.4</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
-<pre class="python"><code>reticulate::repl_python()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
-Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIHJvY3JhdGUucm9jcmF0ZSBpbXBvcnQgUk9DcmF0ZVxuY3JhdGUgPSBST0NyYXRlKCkgXG5gYGAifQ== -->
-<pre class="python"><code>from rocrate.rocrate import ROCrate
+<!-- rnb-source-begin eyJkYXRhIjpbImZyb20gcm9jcmF0ZS5yb2NyYXRlIGltcG9ydCBST0NyYXRlIiwiY3JhdGUgPSBST0NyYXRlKCkgIl19 -->
+<pre class="r"><code>from rocrate.rocrate import ROCrate
 crate = ROCrate() </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -284,15 +242,8 @@ crate = ROCrate() </code></pre>
 <h2>Data entities</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
-<pre class="python"><code>reticulate::repl_python()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
-Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4jIyBhZGRpbmcgYSBGaWxlIGVudGl0eTpcbnJhd19maWxlID0gJy4uL2RhdGEvcmF3X2RhdGEueGxzeCdcbmZpbGVfZW50aXR5ID0gY3JhdGUuYWRkX2ZpbGUocmF3X2ZpbGUpXG5cbiMgQWRkaW5nIGEgRmlsZSBlbnRpdHkgd2l0aCBhIHJlZmVyZW5jZSB0byBhbiBleHRlcm5hbCAoYWJzb2x1dGUpIFVSSVxuI3JlbW90ZV9maWxlID0gY3JhdGUuYWRkX2ZpbGUoJ2h0dHBzOi8vZ2l0aHViLmNvbS9SZXNlYXJjaE9iamVjdC9yby1jcmF0ZS1weS9ibG9iL21hc3Rlci90ZXN0L3Rlc3QtZGF0YS90ZXN0X2dhbGF4eV93Zi5nYScsIGZldGNoX3JlbW90ZSA9IEZhbHNlKVxuXG4jIGFkZGluZyBhIERhdGFzZXRcbiNzYW1wbGVfZGlyID0gJy9wYXRoL3RvL2RpcidcbiNkYXRhc2V0X2VudGl0eSA9IGNyYXRlLmFkZF9kaXJlY3Rvcnkoc2FtcGxlX2RpciwgJ3JlbGF0aXZlL3JvY3JhdGUvcGF0aCcpXG5gYGAifQ== -->
-<pre class="python"><code>## adding a File entity:
+<!-- rnb-source-begin eyJkYXRhIjpbIiMjIGFkZGluZyBhIEZpbGUgZW50aXR5OiIsInJhd19maWxlID0gJy4uL2RhdGEvcmF3X2RhdGEueGxzeCciLCJmaWxlX2VudGl0eSA9IGNyYXRlLmFkZF9maWxlKHJhd19maWxlKSIsIiIsIiMgQWRkaW5nIGEgRmlsZSBlbnRpdHkgd2l0aCBhIHJlZmVyZW5jZSB0byBhbiBleHRlcm5hbCAoYWJzb2x1dGUpIFVSSSIsIiNyZW1vdGVfZmlsZSA9IGNyYXRlLmFkZF9maWxlKCdodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkvYmxvYi9tYXN0ZXIvdGVzdC90ZXN0LWRhdGEvdGVzdF9nYWxheHlfd2YuZ2EnLCBmZXRjaF9yZW1vdGUgPSBGYWxzZSkiLCIiLCIjIGFkZGluZyBhIERhdGFzZXQiLCIjc2FtcGxlX2RpciA9ICcvcGF0aC90by9kaXInIiwiI2RhdGFzZXRfZW50aXR5ID0gY3JhdGUuYWRkX2RpcmVjdG9yeShzYW1wbGVfZGlyLCAncmVsYXRpdmUvcm9jcmF0ZS9wYXRoJykiXX0= -->
+<pre class="r"><code>## adding a File entity:
 raw_file = &#39;../data/raw_data.xlsx&#39;
 file_entity = crate.add_file(raw_file)
 
@@ -310,15 +261,8 @@ file_entity = crate.add_file(raw_file)
 <h2>Contextual Entities</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
-<pre class="python"><code>reticulate::repl_python()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
-Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIHJvY3JhdGUubW9kZWwucGVyc29uIGltcG9ydCBQZXJzb25cblxuIyBBZGQgYXV0aG9ycyBpbmZvXG4jY3JhdGUuYWRkKFBlcnNvbihjcmF0ZSwgJyNsdWthcycsIHsnbmFtZSc6ICdMdWthcyBIdWJlcid9KSlcbmNyZWF0b3IgPSBQZXJzb24oY3JhdGUsICcwMDEnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInLCBcIkBpZFwiOiAnaHR0cHM6Ly9vcmNpZC5vcmcvMDAwMC0wMDAxLTU0NDMtMDI5MCd9KVxuXG5jcmF0ZS5wdWJsaXNoZXIgPSBjcmVhdG9yXG5jcmF0ZS5jcmVhdG9yID0gWyBjcmVhdG9yIF1cbmBgYCJ9 -->
-<pre class="python"><code>from rocrate.model.person import Person
+<!-- rnb-source-begin eyJkYXRhIjpbImZyb20gcm9jcmF0ZS5tb2RlbC5wZXJzb24gaW1wb3J0IFBlcnNvbiIsIiIsIiMgQWRkIGF1dGhvcnMgaW5mbyIsIiNjcmF0ZS5hZGQoUGVyc29uKGNyYXRlLCAnI2x1a2FzJywgeyduYW1lJzogJ0x1a2FzIEh1YmVyJ30pKSIsImNyZWF0b3IgPSBQZXJzb24oY3JhdGUsICcwMDEnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInLCBcIkBpZFwiOiAnaHR0cHM6Ly9vcmNpZC5vcmcvMDAwMC0wMDAxLTU0NDMtMDI5MCd9KSIsIiIsImNyYXRlLnB1Ymxpc2hlciA9IGNyZWF0b3IiLCJjcmF0ZS5jcmVhdG9yID0gWyBjcmVhdG9yIF0iXX0= -->
+<pre class="r"><code>from rocrate.model.person import Person
 
 # Add authors info
 #crate.add(Person(crate, &#39;#lukas&#39;, {&#39;name&#39;: &#39;Lukas Huber&#39;}))
@@ -334,15 +278,8 @@ crate.creator = [ creator ]</code></pre>
 <h2>Other Metadata</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
-<pre class="python"><code>reticulate::repl_python()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
-Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5jcmF0ZS5saWNlbnNlID0gJ0dQTC0zJ1xuY3JhdGUuaXNCYXNlZE9uID0gXCJodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZVwiXG5jcmF0ZS5uYW1lID0gJ1JlcHJvZHVjaWJsZSBOZXVyby1JbnRlbnNpdmUtQ2FyZSBEYXRhIFNjaWVuY2UgUHJvamVjdCBUZW1wbGF0ZSdcbmNyYXRlLmtleXdvcmRzID0gWydOZXVyb2xvZ3knLCAnRGF0YSBTY2llbmNlJywgJ1JlcHJvZHVjaWJpbGl0eScsICdQcm92ZW5hbmNlJywgJ1RyYWNlYWJpbGl0eSddXG5jcmF0ZS5pbWFnZSA9IFwiZHJha2Vfd29ya2Zsb3cuc3ZnXCJcbmNyYXRlLmRlc2NyaXB0aW9uID0gXCJUaGUgdGVtcGxhdGUgZm9yIHRoaXMgd29ya2Zsb3cgY2FuIGJlIGZvdW5kIG9uIEdpdEh1YiwgRG9ja2VySHViIGFuZCBiaW5kZXJcIlxuY3JhdGUuQ3JlYXRpdmVXb3JrU3RhdHVzID0gXCJNYXR1cmluZ1wiXG5gYGAifQ== -->
-<pre class="python"><code>crate.license = &#39;GPL-3&#39;
+<!-- rnb-source-begin eyJkYXRhIjpbImNyYXRlLmxpY2Vuc2UgPSAnR1BMLTMnIiwiY3JhdGUuaXNCYXNlZE9uID0gXCJodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZVwiIiwiY3JhdGUubmFtZSA9ICdSZXByb2R1Y2libGUgTmV1cm8tSW50ZW5zaXZlLUNhcmUgRGF0YSBTY2llbmNlIFByb2plY3QgVGVtcGxhdGUnIiwiY3JhdGUua2V5d29yZHMgPSBbJ05ldXJvbG9neScsICdEYXRhIFNjaWVuY2UnLCAnUmVwcm9kdWNpYmlsaXR5JywgJ1Byb3ZlbmFuY2UnLCAnVHJhY2VhYmlsaXR5J10iLCJjcmF0ZS5pbWFnZSA9IFwiZHJha2Vfd29ya2Zsb3cuc3ZnXCIiLCJjcmF0ZS5kZXNjcmlwdGlvbiA9IFwiVGhlIHRlbXBsYXRlIGZvciB0aGlzIHdvcmtmbG93IGNhbiBiZSBmb3VuZCBvbiBHaXRIdWIsIERvY2tlckh1YiBhbmQgYmluZGVyXCIiLCJjcmF0ZS5DcmVhdGl2ZVdvcmtTdGF0dXMgPSBcIk1hdHVyaW5nXCIiXX0= -->
+<pre class="r"><code>crate.license = &#39;GPL-3&#39;
 crate.isBasedOn = &quot;https://github.com/g4challenge/repro-fair-neuro-ds-template&quot;
 crate.name = &#39;Reproducible Neuro-Intensive-Care Data Science Project Template&#39;
 crate.keywords = [&#39;Neurology&#39;, &#39;Data Science&#39;, &#39;Reproducibility&#39;, &#39;Provenance&#39;, &#39;Traceability&#39;]
@@ -357,15 +294,8 @@ crate.CreativeWorkStatus = &quot;Maturing&quot;</code></pre>
 <h2>write File</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
-<pre class="python"><code>reticulate::repl_python()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
-Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4jIHdyaXRlIGNyYXRlIHRvIGRpc2tcbm91dF9wYXRoID0gJy4uL21hbi9maWd1cmVzLydcbmNyYXRlLndyaXRlX2NyYXRlKG91dF9wYXRoKVxuYGBgIn0= -->
-<pre class="python"><code># write crate to disk
+<!-- rnb-source-begin eyJkYXRhIjpbIiMgd3JpdGUgY3JhdGUgdG8gZGlzayIsIm91dF9wYXRoID0gJy4uL21hbi9maWd1cmVzLyciLCJjcmF0ZS53cml0ZV9jcmF0ZShvdXRfcGF0aCkiXX0= -->
+<pre class="r"><code># write crate to disk
 out_path = &#39;../man/figures/&#39;
 crate.write_crate(out_path)</code></pre>
 <!-- rnb-source-end -->
@@ -374,7 +304,7 @@ crate.write_crate(out_path)</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUk8tQ3JhdGUgVmlnbmV0dGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpUaGlzIEhlbHBlciBkb2N1bWVudCBhbGxvd3MgdGhlIGF1dG9tYXRpYyBjcmVhdGlvbiBvZiBhIHJlc2VhcmNoIG9iamVjdCBjcmF0ZSB3aXRoIG1ldGFkYXRhIGFuZCBlc3BlY2lhbGx5IHRoZSBsaW5rIHRvIHRoZSBhdXRob3IoYWdlbnQpLgpodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkKCmBgYHtyfQpsaWJyYXJ5KHJldGljdWxhdGUpCmxpYnJhcnkocmVudikKcmVudjo6cmVzdG9yZSgpCmtuaXRyOjprbml0X2VuZ2luZXMkc2V0KHB5dGhvbiA9IHJldGljdWxhdGU6OmVuZ19weXRob24pCnVzZV92aXJ0dWFsZW52KCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNS8iLCByZXF1aXJlZD1UKQp1c2VfcHl0aG9uKCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNS9iaW4vcHl0aG9uIikKcHlfY29uZmlnKCkKcHlfaW5zdGFsbCgicm9jcmF0ZSIsIGVudm5hbWUgPSAiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvIikKYGBgCgpgYGB7cHl0aG9ufQpmcm9tIHJvY3JhdGUucm9jcmF0ZSBpbXBvcnQgUk9DcmF0ZQpjcmF0ZSA9IFJPQ3JhdGUoKSAKYGBgCgoKIyMgRGF0YSBlbnRpdGllcwpgYGB7cHl0aG9ufQojIyBhZGRpbmcgYSBGaWxlIGVudGl0eToKcmF3X2ZpbGUgPSAnLi4vZGF0YS9yYXdfZGF0YS54bHN4JwpmaWxlX2VudGl0eSA9IGNyYXRlLmFkZF9maWxlKHJhd19maWxlKQoKIyBBZGRpbmcgYSBGaWxlIGVudGl0eSB3aXRoIGEgcmVmZXJlbmNlIHRvIGFuIGV4dGVybmFsIChhYnNvbHV0ZSkgVVJJCiNyZW1vdGVfZmlsZSA9IGNyYXRlLmFkZF9maWxlKCdodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkvYmxvYi9tYXN0ZXIvdGVzdC90ZXN0LWRhdGEvdGVzdF9nYWxheHlfd2YuZ2EnLCBmZXRjaF9yZW1vdGUgPSBGYWxzZSkKCiMgYWRkaW5nIGEgRGF0YXNldAojc2FtcGxlX2RpciA9ICcvcGF0aC90by9kaXInCiNkYXRhc2V0X2VudGl0eSA9IGNyYXRlLmFkZF9kaXJlY3Rvcnkoc2FtcGxlX2RpciwgJ3JlbGF0aXZlL3JvY3JhdGUvcGF0aCcpCmBgYAoKIyMgQ29udGV4dHVhbCBFbnRpdGllcwoKYGBge3B5dGhvbn0KZnJvbSByb2NyYXRlLm1vZGVsLnBlcnNvbiBpbXBvcnQgUGVyc29uCgojIEFkZCBhdXRob3JzIGluZm8KI2NyYXRlLmFkZChQZXJzb24oY3JhdGUsICcjbHVrYXMnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInfSkpCmNyZWF0b3IgPSBQZXJzb24oY3JhdGUsICcwMDEnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInLCAiQGlkIjogJ2h0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMS01NDQzLTAyOTAnfSkKCmNyYXRlLnB1Ymxpc2hlciA9IGNyZWF0b3IKY3JhdGUuY3JlYXRvciA9IFsgY3JlYXRvciBdCmBgYAoKIyMgT3RoZXIgTWV0YWRhdGEKCmBgYHtweXRob259CmNyYXRlLmxpY2Vuc2UgPSAnR1BMLTMnCmNyYXRlLmlzQmFzZWRPbiA9ICJodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZSIKY3JhdGUubmFtZSA9ICdSZXByb2R1Y2libGUgTmV1cm8tSW50ZW5zaXZlLUNhcmUgRGF0YSBTY2llbmNlIFByb2plY3QgVGVtcGxhdGUnCmNyYXRlLmtleXdvcmRzID0gWydOZXVyb2xvZ3knLCAnRGF0YSBTY2llbmNlJywgJ1JlcHJvZHVjaWJpbGl0eScsICdQcm92ZW5hbmNlJywgJ1RyYWNlYWJpbGl0eSddCmNyYXRlLmltYWdlID0gImRyYWtlX3dvcmtmbG93LnN2ZyIKY3JhdGUuZGVzY3JpcHRpb24gPSAiVGhlIHRlbXBsYXRlIGZvciB0aGlzIHdvcmtmbG93IGNhbiBiZSBmb3VuZCBvbiBHaXRIdWIsIERvY2tlckh1YiBhbmQgYmluZGVyIgpjcmF0ZS5DcmVhdGl2ZVdvcmtTdGF0dXMgPSAiTWF0dXJpbmciCmBgYAoKIyMgd3JpdGUgRmlsZQoKYGBge3B5dGhvbn0KIyB3cml0ZSBjcmF0ZSB0byBkaXNrCm91dF9wYXRoID0gJy4uL21hbi9maWd1cmVzLycKY3JhdGUud3JpdGVfY3JhdGUob3V0X3BhdGgpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUk8tQ3JhdGUgVmlnbmV0dGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpUaGlzIEhlbHBlciBkb2N1bWVudCBhbGxvd3MgdGhlIGF1dG9tYXRpYyBjcmVhdGlvbiBvZiBhIHJlc2VhcmNoIG9iamVjdCBjcmF0ZSB3aXRoIG1ldGFkYXRhIGFuZCBlc3BlY2lhbGx5IHRoZSBsaW5rIHRvIHRoZSBhdXRob3IoYWdlbnQpLgpodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkKCmBgYHtyIGV2YWw9Rn0KbGlicmFyeShyZXRpY3VsYXRlKQpsaWJyYXJ5KHJlbnYpCnJlbnY6OnJlc3RvcmUoKQprbml0cjo6a25pdF9lbmdpbmVzJHNldChweXRob24gPSByZXRpY3VsYXRlOjplbmdfcHl0aG9uKQp1c2VfdmlydHVhbGVudigiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvIiwgcmVxdWlyZWQ9VCkKdXNlX3B5dGhvbigiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvYmluL3B5dGhvbiIpCnB5X2NvbmZpZygpCnB5X2luc3RhbGwoInJvY3JhdGUiLCBlbnZuYW1lID0gIi4uL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41LyIpCmBgYAoKYGBge3B5dGhvbiBldmFsPUZ9CmZyb20gcm9jcmF0ZS5yb2NyYXRlIGltcG9ydCBST0NyYXRlCmNyYXRlID0gUk9DcmF0ZSgpIApgYGAKCgojIyBEYXRhIGVudGl0aWVzCmBgYHtweXRob24gZXZhbD1GfQojIyBhZGRpbmcgYSBGaWxlIGVudGl0eToKcmF3X2ZpbGUgPSAnLi4vZGF0YS9yYXdfZGF0YS54bHN4JwpmaWxlX2VudGl0eSA9IGNyYXRlLmFkZF9maWxlKHJhd19maWxlKQoKIyBBZGRpbmcgYSBGaWxlIGVudGl0eSB3aXRoIGEgcmVmZXJlbmNlIHRvIGFuIGV4dGVybmFsIChhYnNvbHV0ZSkgVVJJCiNyZW1vdGVfZmlsZSA9IGNyYXRlLmFkZF9maWxlKCdodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkvYmxvYi9tYXN0ZXIvdGVzdC90ZXN0LWRhdGEvdGVzdF9nYWxheHlfd2YuZ2EnLCBmZXRjaF9yZW1vdGUgPSBGYWxzZSkKCiMgYWRkaW5nIGEgRGF0YXNldAojc2FtcGxlX2RpciA9ICcvcGF0aC90by9kaXInCiNkYXRhc2V0X2VudGl0eSA9IGNyYXRlLmFkZF9kaXJlY3Rvcnkoc2FtcGxlX2RpciwgJ3JlbGF0aXZlL3JvY3JhdGUvcGF0aCcpCmBgYAoKIyMgQ29udGV4dHVhbCBFbnRpdGllcwoKYGBge3B5dGhvbiBldmFsPUZ9CmZyb20gcm9jcmF0ZS5tb2RlbC5wZXJzb24gaW1wb3J0IFBlcnNvbgoKIyBBZGQgYXV0aG9ycyBpbmZvCiNjcmF0ZS5hZGQoUGVyc29uKGNyYXRlLCAnI2x1a2FzJywgeyduYW1lJzogJ0x1a2FzIEh1YmVyJ30pKQpjcmVhdG9yID0gUGVyc29uKGNyYXRlLCAnMDAxJywgeyduYW1lJzogJ0x1a2FzIEh1YmVyJywgIkBpZCI6ICdodHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDEtNTQ0My0wMjkwJ30pCgpjcmF0ZS5wdWJsaXNoZXIgPSBjcmVhdG9yCmNyYXRlLmNyZWF0b3IgPSBbIGNyZWF0b3IgXQpgYGAKCiMjIE90aGVyIE1ldGFkYXRhCgpgYGB7cHl0aG9uIGV2YWw9Rn0KY3JhdGUubGljZW5zZSA9ICdHUEwtMycKY3JhdGUuaXNCYXNlZE9uID0gImh0dHBzOi8vZ2l0aHViLmNvbS9nNGNoYWxsZW5nZS9yZXByby1mYWlyLW5ldXJvLWRzLXRlbXBsYXRlIgpjcmF0ZS5uYW1lID0gJ1JlcHJvZHVjaWJsZSBOZXVyby1JbnRlbnNpdmUtQ2FyZSBEYXRhIFNjaWVuY2UgUHJvamVjdCBUZW1wbGF0ZScKY3JhdGUua2V5d29yZHMgPSBbJ05ldXJvbG9neScsICdEYXRhIFNjaWVuY2UnLCAnUmVwcm9kdWNpYmlsaXR5JywgJ1Byb3ZlbmFuY2UnLCAnVHJhY2VhYmlsaXR5J10KY3JhdGUuaW1hZ2UgPSAiZHJha2Vfd29ya2Zsb3cuc3ZnIgpjcmF0ZS5kZXNjcmlwdGlvbiA9ICJUaGUgdGVtcGxhdGUgZm9yIHRoaXMgd29ya2Zsb3cgY2FuIGJlIGZvdW5kIG9uIEdpdEh1YiwgRG9ja2VySHViIGFuZCBiaW5kZXIiCmNyYXRlLkNyZWF0aXZlV29ya1N0YXR1cyA9ICJNYXR1cmluZyIKYGBgCgojIyB3cml0ZSBGaWxlCgpgYGB7cHl0aG9uIGV2YWw9Rn0KIyB3cml0ZSBjcmF0ZSB0byBkaXNrCm91dF9wYXRoID0gJy4uL21hbi9maWd1cmVzLycKY3JhdGUud3JpdGVfY3JhdGUob3V0X3BhdGgpCmBgYAoK</div>
 
 
 
