@@ -263,24 +263,24 @@ Run `rm(list = c(&quot;evaluate_process&quot;, &quot;export_result&quot;, &quot;
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>The <code>scenario_2_wrapper</code>-function returns the instantiated scenario_1 drake “tibble”.</p>
+<p>The <code>scenario_wrapper</code>-function returns the instantiated scenario_1 drake “tibble”.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZHJha2U6Om1ha2Uoc2NlbmFyaW9fd3JhcHBlcigpKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiZHJha2U6Om1ha2Uoc2NlbmFyaW9fd3JhcHBlcigpKSJ9 -->
 <pre class="r"><code>drake::make(scenario_wrapper())</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZHJha2VfaGlzdG9yeSgpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiZHJha2VfaGlzdG9yeSgpIn0= -->
 <pre class="r"><code>drake_history()</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmlzX2RyYWtlX2dyYXBoKHNjZW5hcmlvX3dyYXBwZXIoKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoidmlzX2RyYWtlX2dyYXBoKHNjZW5hcmlvX3dyYXBwZXIoKSkifQ== -->
 <pre class="r"><code>vis_drake_graph(scenario_wrapper())</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -296,29 +296,19 @@ Run `rm(list = c(&quot;evaluate_process&quot;, &quot;export_result&quot;, &quot;
 <p>The aim is, that the resampled results are compared and validated if a migration can be considered safe.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9hZGQoc2MyX3JhbmRvbTEpXG5zYzJfcmFuZG9tMVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjpbImxvYWRkKHNjMl9yYW5kb20xKSIsInNjMl9yYW5kb20xIl19 -->
 <pre class="r"><code>loadd(sc2_random1)
 sc2_random1</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6Niwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIxIHggNiJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUF3dHlpVERtaXVCaVlHQmdabUJoWUdWZ1pnVXlHVmhEUTl4MExSZ1lXSmlBSEVhZ0JDZUlyZ0FxRWdZeTJJQ1lEeVRnd01FQUJjeGd2dVAxMzZlWitibHMwVFN5bGxUbDU2VUNHUUpJZ3N5aEljN282cEp6RW91TG9lcVlvSUxzQWY3Qm5oSEpKVkF1RzVoYkFtVDlnN3RDTzZoaTdmUzZjM0MrK2FybDJwMFcvK0g4eUFzQklSKzIrTUg1WVdtTTlyWkhTdEJ0ejB2TVRZWFp6Z1lWWkVrdkxjaUVzamxMTW9FS1NoSnpDMkJlOEhRT2dHa09TQ3J4TjRLSit6ckN4Sm1UQ3dyUTdPRXN5aS9YZzluRkMvSnBBNUQ0RHdRUWhjei8wVUtLS3lXeEpGRXZyUWlvQmVKdEZPUFk4d3RLTXZQemdJWXhnZUtHRlUwell4R2FBSDlwSHNqeUZOM2tqTks4YkYwamtBVmdhUWpnaGJJWmtkaHNFQ3RaWUE1amhjVkZhbDU2SmpCaW9VR1FrNWlVbWdQbDhBRTlDZmFqWGtGUlpoNHM4cmlBb3NWNkpma2xpVEIxWE1uNU9UQVJTSlQrQXdEa1Bic2RrZ0lBQUE9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["gupi"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["timestamp"],"name":[2],"type":["S3: POSIXct"],"align":["right"]},{"label":["ICP"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["PbtO2"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["MAP"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["cpp"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"3","2":"2021-01-01 14:05:00","3":"13.66108","4":"23.66661","5":"103.2549","6":"89.59383"}],"options":{"columns":{"min":{},"max":[10],"total":[6]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdHRoYXQ6OnRlc3RfdGhhdChcInNjMl9yYW5kb20xIGNvbnRhaW5zIHRoZSByZXByb2R1Y2libGUgY29ycmVjdCBzYW1wbGVcIiwge1xuICB0ZXN0dGhhdDo6ZXhwZWN0X2VxdWFsKHNjMl9yYW5kb20xJGNwcFsxXSwgODkuNTkzODI2MTEzMDUyMSlcbn0pXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjpbInRlc3R0aGF0Ojp0ZXN0X3RoYXQoXCJzYzJfcmFuZG9tMSBjb250YWlucyB0aGUgcmVwcm9kdWNpYmxlIGNvcnJlY3Qgc2FtcGxlXCIsIHsiLCIgIHRlc3R0aGF0OjpleHBlY3RfZXF1YWwoc2MyX3JhbmRvbTEkY3BwWzFdLCA4OS41OTM4MjYxMTMwNTIxKSIsIn0pIl19 -->
 <pre class="r"><code>testthat::test_that(&quot;sc2_random1 contains the reproducible correct sample&quot;, {
   testthat::expect_equal(sc2_random1$cpp[1], 89.5938261130521)
 })</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGVzdCBwYXNzZWQg8J+lh1xuIn0= -->
-<pre><code>Test passed 🥇</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>This test is included within the testthat folder as automated reference testing. Test upgrade protocols were succesfull on the stated R Version Upgrade, the Docker Comparison and Package upgrades.</p>
@@ -326,7 +316,7 @@ sc2_random1</code></pre>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2NlbmFyaW8gMiIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBub3RlYm9vayBoYW5kbGVzIHRoZSByZW5kZXJpbmcgb2Ygc2NlbmFyaW9fMiAtIHdoaWNoIGlzIGEgc2ltcGxlIGNhc2Ugb2YgYSBoeXBvdGhlc2VzIC0gaW1wb3J0IGRhdGFzZXQgLSB0cmFuc2Zvcm0gZGF0YXNldCAtIGdlbmVyYXRlIHJlcG9ydCBhbmQgZXZhbHVhdGUgdGhlIHByb2Nlc3MgYW5kIHJlc3VsdC4KCiFbXSguLi9tYW4vZmlndXJlcy9zY2VuYXJpb18yLnBuZykKCkFkZGl0aW9uYWxseSwgdGhpcyBzY2VuYXJpbyB0ZXN0cyAicmFuZG9tbmVzcyIgYW5kIHRoZSByZXByb2R1Y2liaWxpdHkgYW5kICB0cmFjZWFiaWxpdHkgb2Ygc2VlZHMgaW4gYWNyb3NzIGRpZmZlcmVudCBlbnZpcm9ubWVudHMgYW5kIHJ1bnRpbWVzLgoKVGhlIG1haW4gYWltIG9mIHNjZW5hcmlvXzIgaXMgdG8gZGVtb25zdHJhdGUgInJhbmRvbW5lc3MiIGFuZCBpdCdzIHRyYWNlYWJpbGl0eS4gVGhlcmVmb3JlIHRoZSBzZWNvbmQgcHJvY2Vzc2luZyBzdGVwIGFkZGVkIHRvIHNjZW5hcmlvIDEgd2lsbCAic2FtcGxlIiBhbmQgdmFsaWRhdGUgdGhlIGV4dHJhY3RlZCByYW5kb20gbnVtYmVyIHN0YXRpY2FsbHkuCgpgYGB7ciBzZXR1cH0Ka25pdHI6Om9wdHNfa25pdCRzZXQocm9vdC5kaXIgPSBycHJvanJvb3Q6OmZpbmRfcnN0dWRpb19yb290X2ZpbGUoKSkKYGBgCgojIFF1ZXN0aW9uCgpUaGUgc2ltdWxhdGVkIGh5cG90aGVzZXMgaXMgdG8gZ2VuZXJhdGUgYSBDUFAoY2VyZWJyYWwgcGVyZnVzaW9uIHByZXNzdXJlKSBiYXNlZCBvbiByYXdfZGF0YS4gVGhlIGZvbGxvd2luZyBjaHVuayBpbnN0YW50aWF0ZXMgcGFja2FnZXMsIGZ1bmN0aW9ucyBhbmQgcGxhbnMuCgpgYGB7cn0KcGtnbG9hZDo6bG9hZF9hbGwoKQojc291cmNlKCJSL3BhY2thZ2VzLlIiKQojc291cmNlKCJSL2Z1bmN0aW9ucy5SIikKI3NvdXJjZSgiUi9mdW5jdGlvbnNfc2NlbmFyaW9fMi5SIikKI3NvdXJjZSgiUi9wbGFuLlIiKQpgYGAKCkluIG9yZGVyIHRvIGF2b2lkIGVycm9ycyAtIHRoZSBkcmFrZSBjYWNoZSBpcyBjbGVhbmVkLgoKYGBge3IgZXZhbD1GfQojZHJha2U6OmNsZWFuKCkKIyBjaGVjayBmaWxlIGV4aXN0aW5nCiNmaWxlLmV4aXN0cygiZGF0YS9yYXdfZGF0YS54bHN4IikKYGBgCgpUaGUgYHNjZW5hcmlvXzJfd3JhcHBlcmAtZnVuY3Rpb24gcmV0dXJucyB0aGUgaW5zdGFudGlhdGVkIHNjZW5hcmlvXzEgZHJha2UgInRpYmJsZSIuCgpgYGB7cn0KZHJha2U6Om1ha2Uoc2NlbmFyaW9fd3JhcHBlcigpKQpgYGAKCmBgYHtyfQpkcmFrZV9oaXN0b3J5KCkKYGBgCgpgYGB7cn0KdmlzX2RyYWtlX2dyYXBoKHNjZW5hcmlvX3dyYXBwZXIoKSkKYGBgCgojIyBWYWxpZGF0aW9uIG9mIHJhbmRvbW5lc3M6CgpNdWx0aXBsZSByZXN1bHRzIG9mIHRoZSByZXNhbXBsZWQgQ1BQIHZhbHVlcyBhcmUgZG9jdW1lbnRlZCBoZXJlOgoKLSBPcGVyYXRpbmcgU3lzdGVtczogTWFjb3MgdnMgTGludXggKERvY2tlcikKLSBSLVZlcnNpb25zOiA0LjAuMiB2cyA0LjAuNQotIFBhY2thZ2UgdXBncmFkZXMKClRoZSBhaW0gaXMsIHRoYXQgdGhlIHJlc2FtcGxlZCByZXN1bHRzIGFyZSBjb21wYXJlZCBhbmQgdmFsaWRhdGVkIGlmIGEgbWlncmF0aW9uIGNhbiBiZSBjb25zaWRlcmVkIHNhZmUuCgpgYGB7cn0KbG9hZGQoc2MyX3JhbmRvbTEpCnNjMl9yYW5kb20xCmBgYAoKYGBge3J9CnRlc3R0aGF0Ojp0ZXN0X3RoYXQoInNjMl9yYW5kb20xIGNvbnRhaW5zIHRoZSByZXByb2R1Y2libGUgY29ycmVjdCBzYW1wbGUiLCB7CiAgdGVzdHRoYXQ6OmV4cGVjdF9lcXVhbChzYzJfcmFuZG9tMSRjcHBbMV0sIDg5LjU5MzgyNjExMzA1MjEpCn0pCmBgYAoKVGhpcyB0ZXN0IGlzIGluY2x1ZGVkIHdpdGhpbiB0aGUgdGVzdHRoYXQgZm9sZGVyIGFzIGF1dG9tYXRlZCByZWZlcmVuY2UgdGVzdGluZy4gVGVzdCB1cGdyYWRlIHByb3RvY29scyB3ZXJlIHN1Y2Nlc2Z1bGwgb24gdGhlIHN0YXRlZCBSIFZlcnNpb24gVXBncmFkZSwgdGhlIERvY2tlciBDb21wYXJpc29uIGFuZCBQYWNrYWdlIHVwZ3JhZGVzLgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2NlbmFyaW8gMiIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBub3RlYm9vayBoYW5kbGVzIHRoZSByZW5kZXJpbmcgb2Ygc2NlbmFyaW9fMiAtIHdoaWNoIGlzIGEgc2ltcGxlIGNhc2Ugb2YgYSBoeXBvdGhlc2VzIC0gaW1wb3J0IGRhdGFzZXQgLSB0cmFuc2Zvcm0gZGF0YXNldCAtIGdlbmVyYXRlIHJlcG9ydCBhbmQgZXZhbHVhdGUgdGhlIHByb2Nlc3MgYW5kIHJlc3VsdC4KCiFbXSguLi9tYW4vZmlndXJlcy9zY2VuYXJpb18yLnBuZykKCkFkZGl0aW9uYWxseSwgdGhpcyBzY2VuYXJpbyB0ZXN0cyAicmFuZG9tbmVzcyIgYW5kIHRoZSByZXByb2R1Y2liaWxpdHkgYW5kICB0cmFjZWFiaWxpdHkgb2Ygc2VlZHMgaW4gYWNyb3NzIGRpZmZlcmVudCBlbnZpcm9ubWVudHMgYW5kIHJ1bnRpbWVzLgoKVGhlIG1haW4gYWltIG9mIHNjZW5hcmlvXzIgaXMgdG8gZGVtb25zdHJhdGUgInJhbmRvbW5lc3MiIGFuZCBpdCdzIHRyYWNlYWJpbGl0eS4gVGhlcmVmb3JlIHRoZSBzZWNvbmQgcHJvY2Vzc2luZyBzdGVwIGFkZGVkIHRvIHNjZW5hcmlvIDEgd2lsbCAic2FtcGxlIiBhbmQgdmFsaWRhdGUgdGhlIGV4dHJhY3RlZCByYW5kb20gbnVtYmVyIHN0YXRpY2FsbHkuCgpgYGB7ciBzZXR1cH0Ka25pdHI6Om9wdHNfa25pdCRzZXQocm9vdC5kaXIgPSBycHJvanJvb3Q6OmZpbmRfcnN0dWRpb19yb290X2ZpbGUoKSkKYGBgCgojIFF1ZXN0aW9uCgpUaGUgc2ltdWxhdGVkIGh5cG90aGVzZXMgaXMgdG8gZ2VuZXJhdGUgYSBDUFAoY2VyZWJyYWwgcGVyZnVzaW9uIHByZXNzdXJlKSBiYXNlZCBvbiByYXdfZGF0YS4gVGhlIGZvbGxvd2luZyBjaHVuayBpbnN0YW50aWF0ZXMgcGFja2FnZXMsIGZ1bmN0aW9ucyBhbmQgcGxhbnMuCgpgYGB7cn0KcGtnbG9hZDo6bG9hZF9hbGwoKQojc291cmNlKCJSL3BhY2thZ2VzLlIiKQojc291cmNlKCJSL2Z1bmN0aW9ucy5SIikKI3NvdXJjZSgiUi9mdW5jdGlvbnNfc2NlbmFyaW9fMi5SIikKI3NvdXJjZSgiUi9wbGFuLlIiKQpgYGAKCkluIG9yZGVyIHRvIGF2b2lkIGVycm9ycyAtIHRoZSBkcmFrZSBjYWNoZSBpcyBjbGVhbmVkLgoKYGBge3IgZXZhbD1GfQojZHJha2U6OmNsZWFuKCkKIyBjaGVjayBmaWxlIGV4aXN0aW5nCiNmaWxlLmV4aXN0cygiZGF0YS9yYXdfZGF0YS54bHN4IikKYGBgCgpUaGUgYHNjZW5hcmlvX3dyYXBwZXJgLWZ1bmN0aW9uIHJldHVybnMgdGhlIGluc3RhbnRpYXRlZCBzY2VuYXJpb18xIGRyYWtlICJ0aWJibGUiLgoKYGBge3IgZXZhbD1GfQpkcmFrZTo6bWFrZShzY2VuYXJpb193cmFwcGVyKCkpCmBgYAoKYGBge3IgZXZhbD1GfQpkcmFrZV9oaXN0b3J5KCkKYGBgCgpgYGB7ciBldmFsPUZ9CnZpc19kcmFrZV9ncmFwaChzY2VuYXJpb193cmFwcGVyKCkpCmBgYAoKIyMgVmFsaWRhdGlvbiBvZiByYW5kb21uZXNzOgoKTXVsdGlwbGUgcmVzdWx0cyBvZiB0aGUgcmVzYW1wbGVkIENQUCB2YWx1ZXMgYXJlIGRvY3VtZW50ZWQgaGVyZToKCi0gT3BlcmF0aW5nIFN5c3RlbXM6IE1hY29zIHZzIExpbnV4IChEb2NrZXIpCi0gUi1WZXJzaW9uczogNC4wLjIgdnMgNC4wLjUKLSBQYWNrYWdlIHVwZ3JhZGVzCgpUaGUgYWltIGlzLCB0aGF0IHRoZSByZXNhbXBsZWQgcmVzdWx0cyBhcmUgY29tcGFyZWQgYW5kIHZhbGlkYXRlZCBpZiBhIG1pZ3JhdGlvbiBjYW4gYmUgY29uc2lkZXJlZCBzYWZlLgoKYGBge3IgZXZhbD1GfQpsb2FkZChzYzJfcmFuZG9tMSkKc2MyX3JhbmRvbTEKYGBgCgpgYGB7ciBldmFsPUZ9CnRlc3R0aGF0Ojp0ZXN0X3RoYXQoInNjMl9yYW5kb20xIGNvbnRhaW5zIHRoZSByZXByb2R1Y2libGUgY29ycmVjdCBzYW1wbGUiLCB7CiAgdGVzdHRoYXQ6OmV4cGVjdF9lcXVhbChzYzJfcmFuZG9tMSRjcHBbMV0sIDg5LjU5MzgyNjExMzA1MjEpCn0pCmBgYAoKVGhpcyB0ZXN0IGlzIGluY2x1ZGVkIHdpdGhpbiB0aGUgdGVzdHRoYXQgZm9sZGVyIGFzIGF1dG9tYXRlZCByZWZlcmVuY2UgdGVzdGluZy4gVGVzdCB1cGdyYWRlIHByb3RvY29scyB3ZXJlIHN1Y2Nlc2Z1bGwgb24gdGhlIHN0YXRlZCBSIFZlcnNpb24gVXBncmFkZSwgdGhlIERvY2tlciBDb21wYXJpc29uIGFuZCBQYWNrYWdlIHVwZ3JhZGVzLgoKCg==</div>
 
 
 

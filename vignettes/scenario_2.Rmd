@@ -35,17 +35,17 @@ In order to avoid errors - the drake cache is cleaned.
 #file.exists("data/raw_data.xlsx")
 ```
 
-The `scenario_2_wrapper`-function returns the instantiated scenario_1 drake "tibble".
+The `scenario_wrapper`-function returns the instantiated scenario_1 drake "tibble".
 
-```{r}
+```{r eval=F}
 drake::make(scenario_wrapper())
 ```
 
-```{r}
+```{r eval=F}
 drake_history()
 ```
 
-```{r}
+```{r eval=F}
 vis_drake_graph(scenario_wrapper())
 ```
 
@@ -59,12 +59,12 @@ Multiple results of the resampled CPP values are documented here:
 
 The aim is, that the resampled results are compared and validated if a migration can be considered safe.
 
-```{r}
+```{r eval=F}
 loadd(sc2_random1)
 sc2_random1
 ```
 
-```{r}
+```{r eval=F}
 testthat::test_that("sc2_random1 contains the reproducible correct sample", {
   testthat::expect_equal(sc2_random1$cpp[1], 89.5938261130521)
 })

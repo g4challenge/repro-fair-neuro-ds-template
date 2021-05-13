@@ -31,15 +31,15 @@ drake::clean()
 
 The `scenario_wrapper`-function returns the instantiated scenario plan as drake "tibble".
 
-```{r}
+```{r eval=F}
 drake::make(scenario_wrapper())
 ```
 
-```{r}
+```{r eval=F}
 drake_history()
 ```
 
-```{r}
+```{r eval=F}
 vis_drake_graph(scenario_wrapper())
 ```
 
