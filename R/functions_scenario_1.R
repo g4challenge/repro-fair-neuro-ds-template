@@ -8,7 +8,7 @@
 #' @importFrom readxl read_excel
 #'
 #' @tests
-#' expect_error(import_data("test", "some_wrong_path/raw_data.xlsx"),  "data.frame")
+#' expect_error(import_data("test", "some_wrong_path/raw_data.xlsx"),  "`path` does not exist: ‘some_wrong_path/raw_data.xlsx’")
 #'
 #'
 #' @return imported data
