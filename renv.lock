@@ -8,6 +8,10 @@
       }
     ]
   },
+  "Python": {
+    "Version": "3.9.5",
+    "Type": "virtualenv"
+  },
   "Packages": {
     "BH": {
       "Package": "BH",
@@ -958,10 +962,15 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.13.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "079cb1f03ff972b30401ed05623cbe92"
+      "Version": "0.13.2-32",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "renv",
+      "RemoteUsername": "rstudio",
+      "RemoteRef": "0.13.2-32",
+      "RemoteSha": "b966ca9363bcfd2408fb8cce337d5474605d9848",
+      "Hash": "e3c0c2aeee1d913c170ed32c9a3f7084"
     },
     "reprex": {
       "Package": "reprex",
@@ -1318,9 +1327,5 @@
       "Repository": "CRAN",
       "Hash": "3bc8405c637d988801ec5ea88372d0c2"
     }
-  },
-  "Python": {
-    "Version": "3.9.5",
-    "Type": "virtualenv"
   }
 }
