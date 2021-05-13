@@ -3,7 +3,7 @@
 context("File R/functions_scenario_1.R: @tests")
 
 test_that("Function import_data() @ L17", {
-  expect_error(import_data("test", "some_wrong_path/raw_data.xlsx"),  "`path` does not exist: 'some_wrong_path/raw_data.xlsx'")
+  expect_error(import_data("test", "some_wrong_path/raw_data.xlsx"))
 })
 
 
