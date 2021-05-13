@@ -218,148 +218,50 @@ pre code {
 <p>This Helper document allows the automatic creation of a research object crate with metadata and especially the link to the author(agent). <a href="https://github.com/ResearchObject/ro-crate-py" class="uri">https://github.com/ResearchObject/ro-crate-py</a></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZXRpY3VsYXRlKVxubGlicmFyeShyZW52KVxucmVudjo6cmVzdG9yZSgpXG5gYGAifQ== -->
-<pre class="r"><code>library(reticulate)
-library(renv)
-renv::restore()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInJvY3JhdGVcIiwgZW52bmFtZSA9IFwiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>py_install(&quot;rocrate&quot;, envname = &quot;../renv/python/virtualenvs/renv-python-3.9.5/&quot;)
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiKiBUaGUgbGlicmFyeSBpcyBhbHJlYWR5IHN5bmNocm9uaXplZCB3aXRoIHRoZSBsb2NrZmlsZS5cbkNvbGxlY3RpbmcgYXJjcD09MC4yLjFcbiAgVXNpbmcgY2FjaGVkIGFyY3AtMC4yLjEtcHkyLnB5My1ub25lLWFueS53aGwgKDE1IGtCKVxuQ29sbGVjdGluZyBiaW9ibGVuZD09MC4xNS4wXG4gIFVzaW5nIGNhY2hlZCBiaW9ibGVuZC0wLjE1LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDEyLjUgTUIpXG5Db2xsZWN0aW5nIGJvdG89PTIuNDkuMFxuICBVc2luZyBjYWNoZWQgYm90by0yLjQ5LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDEuNCBNQilcbkNvbGxlY3RpbmcgY2VydGlmaT09MjAyMC4xMi41XG4gIFVzaW5nIGNhY2hlZCBjZXJ0aWZpLTIwMjAuMTIuNS1weTIucHkzLW5vbmUtYW55LndobCAoMTQ3IGtCKVxuQ29sbGVjdGluZyBjaGFyZGV0PT00LjAuMFxuICBVc2luZyBjYWNoZWQgY2hhcmRldC00LjAuMC1weTIucHkzLW5vbmUtYW55LndobCAoMTc4IGtCKVxuQ29sbGVjdGluZyBnYWxheHkyY3dsPT0wLjEuNFxuICBVc2luZyBjYWNoZWQgZ2FsYXh5MmN3bC0wLjEuNC1weTMtbm9uZS1hbnkud2hsICg4LjIga0IpXG5Db2xsZWN0aW5nIGd4Zm9ybWF0Mj09MC4xNS4wXG4gIFVzaW5nIGNhY2hlZCBneGZvcm1hdDItMC4xNS4wLXB5Mi5weTMtbm9uZS1hbnkud2hsICg0OSBrQilcbkNvbGxlY3RpbmcgaWRuYT09Mi4xMFxuICBVc2luZyBjYWNoZWQgaWRuYS0yLjEwLXB5Mi5weTMtbm9uZS1hbnkud2hsICg1OCBrQilcbkNvbGxlY3RpbmcgSmluamEyPT0yLjExLjNcbiAgVXNpbmcgY2FjaGVkIEppbmphMi0yLjExLjMtcHkyLnB5My1ub25lLWFueS53aGwgKDEyNSBrQilcbkNvbGxlY3RpbmcgTWFya3VwU2FmZT09MS4xLjFcbiAgVXNpbmcgY2FjaGVkIE1hcmt1cFNhZmUtMS4xLjEtY3AzOS1jcDM5LW1hY29zeF8xMF85X3g4Nl82NC53aGwgKDE2IGtCKVxuQ29sbGVjdGluZyBweXRob24tZGF0ZXV0aWw9PTIuOC4xXG4gIFVzaW5nIGNhY2hlZCBweXRob25fZGF0ZXV0aWwtMi44LjEtcHkyLnB5My1ub25lLWFueS53aGwgKDIyNyBrQilcbkNvbGxlY3RpbmcgUHlZQU1MPT01LjQuMVxuICBVc2luZyBjYWNoZWQgUHlZQU1MLTUuNC4xLWNwMzktY3AzOS1tYWNvc3hfMTBfOV94ODZfNjQud2hsICgyNTkga0IpXG5Db2xsZWN0aW5nIHJlcXVlc3RzPT0yLjI1LjFcbiAgVXNpbmcgY2FjaGVkIHJlcXVlc3RzLTIuMjUuMS1weTIucHkzLW5vbmUtYW55LndobCAoNjEga0IpXG5Db2xsZWN0aW5nIHJlcXVlc3RzLXRvb2xiZWx0PT0wLjkuMVxuICBVc2luZyBjYWNoZWQgcmVxdWVzdHNfdG9vbGJlbHQtMC45LjEtcHkyLnB5My1ub25lLWFueS53aGwgKDU0IGtCKVxuQ29sbGVjdGluZyByb2NyYXRlPT0wLjMuMVxuICBVc2luZyBjYWNoZWQgcm9jcmF0ZS0wLjMuMS1weTMtbm9uZS1hbnkud2hsICgyOTgga0IpXG5Db2xsZWN0aW5nIHNpeD09MS4xNS4wXG4gIFVzaW5nIGNhY2hlZCBzaXgtMS4xNS4wLXB5Mi5weTMtbm9uZS1hbnkud2hsICgxMCBrQilcbkNvbGxlY3RpbmcgdXJsbGliMz09MS4yNi40XG4gIFVzaW5nIGNhY2hlZCB1cmxsaWIzLTEuMjYuNC1weTIucHkzLW5vbmUtYW55LndobCAoMTUzIGtCKVxuSW5zdGFsbGluZyBjb2xsZWN0ZWQgcGFja2FnZXM6IHVybGxpYjMsIGlkbmEsIGNoYXJkZXQsIGNlcnRpZmksIHJlcXVlc3RzLCByZXF1ZXN0cy10b29sYmVsdCwgUHlZQU1MLCBib3RvLCBzaXgsIGJpb2JsZW5kLCBNYXJrdXBTYWZlLCBneGZvcm1hdDIsIHB5dGhvbi1kYXRldXRpbCwgSmluamEyLCBnYWxheHkyY3dsLCBhcmNwLCByb2NyYXRlXG5TdWNjZXNzZnVsbHkgaW5zdGFsbGVkIEppbmphMi0yLjExLjMgTWFya3VwU2FmZS0xLjEuMSBQeVlBTUwtNS40LjEgYXJjcC0wLjIuMSBiaW9ibGVuZC0wLjE1LjAgYm90by0yLjQ5LjAgY2VydGlmaS0yMDIwLjEyLjUgY2hhcmRldC00LjAuMCBnYWxheHkyY3dsLTAuMS40IGd4Zm9ybWF0Mi0wLjE1LjAgaWRuYS0yLjEwIHB5dGhvbi1kYXRldXRpbC0yLjguMSByZXF1ZXN0cy0yLjI1LjEgcmVxdWVzdHMtdG9vbGJlbHQtMC45LjEgcm9jcmF0ZS0wLjMuMSBzaXgtMS4xNS4wIHVybGxpYjMtMS4yNi40XG4ifQ== -->
-<pre><code>* The library is already synchronized with the lockfile.
-Collecting arcp==0.2.1
-  Using cached arcp-0.2.1-py2.py3-none-any.whl (15 kB)
-Collecting bioblend==0.15.0
-  Using cached bioblend-0.15.0-py2.py3-none-any.whl (12.5 MB)
-Collecting boto==2.49.0
-  Using cached boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
-Collecting certifi==2020.12.5
-  Using cached certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
-Collecting chardet==4.0.0
-  Using cached chardet-4.0.0-py2.py3-none-any.whl (178 kB)
-Collecting galaxy2cwl==0.1.4
-  Using cached galaxy2cwl-0.1.4-py3-none-any.whl (8.2 kB)
-Collecting gxformat2==0.15.0
-  Using cached gxformat2-0.15.0-py2.py3-none-any.whl (49 kB)
-Collecting idna==2.10
-  Using cached idna-2.10-py2.py3-none-any.whl (58 kB)
-Collecting Jinja2==2.11.3
-  Using cached Jinja2-2.11.3-py2.py3-none-any.whl (125 kB)
-Collecting MarkupSafe==1.1.1
-  Using cached MarkupSafe-1.1.1-cp39-cp39-macosx_10_9_x86_64.whl (16 kB)
-Collecting python-dateutil==2.8.1
-  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
-Collecting PyYAML==5.4.1
-  Using cached PyYAML-5.4.1-cp39-cp39-macosx_10_9_x86_64.whl (259 kB)
-Collecting requests==2.25.1
-  Using cached requests-2.25.1-py2.py3-none-any.whl (61 kB)
-Collecting requests-toolbelt==0.9.1
-  Using cached requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
-Collecting rocrate==0.3.1
-  Using cached rocrate-0.3.1-py3-none-any.whl (298 kB)
-Collecting six==1.15.0
-  Using cached six-1.15.0-py2.py3-none-any.whl (10 kB)
-Collecting urllib3==1.26.4
-  Using cached urllib3-1.26.4-py2.py3-none-any.whl (153 kB)
-Installing collected packages: urllib3, idna, chardet, certifi, requests, requests-toolbelt, PyYAML, boto, six, bioblend, MarkupSafe, gxformat2, python-dateutil, Jinja2, galaxy2cwl, arcp, rocrate
-Successfully installed Jinja2-2.11.3 MarkupSafe-1.1.1 PyYAML-5.4.1 arcp-0.2.1 bioblend-0.15.0 boto-2.49.0 certifi-2020.12.5 chardet-4.0.0 galaxy2cwl-0.1.4 gxformat2-0.15.0 idna-2.10 python-dateutil-2.8.1 requests-2.25.1 requests-toolbelt-0.9.1 rocrate-0.3.1 six-1.15.0 urllib3-1.26.4</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogWW91IGFyZSB1c2luZyBwaXAgdmVyc2lvbiAyMS4wLjE7IGhvd2V2ZXIsIHZlcnNpb24gMjEuMS4xIGlzIGF2YWlsYWJsZS5cbllvdSBzaG91bGQgY29uc2lkZXIgdXBncmFkaW5nIHZpYSB0aGUgJy9Vc2Vycy9sdWthcy9kZXYvcmVwcm9kdWNpYmxlX2ZhaXJfbmV1cm9fZHNfdGVtcGxhdGUvcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvYmluL3B5dGhvbiAtbSBwaXAgaW5zdGFsbCAtLXVwZ3JhZGUgcGlwJyBjb21tYW5kLlxuIn0= -->
-<pre><code>WARNING: You are using pip version 21.0.1; however, version 21.1.1 is available.
-You should consider upgrading via the &#39;/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4/bin/python -m pip install --upgrade pip&#39; command.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiKiBSZXN0b3JlZCBQeXRob24gcGFja2FnZXMgZnJvbSAnfi9kZXYvcmVwcm9kdWNpYmxlX2ZhaXJfbmV1cm9fZHNfdGVtcGxhdGUvcmVxdWlyZW1lbnRzLnR4dCcuXG4ifQ== -->
-<pre><code>* Restored Python packages from &#39;~/dev/reproducible_fair_neuro_ds_template/requirements.txt&#39;.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua25pdHI6OmtuaXRfZW5naW5lcyRzZXQocHl0aG9uID0gcmV0aWN1bGF0ZTo6ZW5nX3B5dGhvbilcbnVzZV92aXJ0dWFsZW52KFwiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvXCIsIHJlcXVpcmVkPVQpXG51c2VfcHl0aG9uKFwiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvYmluL3B5dGhvblwiKVxuYGBgIn0= -->
-<pre class="r"><code>knitr::knit_engines$set(python = reticulate::eng_python)
-use_virtualenv(&quot;../renv/python/virtualenvs/renv-python-3.9.4/&quot;, required=T)
-use_python(&quot;../renv/python/virtualenvs/renv-python-3.9.4/bin/python&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiKiBBY3RpdmF0ZWQgUHl0aG9uIDMuOS40IFt2aXJ0dWFsZW52OyB+L2Rldi9yZXByb2R1Y2libGVfZmFpcl9uZXVyb19kc190ZW1wbGF0ZS9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNF1cbiogUHJvamVjdCAnfi9kZXYvcmVwcm9kdWNpYmxlX2ZhaXJfbmV1cm9fZHNfdGVtcGxhdGUnIGxvYWRlZC4gW3JlbnYgMC4xMy4yXVxuIn0= -->
-<pre><code>* Activated Python 3.9.4 [virtualenv; ~/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4]
-* Project &#39;~/dev/reproducible_fair_neuro_ds_template&#39; loaded. [renv 0.13.2]</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGhlIHdvcmtpbmcgZGlyZWN0b3J5IHdhcyBjaGFuZ2VkIHRvIC9Vc2Vycy9sdWthcy9kZXYvcmVwcm9kdWNpYmxlX2ZhaXJfbmV1cm9fZHNfdGVtcGxhdGUgaW5zaWRlIGEgbm90ZWJvb2sgY2h1bmsuIFRoZSB3b3JraW5nIGRpcmVjdG9yeSB3aWxsIGJlIHJlc2V0IHdoZW4gdGhlIGNodW5rIGlzIGZpbmlzaGVkIHJ1bm5pbmcuIFVzZSB0aGUga25pdHIgcm9vdC5kaXIgb3B0aW9uIGluIHRoZSBzZXR1cCBjaHVuayB0byBjaGFuZ2UgdGhlIHdvcmtpbmcgZGlyZWN0b3J5IGZvciBub3RlYm9vayBjaHVua3MuXG4ifQ== -->
-<pre><code>The working directory was changed to /Users/lukas/dev/reproducible_fair_neuro_ds_template inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks.</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfY29uZmlnKClcbmBgYCJ9 -->
-<pre class="r"><code>py_config()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicHl0aG9uOiAgICAgICAgIC9Vc2Vycy9sdWthcy9kZXYvcmVwcm9kdWNpYmxlX2ZhaXJfbmV1cm9fZHNfdGVtcGxhdGUvcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvYmluL3B5dGhvblxubGlicHl0aG9uOiAgICAgIC91c3IvbG9jYWwvb3B0L3B5dGhvbkAzLjkvRnJhbWV3b3Jrcy9QeXRob24uZnJhbWV3b3JrL1ZlcnNpb25zLzMuOS9saWIvcHl0aG9uMy45L2NvbmZpZy0zLjktZGFyd2luL2xpYnB5dGhvbjMuOS5keWxpYlxucHl0aG9uaG9tZTogICAgIC9Vc2Vycy9sdWthcy9kZXYvcmVwcm9kdWNpYmxlX2ZhaXJfbmV1cm9fZHNfdGVtcGxhdGUvcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQ6L1VzZXJzL2x1a2FzL2Rldi9yZXByb2R1Y2libGVfZmFpcl9uZXVyb19kc190ZW1wbGF0ZS9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNFxudmVyc2lvbjogICAgICAgIDMuOS40IChkZWZhdWx0LCBBcHIgIDUgMjAyMSwgMDE6NTA6NDYpICBbQ2xhbmcgMTIuMC4wIChjbGFuZy0xMjAwLjAuMzIuMjkpXVxubnVtcHk6ICAgICAgICAgICBbTk9UIEZPVU5EXVxuXG5OT1RFOiBQeXRob24gdmVyc2lvbiB3YXMgZm9yY2VkIGJ5IFJFVElDVUxBVEVfUFlUSE9OXG4ifQ== -->
-<pre><code>python:         /Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4/bin/python
-libpython:      /usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib
-pythonhome:     /Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4:/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4
-version:        3.9.4 (default, Apr  5 2021, 01:50:46)  [Clang 12.0.0 (clang-1200.0.32.29)]
-numpy:           [NOT FOUND]
-
-NOTE: Python version was forced by RETICULATE_PYTHON</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHlfaW5zdGFsbChcInJvY3JhdGVcIiwgZW52bmFtZSA9IFwiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvXCIpXG5gYGAifQ== -->
-<pre class="r"><code>py_install(&quot;rocrate&quot;, envname = &quot;../renv/python/virtualenvs/renv-python-3.9.4/&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVXNpbmcgUHl0aG9uOiAvdXNyL2xvY2FsL0NlbGxhci9weXRob25AMy45LzMuOS40L0ZyYW1ld29ya3MvUHl0aG9uLmZyYW1ld29yay9WZXJzaW9ucy8zLjkvYmluL3B5dGhvbjMuOVxuQ3JlYXRpbmcgdmlydHVhbCBlbnZpcm9ubWVudCAnLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvJyAuLi4gRG9uZSFcbkluc3RhbGxpbmcgcGFja2FnZXM6ICdwaXAnLCAnd2hlZWwnLCAnc2V0dXB0b29scycsICdudW1weSdcblJlcXVpcmVtZW50IGFscmVhZHkgc2F0aXNmaWVkOiBwaXAgaW4gL1VzZXJzL2x1a2FzL2Rldi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNC9saWIvcHl0aG9uMy45L3NpdGUtcGFja2FnZXMgKDIxLjAuMSlcbkNvbGxlY3RpbmcgcGlwXG4gIERvd25sb2FkaW5nIHBpcC0yMS4xLjEtcHkzLW5vbmUtYW55LndobCAoMS41IE1CKVxuQ29sbGVjdGluZyB3aGVlbFxuICBVc2luZyBjYWNoZWQgd2hlZWwtMC4zNi4yLXB5Mi5weTMtbm9uZS1hbnkud2hsICgzNSBrQilcblJlcXVpcmVtZW50IGFscmVhZHkgc2F0aXNmaWVkOiBzZXR1cHRvb2xzIGluIC9Vc2Vycy9sdWthcy9kZXYvcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvbGliL3B5dGhvbjMuOS9zaXRlLXBhY2thZ2VzICg1NC4yLjApXG5Db2xsZWN0aW5nIHNldHVwdG9vbHNcbiAgRG93bmxvYWRpbmcgc2V0dXB0b29scy01Ni4xLjAtcHkzLW5vbmUtYW55LndobCAoNzg1IGtCKVxuQ29sbGVjdGluZyBudW1weVxuICBVc2luZyBjYWNoZWQgbnVtcHktMS4yMC4yLWNwMzktY3AzOS1tYWNvc3hfMTBfOV94ODZfNjQud2hsICgxNi4xIE1CKVxuSW5zdGFsbGluZyBjb2xsZWN0ZWQgcGFja2FnZXM6IHdoZWVsLCBzZXR1cHRvb2xzLCBwaXAsIG51bXB5XG4gIEF0dGVtcHRpbmcgdW5pbnN0YWxsOiBzZXR1cHRvb2xzXG4gICAgRm91bmQgZXhpc3RpbmcgaW5zdGFsbGF0aW9uOiBzZXR1cHRvb2xzIDU0LjIuMFxuICAgIFVuaW5zdGFsbGluZyBzZXR1cHRvb2xzLTU0LjIuMDpcbiAgICAgIFN1Y2Nlc3NmdWxseSB1bmluc3RhbGxlZCBzZXR1cHRvb2xzLTU0LjIuMFxuICBBdHRlbXB0aW5nIHVuaW5zdGFsbDogcGlwXG4gICAgRm91bmQgZXhpc3RpbmcgaW5zdGFsbGF0aW9uOiBwaXAgMjEuMC4xXG4gICAgVW5pbnN0YWxsaW5nIHBpcC0yMS4wLjE6XG4gICAgICBTdWNjZXNzZnVsbHkgdW5pbnN0YWxsZWQgcGlwLTIxLjAuMVxuU3VjY2Vzc2Z1bGx5IGluc3RhbGxlZCBudW1weS0xLjIwLjIgcGlwLTIxLjEuMSBzZXR1cHRvb2xzLTU2LjEuMCB3aGVlbC0wLjM2LjJcblZpcnR1YWwgZW52aXJvbm1lbnQgJy4uL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS40Lycgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQuXG5Vc2luZyB2aXJ0dWFsIGVudmlyb25tZW50ICcuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNC8nIC4uLlxuQ29sbGVjdGluZyByb2NyYXRlXG4gIFVzaW5nIGNhY2hlZCByb2NyYXRlLTAuNC4wLXB5My1ub25lLWFueS53aGwgKDMwOSBrQilcbkNvbGxlY3RpbmcgY2xpY2tcbiAgVXNpbmcgY2FjaGVkIGNsaWNrLTcuMS4yLXB5Mi5weTMtbm9uZS1hbnkud2hsICg4MiBrQilcbkNvbGxlY3RpbmcgZ2FsYXh5MmN3bFxuICBVc2luZyBjYWNoZWQgZ2FsYXh5MmN3bC0wLjEuNC1weTMtbm9uZS1hbnkud2hsICg4LjIga0IpXG5Db2xsZWN0aW5nIGppbmphMlxuICBVc2luZyBjYWNoZWQgSmluamEyLTIuMTEuMy1weTIucHkzLW5vbmUtYW55LndobCAoMTI1IGtCKVxuQ29sbGVjdGluZyByZXF1ZXN0c1xuICBVc2luZyBjYWNoZWQgcmVxdWVzdHMtMi4yNS4xLXB5Mi5weTMtbm9uZS1hbnkud2hsICg2MSBrQilcbkNvbGxlY3RpbmcgcHl0aG9uLWRhdGV1dGlsXG4gIFVzaW5nIGNhY2hlZCBweXRob25fZGF0ZXV0aWwtMi44LjEtcHkyLnB5My1ub25lLWFueS53aGwgKDIyNyBrQilcbkNvbGxlY3RpbmcgYXJjcD09MC4yLjFcbiAgVXNpbmcgY2FjaGVkIGFyY3AtMC4yLjEtcHkyLnB5My1ub25lLWFueS53aGwgKDE1IGtCKVxuQ29sbGVjdGluZyBneGZvcm1hdDI+PTAuMTEuMFxuICBVc2luZyBjYWNoZWQgZ3hmb3JtYXQyLTAuMTUuMC1weTIucHkzLW5vbmUtYW55LndobCAoNDkga0IpXG5Db2xsZWN0aW5nIHB5eWFtbD49NS4zLjBcbiAgVXNpbmcgY2FjaGVkIFB5WUFNTC01LjQuMS1jcDM5LWNwMzktbWFjb3N4XzEwXzlfeDg2XzY0LndobCAoMjU5IGtCKVxuQ29sbGVjdGluZyBiaW9ibGVuZFxuICBVc2luZyBjYWNoZWQgYmlvYmxlbmQtMC4xNS4wLXB5Mi5weTMtbm9uZS1hbnkud2hsICgxMi41IE1CKVxuQ29sbGVjdGluZyBzaXg+PTEuOS4wXG4gIERvd25sb2FkaW5nIHNpeC0xLjE2LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDExIGtCKVxuQ29sbGVjdGluZyBib3RvPj0yLjkuN1xuICBVc2luZyBjYWNoZWQgYm90by0yLjQ5LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDEuNCBNQilcbkNvbGxlY3RpbmcgcmVxdWVzdHMtdG9vbGJlbHQhPTAuOS4wLD49MC41LjFcbiAgVXNpbmcgY2FjaGVkIHJlcXVlc3RzX3Rvb2xiZWx0LTAuOS4xLXB5Mi5weTMtbm9uZS1hbnkud2hsICg1NCBrQilcbkNvbGxlY3RpbmcgY2hhcmRldDw1LD49My4wLjJcbiAgVXNpbmcgY2FjaGVkIGNoYXJkZXQtNC4wLjAtcHkyLnB5My1ub25lLWFueS53aGwgKDE3OCBrQilcbkNvbGxlY3RpbmcgdXJsbGliMzwxLjI3LD49MS4yMS4xXG4gIFVzaW5nIGNhY2hlZCB1cmxsaWIzLTEuMjYuNC1weTIucHkzLW5vbmUtYW55LndobCAoMTUzIGtCKVxuQ29sbGVjdGluZyBjZXJ0aWZpPj0yMDE3LjQuMTdcbiAgVXNpbmcgY2FjaGVkIGNlcnRpZmktMjAyMC4xMi41LXB5Mi5weTMtbm9uZS1hbnkud2hsICgxNDcga0IpXG5Db2xsZWN0aW5nIGlkbmE8Myw+PTIuNVxuICBVc2luZyBjYWNoZWQgaWRuYS0yLjEwLXB5Mi5weTMtbm9uZS1hbnkud2hsICg1OCBrQilcbkNvbGxlY3RpbmcgTWFya3VwU2FmZT49MC4yM1xuICBVc2luZyBjYWNoZWQgTWFya3VwU2FmZS0xLjEuMS1jcDM5LWNwMzktbWFjb3N4XzEwXzlfeDg2XzY0LndobCAoMTYga0IpXG5JbnN0YWxsaW5nIGNvbGxlY3RlZCBwYWNrYWdlczogdXJsbGliMywgaWRuYSwgY2hhcmRldCwgY2VydGlmaSwgcmVxdWVzdHMsIHJlcXVlc3RzLXRvb2xiZWx0LCBweXlhbWwsIGJvdG8sIHNpeCwgYmlvYmxlbmQsIE1hcmt1cFNhZmUsIGd4Zm9ybWF0MiwgcHl0aG9uLWRhdGV1dGlsLCBqaW5qYTIsIGdhbGF4eTJjd2wsIGNsaWNrLCBhcmNwLCByb2NyYXRlXG5TdWNjZXNzZnVsbHkgaW5zdGFsbGVkIE1hcmt1cFNhZmUtMS4xLjEgYXJjcC0wLjIuMSBiaW9ibGVuZC0wLjE1LjAgYm90by0yLjQ5LjAgY2VydGlmaS0yMDIwLjEyLjUgY2hhcmRldC00LjAuMCBjbGljay03LjEuMiBnYWxheHkyY3dsLTAuMS40IGd4Zm9ybWF0Mi0wLjE1LjAgaWRuYS0yLjEwIGppbmphMi0yLjExLjMgcHl0aG9uLWRhdGV1dGlsLTIuOC4xIHB5eWFtbC01LjQuMSByZXF1ZXN0cy0yLjI1LjEgcmVxdWVzdHMtdG9vbGJlbHQtMC45LjEgcm9jcmF0ZS0wLjQuMCBzaXgtMS4xNi4wIHVybGxpYjMtMS4yNi40XG4ifQ== -->
-<pre><code>Using Python: /usr/local/Cellar/python@3.9/3.9.4/Frameworks/Python.framework/Versions/3.9/bin/python3.9
-Creating virtual environment &#39;../renv/python/virtualenvs/renv-python-3.9.4/&#39; ... Done!
-Installing packages: &#39;pip&#39;, &#39;wheel&#39;, &#39;setuptools&#39;, &#39;numpy&#39;
-Requirement already satisfied: pip in /Users/lukas/dev/renv/python/virtualenvs/renv-python-3.9.4/lib/python3.9/site-packages (21.0.1)
-Collecting pip
-  Downloading pip-21.1.1-py3-none-any.whl (1.5 MB)
-Collecting wheel
-  Using cached wheel-0.36.2-py2.py3-none-any.whl (35 kB)
-Requirement already satisfied: setuptools in /Users/lukas/dev/renv/python/virtualenvs/renv-python-3.9.4/lib/python3.9/site-packages (54.2.0)
-Collecting setuptools
-  Downloading setuptools-56.1.0-py3-none-any.whl (785 kB)
-Collecting numpy
-  Using cached numpy-1.20.2-cp39-cp39-macosx_10_9_x86_64.whl (16.1 MB)
-Installing collected packages: wheel, setuptools, pip, numpy
-  Attempting uninstall: setuptools
-    Found existing installation: setuptools 54.2.0
-    Uninstalling setuptools-54.2.0:
-      Successfully uninstalled setuptools-54.2.0
-  Attempting uninstall: pip
-    Found existing installation: pip 21.0.1
-    Uninstalling pip-21.0.1:
-      Successfully uninstalled pip-21.0.1
-Successfully installed numpy-1.20.2 pip-21.1.1 setuptools-56.1.0 wheel-0.36.2
-Virtual environment &#39;../renv/python/virtualenvs/renv-python-3.9.4/&#39; successfully created.
-Using virtual environment &#39;../renv/python/virtualenvs/renv-python-3.9.4/&#39; ...
+<!-- rnb-output-begin eyJkYXRhIjoiVXNpbmcgdmlydHVhbCBlbnZpcm9ubWVudCAnLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvJyAuLi5cbkNvbGxlY3Rpbmcgcm9jcmF0ZVxuICBVc2luZyBjYWNoZWQgcm9jcmF0ZS0wLjQuMC1weTMtbm9uZS1hbnkud2hsICgzMDkga0IpXG5Db2xsZWN0aW5nIGNsaWNrXG4gIFVzaW5nIGNhY2hlZCBjbGljay04LjAuMC1weTMtbm9uZS1hbnkud2hsICg5NiBrQilcbkNvbGxlY3RpbmcgamluamEyXG4gIFVzaW5nIGNhY2hlZCBKaW5qYTItMy4wLjAtcHkzLW5vbmUtYW55LndobCAoMTMzIGtCKVxuQ29sbGVjdGluZyBhcmNwPT0wLjIuMVxuICBVc2luZyBjYWNoZWQgYXJjcC0wLjIuMS1weTIucHkzLW5vbmUtYW55LndobCAoMTUga0IpXG5Db2xsZWN0aW5nIHB5dGhvbi1kYXRldXRpbFxuICBVc2luZyBjYWNoZWQgcHl0aG9uX2RhdGV1dGlsLTIuOC4xLXB5Mi5weTMtbm9uZS1hbnkud2hsICgyMjcga0IpXG5Db2xsZWN0aW5nIHJlcXVlc3RzXG4gIFVzaW5nIGNhY2hlZCByZXF1ZXN0cy0yLjI1LjEtcHkyLnB5My1ub25lLWFueS53aGwgKDYxIGtCKVxuQ29sbGVjdGluZyBnYWxheHkyY3dsXG4gIFVzaW5nIGNhY2hlZCBnYWxheHkyY3dsLTAuMS40LXB5My1ub25lLWFueS53aGwgKDguMiBrQilcbkNvbGxlY3RpbmcgZ3hmb3JtYXQyPj0wLjExLjBcbiAgVXNpbmcgY2FjaGVkIGd4Zm9ybWF0Mi0wLjE1LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDQ5IGtCKVxuQ29sbGVjdGluZyBweXlhbWw+PTUuMy4wXG4gIFVzaW5nIGNhY2hlZCBQeVlBTUwtNS40LjEtY3AzOS1jcDM5LW1hY29zeF8xMF85X3g4Nl82NC53aGwgKDI1OSBrQilcbkNvbGxlY3Rpbmcgc2l4Pj0xLjkuMFxuICBVc2luZyBjYWNoZWQgc2l4LTEuMTYuMC1weTIucHkzLW5vbmUtYW55LndobCAoMTEga0IpXG5Db2xsZWN0aW5nIGJpb2JsZW5kXG4gIFVzaW5nIGNhY2hlZCBiaW9ibGVuZC0wLjE1LjAtcHkyLnB5My1ub25lLWFueS53aGwgKDEyLjUgTUIpXG5Db2xsZWN0aW5nIHJlcXVlc3RzLXRvb2xiZWx0IT0wLjkuMCw+PTAuNS4xXG4gIFVzaW5nIGNhY2hlZCByZXF1ZXN0c190b29sYmVsdC0wLjkuMS1weTIucHkzLW5vbmUtYW55LndobCAoNTQga0IpXG5Db2xsZWN0aW5nIGJvdG8+PTIuOS43XG4gIFVzaW5nIGNhY2hlZCBib3RvLTIuNDkuMC1weTIucHkzLW5vbmUtYW55LndobCAoMS40IE1CKVxuQ29sbGVjdGluZyBjZXJ0aWZpPj0yMDE3LjQuMTdcbiAgVXNpbmcgY2FjaGVkIGNlcnRpZmktMjAyMC4xMi41LXB5Mi5weTMtbm9uZS1hbnkud2hsICgxNDcga0IpXG5Db2xsZWN0aW5nIHVybGxpYjM8MS4yNyw+PTEuMjEuMVxuICBVc2luZyBjYWNoZWQgdXJsbGliMy0xLjI2LjQtcHkyLnB5My1ub25lLWFueS53aGwgKDE1MyBrQilcbkNvbGxlY3RpbmcgY2hhcmRldDw1LD49My4wLjJcbiAgVXNpbmcgY2FjaGVkIGNoYXJkZXQtNC4wLjAtcHkyLnB5My1ub25lLWFueS53aGwgKDE3OCBrQilcbkNvbGxlY3RpbmcgaWRuYTwzLD49Mi41XG4gIFVzaW5nIGNhY2hlZCBpZG5hLTIuMTAtcHkyLnB5My1ub25lLWFueS53aGwgKDU4IGtCKVxuQ29sbGVjdGluZyBNYXJrdXBTYWZlPj0yLjAuMHJjMlxuICBVc2luZyBjYWNoZWQgTWFya3VwU2FmZS0yLjAuMC1jcDM5LWNwMzktbWFjb3N4XzEwXzlfeDg2XzY0LndobCAoMTMga0IpXG5JbnN0YWxsaW5nIGNvbGxlY3RlZCBwYWNrYWdlczogdXJsbGliMywgaWRuYSwgY2hhcmRldCwgY2VydGlmaSwgcmVxdWVzdHMsIHJlcXVlc3RzLXRvb2xiZWx0LCBweXlhbWwsIGJvdG8sIHNpeCwgYmlvYmxlbmQsIE1hcmt1cFNhZmUsIGd4Zm9ybWF0MiwgcHl0aG9uLWRhdGV1dGlsLCBqaW5qYTIsIGdhbGF4eTJjd2wsIGNsaWNrLCBhcmNwLCByb2NyYXRlXG5TdWNjZXNzZnVsbHkgaW5zdGFsbGVkIE1hcmt1cFNhZmUtMi4wLjAgYXJjcC0wLjIuMSBiaW9ibGVuZC0wLjE1LjAgYm90by0yLjQ5LjAgY2VydGlmaS0yMDIwLjEyLjUgY2hhcmRldC00LjAuMCBjbGljay04LjAuMCBnYWxheHkyY3dsLTAuMS40IGd4Zm9ybWF0Mi0wLjE1LjAgaWRuYS0yLjEwIGppbmphMi0zLjAuMCBweXRob24tZGF0ZXV0aWwtMi44LjEgcHl5YW1sLTUuNC4xIHJlcXVlc3RzLTIuMjUuMSByZXF1ZXN0cy10b29sYmVsdC0wLjkuMSByb2NyYXRlLTAuNC4wIHNpeC0xLjE2LjAgdXJsbGliMy0xLjI2LjRcbiJ9 -->
+<pre><code>Using virtual environment &#39;../renv/python/virtualenvs/renv-python-3.9.5/&#39; ...
 Collecting rocrate
   Using cached rocrate-0.4.0-py3-none-any.whl (309 kB)
 Collecting click
-  Using cached click-7.1.2-py2.py3-none-any.whl (82 kB)
-Collecting galaxy2cwl
-  Using cached galaxy2cwl-0.1.4-py3-none-any.whl (8.2 kB)
+  Using cached click-8.0.0-py3-none-any.whl (96 kB)
 Collecting jinja2
-  Using cached Jinja2-2.11.3-py2.py3-none-any.whl (125 kB)
-Collecting requests
-  Using cached requests-2.25.1-py2.py3-none-any.whl (61 kB)
-Collecting python-dateutil
-  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+  Using cached Jinja2-3.0.0-py3-none-any.whl (133 kB)
 Collecting arcp==0.2.1
   Using cached arcp-0.2.1-py2.py3-none-any.whl (15 kB)
+Collecting python-dateutil
+  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting requests
+  Using cached requests-2.25.1-py2.py3-none-any.whl (61 kB)
+Collecting galaxy2cwl
+  Using cached galaxy2cwl-0.1.4-py3-none-any.whl (8.2 kB)
 Collecting gxformat2&gt;=0.11.0
   Using cached gxformat2-0.15.0-py2.py3-none-any.whl (49 kB)
 Collecting pyyaml&gt;=5.3.0
   Using cached PyYAML-5.4.1-cp39-cp39-macosx_10_9_x86_64.whl (259 kB)
+Collecting six&gt;=1.9.0
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting bioblend
   Using cached bioblend-0.15.0-py2.py3-none-any.whl (12.5 MB)
-Collecting six&gt;=1.9.0
-  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
-Collecting boto&gt;=2.9.7
-  Using cached boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
 Collecting requests-toolbelt!=0.9.0,&gt;=0.5.1
   Using cached requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
-Collecting chardet&lt;5,&gt;=3.0.2
-  Using cached chardet-4.0.0-py2.py3-none-any.whl (178 kB)
-Collecting urllib3&lt;1.27,&gt;=1.21.1
-  Using cached urllib3-1.26.4-py2.py3-none-any.whl (153 kB)
+Collecting boto&gt;=2.9.7
+  Using cached boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
 Collecting certifi&gt;=2017.4.17
   Using cached certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
+Collecting urllib3&lt;1.27,&gt;=1.21.1
+  Using cached urllib3-1.26.4-py2.py3-none-any.whl (153 kB)
+Collecting chardet&lt;5,&gt;=3.0.2
+  Using cached chardet-4.0.0-py2.py3-none-any.whl (178 kB)
 Collecting idna&lt;3,&gt;=2.5
   Using cached idna-2.10-py2.py3-none-any.whl (58 kB)
-Collecting MarkupSafe&gt;=0.23
-  Using cached MarkupSafe-1.1.1-cp39-cp39-macosx_10_9_x86_64.whl (16 kB)
+Collecting MarkupSafe&gt;=2.0.0rc2
+  Using cached MarkupSafe-2.0.0-cp39-cp39-macosx_10_9_x86_64.whl (13 kB)
 Installing collected packages: urllib3, idna, chardet, certifi, requests, requests-toolbelt, pyyaml, boto, six, bioblend, MarkupSafe, gxformat2, python-dateutil, jinja2, galaxy2cwl, click, arcp, rocrate
-Successfully installed MarkupSafe-1.1.1 arcp-0.2.1 bioblend-0.15.0 boto-2.49.0 certifi-2020.12.5 chardet-4.0.0 click-7.1.2 galaxy2cwl-0.1.4 gxformat2-0.15.0 idna-2.10 jinja2-2.11.3 python-dateutil-2.8.1 pyyaml-5.4.1 requests-2.25.1 requests-toolbelt-0.9.1 rocrate-0.4.0 six-1.16.0 urllib3-1.26.4</code></pre>
+Successfully installed MarkupSafe-2.0.0 arcp-0.2.1 bioblend-0.15.0 boto-2.49.0 certifi-2020.12.5 chardet-4.0.0 click-8.0.0 galaxy2cwl-0.1.4 gxformat2-0.15.0 idna-2.10 jinja2-3.0.0 python-dateutil-2.8.1 pyyaml-5.4.1 requests-2.25.1 requests-toolbelt-0.9.1 rocrate-0.4.0 six-1.16.0 urllib3-1.26.4</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -368,8 +270,8 @@ Successfully installed MarkupSafe-1.1.1 arcp-0.2.1 bioblend-0.15.0 boto-2.49.0 c
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
 <pre class="python"><code>reticulate::repl_python()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS40ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS40L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.4 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4/bin/python)
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
 Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIHJvY3JhdGUucm9jcmF0ZSBpbXBvcnQgUk9DcmF0ZVxuY3JhdGUgPSBST0NyYXRlKCkgXG5gYGAifQ== -->
@@ -385,8 +287,8 @@ crate = ROCrate() </code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
 <pre class="python"><code>reticulate::repl_python()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS40ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS40L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.4 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4/bin/python)
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
 Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4jIyBhZGRpbmcgYSBGaWxlIGVudGl0eTpcbnJhd19maWxlID0gJy4uL2RhdGEvcmF3X2RhdGEueGxzeCdcbmZpbGVfZW50aXR5ID0gY3JhdGUuYWRkX2ZpbGUocmF3X2ZpbGUpXG5cbiMgQWRkaW5nIGEgRmlsZSBlbnRpdHkgd2l0aCBhIHJlZmVyZW5jZSB0byBhbiBleHRlcm5hbCAoYWJzb2x1dGUpIFVSSVxuI3JlbW90ZV9maWxlID0gY3JhdGUuYWRkX2ZpbGUoJ2h0dHBzOi8vZ2l0aHViLmNvbS9SZXNlYXJjaE9iamVjdC9yby1jcmF0ZS1weS9ibG9iL21hc3Rlci90ZXN0L3Rlc3QtZGF0YS90ZXN0X2dhbGF4eV93Zi5nYScsIGZldGNoX3JlbW90ZSA9IEZhbHNlKVxuXG4jIGFkZGluZyBhIERhdGFzZXRcbiNzYW1wbGVfZGlyID0gJy9wYXRoL3RvL2RpcidcbiNkYXRhc2V0X2VudGl0eSA9IGNyYXRlLmFkZF9kaXJlY3Rvcnkoc2FtcGxlX2RpciwgJ3JlbGF0aXZlL3JvY3JhdGUvcGF0aCcpXG5gYGAifQ== -->
@@ -411,8 +313,8 @@ file_entity = crate.add_file(raw_file)
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
 <pre class="python"><code>reticulate::repl_python()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS40ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS40L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.4 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4/bin/python)
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
 Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5mcm9tIHJvY3JhdGUubW9kZWwucGVyc29uIGltcG9ydCBQZXJzb25cblxuIyBBZGQgYXV0aG9ycyBpbmZvXG4jY3JhdGUuYWRkKFBlcnNvbihjcmF0ZSwgJyNsdWthcycsIHsnbmFtZSc6ICdMdWthcyBIdWJlcid9KSlcbmNyZWF0b3IgPSBQZXJzb24oY3JhdGUsICcwMDEnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInLCBcIkBpZFwiOiAnaHR0cHM6Ly9vcmNpZC5vcmcvMDAwMC0wMDAxLTU0NDMtMDI5MCd9KVxuXG5jcmF0ZS5wdWJsaXNoZXIgPSBjcmVhdG9yXG5jcmF0ZS5jcmVhdG9yID0gWyBjcmVhdG9yIF1cbmBgYCJ9 -->
@@ -435,8 +337,8 @@ crate.creator = [ creator ]</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
 <pre class="python"><code>reticulate::repl_python()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS40ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS40L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
-<pre><code>Python 3.9.4 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.4/bin/python)
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
 Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5jcmF0ZS5saWNlbnNlID0gJ0dQTC0zJ1xuY3JhdGUuaXNCYXNlZE9uID0gXCJodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZVwiXG5jcmF0ZS5uYW1lID0gJ1JlcHJvZHVjaWJsZSBOZXVyby1JbnRlbnNpdmUtQ2FyZSBEYXRhIFNjaWVuY2UgUHJvamVjdCBUZW1wbGF0ZSdcbmNyYXRlLmtleXdvcmRzID0gWydOZXVyb2xvZ3knLCAnRGF0YSBTY2llbmNlJywgJ1JlcHJvZHVjaWJpbGl0eScsICdQcm92ZW5hbmNlJywgJ1RyYWNlYWJpbGl0eSddXG5jcmF0ZS5pbWFnZSA9IFwiZHJha2Vfd29ya2Zsb3cuc3ZnXCJcbmNyYXRlLmRlc2NyaXB0aW9uID0gXCJUaGUgdGVtcGxhdGUgZm9yIHRoaXMgd29ya2Zsb3cgY2FuIGJlIGZvdW5kIG9uIEdpdEh1YiwgRG9ja2VySHViIGFuZCBiaW5kZXJcIlxuY3JhdGUuQ3JlYXRpdmVXb3JrU3RhdHVzID0gXCJNYXR1cmluZ1wiXG5gYGAifQ== -->
@@ -455,6 +357,13 @@ crate.CreativeWorkStatus = &quot;Maturing&quot;</code></pre>
 <h2>write File</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
+<pre class="python"><code>reticulate::repl_python()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuOS41ICgvVXNlcnMvbHVrYXMvZGV2L3JlcHJvZHVjaWJsZV9mYWlyX25ldXJvX2RzX3RlbXBsYXRlL3JlbnYvcHl0aG9uL3ZpcnR1YWxlbnZzL3JlbnYtcHl0aG9uLTMuOS41L2Jpbi9weXRob24pXG5SZXRpY3VsYXRlIDEuMTggUkVQTCAtLSBBIFB5dGhvbiBpbnRlcnByZXRlciBpbiBSLlxuIn0= -->
+<pre><code>Python 3.9.5 (/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/python/virtualenvs/renv-python-3.9.5/bin/python)
+Reticulate 1.18 REPL -- A Python interpreter in R.</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG4jIHdyaXRlIGNyYXRlIHRvIGRpc2tcbm91dF9wYXRoID0gJy4uL21hbi9maWd1cmVzLydcbmNyYXRlLndyaXRlX2NyYXRlKG91dF9wYXRoKVxuYGBgIn0= -->
 <pre class="python"><code># write crate to disk
 out_path = &#39;../man/figures/&#39;
@@ -465,7 +374,7 @@ crate.write_crate(out_path)</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUk8tQ3JhdGUgVmlnbmV0dGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpUaGlzIEhlbHBlciBkb2N1bWVudCBhbGxvd3MgdGhlIGF1dG9tYXRpYyBjcmVhdGlvbiBvZiBhIHJlc2VhcmNoIG9iamVjdCBjcmF0ZSB3aXRoIG1ldGFkYXRhIGFuZCBlc3BlY2lhbGx5IHRoZSBsaW5rIHRvIHRoZSBhdXRob3IoYWdlbnQpLgpodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkKCmBgYHtyfQpsaWJyYXJ5KHJldGljdWxhdGUpCmxpYnJhcnkocmVudikKcmVudjo6cmVzdG9yZSgpCmtuaXRyOjprbml0X2VuZ2luZXMkc2V0KHB5dGhvbiA9IHJldGljdWxhdGU6OmVuZ19weXRob24pCnVzZV92aXJ0dWFsZW52KCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNC8iLCByZXF1aXJlZD1UKQp1c2VfcHl0aG9uKCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNC9iaW4vcHl0aG9uIikKcHlfY29uZmlnKCkKcHlfaW5zdGFsbCgicm9jcmF0ZSIsIGVudm5hbWUgPSAiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjQvIikKYGBgCgpgYGB7cHl0aG9ufQpmcm9tIHJvY3JhdGUucm9jcmF0ZSBpbXBvcnQgUk9DcmF0ZQpjcmF0ZSA9IFJPQ3JhdGUoKSAKYGBgCgoKIyMgRGF0YSBlbnRpdGllcwpgYGB7cHl0aG9ufQojIyBhZGRpbmcgYSBGaWxlIGVudGl0eToKcmF3X2ZpbGUgPSAnLi4vZGF0YS9yYXdfZGF0YS54bHN4JwpmaWxlX2VudGl0eSA9IGNyYXRlLmFkZF9maWxlKHJhd19maWxlKQoKIyBBZGRpbmcgYSBGaWxlIGVudGl0eSB3aXRoIGEgcmVmZXJlbmNlIHRvIGFuIGV4dGVybmFsIChhYnNvbHV0ZSkgVVJJCiNyZW1vdGVfZmlsZSA9IGNyYXRlLmFkZF9maWxlKCdodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkvYmxvYi9tYXN0ZXIvdGVzdC90ZXN0LWRhdGEvdGVzdF9nYWxheHlfd2YuZ2EnLCBmZXRjaF9yZW1vdGUgPSBGYWxzZSkKCiMgYWRkaW5nIGEgRGF0YXNldAojc2FtcGxlX2RpciA9ICcvcGF0aC90by9kaXInCiNkYXRhc2V0X2VudGl0eSA9IGNyYXRlLmFkZF9kaXJlY3Rvcnkoc2FtcGxlX2RpciwgJ3JlbGF0aXZlL3JvY3JhdGUvcGF0aCcpCmBgYAoKIyMgQ29udGV4dHVhbCBFbnRpdGllcwoKYGBge3B5dGhvbn0KZnJvbSByb2NyYXRlLm1vZGVsLnBlcnNvbiBpbXBvcnQgUGVyc29uCgojIEFkZCBhdXRob3JzIGluZm8KI2NyYXRlLmFkZChQZXJzb24oY3JhdGUsICcjbHVrYXMnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInfSkpCmNyZWF0b3IgPSBQZXJzb24oY3JhdGUsICcwMDEnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInLCAiQGlkIjogJ2h0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMS01NDQzLTAyOTAnfSkKCmNyYXRlLnB1Ymxpc2hlciA9IGNyZWF0b3IKY3JhdGUuY3JlYXRvciA9IFsgY3JlYXRvciBdCmBgYAoKIyMgT3RoZXIgTWV0YWRhdGEKCmBgYHtweXRob259CmNyYXRlLmxpY2Vuc2UgPSAnR1BMLTMnCmNyYXRlLmlzQmFzZWRPbiA9ICJodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZSIKY3JhdGUubmFtZSA9ICdSZXByb2R1Y2libGUgTmV1cm8tSW50ZW5zaXZlLUNhcmUgRGF0YSBTY2llbmNlIFByb2plY3QgVGVtcGxhdGUnCmNyYXRlLmtleXdvcmRzID0gWydOZXVyb2xvZ3knLCAnRGF0YSBTY2llbmNlJywgJ1JlcHJvZHVjaWJpbGl0eScsICdQcm92ZW5hbmNlJywgJ1RyYWNlYWJpbGl0eSddCmNyYXRlLmltYWdlID0gImRyYWtlX3dvcmtmbG93LnN2ZyIKY3JhdGUuZGVzY3JpcHRpb24gPSAiVGhlIHRlbXBsYXRlIGZvciB0aGlzIHdvcmtmbG93IGNhbiBiZSBmb3VuZCBvbiBHaXRIdWIsIERvY2tlckh1YiBhbmQgYmluZGVyIgpjcmF0ZS5DcmVhdGl2ZVdvcmtTdGF0dXMgPSAiTWF0dXJpbmciCmBgYAoKIyMgd3JpdGUgRmlsZQoKYGBge3B5dGhvbn0KIyB3cml0ZSBjcmF0ZSB0byBkaXNrCm91dF9wYXRoID0gJy4uL21hbi9maWd1cmVzLycKY3JhdGUud3JpdGVfY3JhdGUob3V0X3BhdGgpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUk8tQ3JhdGUgVmlnbmV0dGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgpUaGlzIEhlbHBlciBkb2N1bWVudCBhbGxvd3MgdGhlIGF1dG9tYXRpYyBjcmVhdGlvbiBvZiBhIHJlc2VhcmNoIG9iamVjdCBjcmF0ZSB3aXRoIG1ldGFkYXRhIGFuZCBlc3BlY2lhbGx5IHRoZSBsaW5rIHRvIHRoZSBhdXRob3IoYWdlbnQpLgpodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkKCmBgYHtyfQpsaWJyYXJ5KHJldGljdWxhdGUpCmxpYnJhcnkocmVudikKcmVudjo6cmVzdG9yZSgpCmtuaXRyOjprbml0X2VuZ2luZXMkc2V0KHB5dGhvbiA9IHJldGljdWxhdGU6OmVuZ19weXRob24pCnVzZV92aXJ0dWFsZW52KCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNS8iLCByZXF1aXJlZD1UKQp1c2VfcHl0aG9uKCIuLi9yZW52L3B5dGhvbi92aXJ0dWFsZW52cy9yZW52LXB5dGhvbi0zLjkuNS9iaW4vcHl0aG9uIikKcHlfY29uZmlnKCkKcHlfaW5zdGFsbCgicm9jcmF0ZSIsIGVudm5hbWUgPSAiLi4vcmVudi9weXRob24vdmlydHVhbGVudnMvcmVudi1weXRob24tMy45LjUvIikKYGBgCgpgYGB7cHl0aG9ufQpmcm9tIHJvY3JhdGUucm9jcmF0ZSBpbXBvcnQgUk9DcmF0ZQpjcmF0ZSA9IFJPQ3JhdGUoKSAKYGBgCgoKIyMgRGF0YSBlbnRpdGllcwpgYGB7cHl0aG9ufQojIyBhZGRpbmcgYSBGaWxlIGVudGl0eToKcmF3X2ZpbGUgPSAnLi4vZGF0YS9yYXdfZGF0YS54bHN4JwpmaWxlX2VudGl0eSA9IGNyYXRlLmFkZF9maWxlKHJhd19maWxlKQoKIyBBZGRpbmcgYSBGaWxlIGVudGl0eSB3aXRoIGEgcmVmZXJlbmNlIHRvIGFuIGV4dGVybmFsIChhYnNvbHV0ZSkgVVJJCiNyZW1vdGVfZmlsZSA9IGNyYXRlLmFkZF9maWxlKCdodHRwczovL2dpdGh1Yi5jb20vUmVzZWFyY2hPYmplY3Qvcm8tY3JhdGUtcHkvYmxvYi9tYXN0ZXIvdGVzdC90ZXN0LWRhdGEvdGVzdF9nYWxheHlfd2YuZ2EnLCBmZXRjaF9yZW1vdGUgPSBGYWxzZSkKCiMgYWRkaW5nIGEgRGF0YXNldAojc2FtcGxlX2RpciA9ICcvcGF0aC90by9kaXInCiNkYXRhc2V0X2VudGl0eSA9IGNyYXRlLmFkZF9kaXJlY3Rvcnkoc2FtcGxlX2RpciwgJ3JlbGF0aXZlL3JvY3JhdGUvcGF0aCcpCmBgYAoKIyMgQ29udGV4dHVhbCBFbnRpdGllcwoKYGBge3B5dGhvbn0KZnJvbSByb2NyYXRlLm1vZGVsLnBlcnNvbiBpbXBvcnQgUGVyc29uCgojIEFkZCBhdXRob3JzIGluZm8KI2NyYXRlLmFkZChQZXJzb24oY3JhdGUsICcjbHVrYXMnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInfSkpCmNyZWF0b3IgPSBQZXJzb24oY3JhdGUsICcwMDEnLCB7J25hbWUnOiAnTHVrYXMgSHViZXInLCAiQGlkIjogJ2h0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMS01NDQzLTAyOTAnfSkKCmNyYXRlLnB1Ymxpc2hlciA9IGNyZWF0b3IKY3JhdGUuY3JlYXRvciA9IFsgY3JlYXRvciBdCmBgYAoKIyMgT3RoZXIgTWV0YWRhdGEKCmBgYHtweXRob259CmNyYXRlLmxpY2Vuc2UgPSAnR1BMLTMnCmNyYXRlLmlzQmFzZWRPbiA9ICJodHRwczovL2dpdGh1Yi5jb20vZzRjaGFsbGVuZ2UvcmVwcm8tZmFpci1uZXVyby1kcy10ZW1wbGF0ZSIKY3JhdGUubmFtZSA9ICdSZXByb2R1Y2libGUgTmV1cm8tSW50ZW5zaXZlLUNhcmUgRGF0YSBTY2llbmNlIFByb2plY3QgVGVtcGxhdGUnCmNyYXRlLmtleXdvcmRzID0gWydOZXVyb2xvZ3knLCAnRGF0YSBTY2llbmNlJywgJ1JlcHJvZHVjaWJpbGl0eScsICdQcm92ZW5hbmNlJywgJ1RyYWNlYWJpbGl0eSddCmNyYXRlLmltYWdlID0gImRyYWtlX3dvcmtmbG93LnN2ZyIKY3JhdGUuZGVzY3JpcHRpb24gPSAiVGhlIHRlbXBsYXRlIGZvciB0aGlzIHdvcmtmbG93IGNhbiBiZSBmb3VuZCBvbiBHaXRIdWIsIERvY2tlckh1YiBhbmQgYmluZGVyIgpjcmF0ZS5DcmVhdGl2ZVdvcmtTdGF0dXMgPSAiTWF0dXJpbmciCmBgYAoKIyMgd3JpdGUgRmlsZQoKYGBge3B5dGhvbn0KIyB3cml0ZSBjcmF0ZSB0byBkaXNrCm91dF9wYXRoID0gJy4uL21hbi9maWd1cmVzLycKY3JhdGUud3JpdGVfY3JhdGUob3V0X3BhdGgpCmBgYAoK</div>
 
 
 
