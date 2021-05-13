@@ -1,3 +1,5 @@
+# reproducibleFairTemplate 0.4.5
+- moved data to inst/extdata
 
 # reproducibleFairTemplate 0.4.2
 - clean runs of drake

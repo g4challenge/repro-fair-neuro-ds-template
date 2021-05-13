@@ -6,11 +6,14 @@
 #' This is where you set up your workflow plan,
 #' a data frame with the steps of your analysis.
 #' @export
+#'
+#' @tests
+#' expect_s3_class(scenario_wrapper(), "drake_plan")
 scenario_wrapper <- function(){
   plan <- drake_plan(
     ## Data Selection
     sc1_question = "string that defines hypothesis - example: get the cpp values from different patients, which are stored in triplets",
-    sc1_data = target(import_data(sc1_question, file_in("data-raw/raw_data.xlsx")),
+    sc1_data = target(import_data(sc1_question, file_in("inst/extdata/raw_data.xlsx")),
                       desc = "
                       ** Dataframe containing patient data **
                       "),

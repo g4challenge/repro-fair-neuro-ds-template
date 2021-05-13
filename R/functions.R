@@ -3,7 +3,7 @@ pkgload::load_code()
 
 #' Increment Template Function
 #'
-#' @param input
+#' @param input integer to increment
 #'
 #' @return output numeric - increased by 1
 #' @export

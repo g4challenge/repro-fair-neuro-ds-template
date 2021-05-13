@@ -7,7 +7,7 @@
 export_result(evaluated_process)
 }
 \arguments{
-\item{if}{process was evaluated succesful}
+\item{evaluated_process}{if process was evaluated succesful}
 }
 \value{
 TRUE as stub

@@ -38,5 +38,5 @@ usethis::use_gpl3_license() # GPL-License for maximum shareability
 library(rdtLite)
 
 rdtLite::prov.quit()
-rdtLite::prov.run("make.R")
+rdtLite::prov.run("make.R", prov.dir = ".prov")
 rdtLite::prov.visualize()

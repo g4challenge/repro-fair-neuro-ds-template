@@ -55,7 +55,7 @@ evaluate_process <- function(analysis) {
 
 #' Export the Result artifact
 #'
-#' @param if process was evaluated succesful
+#' @param evaluated_process if process was evaluated succesful
 #'
 #' @return TRUE as stub
 #' @export

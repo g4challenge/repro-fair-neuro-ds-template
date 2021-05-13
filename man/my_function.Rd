@@ -7,7 +7,7 @@
 my_function(input)
 }
 \arguments{
-\item{input}{}
+\item{input}{integer to increment}
 }
 \value{
 output numeric - increased by 1
