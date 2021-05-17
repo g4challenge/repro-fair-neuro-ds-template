@@ -1,6 +1,6 @@
 Package: reproducibleFairTemplate
 Type: Package
-Title: Reproducible and fair data science project template
+Title: Reproducible and Fair Data Science Project Template
 Version: 0.4.6
 Authors@R: person("Lukas", "Huber", 
                   email = "lukashuber1@gmail.com",
@@ -14,7 +14,9 @@ LazyData: true
 Depends:
     tidyverse,
     rmarkdown,
-    knitr
+    knitr,
+    dplyr, 
+    magrittr
 Imports:
     drake,
     haven,
