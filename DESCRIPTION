@@ -32,6 +32,9 @@ Remotes:
     ropensci/drake,
     wlandau/txtq,
     mstr3336/mandrake
+SystemRequirements:
+    fribidi,
+    harfbuzz
 RoxygenNote: 7.1.1
 Roxygen: list(roclets = c("namespace", "rd", "roxytest::testthat_roclet"))
 Suggests: 
