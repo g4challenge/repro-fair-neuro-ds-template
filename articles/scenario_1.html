@@ -128,22 +128,31 @@
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <pre><code>## Loading required package: rmarkdown</code></pre>
 <pre><code>## Loading required package: knitr</code></pre>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<pre><code>## Loading required package: magrittr</code></pre>
+<pre><code>## 
+## Attaching package: 'magrittr'</code></pre>
+<pre><code>## The following object is masked from 'package:purrr':
+## 
+##     set_names</code></pre>
+<pre><code>## The following object is masked from 'package:tidyr':
+## 
+##     extract</code></pre>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#source("R/packages.R")</span>
 <span class="co">#source("R/functions.R")</span>
 <span class="co">#source("R/functions_scenario_1.R")</span>
 <span class="co">#source("R/plan.R")</span></code></pre></div>
 <p>In order to avoid errors - the drake cache is cleaned.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co"># check file existing</span>
 <span class="co">#file.exists("data/raw_data.xlsx")</span></code></pre></div>
 <p>The <code>scenario_wrapper</code>-function returns the instantiated scenario plan as drake “tibble”.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/make.html">make</a></span><span class="op">(</span><span class="fu"><a href="../reference/scenario_wrapper.html">scenario_wrapper</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">drake_history</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">vis_drake_graph</span><span class="op">(</span><span class="fu"><a href="../reference/scenario_wrapper.html">scenario_wrapper</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
   </div>

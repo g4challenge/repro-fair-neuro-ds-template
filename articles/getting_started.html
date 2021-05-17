@@ -196,6 +196,18 @@
 ## ✖ dplyr::matches() masks tidyr::matches(), testthat::matches()</code></pre>
 <pre><code>## Loading required package: rmarkdown</code></pre>
 <pre><code>## Loading required package: knitr</code></pre>
+<pre><code>## Loading required package: magrittr</code></pre>
+<pre><code>## 
+## Attaching package: 'magrittr'</code></pre>
+<pre><code>## The following object is masked from 'package:purrr':
+## 
+##     set_names</code></pre>
+<pre><code>## The following object is masked from 'package:tidyr':
+## 
+##     extract</code></pre>
+<pre><code>## The following objects are masked from 'package:testthat':
+## 
+##     equals, is_less_than, not</code></pre>
 <pre><code>## ✔ |  OK F W S | Context
 ## 
 ⠏ |   0       | roxytest-tests-functions_scenario_1                             
@@ -216,7 +228,7 @@
 ✔ |   1       | File R/plan.R: @tests
 ## 
 ## ══ Results ═════════════════════════════════════════════════════════════════════
-## Duration: 0.4 s
+## Duration: 0.3 s
 ## 
 ## [ FAIL 0 | WARN 0 | SKIP 0 | PASS 8 ]</code></pre>
 </div>
@@ -224,7 +236,7 @@
 <h3 class="hasAnchor">
 <a href="#provenance-curation" class="anchor"></a>Provenance Curation</h3>
 <p>If you want to curate your results as <code>release</code> - it may be useful and suitable to curate the traces. The following commands help to achieve this:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#clean the cache to force rebuild</span>
 <span class="fu">drake</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/drake/reference/clean.html">clean</a></span><span class="op">(</span>destroy<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co"># clean cache and curate "one" clean run in the drake cache.</span></code></pre></div>
 <p>The second command cleans the <code>.drake</code> folder and allows for version control of only the curated final release.</p>
@@ -233,7 +245,7 @@
 <h3 class="hasAnchor">
 <a href="#complete-provenance" class="anchor"></a>Complete Provenance</h3>
 <p>In order to achieve a track record of complete provenance within the template, <code>rdtLite</code> is used in conjunction with a makefile, the <code>make.R</code> is comparable and similar to the <code>scenario_1.Rmd</code> except it can be captured by rdtLite as workflow run.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co">#validate path to project root</span>
 <span class="fu">rdtLite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rdtLite/man/prov.run.html">prov.run</a></span><span class="op">(</span>r.script.path <span class="op">=</span> <span class="st">"make.R"</span>, prov.dir<span class="op">=</span><span class="st">".prov/"</span><span class="op">)</span></code></pre></div>
 <p>This results in the fresh creation of a <code>.prov</code> subdirectory - which has provenance execution traces according to the rdtlite specification.</p>
