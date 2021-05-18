@@ -19,15 +19,11 @@ The simulated hypotheses is to generate a CPP(cerebral perfusion pressure) based
 
 ```{r}
 pkgload::load_all()
-#source("R/packages.R")
-#source("R/functions.R")
-#source("R/functions_scenario_1.R")
-#source("R/plan.R")
 ```
 
-In order to avoid errors - the drake cache is cleaned.
+In order to avoid errors in reproduction of R package runs - the drake cache is cleaned.
 
-```{r eval=F}
+```{r eval=T}
 drake::clean()
 # check file existing
 #file.exists("data/raw_data.xlsx")
