@@ -21,14 +21,18 @@ WORKDIR /home/rstudio/project
 COPY . /home/rstudio/project
 RUN R -e 'renv::consent(provided=TRUE)'
 RUN R -e 'renv::restore(project="/home/rstudio/project/")'
+USER root
+RUN chown -R rstudio:rstudio /home/rstudio
+USER rstudio
+RUN R -e 'renv::activate(project="/home/rstudio/project/")'
+USER root
 #RUN R -e 'renv::restore(packages = "renv")'
 #RUN R -e 'renv::restore(project="/home/rstudio/")'
 
 
 
-COPY .drake /home/rstudio/project/.drake
-USER root
-RUN chown -R rstudio:rstudio /home/rstudio
+COPY .drake/ /home/rstudio/project/.drake
+
 
 
 #RUN R --vanilla -e 'renv::restore(project="/home/rstudio/project/")'

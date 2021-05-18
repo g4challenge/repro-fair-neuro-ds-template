@@ -1,5 +1,5 @@
 library(testthat)
-library(reproducibleFairTemplate)
+pkgload::load_all(".")
 
 #source_dir("R")
 
