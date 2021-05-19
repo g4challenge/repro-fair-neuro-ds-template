@@ -9,7 +9,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
       - uses: r-lib/actions/setup-r@master
 
@@ -29,7 +29,7 @@ jobs:
       - name: Install package
         run: R CMD INSTALL .
 
-      - name Git Setup
+      - name: Git Setup
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
