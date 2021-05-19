@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          ls -l
+          ls -all
 
       - name: Deploy package
         run: |
