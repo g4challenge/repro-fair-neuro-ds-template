@@ -1,7 +1,7 @@
 Package: reproducibleFairTemplate
 Type: Package
 Title: Reproducible and Fair Data Science Project Template
-Version: 0.4.7
+Version: 0.5.0
 Authors@R: person("Lukas", "Huber", 
                   email = "lukashuber1@gmail.com",
                   role = c("aut", "cre"),

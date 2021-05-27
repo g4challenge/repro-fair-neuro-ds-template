@@ -1,3 +1,6 @@
+# reproducibleFairTemplate 0.5.0
+
+
 # reproducibleFairTemplate 0.4.7
 - clean drake run
 - fixes in GitHub Actions CI (deep copy)
