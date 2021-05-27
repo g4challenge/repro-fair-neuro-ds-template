@@ -12,7 +12,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Depends:
-    R (>= 4.0.1),
+    R (>= 4.0),
     tidyverse,
     rmarkdown,
     knitr,
