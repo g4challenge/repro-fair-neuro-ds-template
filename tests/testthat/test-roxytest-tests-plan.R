@@ -2,7 +2,7 @@
 
 context("File R/plan.R: @tests")
 
-test_that("Function scenario_wrapper() @ L26", {
+test_that("Function scenario_wrapper() @ L27", {
   expect_s3_class(scenario_wrapper(), "drake_plan")
 })
 
