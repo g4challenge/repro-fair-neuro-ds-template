@@ -29,7 +29,8 @@ Imports:
     reticulate,
     gert,
     ggplot2,
-    pkgload
+    pkgload,
+    rprojroot
 Remotes:
     ropensci/drake,
     wlandau/txtq,
