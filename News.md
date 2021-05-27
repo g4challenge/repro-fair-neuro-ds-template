@@ -1,3 +1,7 @@
+# reproducibleFairTemplate 0.4.7
+- clean drake run
+- fixes in GitHub Actions CI (deep copy)
+
 # reproducibleFairTemplate 0.4.5
 - moved data to inst/extdata
 
