@@ -1,0 +1,24 @@
+---
+title: "Example Scenario 1"
+author: Lukas Huber
+output: html_document
+---
+
+
+Run `make.R` to generate the output `report.html` and its dependencies. 
+
+Because of the use of `loadd()` and `readd()` below, `drake` knows `report.report` depends on targets `sc1_interim_data`.
+
+```{r content}
+library(drake)
+loadd(sc1_interim_data)
+print(sc1_interim_data)
+```
+
+
+```{r content2}
+library(tidyverse)
+ggplot(sc1_interim_data, aes(x=timestamp, y=cpp, color=factor(gupi)))+
+  geom_line()
+```
+

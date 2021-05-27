@@ -34,7 +34,7 @@
 		"rdt:p1": {
 			"rdt:name": "make.R",
 			"rdt:type": "Start",
-			"rdt:elapsedTime": "0.783",
+			"rdt:elapsedTime": "1.11",
 			"rdt:scriptNum": 1,
 			"rdt:startLine": "NA",
 			"rdt:startCol": "NA",
@@ -44,7 +44,7 @@
 		"rdt:p2": {
 			"rdt:name": "render_repro <- function(){\n  drake::make(scenario_wrapper()",
 			"rdt:type": "Operation",
-			"rdt:elapsedTime": "0.45",
+			"rdt:elapsedTime": "0.393",
 			"rdt:scriptNum": 1,
 			"rdt:startLine": 7,
 			"rdt:startCol": 1,
@@ -54,7 +54,7 @@
 		"rdt:p3": {
 			"rdt:name": "render_repro()",
 			"rdt:type": "Operation",
-			"rdt:elapsedTime": "2.749",
+			"rdt:elapsedTime": "24.049",
 			"rdt:scriptNum": 1,
 			"rdt:startLine": 10,
 			"rdt:startCol": 1,
@@ -64,7 +64,7 @@
 		"rdt:p4": {
 			"rdt:name": "make.R",
 			"rdt:type": "Finish",
-			"rdt:elapsedTime": "0.318",
+			"rdt:elapsedTime": "0.284",
 			"rdt:scriptNum": 1,
 			"rdt:startLine": "NA",
 			"rdt:startCol": "NA",
@@ -86,1031 +86,8 @@
 			"rdt:location": ""
 		},
 		"rdt:d2": {
-			"rdt:name": "mangle_key",
-			"rdt:value": "data/2-mangle_key",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "45ce3b2543a563aac0f955d52767e570",
-			"rdt:timestamp": "2021-04-05T14.43.49CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/mangle_key"
-		},
-		"rdt:d3": {
-			"rdt:name": "mangle_key_pad",
-			"rdt:value": "data/3-mangle_key_pad",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "45ce3b2543a563aac0f955d52767e570",
-			"rdt:timestamp": "2021-04-05T14.43.49CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/mangle_key_pad"
-		},
-		"rdt:d4": {
-			"rdt:name": "compress",
-			"rdt:value": "data/4-compress",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "1159184937f1a52d70a06a50d63b5947",
-			"rdt:timestamp": "2021-04-05T14.43.49CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/compress"
-		},
-		"rdt:d5": {
-			"rdt:name": "hash_algorithm",
-			"rdt:value": "data/5-hash_algorithm",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "834c7a9970a1e3b6c2fb353badd8b1cd",
-			"rdt:timestamp": "2021-04-05T14.43.49CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/hash_algorithm"
-		},
-		"rdt:d6": {
-			"rdt:name": "head",
-			"rdt:value": "data/6-head",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "package:utils",
-			"rdt:fromEnv": false,
-			"rdt:hash": "897316929176464ebc9ad085f31e7284",
-			"rdt:timestamp": "2021-04-05T14.43.49CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/drake/history/head"
-		},
-		"rdt:d7": {
-			"rdt:name": "total",
-			"rdt:value": "data/7-total",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "b68495714b0e1cad8ebaa1599766a942",
-			"rdt:timestamp": "2021-05-13T14.59.43CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/drake/history/total"
-		},
-		"rdt:d8": {
-			"rdt:name": "8d96d6dec0936572.rds",
-			"rdt:value": "data/8-8d96d6dec0936572.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "3adc0861599a2e6921cd984b6e0d33f9",
-			"rdt:timestamp": "2021-05-06T13.41.15CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/8d96d6dec0936572.rds"
-		},
-		"rdt:d9": {
-			"rdt:name": "91a78a30a1427488.rds",
-			"rdt:value": "data/9-91a78a30a1427488.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "1fdb2521e7fce693c7bea50c3d54abdc",
-			"rdt:timestamp": "2021-04-05T14.43.51CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/91a78a30a1427488.rds"
-		},
-		"rdt:d10": {
-			"rdt:name": "3a720afd4278fee5.rds",
-			"rdt:value": "data/10-3a720afd4278fee5.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "9875663f5639fa086b5d076aba018215",
-			"rdt:timestamp": "2021-04-05T14.43.49CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/3a720afd4278fee5.rds"
-		},
-		"rdt:d11": {
-			"rdt:name": "e61f24fd38666b1d.rds",
-			"rdt:value": "data/11-e61f24fd38666b1d.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "ffe260b165ef28df512e91c796ff87cd",
-			"rdt:timestamp": "2021-04-05T14.43.50CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/e61f24fd38666b1d.rds"
-		},
-		"rdt:d12": {
-			"rdt:name": "053aecbe84bad53c.rds",
-			"rdt:value": "data/12-053aecbe84bad53c.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "3c59d851fdfdd161edda2bdfb0eee852",
-			"rdt:timestamp": "2021-05-13T15.12.42CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/053aecbe84bad53c.rds"
-		},
-		"rdt:d13": {
-			"rdt:name": "96906e3ce639ffd3.rds",
-			"rdt:value": "data/13-96906e3ce639ffd3.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "3af5570d56a17e60ce1f38fa9da7fe29",
-			"rdt:timestamp": "2021-05-13T14.59.43CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/96906e3ce639ffd3.rds"
-		},
-		"rdt:d14": {
-			"rdt:name": "ce924b7ee6bdd7bd.rds",
-			"rdt:value": "data/14-ce924b7ee6bdd7bd.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "d04dd71c62f8911aa6de4a668438f437",
-			"rdt:timestamp": "2021-05-13T14.59.43CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/ce924b7ee6bdd7bd.rds"
-		},
-		"rdt:d15": {
-			"rdt:name": "4ef4945067aabc19.rds",
-			"rdt:value": "data/15-4ef4945067aabc19.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "7f13d2e7f352a278d4add82b59b8ec9f",
-			"rdt:timestamp": "2021-05-13T14.59.43CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/4ef4945067aabc19.rds"
-		},
-		"rdt:d16": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/16-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "326025620086bbbe7e38fa8084cac4fb",
-			"rdt:timestamp": "2021-04-04T11.25.44CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rdtLite/1.3/2b466d4091c4fc789b3f99060785fba2/rdtLite/Meta/package.rds"
-		},
-		"rdt:d17": {
-			"rdt:name": "DESCRIPTION",
-			"rdt:value": "data/17-DESCRIPTION",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "e7b04aafa6dc3c7d3c19d52da07909bc",
-			"rdt:timestamp": "2021-05-13T15.06.09CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/DESCRIPTION"
-		},
-		"rdt:d18": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/18-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "d3a47ef6b7534a77f801b351937a5076",
-			"rdt:timestamp": "2021-04-04T11.24.08CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/testthat/3.0.2/495e0434d9305716b6a87031570ce109/testthat/Meta/package.rds"
-		},
-		"rdt:d19": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/19-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "fcce3fad142796784cc12d3f4ab578df",
-			"rdt:timestamp": "2021-04-04T11.25.45CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/readxl/1.3.1/63537c483c2dbec8d9e3183b3735254a/readxl/Meta/package.rds"
-		},
-		"rdt:d20": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/20-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "63df41759b81e6d2841828dd75718b0f",
-			"rdt:timestamp": "2021-04-23T12.46.48CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/drake/Meta/package.rds"
-		},
-		"rdt:d21": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/21-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "62ee4d65b490d9f1085a7548ba20c6ad",
-			"rdt:timestamp": "2021-04-04T11.23.47CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/remotes/2.2.0/430a0908aee75b1fcba0e62857cab0ce/remotes/Meta/package.rds"
-		},
-		"rdt:d22": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/22-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "782fd8ebd2ce0a101c08f0ffe088cafc",
-			"rdt:timestamp": "2021-04-04T11.24.31CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/forcats/0.5.1/81c3244cab67468aac4c60550832655d/forcats/Meta/package.rds"
-		},
-		"rdt:d23": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/23-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "f3a0f624eca7a9ad25360f1d65f622af",
-			"rdt:timestamp": "2021-04-04T11.23.15CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/stringr/1.4.0/0759e6b6c0957edb1311028a49a35e76/stringr/Meta/package.rds"
-		},
-		"rdt:d24": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/24-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "d7dbfd00e8b651b720b04758ecce8c18",
-			"rdt:timestamp": "2021-05-06T12.47.46CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/dplyr/Meta/package.rds"
-		},
-		"rdt:d25": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/25-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "84f5bea81a1078177b6cefb95b5cd590",
-			"rdt:timestamp": "2021-04-04T11.23.10CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/purrr/0.3.4/97def703420c8ab10d8f0e6c72101e02/purrr/Meta/package.rds"
-		},
-		"rdt:d26": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/26-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "5832e8be142b3b97d79f0ee2e1bc9216",
-			"rdt:timestamp": "2021-04-04T11.24.52CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/readr/1.4.0/2639976851f71f330264a9c9c3d43a61/readr/Meta/package.rds"
-		},
-		"rdt:d27": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/27-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "3f4df278c350af905937dc0a29624364",
-			"rdt:timestamp": "2021-04-04T11.23.17CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/tidyr/1.1.3/450d7dfaedde58e28586b854eeece4fa/tidyr/Meta/package.rds"
-		},
-		"rdt:d28": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/28-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "703a79db2497e993c61fd9099a97bb76",
-			"rdt:timestamp": "2021-04-19T12.36.18CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/tibble/Meta/package.rds"
-		},
-		"rdt:d29": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/29-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "c0d27fadfda0b4a270fc265cdc8bf8dc",
-			"rdt:timestamp": "2021-04-04T11.24.48CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/ggplot2/3.3.3/3eb6477d01eb5bbdc03f7d5f70f2733e/ggplot2/Meta/package.rds"
-		},
-		"rdt:d30": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/30-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "ee249d077a6208b7e102e212af6e2dd7",
-			"rdt:timestamp": "2021-04-04T11.25.54CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/tidyverse/1.3.0/bd51be662f359fa99021f3d51e911490/tidyverse/Meta/package.rds"
-		},
-		"rdt:d31": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/31-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "4e4c0541194834c4749a2ebf8baa2e49",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/stats/Meta/package.rds"
-		},
-		"rdt:d32": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/32-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "49ca020a2d51abed11665cc936d4020b",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/graphics/Meta/package.rds"
-		},
-		"rdt:d33": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/33-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "7b3d5ab2419ff9de8f48216cecc0dd3d",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/grDevices/Meta/package.rds"
-		},
-		"rdt:d34": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/34-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "4a67557b9255c2613bf3bb87abcc683e",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/datasets/Meta/package.rds"
-		},
-		"rdt:d35": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/35-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "2126a9f4075a659c752f6bc644d5566b",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/utils/Meta/package.rds"
-		},
-		"rdt:d36": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/36-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "bc93e1565a5b9a4db9a7cacd03ca6f9d",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/methods/Meta/package.rds"
-		},
-		"rdt:d37": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/37-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "d9d51c297bc15ac02849a3ac3a91bc9a",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/base/Meta/package.rds"
-		},
-		"rdt:d38": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/38-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "01e6d2e3aaf47bb47bec0826f709a979",
-			"rdt:timestamp": "2021-05-04T12.23.11CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/colorspace/Meta/package.rds"
-		},
-		"rdt:d39": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/39-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "fa4c4e6f2b499a8901f80596cdfa0047",
-			"rdt:timestamp": "2021-04-30T12.22.12CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/ellipsis/Meta/package.rds"
-		},
-		"rdt:d40": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/40-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "c9dff296945ada0a8b4775da77955510",
-			"rdt:timestamp": "2021-04-04T11.25.50CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/roxytest/0.0.1.9001/a4183e1f3946f03893c81218718ef877/roxytest/Meta/package.rds"
-		},
-		"rdt:d41": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/41-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "4ff35df5fe5ff2afc8f37dced9d18658",
-			"rdt:timestamp": "2021-04-04T11.23.46CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rprojroot/2.0.2/249d8cd1e74a8f6a26194a91b47f21d1/rprojroot/Meta/package.rds"
-		},
-		"rdt:d42": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/42-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "f3f1b53f6daf02f0f098df632c75ecd0",
-			"rdt:timestamp": "2021-04-04T11.23.20CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/fs/1.5.0/44594a07a42e5f91fac9f93fda6d0109/fs/Meta/package.rds"
-		},
-		"rdt:d43": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/43-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "573f79ff385a1a7fa24bb426cd5bb00c",
-			"rdt:timestamp": "2021-04-04T11.23.57CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rstudioapi/0.13/06c85365a03fdaf699966cc1d3cf53ea/rstudioapi/Meta/package.rds"
-		},
-		"rdt:d44": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/44-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "a2e650c6f25c4383611c2200b1aa7471",
-			"rdt:timestamp": "2021-04-04T11.24.03CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/roxygen2/7.1.1/fcd94e00cc409b25d07ca50f7bf339f5/roxygen2/Meta/package.rds"
-		},
-		"rdt:d45": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/45-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "e79dea6ddf830b3e557df3a85c9606bf",
-			"rdt:timestamp": "2021-04-04T11.23.04CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/fansi/0.4.2/fea074fb67fe4c25d47ad09087da847d/fansi/Meta/package.rds"
-		},
-		"rdt:d46": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/46-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "28a0500411277cf88e6708c0e2681428",
-			"rdt:timestamp": "2021-04-04T11.24.58CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lubridate/1.7.10/1ebfdc8a3cfe8fe19184f5481972b092/lubridate/Meta/package.rds"
-		},
-		"rdt:d47": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/47-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "6b1b2fc58848df9a0a3caa27a8b12686",
-			"rdt:timestamp": "2021-04-04T11.23.35CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/xml2/1.3.2/d4d71a75dd3ea9eb5fa28cc21f9585e2/xml2/Meta/package.rds"
-		},
-		"rdt:d48": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/48-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "c8643086ab63893451aaa04ca41208a7",
-			"rdt:timestamp": "2021-04-04T11.24.18CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/downlit/0.2.1/f24f1e44320a978c03050b8403a83793/downlit/Meta/package.rds"
-		},
-		"rdt:d49": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/49-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "8bf3e6d3106b593483f17bed089e24cd",
-			"rdt:timestamp": "2021-04-04T11.23.25CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/cachem/1.0.4/2703a46dcabfb902f10060b2bca9f708/cachem/Meta/package.rds"
-		},
-		"rdt:d50": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/50-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "e19c1ed0a8931679f149bef3e07ad677",
-			"rdt:timestamp": "2021-04-25T12.31.55CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/knitr/Meta/package.rds"
-		},
-		"rdt:d51": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/51-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "ff51bc8e4b9d7c66133508e6ab3c8f86",
-			"rdt:timestamp": "2021-04-07T12.35.30CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/pkgload/Meta/package.rds"
-		},
-		"rdt:d52": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/52-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "99f8857e8fb5800318f1bbf86ac7f3eb",
-			"rdt:timestamp": "2021-04-04T11.23.19CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/jsonlite/1.7.2/98138e0994d41508c7a6b84a0600cfcb/jsonlite/Meta/package.rds"
-		},
-		"rdt:d53": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/53-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "cd486dad08e3e5d1f3a27138900504ea",
-			"rdt:timestamp": "2021-04-04T11.23.18CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/broom/0.7.5/d5ab8846336cfb2e3c17e5a806eb3045/broom/Meta/package.rds"
-		},
-		"rdt:d54": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/54-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "669fe8c6ce08c95cd89b541ab2807391",
-			"rdt:timestamp": "2021-04-04T11.23.49CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/dbplyr/2.1.0/f30247ffeeebe8d9842dc68fe63e043b/dbplyr/Meta/package.rds"
-		},
-		"rdt:d55": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/55-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "968e0d9842da9c0aafd17b0d062b43c3",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/compiler/Meta/package.rds"
-		},
-		"rdt:d56": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/56-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "6fec215fb3b406b564bedc071690f322",
-			"rdt:timestamp": "2021-04-04T11.23.42CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/httr/1.4.2/a525aba14184fec243f9eaec62fbed43/httr/Meta/package.rds"
-		},
-		"rdt:d57": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/57-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "170fd1989395973a59b209ebb7d7f3e1",
-			"rdt:timestamp": "2021-04-04T11.22.19CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/backports/1.2.1/644043219fc24e190c2f620c1a380a69/backports/Meta/package.rds"
-		},
-		"rdt:d58": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/58-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "bb86c9646335ea32846be04c7bc29d20",
-			"rdt:timestamp": "2021-04-04T11.22.18CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/assertthat/0.2.1/50c838a310445e954bc13f26f26a6ecf/assertthat/Meta/package.rds"
-		},
-		"rdt:d59": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/59-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "6b63817e44cd5b77f628756f9b281926",
-			"rdt:timestamp": "2021-04-04T11.24.21CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/Matrix/1.3-2/ff280503079ad8623d3c4b1519b24ea2/Matrix/Meta/package.rds"
-		},
-		"rdt:d60": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/60-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "1f7f953d3a7e60af2d3e7a826d1ceae6",
-			"rdt:timestamp": "2021-04-04T11.23.25CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/fastmap/1.1.0/77bd60a6157420d4ffa93b27cf6a58b8/fastmap/Meta/package.rds"
-		},
-		"rdt:d61": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/61-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "a5848e1b03c9d29a2ef9fb474ed6922a",
-			"rdt:timestamp": "2021-04-04T11.23.39CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lazyeval/0.2.2/d908914ae53b04d4c0c0fd72ecc35370/lazyeval/Meta/package.rds"
-		},
-		"rdt:d62": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/62-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "b7950185d63f6c021930b850b70a3bb4",
-			"rdt:timestamp": "2021-04-27T12.22.30CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/cli/Meta/package.rds"
-		},
-		"rdt:d63": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/63-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "11ca233df348b278b6d13694574725d4",
-			"rdt:timestamp": "2021-04-04T11.25.20CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/visNetwork/2.0.9/12545f2acf49d1d346d075580122d89c/visNetwork/Meta/package.rds"
-		},
-		"rdt:d64": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/64-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "1c109fd644bf9fb47fab37f3dce19356",
-			"rdt:timestamp": "2021-04-04T11.23.18CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/htmltools/0.5.1.1/af2c2531e55df5cf230c4b5444fc973c/htmltools/Meta/package.rds"
-		},
-		"rdt:d65": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/65-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "cbcbaf7e45859e23bb77ca91c1c2598f",
-			"rdt:timestamp": "2021-04-04T11.23.31CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/prettyunits/1.1.1/95ef9167b75dde9d2ccc3c7528393e7e/prettyunits/Meta/package.rds"
-		},
-		"rdt:d66": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/66-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "92d27e4be2d3f58b574c8f113b4f5e58",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/tools/Meta/package.rds"
-		},
-		"rdt:d67": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/67-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "63cb1d5d7031029f8f6086ac97e24212",
-			"rdt:timestamp": "2021-04-04T11.24.24CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/igraph/1.2.6/7b1f856410253d56ea67ad808f7cdff6/igraph/Meta/package.rds"
-		},
-		"rdt:d68": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/68-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "35a81ca2dbecc3bdc508c058168b7b9e",
-			"rdt:timestamp": "2021-04-04T11.24.37CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/gtable/0.3.0/ac5c6baf7822ce8732b343f14c072c4d/gtable/Meta/package.rds"
-		},
-		"rdt:d69": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/69-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "ddf7be8e9ef937838f37a35c7611e4ba",
-			"rdt:timestamp": "2021-04-04T11.22.56CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/glue/1.4.2/6efd734b14c6471cfe443345f3e35e29/glue/Meta/package.rds"
-		},
-		"rdt:d70": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/70-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "2ddc7d4d063bcbe599b111bb5c12ea28",
-			"rdt:timestamp": "2021-04-04T11.23.51CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/Rcpp/1.0.6/dbb5e436998a7eba5a9d682060533338/Rcpp/Meta/package.rds"
-		},
-		"rdt:d71": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/71-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "a905e23bc497fd2badda55df59d14ec7",
-			"rdt:timestamp": "2021-04-04T11.23.28CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/cellranger/1.1.0/f61dbaec772ccd2e17705c1e872e9e7c/cellranger/Meta/package.rds"
-		},
-		"rdt:d72": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/72-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "b3e80c029e9a7dec73aba7f3077c5584",
-			"rdt:timestamp": "2021-04-04T11.23.22CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/jquerylib/0.1.3/5ff50b36f7f0832f8421745af333e73c/jquerylib/Meta/package.rds"
-		},
-		"rdt:d73": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/73-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "4aaadb5cd401de46a4a324806b02e141",
-			"rdt:timestamp": "2021-04-04T11.25.23CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/pkgdown/1.6.1/8896076540d9e9b556a2ec658c81f916/pkgdown/Meta/package.rds"
-		},
-		"rdt:d74": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/74-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "4f96c4899db104a4fcd1ac03f200bc60",
-			"rdt:timestamp": "2021-04-30T12.29.10CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/vctrs/Meta/package.rds"
-		},
-		"rdt:d75": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/75-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "67583f6a1581014bf4dcffc8a7e20b82",
-			"rdt:timestamp": "2021-04-04T11.24.01CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/xfun/0.22/eab2f8ba53809c321813e72ecbbd19ba/xfun/Meta/package.rds"
-		},
-		"rdt:d76": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/76-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "5d84556ba3be2a2f24d8d7a99a9bf05d",
-			"rdt:timestamp": "2021-04-04T11.25.10CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rvest/1.0.0/74b905b0076e1de6e27f540c95ba68d5/rvest/Meta/package.rds"
-		},
-		"rdt:d77": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/77-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "01ddcc242d5140b2aa6f5218e468d3e6",
-			"rdt:timestamp": "2021-04-04T11.23.01CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lifecycle/1.0.0/3471fb65971f1a7b2d4ae7848cf2db8d/lifecycle/Meta/package.rds"
-		},
-		"rdt:d78": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/78-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "947689776e080006a58c150c04674157",
-			"rdt:timestamp": "2021-05-13T10.37.53CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/renv/Meta/package.rds"
-		},
-		"rdt:d79": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/79-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "e7e159fb1d65fe876f43be9c5f16c7f8",
-			"rdt:timestamp": "2021-04-04T11.25.34CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/pacman/0.5.1/b37932b67288bc62bb81686b2f337a7d/pacman/Meta/package.rds"
-		},
-		"rdt:d80": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/80-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "9fc39f3c6516ccdf37325b66fbcb6090",
-			"rdt:timestamp": "2021-04-04T11.24.51CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/gtools/3.8.2/0a749b4458d19a54acae93c64e3e7c85/gtools/Meta/package.rds"
-		},
-		"rdt:d81": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/81-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "be09ffae62a5a648b565c8bd08937d85",
-			"rdt:timestamp": "2021-04-04T11.22.17CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/sys/3.4/b227d13e29222b4574486cfcbde077fa/sys/Meta/package.rds"
-		},
-		"rdt:d82": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/82-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "e65e3e66a207d9d75369a91a4a3e32e4",
-			"rdt:timestamp": "2021-04-04T11.24.45CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/scales/1.1.1/6f76f71042411426ec8df6c54f34e6dd/scales/Meta/package.rds"
-		},
-		"rdt:d83": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/83-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "09565f0dfdf2ba4051b1e4b0e9b7747d",
-			"rdt:timestamp": "2021-04-04T11.23.31CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/hms/1.0.0/bf552cdd96f5969873afdac7311c7d0d/hms/Meta/package.rds"
-		},
-		"rdt:d84": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/84-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "4e43e95ab2100c78ece171b15c9a1782",
-			"rdt:timestamp": "2021-04-04T11.23.44CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/credentials/1.3.0/a96728288c75a814c900af9da84387be/credentials/Meta/package.rds"
-		},
-		"rdt:d85": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/85-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "d5d12763bf72786e21c1d324b5b02f0b",
-			"rdt:timestamp": "2021-04-04T11.23.39CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rex/1.2.0/093584b944440c5cd07a696b3c8e0e4c/rex/Meta/package.rds"
-		},
-		"rdt:d86": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/86-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "1b290fe32d5d1131f836cc963a3b3371",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/parallel/Meta/package.rds"
-		},
-		"rdt:d87": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/87-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "a927e824c5f1e65cda855696e0e57877",
-			"rdt:timestamp": "2021-04-04T11.24.11CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/gert/1.2.0/dcbfac00cf60125f43791a135ef68285/gert/Meta/package.rds"
-		},
-		"rdt:d88": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/88-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "ae24b178d495a1e6070309203a380974",
-			"rdt:timestamp": "2021-04-04T11.23.43CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/yaml/2.2.1/2826c5d9efb0a88f657c7a679c7106db/yaml/Meta/package.rds"
-		},
-		"rdt:d89": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/89-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "7671b37a1d53960ee117a161429999e4",
-			"rdt:timestamp": "2021-04-04T11.23.56CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/memoise/2.0.0/a0bc51650201a56d00a4798523cc91b3/memoise/Meta/package.rds"
-		},
-		"rdt:d90": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/90-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "aa16c411115e09018007493765b3a626",
-			"rdt:timestamp": "2021-04-04T11.25.47CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/reticulate/1.18/fbd35cac6ae7554d0e4f440bca1adf3a/reticulate/Meta/package.rds"
-		},
-		"rdt:d91": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/91-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "ff567167d048cc83b9df99ab7e3ddacc",
-			"rdt:timestamp": "2021-04-04T11.23.21CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/sass/0.3.1/3ef1adfe46b7b144b970d74ce33ab0d6/sass/Meta/package.rds"
-		},
-		"rdt:d92": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/92-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "b3e9e72b12c4c4d4cdd4b9c89ce78cb4",
-			"rdt:timestamp": "2021-04-04T11.23.14CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/stringi/1.5.3/a063ebea753c92910a4cca7b18bc1f05/stringi/Meta/package.rds"
-		},
-		"rdt:d93": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/93-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "e6a338529e3cbcb1371ecc2f1fcd6678",
-			"rdt:timestamp": "2021-04-04T11.23.46CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/desc/1.3.0/b6963166f7f10b970af1006c462ce6cd/desc/Meta/package.rds"
-		},
-		"rdt:d94": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/94-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "6e35e739aa171241d9d32c9e3934938e",
-			"rdt:timestamp": "2021-04-04T11.24.26CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/filelock/1.0.2/38ec653c2613bed60052ba3787bd8a2c/filelock/Meta/package.rds"
-		},
-		"rdt:d95": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/95-package.rds",
+			"rdt:value": "data/2-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
@@ -1119,86 +96,108 @@
 			"rdt:timestamp": "2021-04-04T11.24.25CEST",
 			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/storr/1.2.5/96034207276a46a44dc81b8d43397602/storr/Meta/package.rds"
 		},
-		"rdt:d96": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/96-package.rds",
+		"rdt:d3": {
+			"rdt:name": "head",
+			"rdt:value": "data/3-head",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "package:utils",
+			"rdt:fromEnv": false,
+			"rdt:hash": "897316929176464ebc9ad085f31e7284",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/drake/history/head"
+		},
+		"rdt:d4": {
+			"rdt:name": "total",
+			"rdt:value": "data/4-total",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "8977c70eed7f819541205ab2e8a117d9",
-			"rdt:timestamp": "2021-05-01T12.23.08CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/rlang/Meta/package.rds"
+			"rdt:hash": "84bc3da1b3e33a18e8d5e1bdd7a18d7a",
+			"rdt:timestamp": "2021-05-27T07.51.14CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/drake/history/total"
 		},
-		"rdt:d97": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/97-package.rds",
+		"rdt:d5": {
+			"rdt:name": "report.Rmd",
+			"rdt:value": "data/5-report.Rmd",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "ef08033a1689346ba33a7120da2c59c3",
-			"rdt:timestamp": "2021-04-04T11.23.09CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/pkgconfig/2.0.3/01f28d4278f15c76cddbea05899c5d6f/pkgconfig/Meta/package.rds"
+			"rdt:hash": "1564f7e1ffd9895eca024d9ec0120799",
+			"rdt:timestamp": "2021-04-01T14.33.41CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/notebooks/report.Rmd"
 		},
-		"rdt:d98": {
+		"rdt:d6": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/98-package.rds",
+			"rdt:value": "data/6-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "29d6b815f43295ec5ba260f1cf3350fd",
-			"rdt:timestamp": "2021-04-04T11.23.38CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/commonmark/1.7/0f22be39ec1d141fd03683c06f3a6e67/commonmark/Meta/package.rds"
+			"rdt:hash": "63df41759b81e6d2841828dd75718b0f",
+			"rdt:timestamp": "2021-04-23T12.46.48CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/drake/Meta/package.rds"
 		},
-		"rdt:d99": {
+		"rdt:d7": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/99-package.rds",
+			"rdt:value": "data/7-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "7c2ab0c453be3f400e8acea934300c35",
-			"rdt:timestamp": "2021-04-04T11.24.00CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/evaluate/0.14/ec8ca05cffcc70569eaaad8469d2a3a7/evaluate/Meta/package.rds"
+			"rdt:hash": "326025620086bbbe7e38fa8084cac4fb",
+			"rdt:timestamp": "2021-04-04T11.25.44CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rdtLite/1.3/2b466d4091c4fc789b3f99060785fba2/rdtLite/Meta/package.rds"
 		},
-		"rdt:d100": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/100-package.rds",
+		"rdt:d8": {
+			"rdt:name": "DESCRIPTION",
+			"rdt:value": "data/8-DESCRIPTION",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "14c51beb3ce5a7819cfa189f63d44081",
-			"rdt:timestamp": "2021-04-04T11.24.19CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lattice/0.20-41/fbd9285028b0263d76d18c95ae51a53d/lattice/Meta/package.rds"
+			"rdt:hash": "4c17ef2792593c8f40bf623a91125afa",
+			"rdt:timestamp": "2021-05-17T17.07.24CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/DESCRIPTION"
 		},
-		"rdt:d101": {
+		"rdt:d9": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/101-package.rds",
+			"rdt:value": "data/9-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "0fa9f90f0671a081cd6097e366c41a30",
-			"rdt:timestamp": "2021-04-04T11.23.50CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/htmlwidgets/1.5.3/6fdaa86d0700f8b3e92ee3c445a5a10d/htmlwidgets/Meta/package.rds"
+			"rdt:hash": "d3a47ef6b7534a77f801b351937a5076",
+			"rdt:timestamp": "2021-04-04T11.24.08CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/testthat/3.0.2/495e0434d9305716b6a87031570ce109/testthat/Meta/package.rds"
 		},
-		"rdt:d102": {
+		"rdt:d10": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/102-package.rds",
+			"rdt:value": "data/10-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "83c1017a0940ba4a81bc458f7b1be321",
-			"rdt:timestamp": "2021-05-01T12.44.25CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/tidyselect/Meta/package.rds"
+			"rdt:hash": "fcce3fad142796784cc12d3f4ab578df",
+			"rdt:timestamp": "2021-04-04T11.25.45CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/readxl/1.3.1/63537c483c2dbec8d9e3183b3735254a/readxl/Meta/package.rds"
 		},
-		"rdt:d103": {
+		"rdt:d11": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/103-package.rds",
+			"rdt:value": "data/11-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "62ee4d65b490d9f1085a7548ba20c6ad",
+			"rdt:timestamp": "2021-04-04T11.23.47CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/remotes/2.2.0/430a0908aee75b1fcba0e62857cab0ce/remotes/Meta/package.rds"
+		},
+		"rdt:d12": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/12-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
@@ -1207,141 +206,20 @@
 			"rdt:timestamp": "2021-04-04T11.23.02CEST",
 			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/magrittr/2.0.1/41287f1ac7d28a92f0a286ed507928d3/magrittr/Meta/package.rds"
 		},
-		"rdt:d104": {
+		"rdt:d13": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/104-package.rds",
+			"rdt:value": "data/13-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "66a938baf7847d28f98d5454b68c2190",
-			"rdt:timestamp": "2021-04-04T11.23.03CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/R6/2.5.0/b203113193e70978a696b2809525649d/R6/Meta/package.rds"
+			"rdt:hash": "e19c1ed0a8931679f149bef3e07ad677",
+			"rdt:timestamp": "2021-04-25T12.31.55CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/knitr/Meta/package.rds"
 		},
-		"rdt:d105": {
+		"rdt:d14": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/105-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "3b0a345badbafb178bc897d3f6089580",
-			"rdt:timestamp": "2021-04-04T11.23.00CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/generics/0.1.0/4d243a9c10b00589889fe32314ffd902/generics/Meta/package.rds"
-		},
-		"rdt:d106": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/106-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "84fe93aea9321b82db72dc08d49e0d92",
-			"rdt:timestamp": "2021-04-04T11.22.20CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/base64url/1.4/0c54cf3a08cc0e550fbd64ad33166143/base64url/Meta/package.rds"
-		},
-		"rdt:d107": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/107-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "f75a8965d9ad7e5d09fac83ec9d728f6",
-			"rdt:timestamp": "2021-04-04T11.25.27CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/mandrake/1.0.0/7049282fddc0cbc739f4fca6d9ba59f6/mandrake/Meta/package.rds"
-		},
-		"rdt:d108": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/108-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "0c2588a789938e5bee91b29844a9d647",
-			"rdt:timestamp": "2021-03-28T12.25.42CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/txtq/Meta/package.rds"
-		},
-		"rdt:d109": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/109-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "f108da0ba2aa326f446d224e19125b36",
-			"rdt:timestamp": "2021-04-04T11.23.48CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/DBI/1.1.1/030aaec5bc6553f35347cbb1e70b1a17/DBI/Meta/package.rds"
-		},
-		"rdt:d110": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/110-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "168c8ad2ccccafc892b997e06c029e24",
-			"rdt:timestamp": "2021-04-14T12.28.02CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/pillar/Meta/package.rds"
-		},
-		"rdt:d111": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/111-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "500f79ee83f04a15c9b3efe40b006013",
-			"rdt:timestamp": "2021-04-04T11.24.54CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/haven/2.3.1/221d0ad75dfa03ebf17b1a4cc5c31dfc/haven/Meta/package.rds"
-		},
-		"rdt:d112": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/112-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "dc7374960ce32b9590fd3d0af7d873ce",
-			"rdt:timestamp": "2021-04-19T12.22.32CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/withr/Meta/package.rds"
-		},
-		"rdt:d113": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/113-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "9750065ba6f56be38dea6fd0746bb6aa",
-			"rdt:timestamp": "2021-04-04T11.25.33CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/modelr/0.1.8/9fd59716311ee82cba83dc2826fc5577/modelr/Meta/package.rds"
-		},
-		"rdt:d114": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/114-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "02f90fa5001df6aa04a4e2141e2c495c",
-			"rdt:timestamp": "2021-04-04T11.23.06CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/crayon/1.4.1/e75525c55c70e5f4f78c9960a4b402e9/crayon/Meta/package.rds"
-		},
-		"rdt:d115": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/115-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "fec2f9d6505a1da05fe14cf7fcebd0c7",
-			"rdt:timestamp": "2021-04-04T11.23.07CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/utf8/1.2.1/c3ad47dc6da0751f18ed53c4613e3ac7/utf8/Meta/package.rds"
-		},
-		"rdt:d116": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/116-package.rds",
+			"rdt:value": "data/14-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
@@ -1350,20 +228,196 @@
 			"rdt:timestamp": "2021-04-04T11.25.12CEST",
 			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rmarkdown/2.7/edbf4cb1aefae783fd8d3a008ae51943/rmarkdown/Meta/package.rds"
 		},
-		"rdt:d117": {
+		"rdt:d15": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/117-package.rds",
+			"rdt:value": "data/15-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "7c389c1c6f03436450ea8274bd9e8835",
-			"rdt:timestamp": "2021-04-04T11.23.32CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/progress/1.2.2/14dc9f7a3c91ebb14ec5bb9208a07061/progress/Meta/package.rds"
+			"rdt:hash": "782fd8ebd2ce0a101c08f0ffe088cafc",
+			"rdt:timestamp": "2021-04-04T11.24.31CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/forcats/0.5.1/81c3244cab67468aac4c60550832655d/forcats/Meta/package.rds"
 		},
-		"rdt:d118": {
+		"rdt:d16": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/118-package.rds",
+			"rdt:value": "data/16-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "f3a0f624eca7a9ad25360f1d65f622af",
+			"rdt:timestamp": "2021-04-04T11.23.15CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/stringr/1.4.0/0759e6b6c0957edb1311028a49a35e76/stringr/Meta/package.rds"
+		},
+		"rdt:d17": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/17-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "d7dbfd00e8b651b720b04758ecce8c18",
+			"rdt:timestamp": "2021-05-06T12.47.46CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/dplyr/Meta/package.rds"
+		},
+		"rdt:d18": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/18-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "84f5bea81a1078177b6cefb95b5cd590",
+			"rdt:timestamp": "2021-04-04T11.23.10CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/purrr/0.3.4/97def703420c8ab10d8f0e6c72101e02/purrr/Meta/package.rds"
+		},
+		"rdt:d19": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/19-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "5832e8be142b3b97d79f0ee2e1bc9216",
+			"rdt:timestamp": "2021-04-04T11.24.52CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/readr/1.4.0/2639976851f71f330264a9c9c3d43a61/readr/Meta/package.rds"
+		},
+		"rdt:d20": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/20-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "3f4df278c350af905937dc0a29624364",
+			"rdt:timestamp": "2021-04-04T11.23.17CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/tidyr/1.1.3/450d7dfaedde58e28586b854eeece4fa/tidyr/Meta/package.rds"
+		},
+		"rdt:d21": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/21-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "703a79db2497e993c61fd9099a97bb76",
+			"rdt:timestamp": "2021-04-19T12.36.18CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/tibble/Meta/package.rds"
+		},
+		"rdt:d22": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/22-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "c0d27fadfda0b4a270fc265cdc8bf8dc",
+			"rdt:timestamp": "2021-04-04T11.24.48CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/ggplot2/3.3.3/3eb6477d01eb5bbdc03f7d5f70f2733e/ggplot2/Meta/package.rds"
+		},
+		"rdt:d23": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/23-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "ee249d077a6208b7e102e212af6e2dd7",
+			"rdt:timestamp": "2021-04-04T11.25.54CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/tidyverse/1.3.0/bd51be662f359fa99021f3d51e911490/tidyverse/Meta/package.rds"
+		},
+		"rdt:d24": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/24-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "4e4c0541194834c4749a2ebf8baa2e49",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/stats/Meta/package.rds"
+		},
+		"rdt:d25": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/25-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "49ca020a2d51abed11665cc936d4020b",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/graphics/Meta/package.rds"
+		},
+		"rdt:d26": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/26-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "7b3d5ab2419ff9de8f48216cecc0dd3d",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/grDevices/Meta/package.rds"
+		},
+		"rdt:d27": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/27-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "4a67557b9255c2613bf3bb87abcc683e",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/datasets/Meta/package.rds"
+		},
+		"rdt:d28": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/28-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "2126a9f4075a659c752f6bc644d5566b",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/utils/Meta/package.rds"
+		},
+		"rdt:d29": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/29-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "bc93e1565a5b9a4db9a7cacd03ca6f9d",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/methods/Meta/package.rds"
+		},
+		"rdt:d30": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/30-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "d9d51c297bc15ac02849a3ac3a91bc9a",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/base/Meta/package.rds"
+		},
+		"rdt:d31": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/31-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "f3f1b53f6daf02f0f098df632c75ecd0",
+			"rdt:timestamp": "2021-04-04T11.23.20CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/fs/1.5.0/44594a07a42e5f91fac9f93fda6d0109/fs/Meta/package.rds"
+		},
+		"rdt:d32": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/32-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
@@ -1372,42 +426,31 @@
 			"rdt:timestamp": "2021-04-04T11.24.16CEST",
 			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/usethis/2.0.1/360e904f9e623286e1a0c6ca0a98c5f6/usethis/Meta/package.rds"
 		},
-		"rdt:d119": {
+		"rdt:d33": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/119-package.rds",
+			"rdt:value": "data/33-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "91a03926446db995bef5f989ee3e0c3c",
-			"rdt:timestamp": "2021-04-01T04.39.16CEST",
-			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/grid/Meta/package.rds"
+			"rdt:hash": "28a0500411277cf88e6708c0e2681428",
+			"rdt:timestamp": "2021-04-04T11.24.58CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lubridate/1.7.10/1ebfdc8a3cfe8fe19184f5481972b092/lubridate/Meta/package.rds"
 		},
-		"rdt:d120": {
+		"rdt:d34": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/120-package.rds",
+			"rdt:value": "data/34-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "995f13ec55b3402a561e3f5fe134f270",
-			"rdt:timestamp": "2021-04-04T11.25.46CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/reprex/1.0.0/cb4d6f77f163b8d685833f2a59e7cb4c/reprex/Meta/package.rds"
+			"rdt:hash": "6e35e739aa171241d9d32c9e3934938e",
+			"rdt:timestamp": "2021-04-04T11.24.26CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/filelock/1.0.2/38ec653c2613bed60052ba3787bd8a2c/filelock/Meta/package.rds"
 		},
-		"rdt:d121": {
+		"rdt:d35": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/121-package.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "ce832f5b6af9eacff789dbd047a352aa",
-			"rdt:timestamp": "2021-04-04T11.22.55CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/digest/0.6.27/a0cbe758a531d054b537d16dff4d58a1/digest/Meta/package.rds"
-		},
-		"rdt:d122": {
-			"rdt:name": "package.rds",
-			"rdt:value": "data/122-package.rds",
+			"rdt:value": "data/35-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
@@ -1416,53 +459,229 @@
 			"rdt:timestamp": "2021-04-04T11.23.43CEST",
 			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/covr/3.5.1/6d80a9fc3c0c8473153b54fa54719dfd/covr/Meta/package.rds"
 		},
-		"rdt:d123": {
+		"rdt:d36": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/123-package.rds",
+			"rdt:value": "data/36-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "988628091888799fa1eedd0a2f21ce63",
-			"rdt:timestamp": "2021-05-01T12.44.12CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/openssl/Meta/package.rds"
+			"rdt:hash": "7c389c1c6f03436450ea8274bd9e8835",
+			"rdt:timestamp": "2021-04-04T11.23.32CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/progress/1.2.2/14dc9f7a3c91ebb14ec5bb9208a07061/progress/Meta/package.rds"
 		},
-		"rdt:d124": {
+		"rdt:d37": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/124-package.rds",
+			"rdt:value": "data/37-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "c074b61e4ce1a42187441b0f8e9fb5bd",
-			"rdt:timestamp": "2021-04-04T11.24.43CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/munsell/0.5.0/6dfe8bf774944bd5595785e3229d8771/munsell/Meta/package.rds"
+			"rdt:hash": "6fec215fb3b406b564bedc071690f322",
+			"rdt:timestamp": "2021-04-04T11.23.42CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/httr/1.4.2/a525aba14184fec243f9eaec62fbed43/httr/Meta/package.rds"
 		},
-		"rdt:d125": {
+		"rdt:d38": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/125-package.rds",
+			"rdt:value": "data/38-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "428e0fb5776b053920d3e2fdf7cf27a4",
-			"rdt:timestamp": "2021-04-04T11.23.24CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/bslib/0.2.4/4830a372b241d78ed6f53731ee3023ac/bslib/Meta/package.rds"
+			"rdt:hash": "4ff35df5fe5ff2afc8f37dced9d18658",
+			"rdt:timestamp": "2021-04-04T11.23.46CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rprojroot/2.0.2/249d8cd1e74a8f6a26194a91b47f21d1/rprojroot/Meta/package.rds"
 		},
-		"rdt:d126": {
+		"rdt:d39": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/126-package.rds",
+			"rdt:value": "data/39-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "79b734a69eba02647ceaea7e542cbfc2",
-			"rdt:timestamp": "2021-04-04T11.23.58CEST",
-			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/sessioninfo/1.1.1/308013098befe37484df72c39cf90d6e/sessioninfo/Meta/package.rds"
+			"rdt:hash": "92d27e4be2d3f58b574c8f113b4f5e58",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/tools/Meta/package.rds"
 		},
-		"rdt:d127": {
+		"rdt:d40": {
 			"rdt:name": "package.rds",
-			"rdt:value": "data/127-package.rds",
+			"rdt:value": "data/40-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "170fd1989395973a59b209ebb7d7f3e1",
+			"rdt:timestamp": "2021-04-04T11.22.19CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/backports/1.2.1/644043219fc24e190c2f620c1a380a69/backports/Meta/package.rds"
+		},
+		"rdt:d41": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/41-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "fec2f9d6505a1da05fe14cf7fcebd0c7",
+			"rdt:timestamp": "2021-04-04T11.23.07CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/utf8/1.2.1/c3ad47dc6da0751f18ed53c4613e3ac7/utf8/Meta/package.rds"
+		},
+		"rdt:d42": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/42-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "66a938baf7847d28f98d5454b68c2190",
+			"rdt:timestamp": "2021-04-04T11.23.03CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/R6/2.5.0/b203113193e70978a696b2809525649d/R6/Meta/package.rds"
+		},
+		"rdt:d43": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/43-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "f108da0ba2aa326f446d224e19125b36",
+			"rdt:timestamp": "2021-04-04T11.23.48CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/DBI/1.1.1/030aaec5bc6553f35347cbb1e70b1a17/DBI/Meta/package.rds"
+		},
+		"rdt:d44": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/44-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "a5848e1b03c9d29a2ef9fb474ed6922a",
+			"rdt:timestamp": "2021-04-04T11.23.39CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lazyeval/0.2.2/d908914ae53b04d4c0c0fd72ecc35370/lazyeval/Meta/package.rds"
+		},
+		"rdt:d45": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/45-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "01e6d2e3aaf47bb47bec0826f709a979",
+			"rdt:timestamp": "2021-05-04T12.23.11CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/colorspace/Meta/package.rds"
+		},
+		"rdt:d46": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/46-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "dc7374960ce32b9590fd3d0af7d873ce",
+			"rdt:timestamp": "2021-04-19T12.22.32CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/withr/Meta/package.rds"
+		},
+		"rdt:d47": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/47-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "83c1017a0940ba4a81bc458f7b1be321",
+			"rdt:timestamp": "2021-05-01T12.44.25CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/tidyselect/Meta/package.rds"
+		},
+		"rdt:d48": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/48-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "cbcbaf7e45859e23bb77ca91c1c2598f",
+			"rdt:timestamp": "2021-04-04T11.23.31CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/prettyunits/1.1.1/95ef9167b75dde9d2ccc3c7528393e7e/prettyunits/Meta/package.rds"
+		},
+		"rdt:d49": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/49-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "968e0d9842da9c0aafd17b0d062b43c3",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/compiler/Meta/package.rds"
+		},
+		"rdt:d50": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/50-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "b7950185d63f6c021930b850b70a3bb4",
+			"rdt:timestamp": "2021-04-27T12.22.30CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/cli/Meta/package.rds"
+		},
+		"rdt:d51": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/51-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "5d84556ba3be2a2f24d8d7a99a9bf05d",
+			"rdt:timestamp": "2021-04-04T11.25.10CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rvest/1.0.0/74b905b0076e1de6e27f540c95ba68d5/rvest/Meta/package.rds"
+		},
+		"rdt:d52": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/52-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "e7e159fb1d65fe876f43be9c5f16c7f8",
+			"rdt:timestamp": "2021-04-04T11.25.34CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/pacman/0.5.1/b37932b67288bc62bb81686b2f337a7d/pacman/Meta/package.rds"
+		},
+		"rdt:d53": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/53-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "6b1b2fc58848df9a0a3caa27a8b12686",
+			"rdt:timestamp": "2021-04-04T11.23.35CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/xml2/1.3.2/d4d71a75dd3ea9eb5fa28cc21f9585e2/xml2/Meta/package.rds"
+		},
+		"rdt:d54": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/54-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "e6a338529e3cbcb1371ecc2f1fcd6678",
+			"rdt:timestamp": "2021-04-04T11.23.46CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/desc/1.3.0/b6963166f7f10b970af1006c462ce6cd/desc/Meta/package.rds"
+		},
+		"rdt:d55": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/55-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "e65e3e66a207d9d75369a91a4a3e32e4",
+			"rdt:timestamp": "2021-04-04T11.24.45CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/scales/1.1.1/6f76f71042411426ec8df6c54f34e6dd/scales/Meta/package.rds"
+		},
+		"rdt:d56": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/56-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
@@ -1471,148 +690,863 @@
 			"rdt:timestamp": "2021-04-04T11.22.18CEST",
 			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/askpass/1.1/e8a22846fff485f0be3770c2da758713/askpass/Meta/package.rds"
 		},
-		"rdt:d128": {
-			"rdt:name": "bf67eb17d70925b4.rds",
-			"rdt:value": "data/128-bf67eb17d70925b4.rds",
+		"rdt:d57": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/57-package.rds",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "ecbb06531805a172a07200f812196e48",
-			"rdt:timestamp": "2021-05-13T15.12.42CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/bf67eb17d70925b4.rds"
+			"rdt:hash": "4aaadb5cd401de46a4a324806b02e141",
+			"rdt:timestamp": "2021-04-04T11.25.23CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/pkgdown/1.6.1/8896076540d9e9b556a2ec658c81f916/pkgdown/Meta/package.rds"
+		},
+		"rdt:d58": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/58-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "ce832f5b6af9eacff789dbd047a352aa",
+			"rdt:timestamp": "2021-04-04T11.22.55CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/digest/0.6.27/a0cbe758a531d054b537d16dff4d58a1/digest/Meta/package.rds"
+		},
+		"rdt:d59": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/59-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "0c2588a789938e5bee91b29844a9d647",
+			"rdt:timestamp": "2021-03-28T12.25.42CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/txtq/Meta/package.rds"
+		},
+		"rdt:d60": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/60-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "ef08033a1689346ba33a7120da2c59c3",
+			"rdt:timestamp": "2021-04-04T11.23.09CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/pkgconfig/2.0.3/01f28d4278f15c76cddbea05899c5d6f/pkgconfig/Meta/package.rds"
+		},
+		"rdt:d61": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/61-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "1c109fd644bf9fb47fab37f3dce19356",
+			"rdt:timestamp": "2021-04-04T11.23.18CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/htmltools/0.5.1.1/af2c2531e55df5cf230c4b5444fc973c/htmltools/Meta/package.rds"
+		},
+		"rdt:d62": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/62-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "669fe8c6ce08c95cd89b541ab2807391",
+			"rdt:timestamp": "2021-04-04T11.23.49CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/dbplyr/2.1.0/f30247ffeeebe8d9842dc68fe63e043b/dbplyr/Meta/package.rds"
+		},
+		"rdt:d63": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/63-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "1f7f953d3a7e60af2d3e7a826d1ceae6",
+			"rdt:timestamp": "2021-04-04T11.23.25CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/fastmap/1.1.0/77bd60a6157420d4ffa93b27cf6a58b8/fastmap/Meta/package.rds"
+		},
+		"rdt:d64": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/64-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "0fa9f90f0671a081cd6097e366c41a30",
+			"rdt:timestamp": "2021-04-04T11.23.50CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/htmlwidgets/1.5.3/6fdaa86d0700f8b3e92ee3c445a5a10d/htmlwidgets/Meta/package.rds"
+		},
+		"rdt:d65": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/65-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "8977c70eed7f819541205ab2e8a117d9",
+			"rdt:timestamp": "2021-05-01T12.23.08CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/rlang/Meta/package.rds"
+		},
+		"rdt:d66": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/66-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "573f79ff385a1a7fa24bb426cd5bb00c",
+			"rdt:timestamp": "2021-04-04T11.23.57CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rstudioapi/0.13/06c85365a03fdaf699966cc1d3cf53ea/rstudioapi/Meta/package.rds"
+		},
+		"rdt:d67": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/67-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "11ca233df348b278b6d13694574725d4",
+			"rdt:timestamp": "2021-04-04T11.25.20CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/visNetwork/2.0.9/12545f2acf49d1d346d075580122d89c/visNetwork/Meta/package.rds"
+		},
+		"rdt:d68": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/68-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "3b0a345badbafb178bc897d3f6089580",
+			"rdt:timestamp": "2021-04-04T11.23.00CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/generics/0.1.0/4d243a9c10b00589889fe32314ffd902/generics/Meta/package.rds"
+		},
+		"rdt:d69": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/69-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "99f8857e8fb5800318f1bbf86ac7f3eb",
+			"rdt:timestamp": "2021-04-04T11.23.19CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/jsonlite/1.7.2/98138e0994d41508c7a6b84a0600cfcb/jsonlite/Meta/package.rds"
+		},
+		"rdt:d70": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/70-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "4e43e95ab2100c78ece171b15c9a1782",
+			"rdt:timestamp": "2021-04-04T11.23.44CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/credentials/1.3.0/a96728288c75a814c900af9da84387be/credentials/Meta/package.rds"
+		},
+		"rdt:d71": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/71-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "6b63817e44cd5b77f628756f9b281926",
+			"rdt:timestamp": "2021-04-04T11.24.21CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/Matrix/1.3-2/ff280503079ad8623d3c4b1519b24ea2/Matrix/Meta/package.rds"
+		},
+		"rdt:d72": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/72-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "2ddc7d4d063bcbe599b111bb5c12ea28",
+			"rdt:timestamp": "2021-04-04T11.23.51CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/Rcpp/1.0.6/dbb5e436998a7eba5a9d682060533338/Rcpp/Meta/package.rds"
+		},
+		"rdt:d73": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/73-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "c074b61e4ce1a42187441b0f8e9fb5bd",
+			"rdt:timestamp": "2021-04-04T11.24.43CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/munsell/0.5.0/6dfe8bf774944bd5595785e3229d8771/munsell/Meta/package.rds"
+		},
+		"rdt:d74": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/74-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "e79dea6ddf830b3e557df3a85c9606bf",
+			"rdt:timestamp": "2021-04-04T11.23.04CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/fansi/0.4.2/fea074fb67fe4c25d47ad09087da847d/fansi/Meta/package.rds"
+		},
+		"rdt:d75": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/75-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "aa16c411115e09018007493765b3a626",
+			"rdt:timestamp": "2021-04-04T11.25.47CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/reticulate/1.18/fbd35cac6ae7554d0e4f440bca1adf3a/reticulate/Meta/package.rds"
+		},
+		"rdt:d76": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/76-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "01ddcc242d5140b2aa6f5218e468d3e6",
+			"rdt:timestamp": "2021-04-04T11.23.01CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lifecycle/1.0.0/3471fb65971f1a7b2d4ae7848cf2db8d/lifecycle/Meta/package.rds"
+		},
+		"rdt:d77": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/77-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "b3e9e72b12c4c4d4cdd4b9c89ce78cb4",
+			"rdt:timestamp": "2021-04-04T11.23.14CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/stringi/1.5.3/a063ebea753c92910a4cca7b18bc1f05/stringi/Meta/package.rds"
+		},
+		"rdt:d78": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/78-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "ae24b178d495a1e6070309203a380974",
+			"rdt:timestamp": "2021-04-04T11.23.43CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/yaml/2.2.1/2826c5d9efb0a88f657c7a679c7106db/yaml/Meta/package.rds"
+		},
+		"rdt:d79": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/79-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "91a03926446db995bef5f989ee3e0c3c",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/grid/Meta/package.rds"
+		},
+		"rdt:d80": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/80-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "1b290fe32d5d1131f836cc963a3b3371",
+			"rdt:timestamp": "2021-04-01T04.39.16CEST",
+			"rdt:location": "/Library/Frameworks/R.framework/Versions/4.0/Resources/library/parallel/Meta/package.rds"
+		},
+		"rdt:d81": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/81-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "02f90fa5001df6aa04a4e2141e2c495c",
+			"rdt:timestamp": "2021-04-04T11.23.06CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/crayon/1.4.1/e75525c55c70e5f4f78c9960a4b402e9/crayon/Meta/package.rds"
+		},
+		"rdt:d82": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/82-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "14c51beb3ce5a7819cfa189f63d44081",
+			"rdt:timestamp": "2021-04-04T11.24.19CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/lattice/0.20-41/fbd9285028b0263d76d18c95ae51a53d/lattice/Meta/package.rds"
+		},
+		"rdt:d83": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/83-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "500f79ee83f04a15c9b3efe40b006013",
+			"rdt:timestamp": "2021-04-04T11.24.54CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/haven/2.3.1/221d0ad75dfa03ebf17b1a4cc5c31dfc/haven/Meta/package.rds"
+		},
+		"rdt:d84": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/84-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "09565f0dfdf2ba4051b1e4b0e9b7747d",
+			"rdt:timestamp": "2021-04-04T11.23.31CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/hms/1.0.0/bf552cdd96f5969873afdac7311c7d0d/hms/Meta/package.rds"
+		},
+		"rdt:d85": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/85-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "be09ffae62a5a648b565c8bd08937d85",
+			"rdt:timestamp": "2021-04-04T11.22.17CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/sys/3.4/b227d13e29222b4574486cfcbde077fa/sys/Meta/package.rds"
+		},
+		"rdt:d86": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/86-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "168c8ad2ccccafc892b997e06c029e24",
+			"rdt:timestamp": "2021-04-14T12.28.02CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/pillar/Meta/package.rds"
+		},
+		"rdt:d87": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/87-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "63cb1d5d7031029f8f6086ac97e24212",
+			"rdt:timestamp": "2021-04-04T11.24.24CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/igraph/1.2.6/7b1f856410253d56ea67ad808f7cdff6/igraph/Meta/package.rds"
+		},
+		"rdt:d88": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/88-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "84fe93aea9321b82db72dc08d49e0d92",
+			"rdt:timestamp": "2021-04-04T11.22.20CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/base64url/1.4/0c54cf3a08cc0e550fbd64ad33166143/base64url/Meta/package.rds"
+		},
+		"rdt:d89": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/89-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "ff51bc8e4b9d7c66133508e6ab3c8f86",
+			"rdt:timestamp": "2021-04-07T12.35.30CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/pkgload/Meta/package.rds"
+		},
+		"rdt:d90": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/90-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "995f13ec55b3402a561e3f5fe134f270",
+			"rdt:timestamp": "2021-04-04T11.25.46CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/reprex/1.0.0/cb4d6f77f163b8d685833f2a59e7cb4c/reprex/Meta/package.rds"
+		},
+		"rdt:d91": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/91-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "ddf7be8e9ef937838f37a35c7611e4ba",
+			"rdt:timestamp": "2021-04-04T11.22.56CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/glue/1.4.2/6efd734b14c6471cfe443345f3e35e29/glue/Meta/package.rds"
+		},
+		"rdt:d92": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/92-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "7c2ab0c453be3f400e8acea934300c35",
+			"rdt:timestamp": "2021-04-04T11.24.00CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/evaluate/0.14/ec8ca05cffcc70569eaaad8469d2a3a7/evaluate/Meta/package.rds"
+		},
+		"rdt:d93": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/93-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "d5d12763bf72786e21c1d324b5b02f0b",
+			"rdt:timestamp": "2021-04-04T11.23.39CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/rex/1.2.0/093584b944440c5cd07a696b3c8e0e4c/rex/Meta/package.rds"
+		},
+		"rdt:d94": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/94-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "947689776e080006a58c150c04674157",
+			"rdt:timestamp": "2021-05-13T10.37.53CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/renv/Meta/package.rds"
+		},
+		"rdt:d95": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/95-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "9750065ba6f56be38dea6fd0746bb6aa",
+			"rdt:timestamp": "2021-04-04T11.25.33CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/modelr/0.1.8/9fd59716311ee82cba83dc2826fc5577/modelr/Meta/package.rds"
+		},
+		"rdt:d96": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/96-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "4f96c4899db104a4fcd1ac03f200bc60",
+			"rdt:timestamp": "2021-04-30T12.29.10CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/vctrs/Meta/package.rds"
+		},
+		"rdt:d97": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/97-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "a905e23bc497fd2badda55df59d14ec7",
+			"rdt:timestamp": "2021-04-04T11.23.28CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/cellranger/1.1.0/f61dbaec772ccd2e17705c1e872e9e7c/cellranger/Meta/package.rds"
+		},
+		"rdt:d98": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/98-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "988628091888799fa1eedd0a2f21ce63",
+			"rdt:timestamp": "2021-05-01T12.44.12CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/openssl/Meta/package.rds"
+		},
+		"rdt:d99": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/99-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "35a81ca2dbecc3bdc508c058168b7b9e",
+			"rdt:timestamp": "2021-04-04T11.24.37CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/gtable/0.3.0/ac5c6baf7822ce8732b343f14c072c4d/gtable/Meta/package.rds"
+		},
+		"rdt:d100": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/100-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "bb86c9646335ea32846be04c7bc29d20",
+			"rdt:timestamp": "2021-04-04T11.22.18CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/assertthat/0.2.1/50c838a310445e954bc13f26f26a6ecf/assertthat/Meta/package.rds"
+		},
+		"rdt:d101": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/101-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "8bf3e6d3106b593483f17bed089e24cd",
+			"rdt:timestamp": "2021-04-04T11.23.25CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/cachem/1.0.4/2703a46dcabfb902f10060b2bca9f708/cachem/Meta/package.rds"
+		},
+		"rdt:d102": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/102-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "67583f6a1581014bf4dcffc8a7e20b82",
+			"rdt:timestamp": "2021-04-04T11.24.01CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/xfun/0.22/eab2f8ba53809c321813e72ecbbd19ba/xfun/Meta/package.rds"
+		},
+		"rdt:d103": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/103-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "cd486dad08e3e5d1f3a27138900504ea",
+			"rdt:timestamp": "2021-04-04T11.23.18CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/broom/0.7.5/d5ab8846336cfb2e3c17e5a806eb3045/broom/Meta/package.rds"
+		},
+		"rdt:d104": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/104-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "a2e650c6f25c4383611c2200b1aa7471",
+			"rdt:timestamp": "2021-04-04T11.24.03CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/roxygen2/7.1.1/fcd94e00cc409b25d07ca50f7bf339f5/roxygen2/Meta/package.rds"
+		},
+		"rdt:d105": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/105-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "a927e824c5f1e65cda855696e0e57877",
+			"rdt:timestamp": "2021-04-04T11.24.11CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/gert/1.2.0/dcbfac00cf60125f43791a135ef68285/gert/Meta/package.rds"
+		},
+		"rdt:d106": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/106-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "f75a8965d9ad7e5d09fac83ec9d728f6",
+			"rdt:timestamp": "2021-04-04T11.25.27CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/mandrake/1.0.0/7049282fddc0cbc739f4fca6d9ba59f6/mandrake/Meta/package.rds"
+		},
+		"rdt:d107": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/107-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "7671b37a1d53960ee117a161429999e4",
+			"rdt:timestamp": "2021-04-04T11.23.56CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/memoise/2.0.0/a0bc51650201a56d00a4798523cc91b3/memoise/Meta/package.rds"
+		},
+		"rdt:d108": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/108-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "fa4c4e6f2b499a8901f80596cdfa0047",
+			"rdt:timestamp": "2021-04-30T12.22.12CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/renv/library/R-4.0/x86_64-apple-darwin17.0/ellipsis/Meta/package.rds"
+		},
+		"rdt:d109": {
+			"rdt:name": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx:_rels/.rels",
+			"rdt:value": "data/109-raw_data.xlsx",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "341cf96b1758ef41181b9e4d6fc0e005",
+			"rdt:timestamp": "2021-02-20T09.55.28CET",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx"
+		},
+		"rdt:d110": {
+			"rdt:name": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx:xl/workbook.xml",
+			"rdt:value": "data/110-raw_data.xlsx",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "341cf96b1758ef41181b9e4d6fc0e005",
+			"rdt:timestamp": "2021-02-20T09.55.28CET",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx"
+		},
+		"rdt:d111": {
+			"rdt:name": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx:xl/_rels/workbook.xml.rels",
+			"rdt:value": "data/111-raw_data.xlsx",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "341cf96b1758ef41181b9e4d6fc0e005",
+			"rdt:timestamp": "2021-02-20T09.55.28CET",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx"
+		},
+		"rdt:d112": {
+			"rdt:name": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx:xl/sharedStrings.xml",
+			"rdt:value": "data/112-raw_data.xlsx",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "341cf96b1758ef41181b9e4d6fc0e005",
+			"rdt:timestamp": "2021-02-20T09.55.28CET",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx"
+		},
+		"rdt:d113": {
+			"rdt:name": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx:xl/styles.xml",
+			"rdt:value": "data/113-raw_data.xlsx",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "341cf96b1758ef41181b9e4d6fc0e005",
+			"rdt:timestamp": "2021-02-20T09.55.28CET",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx"
+		},
+		"rdt:d114": {
+			"rdt:name": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx:xl/worksheets/sheet1.xml",
+			"rdt:value": "data/114-raw_data.xlsx",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "341cf96b1758ef41181b9e4d6fc0e005",
+			"rdt:timestamp": "2021-02-20T09.55.28CET",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/inst/extdata/raw_data.xlsx"
+		},
+		"rdt:d115": {
+			"rdt:name": "package.rds",
+			"rdt:value": "data/115-package.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "428e0fb5776b053920d3e2fdf7cf27a4",
+			"rdt:timestamp": "2021-04-04T11.23.24CEST",
+			"rdt:location": "/Users/lukas/Library/Application Support/renv/cache/v5/R-4.0/x86_64-apple-darwin17.0/bslib/0.2.4/4830a372b241d78ed6f53731ee3023ac/bslib/Meta/package.rds"
+		},
+		"rdt:d116": {
+			"rdt:name": "mangle_key",
+			"rdt:value": "data/116-mangle_key",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "45ce3b2543a563aac0f955d52767e570",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/mangle_key"
+		},
+		"rdt:d117": {
+			"rdt:name": "mangle_key_pad",
+			"rdt:value": "data/117-mangle_key_pad",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "45ce3b2543a563aac0f955d52767e570",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/mangle_key_pad"
+		},
+		"rdt:d118": {
+			"rdt:name": "compress",
+			"rdt:value": "data/118-compress",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "1159184937f1a52d70a06a50d63b5947",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/compress"
+		},
+		"rdt:d119": {
+			"rdt:name": "hash_algorithm",
+			"rdt:value": "data/119-hash_algorithm",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "834c7a9970a1e3b6c2fb353badd8b1cd",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/hash_algorithm"
+		},
+		"rdt:d120": {
+			"rdt:name": "8d96d6dec0936572.rds",
+			"rdt:value": "data/120-8d96d6dec0936572.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "3adc0861599a2e6921cd984b6e0d33f9",
+			"rdt:timestamp": "2021-05-27T07.50.50CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/8d96d6dec0936572.rds"
+		},
+		"rdt:d121": {
+			"rdt:name": "c83addfb77c72f90.rds",
+			"rdt:value": "data/121-c83addfb77c72f90.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "a383fcb7eb868a473843e6d085fadc8a",
+			"rdt:timestamp": "2021-05-27T07.50.59CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/c83addfb77c72f90.rds"
+		},
+		"rdt:d122": {
+			"rdt:name": "aed338899ff8439e.rds",
+			"rdt:value": "data/122-aed338899ff8439e.rds",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "75162335456836f6e42e9464d5e71dd9",
+			"rdt:timestamp": "2021-05-27T07.50.58CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/aed338899ff8439e.rds"
+		},
+		"rdt:d123": {
+			"rdt:name": "output",
+			"rdt:value": "\r-\r/\r\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ...",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "StandardOutput",
+			"rdt:scope": "Standard output",
+			"rdt:fromEnv": false,
+			"rdt:hash": "",
+			"rdt:timestamp": "",
+			"rdt:location": ""
+		},
+		"rdt:d124": {
+			"rdt:name": "version",
+			"rdt:value": "data/124-version",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "base",
+			"rdt:fromEnv": false,
+			"rdt:hash": "87e33054948f724fc6ef9369fdee378a",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/version"
+		},
+		"rdt:d125": {
+			"rdt:name": "mangle_key",
+			"rdt:value": "data/125-mangle_key",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "45ce3b2543a563aac0f955d52767e570",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/mangle_key"
+		},
+		"rdt:d126": {
+			"rdt:name": "mangle_key_pad",
+			"rdt:value": "data/126-mangle_key_pad",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "45ce3b2543a563aac0f955d52767e570",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/mangle_key_pad"
+		},
+		"rdt:d127": {
+			"rdt:name": "compress",
+			"rdt:value": "data/127-compress",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "1159184937f1a52d70a06a50d63b5947",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/compress"
+		},
+		"rdt:d128": {
+			"rdt:name": "hash_algorithm",
+			"rdt:value": "data/128-hash_algorithm",
+			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
+			"rdt:type": "File",
+			"rdt:scope": "undefined",
+			"rdt:fromEnv": false,
+			"rdt:hash": "834c7a9970a1e3b6c2fb353badd8b1cd",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/config/hash_algorithm"
 		},
 		"rdt:d129": {
-			"rdt:name": "ec788f13679fee24.rds",
-			"rdt:value": "data/129-ec788f13679fee24.rds",
+			"rdt:name": ".gitignore",
+			"rdt:value": "data/129-.gitignore",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "89c2d2ef295fe09be061512cb5024ed6",
-			"rdt:timestamp": "2021-05-13T15.12.43CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/ec788f13679fee24.rds"
+			"rdt:hash": "82aa854715cf57d80d82df1a5993884b",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/.gitignore"
 		},
 		"rdt:d130": {
-			"rdt:name": "3004a0dba3211107.rds",
-			"rdt:value": "data/130-3004a0dba3211107.rds",
+			"rdt:name": "head",
+			"rdt:value": "data/130-head",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
-			"rdt:scope": "undefined",
+			"rdt:scope": "package:utils",
 			"rdt:fromEnv": false,
-			"rdt:hash": "55389cac6ec57190d3c2befae51c5708",
-			"rdt:timestamp": "2021-05-13T11.46.44CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/3004a0dba3211107.rds"
+			"rdt:hash": "897316929176464ebc9ad085f31e7284",
+			"rdt:timestamp": "2021-05-27T07.50.47CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/drake/history/head"
 		},
 		"rdt:d131": {
-			"rdt:name": "b73b3b39e609548c.rds",
-			"rdt:value": "data/131-b73b3b39e609548c.rds",
+			"rdt:name": "total",
+			"rdt:value": "data/131-total",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "489f479dd7d614269cda785dd14a04f5",
-			"rdt:timestamp": "2021-05-13T15.13.18CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/b73b3b39e609548c.rds"
+			"rdt:hash": "84bc3da1b3e33a18e8d5e1bdd7a18d7a",
+			"rdt:timestamp": "2021-05-27T07.51.14CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/drake/history/total"
 		},
 		"rdt:d132": {
-			"rdt:name": "199cb98331df9fdc.rds",
-			"rdt:value": "data/132-199cb98331df9fdc.rds",
+			"rdt:name": "db",
+			"rdt:value": "data/132-db",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
 			"rdt:type": "File",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "f50d203d2ae27ca22b966a8faf7b6c0f",
-			"rdt:timestamp": "2021-05-13T14.59.43CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/199cb98331df9fdc.rds"
+			"rdt:hash": "6fae8b2f3d00ac026d4c03c092b00cc4",
+			"rdt:timestamp": "2021-05-27T07.51.15CEST",
+			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/drake/history/db"
 		},
 		"rdt:d133": {
-			"rdt:name": "b45ae5d9af0ba709.rds",
-			"rdt:value": "data/133-b45ae5d9af0ba709.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
+			"rdt:name": "dev.1",
+			"rdt:value": "",
+			"rdt:valType": "Device",
+			"rdt:type": "Device",
 			"rdt:scope": "undefined",
 			"rdt:fromEnv": false,
-			"rdt:hash": "dbd2ddc8b9792f6aab48fb0ed7bf4c95",
-			"rdt:timestamp": "2021-05-13T11.46.44CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/b45ae5d9af0ba709.rds"
+			"rdt:hash": "",
+			"rdt:timestamp": "",
+			"rdt:location": ""
 		},
 		"rdt:d134": {
-			"rdt:name": "97a40fbf4c4eb6bc.rds",
-			"rdt:value": "data/134-97a40fbf4c4eb6bc.rds",
+			"rdt:name": "error.msg",
+			"rdt:value": "File to copy does not exist: dev.off.2.pdf",
 			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
+			"rdt:type": "Exception",
+			"rdt:scope": "ddg.library",
 			"rdt:fromEnv": false,
-			"rdt:hash": "4b2d1d634484959478c9fd004d3a3078",
-			"rdt:timestamp": "2021-05-13T15.13.17CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/97a40fbf4c4eb6bc.rds"
-		},
-		"rdt:d135": {
-			"rdt:name": "27df69d56b059b07.rds",
-			"rdt:value": "data/135-27df69d56b059b07.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "c47ec886811279f1eb4286be4962eaf1",
-			"rdt:timestamp": "2021-05-13T11.46.48CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/27df69d56b059b07.rds"
-		},
-		"rdt:d136": {
-			"rdt:name": "24fb762509168215.rds",
-			"rdt:value": "data/136-24fb762509168215.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "89913be7be76f98f2f4190da89d41721",
-			"rdt:timestamp": "2021-04-05T14.44.09CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/24fb762509168215.rds"
-		},
-		"rdt:d137": {
-			"rdt:name": "d0a170f98b945fe4.rds",
-			"rdt:value": "data/137-d0a170f98b945fe4.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "c7ad19d0efca9f3e8133a48ae0fbdfe5",
-			"rdt:timestamp": "2021-05-13T11.46.48CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/d0a170f98b945fe4.rds"
-		},
-		"rdt:d138": {
-			"rdt:name": "7f41734f39dcafde.rds",
-			"rdt:value": "data/138-7f41734f39dcafde.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "bd0db535830b5746a024f68074c8e95f",
-			"rdt:timestamp": "2021-05-13T11.46.48CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/7f41734f39dcafde.rds"
-		},
-		"rdt:d139": {
-			"rdt:name": "56050530511ca44b.rds",
-			"rdt:value": "data/139-56050530511ca44b.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "faadf5f2d068e8be0ad09683c85d6c29",
-			"rdt:timestamp": "2021-05-13T11.46.48CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/56050530511ca44b.rds"
-		},
-		"rdt:d140": {
-			"rdt:name": "8af3b60bd6426278.rds",
-			"rdt:value": "data/140-8af3b60bd6426278.rds",
-			"rdt:valType": "{\"container\":\"vector\", \"dimension\":[1], \"type\":[\"character\"]}",
-			"rdt:type": "File",
-			"rdt:scope": "undefined",
-			"rdt:fromEnv": false,
-			"rdt:hash": "8808ad6746525452aa7a2a1f06fa7492",
-			"rdt:timestamp": "2021-05-13T11.46.48CEST",
-			"rdt:location": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.drake/data/8af3b60bd6426278.rds"
+			"rdt:hash": "",
+			"rdt:timestamp": "",
+			"rdt:location": ""
 		},
 
 		"rdt:environment": {
@@ -1624,13 +1558,13 @@
 			"rdt:script": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/make.R",
 			"rdt:scriptTimeStamp": "2021-04-22T08.34.18CEST",
 			"rdt:scriptHash": "03715f160c8ad3cd7b7e44b5b51ded59",
-			"rdt:totalElapsedTime": "4.3",
+			"rdt:totalElapsedTime": "25.836",
 			"rdt:sourcedScripts": "",
 			"rdt:sourcedScriptTimeStamps": "",
 			"rdt:sourcedScriptHashes": "",
 			"rdt:workingDirectory": "/Users/lukas/dev/reproducible_fair_neuro_ds_template",
 			"rdt:provDirectory": "/Users/lukas/dev/reproducible_fair_neuro_ds_template/.prov/prov_make",
-			"rdt:provTimestamp": "2021-05-13T15.13.14CEST",
+			"rdt:provTimestamp": "2021-05-27T07.50.44CEST",
 			"rdt:hashAlgorithm": "md5"
 		},
 
@@ -1699,6 +1633,22 @@
 			}
 		},
 		"rdt:l9": {
+			"name": "knitr",
+			"version": "1.33",
+			"prov:type": {
+				"$": "prov:Collection",
+				"type": "xsd:QName"
+			}
+		},
+		"rdt:l10": {
+			"name": "magrittr",
+			"version": "2.0.1",
+			"prov:type": {
+				"$": "prov:Collection",
+				"type": "xsd:QName"
+			}
+		},
+		"rdt:l11": {
 			"name": "methods",
 			"version": "4.0.5",
 			"prov:type": {
@@ -1706,7 +1656,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l10": {
+		"rdt:l12": {
 			"name": "purrr",
 			"version": "0.3.4",
 			"prov:type": {
@@ -1714,7 +1664,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l11": {
+		"rdt:l13": {
 			"name": "rdtLite",
 			"version": "1.3",
 			"prov:type": {
@@ -1722,7 +1672,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l12": {
+		"rdt:l14": {
 			"name": "readr",
 			"version": "1.4.0",
 			"prov:type": {
@@ -1730,7 +1680,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l13": {
+		"rdt:l15": {
 			"name": "readxl",
 			"version": "1.3.1",
 			"prov:type": {
@@ -1738,7 +1688,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l14": {
+		"rdt:l16": {
 			"name": "remotes",
 			"version": "2.2.0",
 			"prov:type": {
@@ -1746,15 +1696,23 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l15": {
+		"rdt:l17": {
 			"name": "reproducibleFairTemplate",
-			"version": "0.4.5",
+			"version": "0.4.6",
 			"prov:type": {
 				"$": "prov:Collection",
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l16": {
+		"rdt:l18": {
+			"name": "rmarkdown",
+			"version": "2.7",
+			"prov:type": {
+				"$": "prov:Collection",
+				"type": "xsd:QName"
+			}
+		},
+		"rdt:l19": {
 			"name": "stats",
 			"version": "4.0.5",
 			"prov:type": {
@@ -1762,7 +1720,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l17": {
+		"rdt:l20": {
 			"name": "stringr",
 			"version": "1.4.0",
 			"prov:type": {
@@ -1770,7 +1728,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l18": {
+		"rdt:l21": {
 			"name": "testthat",
 			"version": "3.0.2",
 			"prov:type": {
@@ -1778,7 +1736,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l19": {
+		"rdt:l22": {
 			"name": "tibble",
 			"version": "3.1.1",
 			"prov:type": {
@@ -1786,7 +1744,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l20": {
+		"rdt:l23": {
 			"name": "tidyr",
 			"version": "1.1.3",
 			"prov:type": {
@@ -1794,7 +1752,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l21": {
+		"rdt:l24": {
 			"name": "tidyverse",
 			"version": "1.3.0",
 			"prov:type": {
@@ -1802,7 +1760,7 @@
 				"type": "xsd:QName"
 			}
 		},
-		"rdt:l22": {
+		"rdt:l25": {
 			"name": "utils",
 			"version": "4.0.5",
 			"prov:type": {
@@ -1831,6 +1789,54 @@
 		"rdt:pd1": {
 			"prov:activity": "rdt:p2",
 			"prov:entity": "rdt:d1"
+		},
+		"rdt:pd2": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d123"
+		},
+		"rdt:pd3": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d124"
+		},
+		"rdt:pd4": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d125"
+		},
+		"rdt:pd5": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d126"
+		},
+		"rdt:pd6": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d127"
+		},
+		"rdt:pd7": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d128"
+		},
+		"rdt:pd8": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d129"
+		},
+		"rdt:pd9": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d130"
+		},
+		"rdt:pd10": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d131"
+		},
+		"rdt:pd11": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d132"
+		},
+		"rdt:pd12": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d133"
+		},
+		"rdt:pd13": {
+			"prov:activity": "rdt:p3",
+			"prov:entity": "rdt:d134"
 		}
 	},
 
@@ -1844,7 +1850,7 @@
 			"prov:activity": "rdt:p3"
 		},
 		"rdt:dp3": {
-			"prov:entity": "rdt:d3",
+			"prov:entity": "rdt:d0",
 			"prov:activity": "rdt:p3"
 		},
 		"rdt:dp4": {
@@ -1856,7 +1862,7 @@
 			"prov:activity": "rdt:p3"
 		},
 		"rdt:dp6": {
-			"prov:entity": "rdt:d0",
+			"prov:entity": "rdt:d6",
 			"prov:activity": "rdt:p3"
 		},
 		"rdt:dp7": {
@@ -2321,78 +2327,6 @@
 		},
 		"rdt:dp122": {
 			"prov:entity": "rdt:d122",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp123": {
-			"prov:entity": "rdt:d123",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp124": {
-			"prov:entity": "rdt:d124",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp125": {
-			"prov:entity": "rdt:d125",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp126": {
-			"prov:entity": "rdt:d126",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp127": {
-			"prov:entity": "rdt:d127",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp128": {
-			"prov:entity": "rdt:d128",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp129": {
-			"prov:entity": "rdt:d129",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp130": {
-			"prov:entity": "rdt:d130",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp131": {
-			"prov:entity": "rdt:d131",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp132": {
-			"prov:entity": "rdt:d132",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp133": {
-			"prov:entity": "rdt:d133",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp134": {
-			"prov:entity": "rdt:d134",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp135": {
-			"prov:entity": "rdt:d135",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp136": {
-			"prov:entity": "rdt:d136",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp137": {
-			"prov:entity": "rdt:d137",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp138": {
-			"prov:entity": "rdt:d138",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp139": {
-			"prov:entity": "rdt:d139",
-			"prov:activity": "rdt:p3"
-		},
-		"rdt:dp140": {
-			"prov:entity": "rdt:d140",
 			"prov:activity": "rdt:p3"
 		}
 	}

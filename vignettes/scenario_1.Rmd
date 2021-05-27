@@ -23,7 +23,7 @@ pkgload::load_all()
 
 In order to avoid errors in reproduction of R package runs - the drake cache is cleaned.
 
-```{r eval=T}
+```{r eval=F}
 drake::clean()
 # check file existing
 #file.exists("data/raw_data.xlsx")

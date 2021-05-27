@@ -31,6 +31,9 @@ pkgdown::build_site()
 
 usethis::use_gpl3_license() # GPL-License for maximum shareability
 
+## Drake Execution
+drake::clean(destroy=T) # attention - makes a clean new release
+
 #prov
 # Provenance in R
 # https://github.com/End-to-end-provenance/RDataTracker

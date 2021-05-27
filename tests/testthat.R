@@ -1,7 +1,7 @@
 library(testthat)
 pkgload::load_all(".")
 
-#source_dir("R")
+source_dir("R")
 
 test_check("reproducibleFairTemplate")
 

@@ -37,10 +37,6 @@ jobs:
         with:
           lfs: 'True'
 
-      - name: List Files
-        run: |
-          ls -a
-
       - uses: r-lib/actions/setup-r@v1
         with:
           r-version: ${{ matrix.config.r }}

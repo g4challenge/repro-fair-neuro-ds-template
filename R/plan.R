@@ -15,6 +15,7 @@ utils::globalVariables(c("sc1_question",
 #' a data frame with the steps of your analysis.
 #' @export
 #'
+#'
 #' @importFrom drake drake_plan target knitr_in file_in file_out
 #' @importFrom magrittr `%>%`
 #' @importFrom dplyr mutate

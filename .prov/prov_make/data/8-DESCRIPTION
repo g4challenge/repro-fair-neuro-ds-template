@@ -1,0 +1,42 @@
+Package: reproducibleFairTemplate
+Type: Package
+Title: Reproducible and Fair Data Science Project Template
+Version: 0.4.6
+Authors@R: person("Lukas", "Huber", 
+                  email = "lukashuber1@gmail.com",
+                  role = c("aut", "cre"),
+                  comment=c(ORCID="0000-0001-5443-0290"))
+Description: Template uses docker, git, rmd, drake, mandrake for reproducible data science.
+    It is aimed at neuro-intensive care research teams with interdisciplinary teams, suits R and Python workflows.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Depends:
+    tidyverse,
+    rmarkdown,
+    knitr,
+    dplyr, 
+    magrittr
+Imports:
+    drake,
+    haven,
+    readxl,
+    lubridate,
+    pacman,
+    visNetwork,
+    mandrake,
+    reticulate,
+    gert,
+    ggplot2
+Remotes:
+    ropensci/drake,
+    wlandau/txtq,
+    mstr3336/mandrake
+SystemRequirements:
+    fribidi,
+    harfbuzz
+RoxygenNote: 7.1.1
+Roxygen: list(roclets = c("namespace", "rd", "roxytest::testthat_roclet"))
+Suggests: 
+    testthat
+VignetteBuilder: knitr
