@@ -34,6 +34,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: List Files
+        run: |
+          ls -l
 
       - uses: r-lib/actions/setup-r@v1
         with:
