@@ -27,7 +27,8 @@ Imports:
     mandrake,
     reticulate,
     gert,
-    ggplot2
+    ggplot2,
+    pkgload
 Remotes:
     ropensci/drake,
     wlandau/txtq,
