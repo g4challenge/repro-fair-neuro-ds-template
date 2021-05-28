@@ -1,6 +1,6 @@
 {
     "description": "This template can serve as common starting point for traceable analyses in observational clinical research. The project should get versioned, Identified, Linked, Documented, Tested, FAIR",
-    "license": "GPL-3",
+    "license": "https://spdx.org/licenses/GPL-3.0-or-later",
     "title": "Reproducible Clinical Research Project Template based on TRACE-RM",
     "upload_type": "software",
     "publication_date": "2020-11-22",

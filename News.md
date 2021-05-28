@@ -1,5 +1,9 @@
 # reproducibleFairTemplate 0.5.0
-
+- verified docker and repository parity
+- R must be 4.0 or higher
+- imports and depends are now fixated
+- all CI Actions do clone .drake and .prov folders
+- drake cache is included and portable
 
 # reproducibleFairTemplate 0.4.7
 - clean drake run
